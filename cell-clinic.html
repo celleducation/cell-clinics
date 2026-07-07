@@ -1,0 +1,2967 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cell Clinics - Physician-Guided Cellular Medicine Platform</title>
+    <meta
+      name="description"
+      content="The clinical layer of Cell Education: physician-guided cellular medicine, diagnostics, biological interpretation and therapeutic systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+:root {
+  --accent: #41c9ff;
+  --pink: #ff5bd6;
+  --ink: #0a0a0a;
+  --white: #fff;
+  --paper: #f6f9fb;
+  --muted: #5c6970;
+  --line: rgba(10, 10, 10, 0.08);
+  --blue: #5678dc;
+  --deep: #151b47;
+  --lucid-blue: #68baf4;
+  --lucid-blue-deep: #4ea8e7;
+  --card-dark: #071522;
+  --soft-cream: #f6f3ec;
+  --signal-gold: #f6c84f;
+  --shadow-blue: 86, 120, 220;
+  --sans: "DM Sans", Arial, sans-serif;
+  --serif: var(--sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 85% 18%, rgba(104, 186, 244, 0.18), transparent 28%),
+    radial-gradient(circle at 18% 88%, rgba(255, 255, 255, 0.9), transparent 30%),
+    linear-gradient(135deg, #f7f5ef 0%, #f8fbfd 52%, #edf7ff 100%);
+  background-attachment: fixed;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.pill {
+  display: inline-flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid rgba(7, 21, 34, 0.14);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(65, 201, 255, 0.18);
+}
+
+.pill-light {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 10px 24px rgba(7, 21, 34, 0.07);
+}
+
+.pill-ghost {
+  border-color: rgba(7, 21, 34, 0.16);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--ink);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 24px;
+  align-items: center;
+  padding: 15px 34px;
+  border-bottom: 1px solid rgba(7, 21, 34, 0.07);
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 14px 36px rgba(86, 120, 220, 0.08);
+}
+
+.nav-logo img {
+  width: 158px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: rgba(10, 10, 10, 0.64);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-menu {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-content: center;
+  gap: 5px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.nav-menu span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--white);
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--soft-cream);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image: radial-gradient(circle, rgba(86, 120, 220, 0.18) 1px, transparent 1.2px);
+  background-size: 16px 16px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-bg,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(circle at 75% 26%, rgba(104, 186, 244, 0.3), transparent 30%),
+    radial-gradient(circle at 18% 84%, rgba(255, 255, 255, 0.9), transparent 28%),
+    linear-gradient(135deg, #f7f4ee 0%, #f8fbfd 46%, #dff2ff 100%);
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.38)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.06));
+}
+
+.cell-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cell-field::before {
+  content: none;
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  width: min(34vw, 460px);
+  height: min(62vw, 780px);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  background:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.06)),
+    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.72), transparent 18%);
+  box-shadow:
+    inset 0 0 80px rgba(255, 255, 255, 0.28),
+    0 36px 110px rgba(86, 120, 220, 0.22);
+  transform: rotate(6deg);
+  opacity: 0.34;
+}
+
+.cell-field::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  opacity: 0.22;
+  background:
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.42)),
+    radial-gradient(circle at 15% 100%, rgba(255, 255, 255, 0.38), transparent 28%);
+}
+
+.cell {
+  display: none;
+}
+
+.cell::before,
+.cell::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 22px rgba(65, 201, 255, 0.16);
+}
+
+.cell::before {
+  top: 24%;
+  left: 24%;
+  width: 14%;
+  height: 14%;
+}
+
+.cell::after {
+  right: 18%;
+  bottom: 24%;
+  width: 18%;
+  height: 18%;
+}
+
+.cell-one {
+  top: 18%;
+  right: 22%;
+  width: clamp(76px, 8vw, 124px);
+  height: clamp(76px, 8vw, 124px);
+}
+
+.cell-two {
+  top: 38%;
+  right: 10%;
+  width: clamp(130px, 14vw, 220px);
+  height: clamp(130px, 14vw, 220px);
+  opacity: 0.86;
+}
+
+.cell-three {
+  top: 10%;
+  left: 48%;
+  width: clamp(58px, 6vw, 96px);
+  height: clamp(58px, 6vw, 96px);
+  opacity: 0.58;
+  filter: blur(0.2px) saturate(1.1);
+}
+
+.cell-four {
+  left: 61%;
+  bottom: 13%;
+  width: clamp(54px, 5vw, 84px);
+  height: clamp(54px, 5vw, 84px);
+  opacity: 0.46;
+  filter: blur(0.8px);
+}
+
+.cell-five {
+  right: 33%;
+  bottom: 24%;
+  width: clamp(36px, 4vw, 68px);
+  height: clamp(36px, 4vw, 68px);
+  opacity: 0.62;
+  filter: blur(0.6px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.72fr);
+  min-height: 100svh;
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
+  padding: 110px 40px 72px;
+}
+
+.hero-main {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow.dark {
+  color: #777;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+h1 {
+  max-width: 980px;
+  font-size: clamp(42px, 4.6vw, 72px);
+  line-height: 0.98;
+}
+
+.hero p {
+  max-width: 660px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.65;
+}
+
+.hero-quote {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  width: min(430px, 32vw);
+  min-width: 330px;
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.48)),
+    rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(24px) saturate(1.12);
+  -webkit-backdrop-filter: blur(24px) saturate(1.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 22px 60px rgba(86, 120, 220, 0.1);
+}
+
+.hero-quote img {
+  width: 92px;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-quote span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-quote p {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.hero-quote strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.hero-actions,
+.access-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-meta {
+  display: grid;
+  min-width: 260px;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 24px 60px rgba(86, 120, 220, 0.16);
+}
+
+.hero-meta span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headline-section {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: 92px 40px;
+  overflow: hidden;
+  color: var(--ink);
+  background: #fff;
+}
+
+.headline-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(65, 201, 255, 0.12), transparent 26%),
+    radial-gradient(circle at 74% 82%, rgba(255, 91, 214, 0.07), transparent 28%),
+    linear-gradient(180deg, #fff 0%, #f8fbfd 100%);
+  background-position: center;
+  background-size: cover;
+}
+
+.headline-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
+  gap: clamp(36px, 7vw, 110px);
+  align-items: end;
+  width: 100%;
+}
+
+.clinic-copy {
+  max-width: 820px;
+}
+
+.headline-content h2 {
+  max-width: 760px;
+  font-size: clamp(38px, 4.2vw, 60px);
+  line-height: 1.04;
+}
+
+.final-content h2 {
+  font-size: clamp(42px, 5.8vw, 86px);
+  line-height: 1.02;
+}
+
+.headline-content p {
+  max-width: 620px;
+  margin: 24px 0 30px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.final-content p {
+  max-width: 650px;
+  margin: 28px 0 34px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 19px;
+}
+
+.clinic-principles {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+
+.clinic-principles span {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.84);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.clinic-panel {
+  padding: 26px;
+  border: 1px solid rgba(65, 201, 255, 0.18);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(240, 248, 252, 0.9)),
+    #fff;
+  box-shadow: 0 18px 46px rgba(86, 120, 220, 0.06);
+}
+
+.clinic-panel p {
+  margin: 0;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.panel-label {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.network,
+.shop-section,
+.access-section,
+.experts {
+  padding: 88px 40px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, #fff 0%, #f8fbfd 100%);
+}
+
+.network {
+  padding-top: 104px;
+  padding-bottom: 104px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.network-intro {
+  max-width: 1040px;
+  margin-bottom: 42px;
+}
+
+.network-intro p {
+  margin: 0;
+  max-width: 880px;
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 600;
+  line-height: 1.24;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  align-items: stretch;
+}
+
+.feature-grid article,
+.shop-card,
+.expert-card,
+.access-card {
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.86)),
+    #fff;
+  box-shadow: 0 18px 46px rgba(86, 120, 220, 0.055);
+}
+
+.feature-grid article {
+  display: flex;
+  min-height: 320px;
+  flex-direction: column;
+  padding: 30px;
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-grid article:nth-child(2),
+.feature-grid article:nth-child(4) {
+  margin-top: 0;
+}
+
+.feature-grid article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(65, 201, 255, 0.32);
+  box-shadow: 0 24px 56px rgba(86, 120, 220, 0.08);
+}
+
+.feature-number,
+.card-index,
+.timeline span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid rgba(65, 201, 255, 0.22);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.section-lead {
+  max-width: 720px;
+  margin: -18px 0 42px;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.12;
+}
+
+p {
+  color: var(--muted);
+}
+
+.section-title {
+  max-width: 880px;
+  margin: 0 0 38px;
+  font-size: clamp(40px, 4.4vw, 66px);
+  line-height: 1.04;
+}
+
+.shop-section {
+  background: #f5f9fc;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.4vw, 34px);
+  align-items: stretch;
+}
+
+.shop-card {
+  overflow: hidden;
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  padding: 20px 20px 28px;
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(65, 201, 255, 0.45);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.07);
+}
+
+.shop-media {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #edf4f7;
+}
+
+.shop-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop-card p {
+  flex: 1;
+  min-height: 0;
+  margin-bottom: 24px;
+  line-height: 1.72;
+}
+
+.shop-card .pill {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.access-section {
+  background: linear-gradient(180deg, #fff 0%, #f3f8fb 100%);
+}
+
+.access-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.95fr);
+  gap: clamp(30px, 5vw, 66px);
+  padding: clamp(30px, 5vw, 60px);
+  overflow: hidden;
+  position: relative;
+}
+
+.access-card::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: -18%;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(65, 201, 255, 0.16), transparent 65%);
+  pointer-events: none;
+}
+
+.access-card h2 {
+  max-width: 680px;
+  font-size: clamp(40px, 4.5vw, 68px);
+  line-height: 1.04;
+}
+
+.access-card > div > p {
+  max-width: 640px;
+  font-size: 18px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline article {
+  min-height: 150px;
+  padding: 20px;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px);
+  transition: transform 0.35s ease, border-color 0.25s ease;
+}
+
+.timeline article:nth-child(even) {
+  transform: none;
+}
+
+.timeline article:hover {
+  border-color: rgba(65, 201, 255, 0.34);
+}
+
+.timeline strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.timeline p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.experts {
+  background: #f6f9fb;
+}
+
+.expert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.expert-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 26px;
+  align-items: center;
+  padding: 24px;
+  min-height: 300px;
+}
+
+.expert-card img,
+.expert-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  background:
+    linear-gradient(135deg, rgba(65, 201, 255, 0.14), rgba(255, 91, 214, 0.08)),
+    url("/images/shop-medical-knowhow.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.expert-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.final-cta {
+  position: relative;
+  min-height: 680px;
+  display: grid;
+  place-items: center;
+  padding: 96px 40px;
+  overflow: hidden;
+  color: var(--white);
+  text-align: center;
+  background: #0d1028;
+}
+
+.final-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(65, 201, 255, 0.2), transparent 32%),
+    radial-gradient(circle at 76% 72%, rgba(255, 91, 214, 0.12), transparent 30%),
+    linear-gradient(135deg, #0d1028 0%, #18275f 58%, #253b8a 100%);
+}
+
+.final-content {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 100%);
+}
+
+.final-content p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.assessment-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(180px, 1fr) auto auto;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.assessment-form input,
+.assessment-form select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 0 16px;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.assessment-form input::placeholder {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.assessment-form option {
+  color: var(--ink);
+}
+
+.assessment-form button {
+  cursor: pointer;
+}
+
+.assessment-form .pill {
+  min-height: 48px;
+  justify-content: center;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 36px 40px;
+  background: var(--white);
+}
+
+.footer img {
+  width: 142px;
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-system-layout {
+  align-items: center;
+}
+
+.hero-system-layout h1 {
+  max-width: 960px;
+}
+
+.journey-visual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.44)),
+    rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px) saturate(1.08);
+  -webkit-backdrop-filter: blur(24px) saturate(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 24px 66px rgba(86, 120, 220, 0.11);
+}
+
+.journey-visual span,
+.process-flow span {
+  position: relative;
+  display: flex;
+  min-height: 46px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 16px;
+  border: 1px solid rgba(65, 201, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.journey-visual span {
+  flex-direction: column;
+  min-height: 84px;
+  justify-content: center;
+  padding: 13px 34px 13px 14px;
+}
+
+.journey-visual span strong {
+  color: var(--blue);
+  font-size: 15px;
+}
+
+.journey-visual span small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.journey-visual span::after,
+.process-flow span::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(65, 201, 255, 0.1);
+}
+
+.positioning-strip {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 22px 40px;
+  border-top: 1px solid rgba(7, 21, 34, 0.06);
+  border-bottom: 1px solid rgba(7, 21, 34, 0.06);
+  background: #fff;
+}
+
+.positioning-strip > span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.positioning-strip div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.positioning-strip strong {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border: 1px solid rgba(104, 186, 244, 0.24);
+  border-radius: 999px;
+  padding: 0 16px;
+  color: var(--card-dark);
+  background: #eef8ff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.system-section .headline-content {
+  align-items: center;
+}
+
+.section-kicker {
+  margin-bottom: 42px;
+}
+
+.premium-grid article {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(65, 201, 255, 0.12), transparent 26%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 251, 0.9));
+}
+
+.protocol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.protocol-card {
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 91, 214, 0.08), transparent 30%),
+    radial-gradient(circle at 0% 100%, rgba(65, 201, 255, 0.12), transparent 32%),
+    #fff;
+  box-shadow: 0 18px 46px rgba(86, 120, 220, 0.055);
+  transition: transform 0.35s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.protocol-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(65, 201, 255, 0.32);
+  box-shadow: 0 24px 60px rgba(86, 120, 220, 0.08);
+}
+
+.protocol-card > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 42px;
+  border: 1px solid rgba(65, 201, 255, 0.22);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.protocol-card p {
+  flex: 1;
+}
+
+.protocol-card .pill {
+  align-self: flex-start;
+}
+
+.access-large {
+  min-height: 680px;
+}
+
+.dashboard-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
+  gap: clamp(32px, 6vw, 92px);
+  align-items: center;
+  padding: 104px 40px;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 92% 18%, rgba(65, 201, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, #fff 0%, #f6f9fb 100%);
+}
+
+.dashboard-copy p {
+  max-width: 620px;
+  margin-bottom: 28px;
+  font-size: 18px;
+}
+
+.biomarker-panel {
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(7, 21, 34, 0.08);
+  border-radius: 32px;
+  background: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.84),
+    0 24px 70px rgba(7, 21, 34, 0.075);
+}
+
+.panel-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.panel-topline span {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.9fr) 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid rgba(10, 10, 10, 0.07);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.metric-row i {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(104, 186, 244, 0.16);
+}
+
+.metric-row i::before {
+  content: "";
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--lucid-blue), var(--lucid-blue-deep));
+}
+
+.metric-row strong {
+  font-size: 13px;
+}
+
+.expert-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.expert-grid-three .expert-card {
+  grid-template-columns: 1fr;
+}
+
+.expert-grid-three .expert-card img,
+.expert-grid-three .expert-placeholder {
+  max-width: 210px;
+}
+
+.page-hero {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  align-items: end;
+  padding: 130px 40px 70px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 22%, rgba(65, 201, 255, 0.24), transparent 28%),
+    radial-gradient(circle at 84% 78%, rgba(255, 91, 214, 0.16), transparent 32%),
+    linear-gradient(135deg, #fbfdfe 0%, #eaf7fc 48%, #f8e8f4 100%);
+}
+
+.page-hero h1 {
+  max-width: 920px;
+}
+
+.page-hero p {
+  max-width: 720px;
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.tab {
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.content-band {
+  padding: 88px 40px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1fr);
+  gap: clamp(32px, 6vw, 84px);
+  align-items: start;
+}
+
+.info-list,
+.component-list {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.info-list li,
+.component-list li {
+  padding: 16px 18px;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.placeholder-visual {
+  min-height: 360px;
+  border: 1px solid rgba(65, 201, 255, 0.18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 74% 24%, rgba(65, 201, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 24% 80%, rgba(255, 91, 214, 0.08), transparent 30%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(246, 249, 251, 0.78));
+  box-shadow: 0 24px 70px rgba(86, 120, 220, 0.07);
+}
+
+.text-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.text-card {
+  min-height: 220px;
+  padding: 26px;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(86, 120, 220, 0.05);
+}
+
+.text-card span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Category-defining landing page rhythm */
+.clinic-hero {
+  min-height: 100svh;
+}
+
+.hero-cinema {
+  width: min(480px, 100%);
+  min-width: 0;
+}
+
+.clinic-transform-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid rgba(7, 21, 34, 0.07);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 70px rgba(7, 21, 34, 0.08);
+}
+
+.transform-node {
+  min-height: 148px;
+  padding: 26px;
+  border: 1px solid rgba(7, 21, 34, 0.08);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(7, 21, 34, 0.045);
+}
+
+.transform-node:nth-of-type(1) {
+  border-color: rgba(104, 186, 244, 0.42);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 42%),
+    linear-gradient(135deg, var(--lucid-blue) 0%, var(--lucid-blue-deep) 100%);
+  color: var(--white);
+}
+
+.transform-node:nth-of-type(3) {
+  border-color: rgba(7, 21, 34, 0.12);
+  background: var(--card-dark);
+  color: var(--white);
+}
+
+.transform-node.final {
+  border-color: rgba(7, 21, 34, 0.08);
+  background: #fff;
+  color: var(--ink);
+}
+
+.transform-node span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.transform-node strong {
+  display: block;
+  color: var(--blue);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.transform-node p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.transform-node:nth-of-type(1) span,
+.transform-node:nth-of-type(1) strong,
+.transform-node:nth-of-type(1) p,
+.transform-node:nth-of-type(3) strong,
+.transform-node:nth-of-type(3) p {
+  color: var(--white);
+}
+
+.transform-node:nth-of-type(3) span {
+  display: inline-grid;
+  width: auto;
+  min-height: 26px;
+  place-items: center;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--card-dark);
+  background: var(--signal-gold);
+}
+
+.transform-arrow {
+  color: rgba(7, 21, 34, 0.38);
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1;
+}
+
+.system-section {
+  color: var(--white);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(104, 186, 244, 0.2), transparent 28%),
+    linear-gradient(135deg, #071522 0%, #10283e 58%, #173e5f 100%);
+}
+
+.system-section .headline-bg {
+  background:
+    radial-gradient(circle at 18% 80%, rgba(255, 91, 214, 0.08), transparent 30%),
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: auto, 42px 42px, 42px 42px;
+}
+
+.system-section .eyebrow,
+.system-section h2 {
+  color: var(--white);
+}
+
+.system-section p {
+  max-width: 780px;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.clinic-os {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  min-height: auto;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 26px 80px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(18px);
+  counter-reset: clinic-flow;
+}
+
+.os-line {
+  display: none;
+}
+
+.clinic-os span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 72px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.clinic-os span::before {
+  counter-increment: clinic-flow;
+  content: "0" counter(clinic-flow);
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(65, 201, 255, 0.13);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow:
+    0 0 0 1px rgba(65, 201, 255, 0.28),
+    0 8px 20px rgba(65, 201, 255, 0.1);
+}
+
+.clinic-os span:nth-of-type(even) {
+  text-align: left;
+  background: var(--lucid-blue);
+  color: var(--white);
+}
+
+.receive-section {
+  background: #fff;
+}
+
+.how-section {
+  background:
+    radial-gradient(circle at 88% 8%, rgba(104, 186, 244, 0.18), transparent 26%),
+    linear-gradient(180deg, #f7f5ef 0%, #fff 100%);
+}
+
+.pathway-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.pathway-grid article {
+  min-height: 230px;
+  padding: 24px;
+}
+
+.receive-section .feature-grid article {
+  min-height: 260px;
+  padding: 26px;
+}
+
+.pathway-grid article,
+.premium-grid article {
+  border-radius: 28px;
+}
+
+.pathway-grid article:nth-child(1),
+.premium-grid article:nth-child(1) {
+  border-color: rgba(104, 186, 244, 0.34);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 42%),
+    linear-gradient(135deg, var(--lucid-blue), var(--lucid-blue-deep));
+  color: var(--white);
+}
+
+.pathway-grid article:nth-child(1) h3,
+.pathway-grid article:nth-child(1) p,
+.pathway-grid article:nth-child(1) .feature-number,
+.premium-grid article:nth-child(1) h3,
+.premium-grid article:nth-child(1) p,
+.premium-grid article:nth-child(1) .feature-number {
+  color: var(--white);
+}
+
+.pathway-grid article:nth-child(3),
+.premium-grid article:nth-child(3) {
+  border-color: rgba(7, 21, 34, 0.12);
+  background: var(--card-dark);
+  color: var(--white);
+}
+
+.pathway-grid article:nth-child(3) h3,
+.pathway-grid article:nth-child(3) p,
+.premium-grid article:nth-child(3) h3,
+.premium-grid article:nth-child(3) p {
+  color: var(--white);
+}
+
+.pathway-grid article:nth-child(3) .feature-number,
+.premium-grid article:nth-child(3) .feature-number {
+  border-color: rgba(246, 200, 79, 0.26);
+  color: var(--card-dark);
+  background: var(--signal-gold);
+}
+
+.premium-grid {
+  grid-template-columns: 1.15fr 0.9fr 0.9fr 1.15fr;
+}
+
+.premium-grid article:nth-child(1),
+.premium-grid article:nth-child(4) {
+  min-height: 280px;
+}
+
+.cinematic-protocols {
+  padding-top: 68px;
+  padding-bottom: 72px;
+}
+
+.cinematic-protocols .section-title {
+  max-width: 680px;
+  margin-bottom: 20px;
+  font-size: clamp(34px, 3.6vw, 50px);
+}
+
+.cinematic-protocols .section-lead {
+  margin-bottom: 28px;
+}
+
+.protocol-world-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.protocol-world {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 0;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 21, 34, 0.08);
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 18px 52px rgba(7, 21, 34, 0.055);
+}
+
+.protocol-world h3 {
+  max-width: 360px;
+  font-family: var(--sans);
+  font-size: clamp(25px, 2.1vw, 34px);
+  font-weight: 800;
+  line-height: 1.04;
+}
+
+.protocol-world > div > span {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  margin-bottom: 12px;
+  border: 1px solid rgba(65, 201, 255, 0.22);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.protocol-world p {
+  max-width: 360px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.protocol-visual {
+  position: relative;
+  order: -1;
+  min-height: 132px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 26% 30%, rgba(255, 255, 255, 0.72), transparent 16%),
+    radial-gradient(circle at 72% 68%, rgba(104, 186, 244, 0.26), transparent 28%),
+    linear-gradient(135deg, #f8fbfd, #dff2ff);
+}
+
+.protocol-visual i {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: inset -10px -10px 26px rgba(65, 201, 255, 0.14), 0 18px 42px rgba(86, 120, 220, 0.07);
+}
+
+.protocol-visual i:nth-child(1) { width: 86px; height: 86px; top: 18px; left: 28px; }
+.protocol-visual i:nth-child(2) { width: 118px; height: 118px; right: 24px; bottom: -34px; }
+.protocol-visual i:nth-child(3) { width: 38px; height: 38px; right: 44%; top: 38%; background: rgba(255, 91, 214, 0.13); }
+
+.mito-world .protocol-visual {
+  background:
+    radial-gradient(circle at 75% 62%, rgba(255, 255, 255, 0.4), transparent 32%),
+    linear-gradient(135deg, var(--lucid-blue), var(--lucid-blue-deep));
+}
+
+.cognitive-world .protocol-visual {
+  background: radial-gradient(circle at 70% 28%, rgba(104, 186, 244, 0.22), transparent 32%), linear-gradient(135deg, var(--card-dark), #123553);
+}
+
+.recovery-world .protocol-visual {
+  background: radial-gradient(circle at 28% 74%, rgba(104, 186, 244, 0.18), transparent 36%), linear-gradient(135deg, #fff, #eef8ff);
+}
+
+.aging-world .protocol-visual {
+  background: radial-gradient(circle at 74% 24%, rgba(246, 200, 79, 0.24), transparent 30%), linear-gradient(135deg, #fff, #f7f5ef);
+}
+
+.why-section {
+  padding: 110px 40px;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(65, 201, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 82%, rgba(255, 91, 214, 0.08), transparent 30%),
+    #fff;
+}
+
+.why-inner {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.why-inner h2 {
+  max-width: 980px;
+  margin: 12px 0 24px;
+  color: var(--ink);
+  font-size: clamp(34px, 4.4vw, 66px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.why-inner p {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.45;
+}
+
+.signature-dashboard {
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: minmax(0, 0.62fr) minmax(520px, 1.38fr);
+  min-height: 920px;
+  padding-top: 128px;
+  padding-bottom: 128px;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(104, 186, 244, 0.24), transparent 32%),
+    linear-gradient(180deg, #f7f5ef 0%, #fff 100%);
+}
+
+.dashboard-stage {
+  position: relative;
+  min-height: 640px;
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+}
+
+.energy-score {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 10px 0 24px;
+}
+
+.energy-score strong {
+  font-family: var(--sans);
+  font-size: clamp(82px, 8vw, 138px);
+  font-weight: 800;
+  line-height: 0.88;
+}
+
+.energy-score span {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.physician-note {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  z-index: 3;
+  width: min(360px, 48%);
+  padding: 22px;
+  border: 1px solid rgba(7, 21, 34, 0.1);
+  border-radius: 26px;
+  background: var(--card-dark);
+  box-shadow: 0 20px 60px rgba(7, 21, 34, 0.14);
+}
+
+.physician-note span {
+  color: var(--signal-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.physician-note p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cellular-map {
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  width: min(430px, 58%);
+  aspect-ratio: 1;
+  border: 1px solid rgba(65, 201, 255, 0.16);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.cellular-map i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 10px rgba(65, 201, 255, 0.1);
+}
+
+.cellular-map i:nth-child(1) { top: 16%; left: 26%; }
+.cellular-map i:nth-child(2) { right: 18%; top: 34%; background: var(--pink); box-shadow: 0 0 0 10px rgba(255, 91, 214, 0.08); }
+.cellular-map i:nth-child(3) { left: 44%; bottom: 16%; }
+.cellular-map i:nth-child(4) { left: 18%; bottom: 34%; width: 11px; height: 11px; }
+
+.human-trust {
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 91, 214, 0.08), transparent 28%),
+    radial-gradient(circle at 10% 92%, rgba(65, 201, 255, 0.12), transparent 30%),
+    linear-gradient(180deg, #fff 0%, #f7fbfd 100%);
+}
+
+.physician-editorial {
+  display: grid;
+  gap: 36px;
+}
+
+.physician-lead p {
+  max-width: 760px;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 650;
+  line-height: 1.32;
+}
+
+.medical-leadership-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.medical-expert-card {
+  min-height: 300px;
+  padding: 32px;
+  border: 1px solid rgba(7, 21, 34, 0.08);
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 18px 46px rgba(7, 21, 34, 0.055);
+}
+
+.medical-expert-card span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.medical-expert-card h3 {
+  margin-bottom: 18px;
+  font-size: clamp(30px, 3vw, 46px);
+}
+
+.medical-expert-card p {
+  margin: 0;
+  max-width: 420px;
+  font-size: 16px;
+}
+
+.kay-card {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.kay-card img {
+  width: 128px;
+  height: 158px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  background: #fff;
+}
+
+/* Site-wide premium gradient background */
+body::before,
+body::after {
+  content: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+body::before {
+  opacity: 0.82;
+  background:
+    radial-gradient(ellipse at 16% 8%, rgba(65, 201, 255, 0.18), transparent 34%),
+    radial-gradient(ellipse at 86% 14%, rgba(255, 91, 214, 0.12), transparent 32%),
+    radial-gradient(ellipse at 68% 82%, rgba(65, 201, 255, 0.1), transparent 38%),
+    linear-gradient(135deg, rgba(251, 253, 254, 0.96) 0%, rgba(234, 247, 252, 0.78) 42%, rgba(248, 232, 244, 0.64) 100%);
+}
+
+body::after {
+  opacity: 0.34;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), transparent 36%, rgba(255, 255, 255, 0.48)),
+    radial-gradient(ellipse at 50% 42%, rgba(255, 255, 255, 0.42), transparent 44%);
+  filter: blur(18px);
+}
+
+section > :not(.hero-bg):not(.hero-overlay):not(.headline-bg):not(.final-bg),
+.footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero::before,
+.hero::after,
+.system-section::before,
+.system-section::after,
+.signature-dashboard::before,
+.signature-dashboard::after,
+.final-cta::before,
+.final-cta::after,
+.page-hero::before,
+.page-hero::after {
+  content: none;
+}
+
+.hero-content,
+.headline-content,
+.dashboard-copy,
+.dashboard-stage,
+.final-content,
+.page-hero > div {
+  position: relative;
+  z-index: 2;
+}
+
+.clinic-os,
+.biomarker-panel,
+.journey-visual {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1080px) {
+  .nav {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-menu {
+    display: grid;
+    justify-self: end;
+  }
+
+  .hero-content,
+  .access-card,
+  .headline-content {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .hero-meta {
+    width: min(420px, 100%);
+  }
+
+  .hero-quote {
+    width: min(460px, 100%);
+    min-width: 0;
+  }
+
+  .feature-grid,
+  .shop-grid,
+  .medical-leadership-grid,
+  .protocol-grid,
+  .assessment-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-section,
+  .split-layout,
+  .protocol-world,
+  .physician-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cinema {
+    width: min(560px, 100%);
+    min-width: 0;
+  }
+
+  .positioning-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .positioning-strip div {
+    justify-content: flex-start;
+  }
+
+  .clinic-os span,
+  .clinic-os span:nth-of-type(even) {
+    width: auto;
+    transform: none;
+    text-align: left;
+  }
+
+  .signature-dashboard {
+    min-height: auto;
+  }
+
+  .expert-grid-three,
+  .text-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid article:nth-child(2),
+  .feature-grid article:nth-child(4) {
+    margin-top: 0;
+  }
+
+  .expert-card {
+    grid-template-columns: 170px 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    padding: 12px 20px;
+  }
+
+  .nav-logo img,
+  .footer img {
+    width: 126px;
+  }
+
+  .hero-content {
+    gap: 28px;
+    padding: 104px 24px 36px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 9.8vw, 45px);
+    line-height: 1.04;
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .hero-quote {
+    grid-template-columns: 72px 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .hero-quote img {
+    width: 72px;
+    border-radius: 14px;
+  }
+
+  .hero-quote p {
+    font-size: 13px;
+  }
+
+  .hero-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .hero-meta span {
+    font-size: 11px;
+  }
+
+  .headline-content h2,
+  .final-content h2,
+  .access-card h2,
+  .section-title {
+    font-size: clamp(36px, 10vw, 46px);
+  }
+
+  .headline-section,
+  .network,
+  .shop-section,
+  .access-section,
+  .experts,
+  .final-cta {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .feature-grid,
+  .shop-grid,
+  .expert-grid,
+  .protocol-world-list,
+  .medical-leadership-grid,
+  .protocol-grid,
+  .expert-grid-three,
+  .text-card-grid,
+  .assessment-form {
+    grid-template-columns: 1fr;
+  }
+
+  .kay-card {
+    grid-template-columns: 92px 1fr;
+  }
+
+  .kay-card img {
+    width: 92px;
+    height: 116px;
+  }
+
+  .hero-system-layout {
+    justify-content: start;
+  }
+
+  .journey-visual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-width: 0;
+  }
+
+  .journey-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .process-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-section,
+  .page-hero,
+  .content-band {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .protocol-world {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .protocol-world h3 {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .protocol-visual {
+    min-height: 150px;
+  }
+
+  .dashboard-stage {
+    min-height: auto;
+  }
+
+  .physician-note,
+  .cellular-map {
+    position: relative;
+    width: 100%;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin-top: 18px;
+  }
+
+  .cellular-map {
+    max-width: 320px;
+  }
+
+  .metric-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid article,
+  .shop-card {
+    min-height: auto;
+  }
+
+  .timeline article:nth-child(even) {
+    transform: none;
+  }
+
+  .expert-card {
+    grid-template-columns: 1fr;
+  }
+
+  .expert-card img,
+  .expert-placeholder {
+    max-width: 260px;
+  }
+
+  .footer {
+    display: grid;
+    padding: 32px 24px;
+  }
+
+  .footer nav {
+    justify-content: flex-start;
+  }
+}
+
+/* Premium clinical operating-system visual layer */
+:root {
+  --ink: #07111f;
+  --muted: #66737f;
+  --line: rgba(7, 17, 31, 0.08);
+  --accent: #79c8f2;
+  --blue: #2c6f9f;
+  --deep: #081522;
+  --card-dark: #07111f;
+  --silver: #eef3f7;
+  --lucid-blue: #79c8f2;
+  --lucid-blue-deep: #2c6f9f;
+  --signal-gold: #d8c79d;
+  --glass: rgba(255, 255, 255, 0.58);
+  --glass-strong: rgba(255, 255, 255, 0.76);
+}
+
+body {
+  background:
+    radial-gradient(900px 620px at 78% 12%, rgba(121, 200, 242, 0.18), transparent 62%),
+    radial-gradient(740px 520px at 18% 78%, rgba(8, 21, 34, 0.08), transparent 66%),
+    radial-gradient(680px 500px at 58% 42%, rgba(255, 255, 255, 0.78), transparent 68%),
+    linear-gradient(135deg, #fbfcfd 0%, #eef4f8 48%, #f8fafb 100%);
+  color: var(--ink);
+}
+
+body::before {
+  content: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(7, 17, 31, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 17, 31, 0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 20%, #000 0%, transparent 74%);
+}
+
+body::after {
+  content: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    radial-gradient(circle at 45% 18%, rgba(255, 255, 255, 0.92), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(8, 21, 34, 0.035));
+  filter: none;
+}
+
+.nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(30px) saturate(1.16);
+  -webkit-backdrop-filter: blur(30px) saturate(1.16);
+  box-shadow: 0 18px 48px rgba(8, 21, 34, 0.055);
+}
+
+.nav-logo img {
+  width: 168px;
+}
+
+.pill {
+  min-height: 48px;
+  border-color: rgba(8, 21, 34, 0.12);
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 10px 28px rgba(8, 21, 34, 0.045);
+  backdrop-filter: blur(16px);
+}
+
+.pill-light {
+  border-color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.pill-ghost {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.hero {
+  background: transparent;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(820px 540px at 76% 24%, rgba(121, 200, 242, 0.22), transparent 64%),
+    radial-gradient(780px 520px at 20% 78%, rgba(8, 21, 34, 0.08), transparent 68%),
+    linear-gradient(135deg, #fbfcfd 0%, #edf5fa 52%, #f8fafb 100%);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.38) 58%, rgba(255, 255, 255, 0.12)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(245, 249, 252, 0.62));
+}
+
+.hero-content {
+  min-height: 100svh;
+  padding-top: 116px;
+  padding-bottom: 92px;
+}
+
+.hero-main h1 {
+  max-width: 980px;
+  font-size: clamp(58px, 7.8vw, 126px);
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+}
+
+.hero-main p {
+  max-width: 760px;
+  color: rgba(7, 17, 31, 0.66);
+  font-size: clamp(18px, 1.45vw, 23px);
+  line-height: 1.48;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+
+.hero-cinema {
+  width: min(540px, 100%);
+}
+
+.clinic-transform-card,
+.biomarker-panel,
+.medical-expert-card,
+.protocol-world,
+.feature-grid article,
+.positioning-strip,
+.assessment-form {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.38)),
+    rgba(255, 255, 255, 0.44);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 24px 70px rgba(8, 21, 34, 0.075);
+  backdrop-filter: blur(28px) saturate(1.06);
+  -webkit-backdrop-filter: blur(28px) saturate(1.06);
+}
+
+.clinic-transform-card {
+  gap: 12px;
+  padding: 16px;
+  border-radius: 34px;
+}
+
+.transform-node {
+  min-height: 152px;
+  border-color: rgba(255, 255, 255, 0.62);
+  border-radius: 26px;
+  background:
+    radial-gradient(460px 240px at 88% 12%, rgba(121, 200, 242, 0.18), transparent 62%),
+    rgba(255, 255, 255, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+.transform-node:nth-of-type(1),
+.transform-node:nth-of-type(3),
+.transform-node.final {
+  border-color: rgba(255, 255, 255, 0.62);
+  background:
+    radial-gradient(480px 240px at 80% 12%, rgba(121, 200, 242, 0.22), transparent 60%),
+    rgba(255, 255, 255, 0.58);
+  color: var(--ink);
+}
+
+.transform-node:nth-of-type(1) span,
+.transform-node:nth-of-type(1) strong,
+.transform-node:nth-of-type(1) p,
+.transform-node:nth-of-type(3) strong,
+.transform-node:nth-of-type(3) p,
+.transform-node.final strong,
+.transform-node.final p {
+  color: inherit;
+}
+
+.transform-node:nth-of-type(3) span {
+  background: rgba(121, 200, 242, 0.16);
+  color: var(--blue);
+}
+
+.transform-node span,
+.feature-number,
+.protocol-world > div > span {
+  color: var(--blue);
+}
+
+.transform-node strong {
+  color: var(--ink);
+}
+
+.transform-node p {
+  color: rgba(7, 17, 31, 0.62);
+}
+
+.transform-arrow {
+  color: rgba(7, 17, 31, 0.22);
+}
+
+.positioning-strip {
+  margin: 0 40px;
+  border-radius: 999px;
+  transform: translateY(-32px);
+}
+
+.headline-section,
+.network,
+.shop-section,
+.why-section,
+.dashboard-section,
+.experts {
+  background: transparent;
+}
+
+.system-section {
+  color: var(--white);
+  background:
+    radial-gradient(820px 520px at 72% 18%, rgba(121, 200, 242, 0.18), transparent 62%),
+    linear-gradient(135deg, #07111f 0%, #0d2034 54%, #102b45 100%);
+}
+
+.system-section .headline-bg {
+  background:
+    radial-gradient(680px 420px at 82% 24%, rgba(255, 255, 255, 0.12), transparent 68%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+}
+
+.clinic-os {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(28px);
+}
+
+.clinic-os span,
+.clinic-os span:nth-of-type(even) {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pathway-grid article:nth-child(1),
+.premium-grid article:nth-child(1),
+.pathway-grid article:nth-child(3),
+.premium-grid article:nth-child(3) {
+  border-color: rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.38)),
+    rgba(255, 255, 255, 0.44);
+  color: var(--ink);
+}
+
+.pathway-grid article:nth-child(1) h3,
+.pathway-grid article:nth-child(1) p,
+.pathway-grid article:nth-child(1) .feature-number,
+.premium-grid article:nth-child(1) h3,
+.premium-grid article:nth-child(1) p,
+.premium-grid article:nth-child(1) .feature-number,
+.pathway-grid article:nth-child(3) h3,
+.pathway-grid article:nth-child(3) p,
+.premium-grid article:nth-child(3) h3,
+.premium-grid article:nth-child(3) p {
+  color: inherit;
+}
+
+.section-title,
+.why-inner h2 {
+  letter-spacing: -0.02em;
+}
+
+.protocol-visual {
+  min-height: 156px;
+  background:
+    radial-gradient(520px 240px at 78% 24%, rgba(121, 200, 242, 0.22), transparent 64%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(236, 244, 249, 0.76));
+}
+
+.mito-world .protocol-visual,
+.cognitive-world .protocol-visual,
+.recovery-world .protocol-visual,
+.aging-world .protocol-visual {
+  background:
+    radial-gradient(520px 240px at 78% 24%, rgba(121, 200, 242, 0.24), transparent 64%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(236, 244, 249, 0.76));
+}
+
+.cognitive-world .protocol-visual {
+  background:
+    radial-gradient(480px 220px at 78% 24%, rgba(121, 200, 242, 0.18), transparent 62%),
+    linear-gradient(135deg, #07111f, #17324c);
+}
+
+.signature-dashboard {
+  background:
+    radial-gradient(820px 520px at 78% 20%, rgba(121, 200, 242, 0.18), transparent 62%),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.42));
+}
+
+.physician-note {
+  border-color: rgba(255, 255, 255, 0.14);
+  background:
+    radial-gradient(420px 220px at 78% 18%, rgba(121, 200, 242, 0.16), transparent 62%),
+    rgba(7, 17, 31, 0.92);
+}
+
+.physician-note span {
+  color: #b9e3f8;
+}
+
+.cellular-map {
+  opacity: 0.45;
+  filter: blur(0.2px);
+}
+
+.human-trust {
+  background:
+    radial-gradient(720px 420px at 86% 12%, rgba(121, 200, 242, 0.16), transparent 62%),
+    transparent;
+}
+
+.final-cta {
+  background: #07111f;
+}
+
+.final-bg {
+  background:
+    radial-gradient(760px 520px at 28% 20%, rgba(121, 200, 242, 0.22), transparent 64%),
+    radial-gradient(620px 420px at 72% 78%, rgba(255, 255, 255, 0.08), transparent 66%),
+    linear-gradient(135deg, #07111f, #102b45);
+}
+
+@media (max-width: 760px) {
+  .hero-main h1 {
+    font-size: clamp(48px, 12vw, 72px);
+  }
+
+  .positioning-strip {
+    margin: 0 18px;
+    border-radius: 28px;
+    transform: translateY(-18px);
+  }
+}
+
+/* v40: controlled premium typography scale */
+.hero-content {
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.68fr);
+  min-height: auto;
+  padding-top: clamp(128px, 9vw, 160px);
+  padding-bottom: clamp(72px, 7vw, 112px);
+  gap: clamp(44px, 5vw, 82px);
+}
+
+.hero-main {
+  max-width: 820px;
+}
+
+.hero-main h1 {
+  max-width: 780px;
+  font-size: clamp(54px, 5.2vw, 92px);
+  line-height: 0.94;
+  letter-spacing: -0.018em;
+}
+
+.hero-main p {
+  max-width: 700px;
+  margin-top: 24px;
+  font-size: clamp(17px, 1.18vw, 21px);
+  line-height: 1.55;
+}
+
+.section-title,
+.headline-content h2,
+.why-inner h2,
+.final-content h2 {
+  font-size: clamp(38px, 3.7vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.016em;
+}
+
+.cinematic-protocols .section-title {
+  font-size: clamp(36px, 3.2vw, 58px);
+}
+
+.protocol-world h3 {
+  font-size: clamp(26px, 2vw, 38px);
+  line-height: 1.05;
+}
+
+.energy-score strong {
+  font-size: clamp(70px, 6vw, 108px);
+}
+
+.medical-expert-card h3 {
+  font-size: clamp(28px, 2.4vw, 40px);
+}
+
+.physician-lead p {
+  font-size: clamp(18px, 1.5vw, 24px);
+}
+
+.transform-node {
+  min-height: 132px;
+  padding: 22px;
+}
+
+.transform-node strong {
+  font-size: clamp(24px, 1.7vw, 30px);
+}
+
+.transform-node p {
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.clinic-transform-card {
+  padding: 14px;
+}
+
+.nav {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+@media (min-width: 1440px) {
+  .hero-main h1 {
+    font-size: clamp(64px, 4.6vw, 88px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding-top: 112px;
+  }
+
+  .hero-main h1 {
+    max-width: 760px;
+    font-size: clamp(48px, 8.4vw, 76px);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-main h1 {
+    font-size: clamp(40px, 10.5vw, 58px);
+    line-height: 0.98;
+  }
+
+  .hero-main p {
+    font-size: 16px;
+  }
+
+  .section-title,
+  .headline-content h2,
+  .why-inner h2,
+  .final-content h2 {
+    font-size: clamp(34px, 8.8vw, 46px);
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-logo" href="./index.html" aria-label="Cell Clinics home">
+        <img src="/images/cellclinics.svg" alt="Cell Clinics" />
+      </a>
+      <div class="nav-links">
+        <a href="#clinic">Clinic</a>
+        <a href="./protocols/">Protocols</a>
+        <a href="./access/">Access</a>
+        <a href="./science/">Science</a>
+        <a href="./experts/">Experts</a>
+      </div>
+      <a class="pill nav-cta" href="#assessment">Start Assessment</a>
+      <button class="nav-menu" type="button" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main id="top">
+      <section class="hero clinic-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content hero-system-layout">
+          <div class="hero-main">
+            <div class="eyebrow">Physician-Guided Cellular Medicine</div>
+            <h1>From cellular diagnostics to physician-guided protocols.</h1>
+            <p>
+              Cell Clinics transforms advanced cellular medicine into a structured
+              clinical pathway: assessment, biomarker interpretation, medical
+              consultation and personalized therapeutic systems.
+            </p>
+            <div class="hero-actions">
+              <a class="pill pill-light" href="#assessment">Start Assessment</a>
+              <a class="pill pill-ghost" href="./protocols/">Explore Clinical Systems</a>
+            </div>
+          </div>
+          <div class="hero-cinema" aria-label="Cell Education to Cell Clinics pathway">
+            <div class="clinic-transform-card">
+              <div class="transform-node">
+                <span>01</span>
+                <strong>Assessment</strong>
+                <p>Digital intake of symptoms, biomarkers, goals and biological context.</p>
+              </div>
+              <div class="transform-arrow">↓</div>
+              <div class="transform-node">
+                <span>02</span>
+                <strong>Medical Consultation</strong>
+                <p>Physician-led interpretation of diagnostics and clinical priorities.</p>
+              </div>
+              <div class="transform-arrow">↓</div>
+              <div class="transform-node final">
+                <span>03</span>
+                <strong>Therapeutic System</strong>
+                <p>Personalized protocol, therapeutic access and follow-up optimization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="positioning-strip" aria-label="Cell Clinics positioning">
+        <span>Built at the intersection of</span>
+        <div>
+          <strong>Cellular Medicine</strong>
+          <strong>Functional Diagnostics</strong>
+          <strong>Longevity Science</strong>
+          <strong>Physician-Guided Therapeutics</strong>
+        </div>
+      </section>
+
+      <section class="headline-section system-section" id="clinic">
+        <div class="headline-bg"></div>
+        <div class="headline-content">
+          <div class="clinic-copy">
+            <div class="eyebrow dark">From Education to Clinical Access</div>
+            <h2>Cell Education becomes a clinical platform</h2>
+            <p>
+              Cell Education established the scientific foundation. Cell Clinics
+              transforms this knowledge into real-world clinical implementation
+              through diagnostics, physician interpretation and personalized
+              therapeutic systems.
+            </p>
+          </div>
+          <div class="clinic-os" aria-label="Clinical access process">
+            <div class="os-line"></div>
+            <span>Cell Education</span>
+            <span>Biological Interpretation</span>
+            <span>Cell Clinics</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="network how-section" id="how">
+        <div class="section-kicker">
+          <div class="eyebrow dark">How It Works</div>
+          <h2 class="section-title">A Structured Clinical Pathway</h2>
+          <p class="section-lead">
+            Cell Clinics creates a guided process designed around biological
+            individuality — combining diagnostics, medical expertise and continuous
+            optimization.
+          </p>
+        </div>
+        <div class="feature-grid pathway-grid">
+          <article>
+            <div class="feature-number">01</div>
+            <h3>Digital Assessment</h3>
+            <p>Comprehensive intake of symptoms, biomarkers, goals and biological context.</p>
+          </article>
+          <article>
+            <div class="feature-number">02</div>
+            <h3>Functional Diagnostics</h3>
+            <p>Advanced laboratory and cellular performance analysis.</p>
+          </article>
+          <article>
+            <div class="feature-number">03</div>
+            <h3>Physician Consultation</h3>
+            <p>Consultations with physicians specialized in longevity and cellular medicine.</p>
+          </article>
+          <article>
+            <div class="feature-number">04</div>
+            <h3>Personalized Therapeutic Systems</h3>
+            <p>Individualized protocols designed around biological data and therapeutic objectives.</p>
+          </article>
+          <article>
+            <div class="feature-number">05</div>
+            <h3>Continuous Optimization</h3>
+            <p>Ongoing reassessments, protocol adaptation and performance monitoring.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="network receive-section" id="receive">
+        <div class="section-kicker">
+          <div class="eyebrow dark">What Patients Receive</div>
+          <h2 class="section-title">Concrete deliverables, not generic recommendations</h2>
+        </div>
+        <div class="feature-grid premium-grid">
+          <article>
+            <div class="feature-number">01</div>
+            <h3>Digital Intake & Health Assessment</h3>
+            <p>A structured profile of symptoms, goals, history, performance needs and biological context.</p>
+          </article>
+          <article>
+            <div class="feature-number">02</div>
+            <h3>Biomarker & Lab Review</h3>
+            <p>Medical review of biomarkers, inflammation markers, recovery signals and cellular performance indicators.</p>
+          </article>
+          <article>
+            <div class="feature-number">03</div>
+            <h3>Physician Consultation</h3>
+            <p>A physician-guided consultation translating diagnostics into a clinical strategy and protocol direction.</p>
+          </article>
+          <article>
+            <div class="feature-number">04</div>
+            <h3>Protocol & Therapeutic Access</h3>
+            <p>Personalized protocol PDF or dashboard, selected therapeutics, infusion options and follow-up optimization.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="shop-section protocol-worlds cinematic-protocols" id="protocols">
+        <div class="eyebrow dark">Clinical Systems</div>
+        <h2 class="section-title">Physician-Guided Therapeutic Systems</h2>
+        <p class="section-lead">
+          Clinical systems designed for cellular function, resilience and long-term
+          biological performance.
+        </p>
+        <div class="protocol-world-list">
+          <article class="protocol-world mito-world">
+            <div><span>01</span><h3>Mitochondrial Performance</h3><p>For cellular energy, respiration, fatigue, regeneration and metabolic performance.</p>
+            <a class="pill" href="./protocols/mitochondrial-performance/">Explore Protocol</a>
+            </div><div class="protocol-visual"><i></i><i></i><i></i></div>
+          </article>
+          <article class="protocol-world cognitive-world">
+            <div><span>02</span><h3>Cognitive Performance</h3><p>For focus, mental energy, stress resilience and neurocellular health.</p>
+            <a class="pill" href="./protocols/">Explore Protocol</a>
+            </div><div class="protocol-visual"><i></i><i></i><i></i></div>
+          </article>
+          <article class="protocol-world recovery-world">
+            <div><span>03</span><h3>Regeneration & Recovery</h3><p>For inflammation balance, tissue regeneration, resilience and biological recovery.</p>
+            <a class="pill" href="./protocols/">Explore Protocol</a>
+            </div><div class="protocol-visual"><i></i><i></i><i></i></div>
+          </article>
+          <article class="protocol-world aging-world">
+            <div><span>04</span><h3>Biological Longevity</h3><p>For preventive cellular health, aging processes, biomarker optimization and long-term vitality.</p>
+            <a class="pill" href="./protocols/">Explore Protocol</a>
+            </div><div class="protocol-visual"><i></i><i></i><i></i></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="why-section">
+        <div class="why-inner">
+          <div class="eyebrow dark">Why Now</div>
+          <h2>Modern medicine treats disease. Cellular medicine focuses on biological function before disease develops.</h2>
+          <p>
+            Cell Clinics combines diagnostics, physician expertise and advanced
+            therapeutic systems to support performance, resilience and long-term
+            biological health.
+          </p>
+        </div>
+      </section>
+
+      <section class="dashboard-section signature-dashboard" id="dashboard">
+        <div class="dashboard-copy">
+          <div class="eyebrow dark">Dashboard</div>
+          <h2 class="section-title">Your Biology, Interpreted</h2>
+          <p>
+            Every therapeutic decision is guided by diagnostics, physician
+            interpretation and dynamic biological context.
+          </p>
+          <a class="pill" href="./dashboard/">Preview Dashboard</a>
+        </div>
+        <div class="dashboard-stage" aria-label="Cellular performance dashboard preview">
+          <div class="biomarker-panel hero-panel">
+            <div class="panel-topline">
+              <span>Cellular Intelligence Overview</span>
+              <strong>Physician Interpreted</strong>
+            </div>
+            <div class="energy-score"><strong>84</strong><span>Cellular Energy Index</span></div>
+            <div class="metric-row"><span>Cellular Energy</span><i style="--value: 78%"></i><strong>78%</strong></div>
+            <div class="metric-row"><span>Recovery Capacity</span><i style="--value: 66%"></i><strong>66%</strong></div>
+            <div class="metric-row"><span>Inflammatory Load</span><i style="--value: 32%"></i><strong>Low</strong></div>
+            <div class="metric-row"><span>Stress Resilience</span><i style="--value: 71%"></i><strong>71%</strong></div>
+            <div class="metric-row"><span>Biological Optimization Score</span><i style="--value: 72%"></i><strong>72%</strong></div>
+          </div>
+          <div class="physician-note">
+            <span>Clinical Interpretation</span>
+            <p>Your current biological profile indicates improving mitochondrial recovery capacity with stable inflammatory regulation. Continued protocol adaptation is recommended to optimize resilience and energy performance.</p>
+          </div>
+          <div class="cellular-map"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </section>
+
+      <section class="experts human-trust" id="experts">
+        <div class="physician-editorial">
+          <div class="physician-lead">
+            <div class="eyebrow dark">Medical Trust</div>
+            <h2 class="section-title">Medical responsibility behind every protocol</h2>
+            <p>Cell Clinics is built around clear clinical roles: medical leadership defines the framework, trained physicians interpret diagnostics and a selected network supports therapeutic implementation.</p>
+          </div>
+          <div class="medical-leadership-grid">
+            <article class="medical-expert-card kay-card">
+              <img src="/images/kay-bredehorst.jpg" alt="Dr. Kay Bredehorst" />
+              <div>
+                <span>Medical Leadership</span>
+                <h3>Dr. Kay Bredehorst</h3>
+                <p>
+                  Physician, researcher and educator in cellular medicine. Responsible
+                  for clinical framework, protocol quality and medical education.
+                </p>
+              </div>
+            </article>
+            <article class="medical-expert-card">
+              <span>Clinical Implementation</span>
+              <h3>Physician Network</h3>
+              <p>A selected network of trained physicians applying Cell Education standards in diagnostics, consultation and therapeutic implementation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" id="assessment">
+        <div class="final-bg"></div>
+        <div class="final-content">
+          <div class="eyebrow">Begin</div>
+          <h2>Begin Your Assessment</h2>
+          <p>
+            Access a physician-guided cellular medicine experience designed around
+            diagnostics, biological interpretation and personalized therapeutic systems.
+          </p>
+          <div class="assessment-form">
+            <input type="text" aria-label="Name" placeholder="Name" />
+            <input type="email" aria-label="Email" placeholder="Email" />
+            <select aria-label="Primary goal">
+              <option>Primary Goal</option>
+              <option>Energy & Mitochondria</option>
+              <option>Cognitive Performance</option>
+              <option>Recovery & Regeneration</option>
+              <option>Healthy Aging</option>
+            </select>
+            <button class="pill pill-light" type="button">Request Access</button>
+            <a class="pill pill-ghost" href="#top">Begin Assessment</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="/images/cellclinics.svg" alt="Cell Clinics" />
+      <nav>
+        <a href="./protocols/">Protocols</a>
+        <a href="./access/">Access</a>
+        <a href="./science/">Science</a>
+        <a href="./experts/">Experts</a>
+        <a href="./dashboard/">Dashboard</a>
+      </nav>
+    </footer>
+  </body>
+</html>
