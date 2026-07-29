@@ -35,13 +35,13 @@ export default async function PartnershipsPage({params}: {params: Promise<{local
       />
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow={t("ecosystem.label")} title={t("ecosystem.title")} body={t("ecosystem.body2")} />
+          <SectionHeading eyebrow={t("ecosystem.label")} title={t("ecosystem.title")} intro={t("ecosystem.body2")} />
           <ModuleGrid items={modules} />
         </div>
       </section>
       <section className="section section-alt">
         <div className="container">
-          <SectionHeading title={t("partnershipsPage.programTitle")} body={t("partnershipsPage.programLead")} />
+          <SectionHeading title={t("partnershipsPage.programTitle")} intro={t("partnershipsPage.programLead")} />
           <div className="timeline">
             {weeks.map((week, index) => <div key={week}><span>{String(index + 1).padStart(2, "0")}</span><Check size={18}/><strong>{week}</strong></div>)}
           </div>

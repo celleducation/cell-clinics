@@ -49,7 +49,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} body={t("home.whatBody")} />
+          <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
           <ModuleGrid items={modules} />
           <div className="section-action">
             <ButtonLink href="/platform" variant="secondary">{t("cta.explorePlatform")}</ButtonLink>
@@ -106,7 +106,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       <section className="section section-soft">
         <div className="container leadership-teaser">
           <div>
-            <SectionHeading eyebrow={t("leadership.label")} title={t("leadership.title")} body={t("leadership.body")} />
+            <SectionHeading eyebrow={t("leadership.label")} title={t("leadership.title")} intro={t("leadership.body")} />
             <div className="credential-list">
               {[t("leadership.stat1"), t("leadership.stat2"), t("leadership.stat3"), t("leadership.stat4")].map((item) => (
                 <div key={item}><Check size={17} />{item}</div>

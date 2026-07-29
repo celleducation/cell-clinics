@@ -33,7 +33,7 @@ export default async function PlatformPage({params}: {params: Promise<{locale: s
       />
       <section className="section">
         <div className="container">
-          <SectionHeading title={t("platformPage.integratedTitle")} body={t("platformPage.integratedBody")} />
+          <SectionHeading title={t("platformPage.integratedTitle")} intro={t("platformPage.integratedBody")} />
           <ModuleGrid items={modules} />
         </div>
       </section>
