@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "title": "Cell Clinics | Plataforma médica para medicina celular",
+    "description": "Cell Clinics ayuda a clínicas, médicos y proveedores sanitarios a implementar medicina celular guiada por médicos mediante diagnóstico, marcos clínicos, formación médica y sistemas terapéuticos."
+  },
+  "nav": {
+    "platform": "Plataforma",
+    "systems": "Sistemas clínicos",
+    "partnerships": "Colaboraciones",
+    "contact": "Contacto",
+    "clinicalSystems": "Sistemas clínicos",
+    "network": "Red",
+    "company": "Empresa"
+  },
+  "cta": {
+    "partnerWithUs": "Convertirse en socio",
+    "heroPrimary": "Convertirse en clínica socia",
+    "bookCall": "Reservar llamada estratégica",
+    "explorePlatform": "Explorar la plataforma",
+    "viewSystems": "Ver sistemas clínicos",
+    "learnEducation": "Conocer Cell Education",
+    "requestInfo": "Solicitar información de colaboración"
+  },
+  "hero": {
+    "label": "Plataforma de implementación guiada por médicos",
+    "title": "La infraestructura para la medicina celular moderna",
+    "body": "Cell Clinics ofrece marcos clínicos, formación médica, sistemas diagnósticos y apoyo a la implementación para clínicas, médicos y proveedores sanitarios que desean desarrollar programas avanzados de medicina celular.",
+    "trust1": "Guiado por médicos",
+    "trust2": "Marcos clínicos",
+    "trust3": "Red internacional",
+    "trust4": "Base de Cell Education",
+    "panelLabel": "Ecosistema de medicina celular",
+    "panelText": "Educación · Diagnóstico · Médicos · Sistemas clínicos"
+  },
+  "lab": {
+    "label": "Longevity Lab",
+    "title": "Así fue Longevity Lab 2026",
+    "body1": "Una jornada enfocada en medicina celular, longevidad y rendimiento humano, conectando medicina, ciencia, deporte de élite y emprendimiento en Mallorca.",
+    "body2": "Longevity Lab Mallorca en movimiento. La película oficial recoge la energía de la mañana científica en Estadi Mallorca Son Moix y del intercambio vespertino en Mallorca Country Club.",
+    "cta": "Explorar Longevity Lab"
+  },
+  "implementation": {
+    "label": "Clínica modelo central",
+    "title": "Uno de nuestros socios centrales",
+    "subtitle": "Gais, Suiza",
+    "exampleLabel": "Clínica modelo central",
+    "location": "Gais, Suiza",
+    "poweredBy": "Powered by Cell Clinics",
+    "body1": "Como clínica asociada central dentro del marco de Cell Clinics, este centro muestra cómo la medicina celular guiada por médicos, el diagnóstico biológico, la medicina regenerativa y una atención clínica premium pueden integrarse en un único entorno operativo.",
+    "body2": "",
+    "feature1": "Diagnóstico biológico",
+    "feature2": "Atención guiada por expertos",
+    "feature3": "Medicina regenerativa",
+    "feature4": "Programas de longevidad",
+    "demonstratesTitle": "Qué demuestra este modelo",
+    "demonstratesBody": "El modelo de Cell Clinics está diseñado para ayudar a proveedores sanitarios a implementar programas estructurados de medicina celular en consultas y clínicas existentes.",
+    "demonstratesBody2": "Incluye formación médica, marcos diagnósticos, vías clínicas y soporte de implementación.",
+    "point1": "Vías diagnósticas estructuradas",
+    "point2": "Implementación guiada por médicos",
+    "point3": "Marcos de formación clínica",
+    "point4": "Experiencia premium para el paciente",
+    "point5": "Modelo operativo escalable",
+    "poweredTitle": "Respaldado por marcos clínicos",
+    "poweredBody": "Cell Clinics proporciona marcos educativos, diagnósticos y de implementación que permiten a los proveedores sanitarios construir programas estructurados de medicina celular dentro de sus propios entornos clínicos.",
+    "poweredBody2": "El objetivo no es estandarizar las clínicas, sino ofrecer un marco probado que pueda adaptarse a la experiencia médica local, las poblaciones de pacientes y los objetivos clínicos.",
+    "cta": "Explorar el modelo de socio",
+    "gallery1": "Paisaje y recuperación",
+    "gallery2": "Exterior de la clínica",
+    "gallery3": "Regeneración y bienestar",
+    "gallery4": "Ubicación estratégica"
+  },
+  "news": {
+    "label": "Noticias",
+    "badge": "Reconocimiento internacional",
+    "title": "Invitación al Sheba Medical Center",
+    "body": "Cell Clinics ha sido invitado al Sheba Medical Center, reconocido entre los mejores hospitales del mundo, para presentar el marco de Cell Clinics y explorar oportunidades de colaboración clínica internacional.",
+    "note": "Un hito para la expansión internacional de la medicina celular guiada por médicos.",
+    "cta": "Hablar sobre colaboraciones internacionales"
+  },
+  "ecosystem": {
+    "label": "Ecosistema de socios",
+    "title": "Todo lo que necesita para construir una práctica exitosa de medicina celular",
+    "body1": "Únase a una plataforma de implementación diseñada para médicos, clínicas y profesionales sanitarios.",
+    "body2": "Cell Clinics combina formación, sistemas clínicos, diagnóstico, productos y una red internacional de expertos en un ecosistema integrado que permite implementar con éxito la medicina celular en la práctica clínica.",
+    "card1Title": "Formación",
+    "card1Body": "Formación médica integral a través de Circle, Campus, capacitación en infusiones, webinars y actualizaciones científicas continuas.",
+    "card2Title": "Sistemas clínicos",
+    "card2Body": "Marcos clínicos estandarizados, conceptos terapéuticos y protocolos de implementación para integrar la medicina celular en la práctica diaria.",
+    "card3Title": "Diagnóstico",
+    "card3Body": "Conceptos diagnósticos modernos que respaldan la planificación terapéutica personalizada y la toma de decisiones basada en evidencia.",
+    "card4Title": "Productos",
+    "card4Body": "Acceso a conceptos premium de infusión, suplementos nutricionales y productos innovadores de medicina celular.",
+    "card5Title": "Red global",
+    "card5Body": "Forme parte de una comunidad internacional de médicos, clínicas, investigadores y expertos en longevidad.",
+    "card6Title": "Crecimiento de la consulta",
+    "card6Body": "Recursos de marketing, educación para pacientes y apoyo a la implementación para establecer con éxito la medicina celular en su práctica.",
+    "ctaLabel": "Plataforma integrada",
+    "ctaTitle": "Más que productos. Más que formación.",
+    "ctaBody": "Cell Clinics es una plataforma integral de implementación que ayuda a los proveedores sanitarios a integrar con éxito la medicina celular en la práctica clínica mediante formación, diagnóstico, sistemas clínicos y una red internacional de expertos."
+  },
+  "brand": {
+    "platformKicker": "Ecosistema de la plataforma",
+    "systemsKicker": "Sistemas clínicos",
+    "applicationKicker": "Solicitud de colaboración"
+  },
+  "platform": {
+    "label": "Cómo funciona la plataforma",
+    "title": "Un ecosistema integrado para la medicina celular moderna",
+    "body": "Cell Clinics conecta educación, diagnóstico, sistemas clínicos, productos y una red internacional de médicos en una sola plataforma de implementación. Cada componente está diseñado para acompañar a los proveedores sanitarios a lo largo de todo el recorrido del paciente.",
+    "coreLabel": "Cell Clinics",
+    "module1Title": "Cell Education",
+    "module1Body": "Formación científica y capacitación médica continua.",
+    "module2Title": "Sistemas clínicos",
+    "module2Body": "Marcos estandarizados para una implementación estructurada.",
+    "module3Title": "Diagnóstico",
+    "module3Body": "Conceptos diagnósticos basados en evidencia.",
+    "module4Title": "Productos",
+    "module4Body": "Soluciones innovadoras de medicina celular.",
+    "module5Title": "Global Hub",
+    "module5Body": "Colaboración internacional entre expertos y médicos.",
+    "module6Title": "Clínicas asociadas",
+    "module6Body": "Implementación clínica en la práctica diaria.",
+    "closingTitle": "Una plataforma. Un estándar. Una red.",
+    "closingBody": "Cell Clinics es mucho más que una colección de productos o programas educativos. Es una plataforma integrada que reúne todos los elementos necesarios para implementar con éxito la medicina celular en la práctica clínica."
+  },
+  "systems": {
+    "label": "Sistemas clínicos",
+    "title": "Cuatro vías de implementación para programas de medicina celular.",
+    "card1Title": "Rendimiento mitocondrial",
+    "card1Body": "Marcos para energía, respiración y rendimiento metabólico.",
+    "card2Title": "Contexto genético y celular",
+    "card2Body": "Individualidad biológica y orientación precisa de protocolos personalizados.",
+    "card3Title": "Regeneración y recuperación",
+    "card3Body": "Equilibrio inflamatorio, resiliencia y apoyo a la recuperación.",
+    "card4Title": "Acceso terapéutico",
+    "card4Body": "Vías estructuradas de implementación terapéutica."
+  },
+  "leadership": {
+    "label": "Liderazgo médico",
+    "title": "Liderazgo médico",
+    "body": "El marco de Cell Clinics se basa en décadas de formación médica, desarrollo de marcos clínicos y experiencia en medicina celular.",
+    "stat1": "<strong>Formación</strong> médica",
+    "stat2": "<strong>Desarrollo</strong> de marcos clínicos",
+    "stat3": "<strong>Docencia</strong> internacional",
+    "stat4": "<strong>Experiencia</strong> en medicina celular",
+    "cardLabel": "Autoridad científica y educativa",
+    "cardBody": "Formación médica y desarrollo de marcos clínicos para la implementación de medicina celular."
+  },
+  "form": {
+    "label": "Solicitud de colaboración",
+    "title": "Convertirse en clínica asociada",
+    "body": "Nuestro equipo se pondrá en contacto con usted en un plazo de 48 horas para valorar oportunidades de implementación.",
+    "clinicName": "Nombre de la clínica",
+    "clinicNamePlaceholder": "Nombre de la clínica u organización",
+    "website": "Sitio web",
+    "websitePlaceholder": "https://",
+    "country": "País",
+    "countryPlaceholder": "País",
+    "primaryContact": "Contacto principal",
+    "primaryContactPlaceholder": "Nombre completo",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Dirección de correo electrónico",
+    "phone": "Teléfono",
+    "phonePlaceholder": "Número de teléfono",
+    "profession": "Profesión",
+    "professionPhysician": "Médico/a",
+    "professionOwner": "Propietario/a de clínica",
+    "professionLongevity": "Centro de longevidad",
+    "professionHealth": "Centro de salud",
+    "professionFunctional": "Consulta de medicina funcional",
+    "professionOther": "Otro",
+    "clinicType": "Tipo de clínica",
+    "clinicTypePlaceholder": "Clínica privada, centro de longevidad, consulta...",
+    "notes": "Notas opcionales",
+    "notesPlaceholder": "Cuéntenos sobre su clínica, equipo y objetivos",
+    "note": "Revisaremos personalmente su solicitud y analizaremos la mejor vía de implementación para su clínica.",
+    "sending": "Enviando...",
+    "success": "Gracias por su solicitud. Nuestro equipo revisará su información y se pondrá en contacto en un plazo de 48 horas.",
+    "activationRequired": "FormSubmit aún no está activado. Abra el correo de confirmación enviado a info@cell-education.com y active primero el formulario.",
+    "error": "No se pudo enviar su solicitud automáticamente. Escriba directamente a info@cell-education.com."
+  },
+  "footer": {
+    "privacy": "Política de privacidad",
+    "terms": "Aviso legal",
+    "description": "Una plataforma de implementación guiada por médicos para clínicas que desarrollan programas de medicina celular.",
+    "productOf": "Un producto de Cell Education.",
+    "groupLine": "Parte de Cell Group — Cell Education · cell supply · cell clinics."
+  },
+  "common": {
+    "learnMore": "Más información",
+    "viewDetails": "Ver detalles",
+    "back": "Volver",
+    "search": "Buscar",
+    "all": "Todos"
+  },
+  "home": {
+    "whatLabel": "Plataforma",
+    "whatTitle": "Una capa integral de implementación para la medicina celular.",
+    "whatBody": "Formación, diagnóstico, sistemas clínicos, productos y una red internacional se conectan en una plataforma guiada por médicos.",
+    "proofLabel": "Aplicación clínica",
+    "proofTitle": "Diseñado para la implementación real."
+  },
+  "platformPage": {
+    "eyebrow": "Plataforma",
+    "title": "Plataforma de implementación guiada por médicos",
+    "lead": "Cell Clinics conecta todos los componentes necesarios para integrar la medicina celular estructurada en la práctica clínica.",
+    "integratedTitle": "Más que productos. Más que formación.",
+    "integratedBody": "Cell Clinics es una plataforma integral que ayuda a los proveedores sanitarios a implementar medicina celular mediante formación, diagnóstico, sistemas clínicos y una red internacional de expertos."
+  },
+  "networkPage": {
+    "eyebrow": "Red",
+    "title": "Encuentre un centro asociado a Cell Clinics",
+    "lead": "Explore la creciente red de clínicas que implementan medicina celular guiada por médicos.",
+    "searchLabel": "Buscar por clínica o ubicación",
+    "searchPlaceholder": "Buscar ubicación",
+    "focusLabel": "Área de especialización",
+    "languageLabel": "Idioma",
+    "noResults": "Ninguna clínica coincide con estos filtros.",
+    "modelClinic": "Clínica modelo central"
+  },
+  "partnershipsPage": {
+    "eyebrow": "Colaboraciones",
+    "title": "Todo lo necesario para desarrollar una práctica de medicina celular",
+    "lead": "Únase a una plataforma de implementación diseñada para médicos, clínicas y profesionales sanitarios.",
+    "programTitle": "Programa de implementación de 30 días",
+    "programLead": "Un itinerario estructurado desde la estrategia hasta el lanzamiento clínico.",
+    "week1": "Semana 1 · Inicio",
+    "week2": "Semana 2 · Preparación",
+    "week3": "Semana 3 · Implementación",
+    "week4": "Semana 4 · Lanzamiento"
+  },
+  "companyPage": {
+    "eyebrow": "Empresa",
+    "title": "El ecosistema de Cell Group",
+    "lead": "Cell Group conecta formación, acceso a productos e implementación clínica a través de tres marcas especializadas.",
+    "education": "Formación médica, directrices y protocolos.",
+    "supply": "Plataforma de productos, abastecimiento y distribución.",
+    "clinics": "Centros asociados, atención al paciente e implementación."
+  },
+  "newsPage": {
+    "eyebrow": "Noticias y eventos",
+    "title": "Intercambio científico en movimiento",
+    "lead": "Hitos, eventos y conversaciones clínicas internacionales seleccionados."
+  },
+  "leadershipPage": {
+    "eyebrow": "Liderazgo médico",
+    "title": "Autoridad científica y educativa",
+    "lead": "El marco de Cell Clinics se basa en décadas de formación médica y experiencia en medicina celular.",
+    "role": "Dirección médica para la formación profesional y el desarrollo de marcos clínicos."
+  },
+  "contactPage": {
+    "eyebrow": "Contacto",
+    "title": "Inicie una conversación con Cell Clinics",
+    "lead": "Hable con nuestro equipo sobre colaboraciones, implementación y la red de Cell Clinics.",
+    "emailLabel": "Contacto general"
+  },
+  "apply": {
+    "step": "Paso",
+    "step1Title": "Su clínica",
+    "step2Title": "Su perfil de implementación",
+    "next": "Continuar",
+    "previous": "Volver",
+    "consent": "Acepto que Cell Clinics utilice mis datos para responder a esta solicitud de colaboración.",
+    "submit": "Solicitar información de colaboración"
+  },
+  "formApi": {
+    "success": "Gracias por su solicitud. Nuestro equipo revisará sus datos y se pondrá en contacto en un plazo de 48 horas.",
+    "error": "No se pudo enviar su solicitud. Inténtelo de nuevo o escriba a info@cell-education.com."
+  }
+}

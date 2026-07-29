@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "title": "Cell Clinics | Ärztlich geführte Plattform für Zellmedizin",
+    "description": "Cell Clinics unterstützt Kliniken, Ärzte und Gesundheitsanbieter bei der Implementierung ärztlich geführter Zellmedizin durch Diagnostik, klinische Frameworks, Weiterbildung und therapeutische Systeme."
+  },
+  "nav": {
+    "platform": "Plattform",
+    "systems": "Klinische Systeme",
+    "partnerships": "Partnerschaften",
+    "contact": "Kontakt",
+    "clinicalSystems": "Klinische Systeme",
+    "network": "Netzwerk",
+    "company": "Unternehmen"
+  },
+  "cta": {
+    "partnerWithUs": "Partner werden",
+    "heroPrimary": "Partnerklinik werden",
+    "bookCall": "Strategiegespräch buchen",
+    "explorePlatform": "Plattform ansehen",
+    "viewSystems": "Klinische Systeme ansehen",
+    "learnEducation": "Mehr über Cell Education",
+    "requestInfo": "Partnerschaftsinformationen anfordern"
+  },
+  "hero": {
+    "label": "Ärztlich geführte Implementierungsplattform",
+    "title": "Die Infrastruktur für moderne Zellmedizin",
+    "body": "Cell Clinics bietet klinische Frameworks, ärztliche Weiterbildung, diagnostische Systeme und Implementierungsunterstützung für Kliniken, Ärzte und Gesundheitsanbieter, die moderne Programme für Zellmedizin aufbauen möchten.",
+    "trust1": "Ärztlich geführt",
+    "trust2": "Klinische Standards",
+    "trust3": "Internationales Netzwerk",
+    "trust4": "Auf Cell Education aufgebaut",
+    "panelLabel": "Ökosystem für zelluläre Medizin",
+    "panelText": "Weiterbildung · Diagnostik · Ärzte · Klinische Systeme"
+  },
+  "lab": {
+    "label": "Longevity Lab",
+    "title": "Das war Longevity Lab 2026",
+    "body1": "Ein fokussierter Tag rund um Zellmedizin, Longevity und Human Performance, der Medizin, Wissenschaft, Spitzensport und Unternehmertum auf Mallorca zusammengebracht hat.",
+    "body2": "Longevity Lab Mallorca in Bewegung. Der offizielle Recap-Film fängt die Energie des wissenschaftlichen Vormittags im Estadi Mallorca Son Moix und des abendlichen Austauschs im Mallorca Country Club ein.",
+    "cta": "Zum Longevity Lab"
+  },
+  "implementation": {
+    "label": "Zentrale Modellklinik",
+    "title": "Einer unserer zentralen Partner",
+    "subtitle": "Gais, Schweiz",
+    "exampleLabel": "Zentrale Modellklinik",
+    "location": "Gais, Schweiz",
+    "poweredBy": "Powered by Cell Clinics",
+    "body1": "Als zentrale Partnerklinik innerhalb des Cell Clinics Frameworks zeigt dieser Standort, wie ärztlich geführte Zellmedizin, biologische Diagnostik, regenerative Medizin und ein hochwertiges klinisches Umfeld in einem operativen Zentrum zusammengeführt werden können.",
+    "body2": "",
+    "feature1": "Biologische Diagnostik",
+    "feature2": "Ärztlich geführte Versorgung",
+    "feature3": "Regenerative Medizin",
+    "feature4": "Longevity-Programme",
+    "demonstratesTitle": "Was dieses Modell zeigt",
+    "demonstratesBody": "Das Cell Clinics Modell unterstützt Gesundheitsanbieter dabei, strukturierte Programme für Zellmedizin in bestehende Praxen und Kliniken zu integrieren.",
+    "demonstratesBody2": "Dazu gehören ärztliche Weiterbildung, diagnostische Standards, klinische Behandlungspfade und operative Implementierungsunterstützung.",
+    "point1": "Strukturierte diagnostische Pfade",
+    "point2": "Ärztlich geführte Implementierung",
+    "point3": "Frameworks für klinische Weiterbildung",
+    "point4": "Hochwertiges Patientenerlebnis",
+    "point5": "Skalierbares Betriebsmodell",
+    "poweredTitle": "Auf klinischen Frameworks aufgebaut",
+    "poweredBody": "Cell Clinics stellt Weiterbildungs-, Diagnostik- und Implementierungsframeworks bereit, mit denen Gesundheitsanbieter strukturierte Programme für Zellmedizin in ihrer eigenen klinischen Umgebung aufbauen können.",
+    "poweredBody2": "Ziel ist nicht, Kliniken zu standardisieren, sondern ein bewährtes Framework bereitzustellen, das an lokale medizinische Expertise, Patientengruppen und klinische Ziele angepasst werden kann.",
+    "cta": "Partnermodell ansehen",
+    "gallery1": "Landschaft & Regeneration",
+    "gallery2": "Klinikgebäude",
+    "gallery3": "Regeneration & Wellness",
+    "gallery4": "Strategischer Standort"
+  },
+  "news": {
+    "label": "News",
+    "badge": "Internationale Anerkennung",
+    "title": "Einladung ins Sheba Medical Center",
+    "body": "Cell Clinics wurde vom Sheba Medical Center, einem der weltweit führenden Krankenhäuser, eingeladen, das Cell Clinics Framework vorzustellen und Möglichkeiten für eine internationale klinische Zusammenarbeit auszuloten.",
+    "note": "Ein Meilenstein für die internationale Expansion ärztlich geführter zellulärer Medizin.",
+    "cta": "Internationale Partnerschaften besprechen"
+  },
+  "ecosystem": {
+    "label": "Partner-Ökosystem",
+    "title": "Alles, was Sie für eine erfolgreiche zellmedizinische Praxis brauchen",
+    "body1": "Werden Sie Teil einer Implementierungsplattform, die speziell für Ärztinnen und Ärzte, Kliniken und Gesundheitsanbieter entwickelt wurde.",
+    "body2": "Cell Clinics vereint Weiterbildung, klinische Systeme, Diagnostik, Produkte und ein internationales Expertennetzwerk in einem integrierten Ökosystem und ermöglicht so die erfolgreiche Umsetzung von Zellmedizin im klinischen Alltag.",
+    "card1Title": "Weiterbildung",
+    "card1Body": "Umfassende ärztliche Weiterbildung durch Circle, Campus, Infusionstrainings, Webinare und kontinuierliche wissenschaftliche Updates.",
+    "card2Title": "Klinische Systeme",
+    "card2Body": "Standardisierte klinische Frameworks, Behandlungskonzepte und Implementierungsprotokolle für die Integration von Zellmedizin in den Praxisalltag.",
+    "card3Title": "Diagnostik",
+    "card3Body": "Moderne Diagnostikkonzepte zur Unterstützung personalisierter Therapieplanung und evidenzbasierter Entscheidungen.",
+    "card4Title": "Produkte",
+    "card4Body": "Zugang zu hochwertigen Infusionskonzepten, Nahrungsergänzungen und innovativen Produkten der Zellmedizin.",
+    "card5Title": "Globales Netzwerk",
+    "card5Body": "Werden Sie Teil einer internationalen Gemeinschaft aus Ärztinnen und Ärzten, Kliniken, Forschern und Longevity-Experten.",
+    "card6Title": "Praxisausbau",
+    "card6Body": "Marketingressourcen, Patientenaufklärung und Implementierungsunterstützung, um Zellmedizin erfolgreich in Ihrer Praxis zu etablieren.",
+    "ctaLabel": "Integrierte Plattform",
+    "ctaTitle": "Mehr als Produkte. Mehr als Weiterbildung.",
+    "ctaBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter dabei unterstützt, Zellmedizin durch Weiterbildung, Diagnostik, klinische Systeme und ein internationales Expertennetzwerk erfolgreich in die Praxis zu integrieren."
+  },
+  "brand": {
+    "platformKicker": "Plattform-Ökosystem",
+    "systemsKicker": "Klinische Systeme",
+    "applicationKicker": "Partneranfrage"
+  },
+  "platform": {
+    "label": "So funktioniert die Plattform",
+    "title": "Ein integriertes Ökosystem für moderne Zellmedizin",
+    "body": "Cell Clinics verbindet Weiterbildung, Diagnostik, klinische Systeme, Produkte und ein internationales Ärztenetzwerk zu einer durchgängigen Implementierungsplattform. Jede Komponente unterstützt Gesundheitsanbieter entlang der gesamten Patient Journey.",
+    "coreLabel": "Cell Clinics",
+    "module1Title": "Cell Education",
+    "module1Body": "Wissenschaftliche Weiterbildung und kontinuierliches ärztliches Training.",
+    "module2Title": "Klinische Systeme",
+    "module2Body": "Standardisierte Frameworks für die Implementierung im Praxisalltag.",
+    "module3Title": "Diagnostik",
+    "module3Body": "Evidenzbasierte diagnostische Konzepte und Bewertungslogiken.",
+    "module4Title": "Produkte",
+    "module4Body": "Innovative Lösungen für die zellmedizinische Versorgung.",
+    "module5Title": "Global Hub",
+    "module5Body": "Internationale Zusammenarbeit mit Ärzten und Experten.",
+    "module6Title": "Partnerkliniken",
+    "module6Body": "Klinische Umsetzung in der täglichen Versorgungspraxis.",
+    "closingTitle": "Eine Plattform. Ein Standard. Ein Netzwerk.",
+    "closingBody": "Cell Clinics ist mehr als eine Sammlung einzelner Produkte oder Fortbildungsangebote. Die Plattform vereint alle Bausteine, die Gesundheitsanbieter für die erfolgreiche Implementierung von Zellmedizin im klinischen Alltag benötigen."
+  },
+  "systems": {
+    "label": "Klinische Systeme",
+    "title": "Vier Implementierungspfade für zellmedizinische Programme.",
+    "card1Title": "Mitochondriale Performance",
+    "card1Body": "Frameworks für Energie, Zellatmung und metabolische Leistungsfähigkeit.",
+    "card2Title": "Genetischer und zellulärer Kontext",
+    "card2Body": "Biologische Individualität und die präzise Ausrichtung personalisierter Protokolle.",
+    "card3Title": "Regeneration & Recovery",
+    "card3Body": "Entzündungsbalance, Resilienz und regenerative Unterstützung.",
+    "card4Title": "Therapeutischer Zugang",
+    "card4Body": "Strukturierte Wege für therapeutischen Zugang und klinische Umsetzung."
+  },
+  "leadership": {
+    "label": "Medizinische Leitung",
+    "title": "Medizinische Leitung",
+    "body": "Das Cell Clinics Framework basiert auf jahrzehntelanger ärztlicher Weiterbildung, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
+    "stat1": "<strong>Ärztliche</strong> Fortbildung",
+    "stat2": "<strong>Klinische</strong> Framework-Entwicklung",
+    "stat3": "<strong>Internationale</strong> Lehre",
+    "stat4": "<strong>Zellmedizinische</strong> Expertise",
+    "cardLabel": "Wissenschaftliche & medizinische Leitung",
+    "cardBody": "Ärztliche Weiterbildung und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
+  },
+  "form": {
+    "label": "Partnerschaftsanfrage",
+    "title": "Partnerklinik werden",
+    "body": "Unser Team meldet sich innerhalb von 48 Stunden, um passende Implementierungsmöglichkeiten mit Ihnen zu besprechen.",
+    "clinicName": "Klinikname",
+    "clinicNamePlaceholder": "Name der Klinik oder Organisation",
+    "website": "Website",
+    "websitePlaceholder": "https://",
+    "country": "Land",
+    "countryPlaceholder": "Land",
+    "primaryContact": "Ansprechpartner",
+    "primaryContactPlaceholder": "Vollständiger Name",
+    "email": "E-Mail",
+    "emailPlaceholder": "E-Mail-Adresse",
+    "phone": "Telefon",
+    "phonePlaceholder": "Telefonnummer",
+    "profession": "Beruf",
+    "professionPhysician": "Arzt/Ärztin",
+    "professionOwner": "Klinikinhaber/in",
+    "professionLongevity": "Longevity-Zentrum",
+    "professionHealth": "Gesundheitszentrum",
+    "professionFunctional": "Praxis für funktionelle Medizin",
+    "professionOther": "Sonstiges",
+    "clinicType": "Kliniktyp",
+    "clinicTypePlaceholder": "Privatklinik, Longevity-Zentrum, Praxis ...",
+    "notes": "Optionale Notizen",
+    "notesPlaceholder": "Erzählen Sie uns von Ihrer Klinik, Ihrem Team und Ihren Zielen",
+    "note": "Wir prüfen Ihre Bewerbung persönlich und besprechen den passenden Implementierungspfad für Ihre Klinik.",
+    "sending": "Wird gesendet...",
+    "success": "Vielen Dank für Ihre Bewerbung. Unser Team prüft Ihre Angaben und meldet sich innerhalb von 48 Stunden.",
+    "activationRequired": "FormSubmit ist noch nicht aktiviert. Bitte öffne die Bestätigungs-E-Mail, die an info@cell-education.com gesendet wurde, und aktiviere das Formular zuerst.",
+    "error": "Ihre Bewerbung konnte nicht automatisch gesendet werden. Bitte schreiben Sie direkt an info@cell-education.com."
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "Impressum",
+    "description": "Eine ärztlich geführte Implementierungsplattform für Kliniken, die strukturierte Programme für Zellmedizin aufbauen.",
+    "productOf": "Ein Produkt von Cell Education.",
+    "groupLine": "Teil der Cell Group — Cell Education · cell supply · cell clinics."
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "viewDetails": "Details ansehen",
+    "back": "Zurück",
+    "search": "Suchen",
+    "all": "Alle"
+  },
+  "home": {
+    "whatLabel": "Plattform",
+    "whatTitle": "Die vollständige Implementierungsebene für moderne Zellmedizin.",
+    "whatBody": "Weiterbildung, Diagnostik, klinische Systeme, Produkte und ein internationales Netzwerk werden in einer ärztlich geführten Plattform verbunden.",
+    "proofLabel": "Klinische Umsetzung",
+    "proofTitle": "Für reale Implementierung entwickelt."
+  },
+  "platformPage": {
+    "eyebrow": "Plattform",
+    "title": "Ärztlich geführte Implementierungsplattform",
+    "lead": "Cell Clinics verbindet alle Komponenten, die erforderlich sind, um strukturierte Zellmedizin in den klinischen Alltag zu integrieren.",
+    "integratedTitle": "Mehr als Produkte. Mehr als Weiterbildung.",
+    "integratedBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter mit Weiterbildung, Diagnostik, klinischen Systemen und einem internationalen Expertennetzwerk bei der erfolgreichen Integration von Zellmedizin unterstützt."
+  },
+  "networkPage": {
+    "eyebrow": "Netzwerk",
+    "title": "Cell Clinics Partner finden",
+    "lead": "Entdecken Sie das wachsende Netzwerk von Kliniken, die ärztlich geführte Zellmedizin umsetzen.",
+    "searchLabel": "Nach Klinik oder Ort suchen",
+    "searchPlaceholder": "Ort suchen",
+    "focusLabel": "Schwerpunkt",
+    "languageLabel": "Sprache",
+    "noResults": "Keine Klinik entspricht diesen Filtern.",
+    "modelClinic": "Zentrale Modellklinik"
+  },
+  "partnershipsPage": {
+    "eyebrow": "Partnerschaften",
+    "title": "Alles für den erfolgreichen Aufbau einer zellmedizinischen Praxis",
+    "lead": "Werden Sie Teil einer Implementierungsplattform für Ärztinnen und Ärzte, Kliniken und Gesundheitsanbieter.",
+    "programTitle": "30-Tage-Implementierungsprogramm",
+    "programLead": "Ein strukturierter Weg von der strategischen Ausrichtung bis zum klinischen Start.",
+    "week1": "Woche 1 · Kick-off",
+    "week2": "Woche 2 · Vorbereitung",
+    "week3": "Woche 3 · Implementierung",
+    "week4": "Woche 4 · Go-live"
+  },
+  "companyPage": {
+    "eyebrow": "Unternehmen",
+    "title": "Das Ökosystem der Cell Group",
+    "lead": "Die Cell Group verbindet Weiterbildung, Produktzugang und klinische Implementierung in drei spezialisierten Marken.",
+    "education": "Ärztliche Weiterbildung, Leitlinien und Protokolle.",
+    "supply": "Produktplattform, Beschaffung und Distribution.",
+    "clinics": "Partnerpraxen, Patientenversorgung und Implementierung."
+  },
+  "newsPage": {
+    "eyebrow": "News & Events",
+    "title": "Wissenschaftlicher Austausch in Bewegung",
+    "lead": "Ausgewählte Meilensteine, Veranstaltungen und internationale klinische Gespräche."
+  },
+  "leadershipPage": {
+    "eyebrow": "Medizinische Leitung",
+    "title": "Wissenschaftliche und medizinische Autorität",
+    "lead": "Das Cell Clinics Framework basiert auf jahrzehntelanger ärztlicher Weiterbildung und zellmedizinischer Expertise.",
+    "role": "Medizinische Leitung für ärztliche Weiterbildung und klinische Framework-Entwicklung."
+  },
+  "contactPage": {
+    "eyebrow": "Kontakt",
+    "title": "Sprechen Sie mit Cell Clinics",
+    "lead": "Kontaktieren Sie unser Team zu Partnerschaften, Implementierung und dem Cell Clinics Netzwerk.",
+    "emailLabel": "Allgemeiner Kontakt"
+  },
+  "apply": {
+    "step": "Schritt",
+    "step1Title": "Ihre Klinik",
+    "step2Title": "Ihr Implementierungsprofil",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "consent": "Ich stimme zu, dass Cell Clinics meine Angaben zur Bearbeitung dieser Partnerschaftsanfrage verwendet.",
+    "submit": "Partnerschaftsinformationen anfordern"
+  },
+  "formApi": {
+    "success": "Vielen Dank für Ihre Anfrage. Unser Team prüft Ihre Angaben und meldet sich innerhalb von 48 Stunden.",
+    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@cell-education.com."
+  }
+}

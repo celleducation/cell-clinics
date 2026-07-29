@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "title": "Cell Clinics | Physician-Guided Cellular Medicine Platform",
+    "description": "Cell Clinics helps healthcare providers implement physician-guided cellular medicine through diagnostics, clinical frameworks, physician education and therapeutic systems."
+  },
+  "nav": {
+    "platform": "Platform",
+    "systems": "Clinical Systems",
+    "partnerships": "Partnerships",
+    "contact": "Contact",
+    "clinicalSystems": "Clinical Systems",
+    "network": "Network",
+    "company": "Company"
+  },
+  "cta": {
+    "partnerWithUs": "Partner With Us",
+    "heroPrimary": "Become A Partner Clinic",
+    "bookCall": "Book Strategy Call",
+    "explorePlatform": "Explore The Platform",
+    "viewSystems": "View Clinical Systems",
+    "learnEducation": "Learn About Cell Education",
+    "requestInfo": "Request Partnership Information"
+  },
+  "hero": {
+    "label": "Physician-Guided Implementation Platform",
+    "title": "The Operating System For Modern Cellular Medicine",
+    "body": "Cell Clinics provides clinical frameworks, physician education, diagnostic systems and implementation support for healthcare providers building advanced cellular medicine programs.",
+    "trust1": "Physician-Guided",
+    "trust2": "Clinical Frameworks",
+    "trust3": "International Network",
+    "trust4": "Cell Education Foundation",
+    "panelLabel": "Cellular medicine ecosystem",
+    "panelText": "Education · Diagnostics · Physicians · Clinical Systems"
+  },
+  "lab": {
+    "label": "Longevity Lab",
+    "title": "This Was Longevity Lab 2026",
+    "body1": "A focused day on cellular medicine, longevity and human performance, connecting medicine, science, elite sport and entrepreneurship in Mallorca.",
+    "body2": "Longevity Lab Mallorca in motion. The official recap film captures the energy of the scientific morning at Estadi Mallorca Son Moix and the evening exchange at Mallorca Country Club.",
+    "cta": "Explore Longevity Lab"
+  },
+  "implementation": {
+    "label": "Central Model Clinic",
+    "title": "One Of Our Central Partners",
+    "subtitle": "Gais, Switzerland",
+    "exampleLabel": "Central Model Clinic",
+    "location": "Gais, Switzerland",
+    "poweredBy": "Powered by Cell Clinics",
+    "body1": "As a central partner clinic within the Cell Clinics framework, this site demonstrates how physician-guided cellular medicine, biological diagnostics, regenerative medicine and premium clinical care can come together inside one operational center.",
+    "body2": "",
+    "feature1": "Clinical Diagnostics",
+    "feature2": "Expert-Guided Care",
+    "feature3": "Regenerative Medicine",
+    "feature4": "Longevity Programs",
+    "demonstratesTitle": "What This Demonstrates",
+    "demonstratesBody": "The Cell Clinics model helps healthcare providers implement structured cellular medicine programs within existing practices and clinics.",
+    "demonstratesBody2": "This includes physician education, diagnostic frameworks, clinical pathways and implementation support.",
+    "point1": "Structured diagnostic pathways",
+    "point2": "Physician-guided implementation",
+    "point3": "Clinical education frameworks",
+    "point4": "Premium patient experience",
+    "point5": "Scalable operational model",
+    "poweredTitle": "Powered By Clinical Frameworks",
+    "poweredBody": "Cell Clinics provides the educational, diagnostic and implementation frameworks that enable healthcare providers to build structured cellular medicine programs inside their own clinical environments.",
+    "poweredBody2": "The objective is not to standardize clinics, but to provide a proven framework that can be adapted to local medical expertise, patient populations and clinical objectives.",
+    "cta": "Explore The Partner Model",
+    "gallery1": "Landscape & Recovery",
+    "gallery2": "Clinic Exterior",
+    "gallery3": "Regeneration & Wellness",
+    "gallery4": "Strategic Location"
+  },
+  "news": {
+    "label": "News",
+    "badge": "International Recognition",
+    "title": "Invited To Sheba Medical Center",
+    "body": "Cell Clinics has been invited to Sheba Medical Center, recognized among the world’s top hospitals, to present the Cell Clinics framework and explore opportunities for international clinical collaboration.",
+    "note": "A milestone for the international expansion of physician-guided cellular medicine.",
+    "cta": "Discuss International Partnerships"
+  },
+  "ecosystem": {
+    "label": "Partner Ecosystem",
+    "title": "Everything You Need To Build A Successful Cellular Medicine Practice",
+    "body1": "Join an implementation platform designed for physicians, clinics and healthcare professionals.",
+    "body2": "Cell Clinics combines education, clinical systems, diagnostics, products and an international expert network into one integrated ecosystem, enabling the successful implementation of cellular medicine in clinical practice.",
+    "card1Title": "Education",
+    "card1Body": "Comprehensive physician education through Circle, Campus, infusion training, webinars and continuous scientific updates.",
+    "card2Title": "Clinical Systems",
+    "card2Body": "Standardized clinical frameworks, treatment concepts and implementation protocols for integrating cellular medicine into everyday practice.",
+    "card3Title": "Diagnostics",
+    "card3Body": "Modern diagnostic concepts supporting personalized treatment planning and evidence-based decision making.",
+    "card4Title": "Products",
+    "card4Body": "Access premium infusion concepts, nutritional supplements and innovative cellular medicine products.",
+    "card5Title": "Global Network",
+    "card5Body": "Become part of an international community of physicians, clinics, researchers and longevity experts.",
+    "card6Title": "Practice Growth",
+    "card6Body": "Marketing resources, patient education and implementation support to successfully establish cellular medicine within your practice.",
+    "ctaLabel": "Integrated Platform",
+    "ctaTitle": "More Than Products. More Than Education.",
+    "ctaBody": "Cell Clinics is a complete implementation platform that helps healthcare providers successfully integrate cellular medicine into clinical practice through education, diagnostics, clinical systems and an international expert network."
+  },
+  "brand": {
+    "platformKicker": "Platform Ecosystem",
+    "systemsKicker": "Clinical Systems",
+    "applicationKicker": "Partner Application"
+  },
+  "platform": {
+    "label": "How The Platform Works",
+    "title": "One Integrated Ecosystem For Modern Cellular Medicine",
+    "body": "Cell Clinics connects education, diagnostics, clinical systems, products and an international physician network into one implementation platform. Every component is designed to support healthcare providers throughout the entire patient journey.",
+    "coreLabel": "Cell Clinics",
+    "module1Title": "Cell Education",
+    "module1Body": "Scientific education and continuous physician training.",
+    "module2Title": "Clinical Systems",
+    "module2Body": "Standardized implementation frameworks.",
+    "module3Title": "Diagnostics",
+    "module3Body": "Evidence-based diagnostic concepts.",
+    "module4Title": "Products",
+    "module4Body": "Innovative cellular medicine solutions.",
+    "module5Title": "Global Hub",
+    "module5Body": "International expert collaboration.",
+    "module6Title": "Partner Clinics",
+    "module6Body": "Clinical implementation in daily practice.",
+    "closingTitle": "One Platform. One Standard. One Network.",
+    "closingBody": "Cell Clinics is more than a collection of products or educational programs. It is an integrated platform that brings together every element required to successfully implement cellular medicine in clinical practice."
+  },
+  "systems": {
+    "label": "Clinical Systems",
+    "title": "Four implementation pathways for cellular medicine programs.",
+    "card1Title": "Mitochondrial Performance",
+    "card1Body": "Frameworks for energy, respiration and metabolic performance.",
+    "card2Title": "Genetic & Cellular Context",
+    "card2Body": "Biological individuality and precision protocol direction.",
+    "card3Title": "Regeneration & Recovery",
+    "card3Body": "Inflammation balance, resilience and recovery support.",
+    "card4Title": "Therapeutic Access",
+    "card4Body": "Structured therapeutic implementation pathways."
+  },
+  "leadership": {
+    "label": "Medical Leadership",
+    "title": "Medical Leadership",
+    "body": "The Cell Clinics framework is built upon decades of physician education, clinical framework development and cellular medicine expertise.",
+    "stat1": "<strong>Physician</strong> Education",
+    "stat2": "<strong>Clinical</strong> Framework Development",
+    "stat3": "<strong>International</strong> Teaching",
+    "stat4": "<strong>Cellular</strong> Medicine Expertise",
+    "cardLabel": "Scientific & Educational Authority",
+    "cardBody": "Medical education and clinical framework development for cellular medicine implementation."
+  },
+  "form": {
+    "label": "Partner Application",
+    "title": "Become A Partner Clinic",
+    "body": "Our team will contact you within 48 hours to discuss implementation opportunities for your clinic.",
+    "clinicName": "Clinic Name",
+    "clinicNamePlaceholder": "Clinic or organization name",
+    "website": "Website",
+    "websitePlaceholder": "https://",
+    "country": "Country",
+    "countryPlaceholder": "Country",
+    "primaryContact": "Primary Contact",
+    "primaryContactPlaceholder": "Full name",
+    "email": "Email",
+    "emailPlaceholder": "Email address",
+    "phone": "Phone",
+    "phonePlaceholder": "Phone number",
+    "profession": "Profession",
+    "professionPhysician": "Physician",
+    "professionOwner": "Clinic Owner",
+    "professionLongevity": "Longevity Center",
+    "professionHealth": "Health Center",
+    "professionFunctional": "Functional Medicine Practice",
+    "professionOther": "Other",
+    "clinicType": "Clinic Type",
+    "clinicTypePlaceholder": "Private clinic, longevity center, practice...",
+    "notes": "Optional Notes",
+    "notesPlaceholder": "Tell us about your clinic, team and goals",
+    "note": "We will personally review your application and discuss the best implementation pathway for your clinic.",
+    "sending": "Sending...",
+    "success": "Thank you for your application. Our team will review your information and contact you within 48 hours.",
+    "activationRequired": "Form submission is not activated yet. Please open the confirmation email from FormSubmit sent to info@cell-education.com and activate the form first.",
+    "error": "Your application could not be sent automatically. Please email info@cell-education.com directly."
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Imprint",
+    "description": "A physician-guided implementation platform for clinics building cellular medicine programs.",
+    "productOf": "A product of Cell Education.",
+    "groupLine": "Part of the Cell Group — Cell Education · cell supply · cell clinics."
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewDetails": "View details",
+    "back": "Back",
+    "search": "Search",
+    "all": "All"
+  },
+  "home": {
+    "whatLabel": "Platform",
+    "whatTitle": "A complete implementation layer for cellular medicine.",
+    "whatBody": "Education, diagnostics, clinical systems, products and an international network are connected in one physician-guided platform.",
+    "proofLabel": "Clinical proof",
+    "proofTitle": "Built for implementation, not presentation."
+  },
+  "platformPage": {
+    "eyebrow": "Platform",
+    "title": "Physician-Guided Implementation Platform",
+    "lead": "Cell Clinics connects every component required to bring structured cellular medicine into clinical practice.",
+    "integratedTitle": "More Than Products. More Than Education.",
+    "integratedBody": "Cell Clinics is a complete implementation platform that helps healthcare providers successfully integrate cellular medicine into clinical practice through education, diagnostics, clinical systems and an international expert network."
+  },
+  "networkPage": {
+    "eyebrow": "Network",
+    "title": "Find a Cell Clinics Partner",
+    "lead": "Explore the growing network of clinics implementing physician-guided cellular medicine.",
+    "searchLabel": "Search by clinic or location",
+    "searchPlaceholder": "Search location",
+    "focusLabel": "Focus area",
+    "languageLabel": "Language",
+    "noResults": "No clinics match these filters.",
+    "modelClinic": "Central Model Clinic"
+  },
+  "partnershipsPage": {
+    "eyebrow": "Partnerships",
+    "title": "Everything You Need To Build A Successful Cellular Medicine Practice",
+    "lead": "Join an implementation platform designed for physicians, clinics and healthcare professionals.",
+    "programTitle": "30-Day Implementation Program",
+    "programLead": "A structured pathway from strategic alignment to clinical launch.",
+    "week1": "Week 1 · Kick-Off",
+    "week2": "Week 2 · Prepare",
+    "week3": "Week 3 · Implementation",
+    "week4": "Week 4 · Go Live"
+  },
+  "companyPage": {
+    "eyebrow": "Company",
+    "title": "The Cell Group Ecosystem",
+    "lead": "Cell Group connects education, product access and clinical implementation across three focused brands.",
+    "education": "Physician education, guidelines and protocols.",
+    "supply": "Product platform, sourcing and distribution.",
+    "clinics": "Partner practices, patient care and implementation."
+  },
+  "newsPage": {
+    "eyebrow": "News & Events",
+    "title": "Scientific Exchange In Motion",
+    "lead": "Selected milestones, events and international clinical conversations."
+  },
+  "leadershipPage": {
+    "eyebrow": "Medical Leadership",
+    "title": "Scientific And Educational Authority",
+    "lead": "The Cell Clinics framework is built on decades of physician education and cellular medicine expertise.",
+    "role": "Medical leadership for physician education and clinical framework development."
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Start A Conversation With Cell Clinics",
+    "lead": "Speak with our team about partnerships, implementation and the Cell Clinics network.",
+    "emailLabel": "General contact"
+  },
+  "apply": {
+    "step": "Step",
+    "step1Title": "Your clinic",
+    "step2Title": "Your implementation profile",
+    "next": "Continue",
+    "previous": "Back",
+    "consent": "I agree that Cell Clinics may use my information to respond to this partnership inquiry.",
+    "submit": "Request Partnership Information"
+  },
+  "formApi": {
+    "success": "Thank you for your application. Our team will review your information and contact you within 48 hours.",
+    "error": "Your inquiry could not be sent. Please try again or contact info@cell-education.com."
+  }
+}

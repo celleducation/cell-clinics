@@ -1,0 +1,141 @@
+import Image from "next/image";
+import type {Metadata} from "next";
+import {Check, ExternalLink} from "lucide-react";
+import {getTranslations, setRequestLocale} from "next-intl/server";
+import {ButtonLink} from "@/components/ui/ButtonLink";
+import {SectionHeading} from "@/components/ui/SectionHeading";
+import {ModuleGrid} from "@/components/ModuleGrid";
+import {ClinicalSystems} from "@/components/ClinicalSystems";
+import {partnerModules} from "@/content/site";
+
+export const metadata: Metadata = {
+  title: "The Operating System for Modern Cellular Medicine",
+  description: "Clinical frameworks, physician education, diagnostics and implementation support for modern cellular medicine programs."
+};
+
+export default async function HomePage({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations();
+
+  const trust = [t("hero.trust1"), t("hero.trust2"), t("hero.trust3"), t("hero.trust4")];
+  const modules = partnerModules.map((item, index) => ({
+    ...item,
+    title: t(`ecosystem.card${index + 1}Title`),
+    body: t(`ecosystem.card${index + 1}Body`)
+  }));
+
+  return (
+    <>
+      <section className="home-hero section-soft">
+        <div className="container home-hero-grid">
+          <div>
+            <span className="eyebrow">{t("hero.label")}</span>
+            <h1 className="display">{t("hero.title")}</h1>
+            <p className="lead">{t("hero.body")}</p>
+            <div className="button-row">
+              <ButtonLink href="/partnerships/apply" size="large">{t("cta.heroPrimary")}</ButtonLink>
+              <ButtonLink href="/platform" variant="secondary" size="large">{t("cta.explorePlatform")}</ButtonLink>
+            </div>
+          </div>
+          <div className="home-hero-art">
+            <Image src="/images/cellclinic-platform.png" alt="" width={1400} height={1080} priority />
+          </div>
+        </div>
+        <div className="container trust-row">
+          {trust.map((item) => <div className="trust-item" key={item}><Check size={17} /> <span>{item}</span></div>)}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} body={t("home.whatBody")} />
+          <ModuleGrid items={modules} />
+          <div className="section-action">
+            <ButtonLink href="/platform" variant="secondary">{t("cta.explorePlatform")}</ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container">
+          <SectionHeading eyebrow={t("systems.label")} title={t("systems.title")} />
+          <ClinicalSystems compact />
+          <div className="section-action">
+            <ButtonLink href="/clinical-systems" variant="secondary">{t("cta.viewSystems")}</ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      <section className="section model-clinic-section">
+        <div className="container model-clinic-grid">
+          <div className="model-clinic-copy">
+            <span className="eyebrow">{t("implementation.label")}</span>
+            <h2 className="section-title">{t("implementation.title")}</h2>
+            <p className="lead">{t("implementation.body1")}</p>
+            <div className="clinic-brand-row">
+              <Image src="/clinics/alpstein/logo.webp" alt="Alpstein Clinic" width={330} height={140} />
+              <span>{t("implementation.poweredBy")}</span>
+            </div>
+            <div className="button-row">
+              <ButtonLink href="/network/alpstein-clinic" variant="secondary">{t("implementation.cta")}</ButtonLink>
+            </div>
+          </div>
+          <div className="model-gallery">
+            <Image src="/clinics/alpstein/interior-1.webp" alt="Alpstein Clinic interior" width={900} height={760} />
+            <Image src="/clinics/alpstein/recovery.webp" alt="Alpstein Clinic recovery area" width={900} height={760} />
+            <Image src="/clinics/alpstein/landscape.webp" alt="Appenzell landscape" width={900} height={760} />
+          </div>
+        </div>
+      </section>
+
+      <section className="section news-teaser">
+        <div className="container news-card card">
+          <div className="news-copy">
+            <span className="eyebrow">{t("news.label")}</span>
+            <Image className="news-logo" src="/images/sheba-medical-center-logo.png" alt="Sheba Medical Center" width={420} height={200} />
+            <h2 className="section-title">{t("news.title")}</h2>
+            <p>{t("news.body")}</p>
+            <p className="news-note">{t("news.note")}</p>
+            <ButtonLink href="/company/news" variant="secondary">{t("common.learnMore")}</ButtonLink>
+          </div>
+          <Image className="news-image" src="/images/sheba-medical-center-campus.jpg" alt="Sheba Medical Center campus" width={900} height={600} />
+        </div>
+      </section>
+
+      <section className="section section-soft">
+        <div className="container leadership-teaser">
+          <div>
+            <SectionHeading eyebrow={t("leadership.label")} title={t("leadership.title")} body={t("leadership.body")} />
+            <div className="credential-list">
+              {[t("leadership.stat1"), t("leadership.stat2"), t("leadership.stat3"), t("leadership.stat4")].map((item) => (
+                <div key={item}><Check size={17} />{item}</div>
+              ))}
+            </div>
+            <div className="button-row">
+              <ButtonLink href="/company/leadership" variant="secondary">{t("cta.learnEducation")}</ButtonLink>
+            </div>
+          </div>
+          <div className="leadership-portrait">
+            <Image src="/images/kay-bredehorst.jpg" alt="Dr. Kay Bredehorst" width={900} height={1100} />
+            <div><strong>Dr. Kay Bredehorst</strong><span>{t("leadershipPage.role")}</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section final-cta">
+        <div className="container final-cta-inner">
+          <span className="eyebrow">{t("form.label")}</span>
+          <h2 className="section-title">{t("form.title")}</h2>
+          <p className="lead">{t("form.body")}</p>
+          <div className="button-row">
+            <ButtonLink href="/partnerships/apply" size="large">{t("cta.requestInfo")}</ButtonLink>
+            <a className="button button-secondary button-lg" href="mailto:info@cell-education.com">
+              {t("cta.bookCall")} <ExternalLink size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

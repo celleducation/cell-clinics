@@ -5604,7 +5604,7 @@ body::after {
   right: 28px;
   width: 92px;
   height: 45px;
-  background: url("/images/cellclinics-logoneu.png") center / contain no-repeat;
+  background: url("cell-clinics-logo.svg") center / contain no-repeat;
   opacity: 0.16;
   pointer-events: none;
 }
