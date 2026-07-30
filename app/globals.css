@@ -424,10 +424,13 @@ textarea {
 }
 
 .footer-logo {
-  width: 190px;
-  padding: 12px;
-  border-radius: 12px;
-  background: white;
+  width: 214px;
+}
+
+.footer-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .footer-brand p {
