@@ -265,6 +265,7 @@
   },
   "formApi": {
     "success": "Thank you for your application. Our team will review your information and contact you within 48 hours.",
-    "error": "Your inquiry could not be sent. Please try again or contact info@cell-education.com."
+    "error": "Your inquiry could not be sent automatically.",
+    "emailFallback": "Send the completed inquiry by email"
   }
 }

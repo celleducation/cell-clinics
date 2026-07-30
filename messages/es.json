@@ -265,6 +265,7 @@
   },
   "formApi": {
     "success": "Gracias por su solicitud. Nuestro equipo revisará sus datos y se pondrá en contacto en un plazo de 48 horas.",
-    "error": "No se pudo enviar su solicitud. Inténtelo de nuevo o escriba a info@cell-education.com."
+    "error": "No se pudo enviar su solicitud automáticamente.",
+    "emailFallback": "Enviar la solicitud completa por correo electrónico"
   }
 }

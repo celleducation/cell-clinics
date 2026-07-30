@@ -18,6 +18,15 @@ const inquirySchema = z.object({
 
 const requests = new Map<string, number[]>();
 
+function escapeHtml(value: unknown) {
+  return String(value || "—")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 function rateLimited(ip: string) {
   const now = Date.now();
   const recent = (requests.get(ip) || []).filter((timestamp) => now - timestamp < 60 * 60 * 1000);
@@ -50,18 +59,22 @@ export async function POST(request: NextRequest) {
 
   const {companyFax: _, turnstileToken: __, ...data} = parsed.data;
   const rows = Object.entries({...data, submissionDate: new Date().toISOString()})
-    .map(([key, value]) => `<tr><th style="text-align:left;padding:8px;border-bottom:1px solid #e5ebf2">${key}</th><td style="padding:8px;border-bottom:1px solid #e5ebf2">${String(value || "—")}</td></tr>`)
+    .map(([key, value]) => `<tr><th style="text-align:left;padding:8px;border-bottom:1px solid #e5ebf2">${escapeHtml(key)}</th><td style="padding:8px;border-bottom:1px solid #e5ebf2">${escapeHtml(value)}</td></tr>`)
     .join("");
 
   if (process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: process.env.PARTNER_INQUIRY_FROM || "Cell Clinics <forms@cell-clinics.com>",
       to: process.env.PARTNER_INQUIRY_TO || "info@cell-education.com",
       replyTo: data.email,
       subject: "New Cell Clinics Partner Application",
       html: `<h1>New Cell Clinics Partner Application</h1><table style="border-collapse:collapse;width:100%">${rows}</table>`
     });
+    if (result.error) {
+      console.error("Partner inquiry email failed", result.error);
+      return NextResponse.json({error: "Email delivery failed"}, {status: 502});
+    }
   } else if (process.env.NODE_ENV === "production") {
     return NextResponse.json({error: "Email service is not configured"}, {status: 503});
   } else {

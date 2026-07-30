@@ -265,6 +265,7 @@
   },
   "formApi": {
     "success": "Vielen Dank für Ihre Anfrage. Unser Team prüft Ihre Angaben und meldet sich innerhalb von 48 Stunden.",
-    "error": "Ihre Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@cell-education.com."
+    "error": "Ihre Anfrage konnte nicht automatisch gesendet werden.",
+    "emailFallback": "Ausgefüllte Anfrage per E-Mail senden"
   }
 }

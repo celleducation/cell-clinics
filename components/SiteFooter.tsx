@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {getTranslations} from "next-intl/server";
-import {Link} from "@/i18n/navigation";
 
 export async function SiteFooter() {
   const t = await getTranslations();
@@ -18,17 +17,15 @@ export async function SiteFooter() {
           </div>
           <nav className="footer-nav" aria-label="Platform">
             <strong>{t("nav.platform")}</strong>
-            <Link href="/platform">{t("nav.platform")}</Link>
-            <Link href="/clinical-systems">{t("nav.clinicalSystems")}</Link>
-            <Link href="/network">{t("nav.network")}</Link>
-            <Link href="/partnerships">{t("nav.partnerships")}</Link>
+            <a href="#platform">{t("nav.platform")}</a>
+            <a href="#systems">{t("nav.clinicalSystems")}</a>
+            <a href="#proof">{t("home.proofLabel")}</a>
+            <a href="#application">{t("cta.partnerWithUs")}</a>
           </nav>
-          <nav className="footer-nav" aria-label="Company">
-            <strong>{t("nav.company")}</strong>
-            <Link href="/company">{t("nav.company")}</Link>
-            <Link href="/company/leadership">{t("leadership.title")}</Link>
-            <Link href="/company/news">{t("news.label")}</Link>
-            <Link href="/contact">{t("nav.contact")}</Link>
+          <nav className="footer-nav" aria-label="Contact">
+            <strong>{t("nav.contact")}</strong>
+            <a href="mailto:info@cell-education.com">info@cell-education.com</a>
+            <a href="#application">{t("cta.requestInfo")}</a>
             <a href="https://cell-education.com" target="_blank" rel="noreferrer">Cell Education ↗</a>
           </nav>
         </div>

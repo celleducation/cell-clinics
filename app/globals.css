@@ -38,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -828,6 +829,10 @@ textarea.input {
   margin-top: 32px;
 }
 
+#platform .module-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .systems-list {
   display: grid;
   gap: 24px;
@@ -1257,6 +1262,23 @@ textarea.input {
   padding: clamp(24px, 5vw, 48px);
 }
 
+.application-section {
+  background: var(--card-alt);
+}
+
+.application-onepager {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: 64px;
+}
+
+.application-onepager .application-intro {
+  position: sticky;
+  top: 120px;
+  margin-bottom: 0;
+}
+
 .form-progress {
   display: flex;
   align-items: center;
@@ -1325,8 +1347,24 @@ textarea.input {
   gap: 12px;
 }
 
+.form-submit {
+  width: 100%;
+  min-height: 52px;
+}
+
 .form-error {
   color: var(--danger);
+}
+
+.form-error p {
+  margin: 16px 0 6px;
+}
+
+.form-error .text-link {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .form-success {
@@ -1422,6 +1460,19 @@ textarea.input {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  #platform .module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .application-onepager {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .application-onepager .application-intro {
+    position: static;
+  }
+
   .clinic-finder {
     grid-template-columns: 1fr;
   }
@@ -1456,6 +1507,10 @@ textarea.input {
   .event-card,
   .clinic-contact,
   .clinic-focus-list {
+    grid-template-columns: 1fr;
+  }
+
+  #platform .module-grid {
     grid-template-columns: 1fr;
   }
 

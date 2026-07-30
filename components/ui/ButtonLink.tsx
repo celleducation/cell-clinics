@@ -16,10 +16,20 @@ export function ButtonLink({
   size = "md",
   className = ""
 }: ButtonLinkProps) {
+  const classes = `button button-${variant} ${size === "lg" || size === "large" ? "button-lg" : ""} ${className}`.trim();
+
+  if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
     <Link
       href={href}
-      className={`button button-${variant} ${size === "lg" || size === "large" ? "button-lg" : ""} ${className}`.trim()}
+      className={classes}
     >
       {children}
     </Link>

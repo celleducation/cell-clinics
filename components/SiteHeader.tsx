@@ -6,23 +6,17 @@ import {useTranslations} from "next-intl";
 import {useState} from "react";
 import {ButtonLink} from "./ui/ButtonLink";
 import {LocaleSwitcher} from "./LocaleSwitcher";
-import {Link, usePathname} from "@/i18n/navigation";
+import {Link} from "@/i18n/navigation";
 
 const navItems = [
-  {key: "platform", href: "/platform"},
-  {key: "clinicalSystems", href: "/clinical-systems"},
-  {key: "network", href: "/network"},
-  {key: "partnerships", href: "/partnerships"},
-  {key: "company", href: "/company"},
-  {key: "contact", href: "/contact"}
+  {key: "platform", href: "#platform"},
+  {key: "clinicalSystems", href: "#systems"},
+  {key: "proof", href: "#proof"}
 ] as const;
 
 export function SiteHeader() {
   const t = useTranslations();
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="site-header">
@@ -32,14 +26,14 @@ export function SiteHeader() {
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <Link className="nav-link" data-active={isActive(item.href)} key={item.key} href={item.href}>
-              {t(`nav.${item.key}`)}
-            </Link>
+            <a className="nav-link" key={item.key} href={item.href}>
+              {item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`)}
+            </a>
           ))}
         </nav>
         <div className="header-actions">
           <LocaleSwitcher />
-          <ButtonLink href="/partnerships/apply">{t("cta.heroPrimary")}</ButtonLink>
+          <ButtonLink href="#application">{t("cta.partnerWithUs")}</ButtonLink>
           <button
             className="mobile-menu-button"
             type="button"
@@ -54,18 +48,19 @@ export function SiteHeader() {
       </div>
       <nav id="mobile-navigation" className="mobile-panel" hidden={!open} aria-label="Mobile navigation">
         {navItems.map((item) => (
-          <Link
+          <a
             className="nav-link"
-            data-active={isActive(item.href)}
             key={item.key}
             href={item.href}
             onClick={() => setOpen(false)}
           >
-            {t(`nav.${item.key}`)}
-          </Link>
+            {item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`)}
+          </a>
         ))}
         <LocaleSwitcher />
-        <ButtonLink href="/partnerships/apply">{t("cta.heroPrimary")}</ButtonLink>
+        <a className="button button-primary" href="#application" onClick={() => setOpen(false)}>
+          {t("cta.partnerWithUs")}
+        </a>
       </nav>
     </header>
   );

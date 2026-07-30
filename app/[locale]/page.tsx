@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type {Metadata} from "next";
-import {Check, ExternalLink} from "lucide-react";
+import {Check} from "lucide-react";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {ModuleGrid} from "@/components/ModuleGrid";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
+import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {partnerModules} from "@/content/site";
 
 export const metadata: Metadata = {
@@ -34,8 +35,8 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <h1 className="display">{t("hero.title")}</h1>
             <p className="lead">{t("hero.body")}</p>
             <div className="button-row">
-              <ButtonLink href="/partnerships/apply" size="large">{t("cta.heroPrimary")}</ButtonLink>
-              <ButtonLink href="/platform" variant="secondary" size="large">{t("cta.explorePlatform")}</ButtonLink>
+              <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
+              <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
             </div>
           </div>
           <div className="home-hero-art">
@@ -47,27 +48,27 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="platform">
         <div className="container">
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
-          <ModuleGrid items={modules} />
+          <ModuleGrid items={modules.slice(0, 4)} />
           <div className="section-action">
-            <ButtonLink href="/platform" variant="secondary">{t("cta.explorePlatform")}</ButtonLink>
+            <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
           </div>
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section section-alt" id="systems">
         <div className="container">
           <SectionHeading eyebrow={t("systems.label")} title={t("systems.title")} />
           <ClinicalSystems compact />
           <div className="section-action">
-            <ButtonLink href="/clinical-systems" variant="secondary">{t("cta.viewSystems")}</ButtonLink>
+            <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
           </div>
         </div>
       </section>
 
-      <section className="section model-clinic-section">
+      <section className="section model-clinic-section" id="proof">
         <div className="container model-clinic-grid">
           <div className="model-clinic-copy">
             <span className="eyebrow">{t("implementation.label")}</span>
@@ -78,7 +79,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               <span>{t("implementation.poweredBy")}</span>
             </div>
             <div className="button-row">
-              <ButtonLink href="/network/alpstein-clinic" variant="secondary">{t("implementation.cta")}</ButtonLink>
+              <ButtonLink href="#application" variant="secondary">{t("implementation.cta")}</ButtonLink>
             </div>
           </div>
           <div className="model-gallery">
@@ -89,7 +90,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </section>
 
-      <section className="section news-teaser">
+      <section className="section news-teaser" id="news">
         <div className="container news-card card">
           <div className="news-copy">
             <span className="eyebrow">{t("news.label")}</span>
@@ -97,13 +98,13 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <h2 className="section-title">{t("news.title")}</h2>
             <p>{t("news.body")}</p>
             <p className="news-note">{t("news.note")}</p>
-            <ButtonLink href="/company/news" variant="secondary">{t("common.learnMore")}</ButtonLink>
+            <ButtonLink href="#application" variant="secondary">{t("news.cta")}</ButtonLink>
           </div>
           <Image className="news-image" src="/images/sheba-medical-center-campus.jpg" alt="Sheba Medical Center campus" width={900} height={600} />
         </div>
       </section>
 
-      <section className="section section-soft">
+      <section className="section section-soft" id="leadership">
         <div className="container leadership-teaser">
           <div>
             <SectionHeading eyebrow={t("leadership.label")} title={t("leadership.title")} intro={t("leadership.body")} />
@@ -113,7 +114,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               ))}
             </div>
             <div className="button-row">
-              <ButtonLink href="/company/leadership" variant="secondary">{t("cta.learnEducation")}</ButtonLink>
+              <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
             </div>
           </div>
           <div className="leadership-portrait">
@@ -123,17 +124,15 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </section>
 
-      <section className="section final-cta">
-        <div className="container final-cta-inner">
-          <span className="eyebrow">{t("form.label")}</span>
-          <h2 className="section-title">{t("form.title")}</h2>
-          <p className="lead">{t("form.body")}</p>
-          <div className="button-row">
-            <ButtonLink href="/partnerships/apply" size="large">{t("cta.requestInfo")}</ButtonLink>
-            <a className="button button-secondary button-lg" href="mailto:info@cell-education.com">
-              {t("cta.bookCall")} <ExternalLink size={16} />
-            </a>
+      <section className="section application-section" id="application">
+        <div className="container application-onepager">
+          <div className="application-intro">
+            <span className="eyebrow">{t("form.label")}</span>
+            <h2 className="section-title">{t("form.title")}</h2>
+            <p className="lead">{t("form.body")}</p>
+            <p>{t("form.note")}</p>
           </div>
+          <PartnerApplicationForm />
         </div>
       </section>
     </>

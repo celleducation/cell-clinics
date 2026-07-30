@@ -4,7 +4,6 @@ import {notFound} from "next/navigation";
 import {routing} from "@/i18n/routing";
 import {SiteFooter} from "@/components/SiteFooter";
 import {SiteHeader} from "@/components/SiteHeader";
-import {LegacyHashRedirect} from "@/components/LegacyHashRedirect";
 import {LocaleDocumentLanguage} from "@/components/LocaleDocumentLanguage";
 
 export function generateStaticParams() {
@@ -28,7 +27,6 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <LocaleDocumentLanguage locale={locale} />
       <SiteHeader />
-      <LegacyHashRedirect />
       <main>{children}</main>
       <SiteFooter />
     </NextIntlClientProvider>
