@@ -10,12 +10,48 @@ declare global {
   }
 }
 
+type SubmissionResult = {
+  activationRequired?: boolean;
+  message?: string;
+  success?: boolean | string;
+};
+
 export function PartnerApplicationForm() {
   const t = useTranslations();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "activation" | "error">("idle");
   const [emailFallback, setEmailFallback] = useState("mailto:info@cell-education.com");
   const [turnstileToken, setTurnstileToken] = useState("");
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  async function submitViaFormSubmit(data: Record<string, string>) {
+    const response = await fetch("https://formsubmit.co/ajax/info@cell-education.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        "Clinic Name": data.clinicName,
+        Website: data.website || "—",
+        Country: data.country,
+        "Primary Contact": data.primaryContact,
+        Email: data.email,
+        Phone: data.phone || "—",
+        Profession: data.profession,
+        "Clinic Type": data.clinicType,
+        Notes: data.notes || "—",
+        "Submission Date": new Date().toISOString(),
+        _subject: "New Cell Clinics Partner Application",
+        _replyto: data.email,
+        _template: "table",
+        _captcha: "false"
+      })
+    });
+    const result = await response.json().catch(() => ({})) as SubmissionResult;
+    const failed = !response.ok || result.success === false || result.success === "false";
+    if (failed) throw new Error("FormSubmit delivery failed");
+    return result;
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -50,8 +86,17 @@ export function PartnerApplicationForm() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
       });
-      const result = await response.json().catch(() => ({})) as {activationRequired?: boolean};
-      if (!response.ok) throw new Error();
+      const result = await response.json().catch(() => ({})) as SubmissionResult;
+      if (!response.ok) {
+        const fallbackResult = await submitViaFormSubmit(data);
+        if (/activat|confirm/i.test(fallbackResult.message || "")) {
+          setStatus("activation");
+          return;
+        }
+        setStatus("success");
+        form.reset();
+        return;
+      }
       if (result.activationRequired) {
         setStatus("activation");
         return;
