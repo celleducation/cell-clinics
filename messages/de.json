@@ -146,6 +146,22 @@
     "cardLabel": "Wissenschaftliche & medizinische Leitung",
     "cardBody": "Ärztliche Weiterbildung und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
   },
+  "onboarding": {
+    "label": "Partner-Onboarding",
+    "title": "In 30 Tagen zum Go-live",
+    "body": "Ein klar strukturierter Implementierungsprozess überführt das Cell Clinics Framework in ein einsatzbereites Programm für Ihre Praxis.",
+    "step1Title": "Kick-off",
+    "step1Body": "Zugänge, Zuständigkeiten und der gemeinsame Zeitplan werden festgelegt.",
+    "step2Title": "Praxisvorbereitung",
+    "step2Body": "Team, Materialien und digitaler Auftritt werden vorbereitet.",
+    "step3Title": "Klinische Implementierung",
+    "step3Body": "Schulung, Diagnostik und klinische Abläufe werden eingeführt.",
+    "step4Title": "Go-live",
+    "step4Body": "Ihre Praxis startet und wird in das Cell Clinics Netzwerk aufgenommen.",
+    "support": "Nach dem Start: fortlaufende Schulungen, wissenschaftliche Updates und Implementierungsbegleitung.",
+    "days": "Tage bis zum Go-live",
+    "mockupLabel": "Cell Clinics Partner Playbook"
+  },
   "form": {
     "label": "Partnerschaftsanfrage",
     "title": "Partnerklinik werden",

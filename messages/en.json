@@ -146,6 +146,22 @@
     "cardLabel": "Scientific & Educational Authority",
     "cardBody": "Medical education and clinical framework development for cellular medicine implementation."
   },
+  "onboarding": {
+    "label": "Partner Onboarding",
+    "title": "From Partnership To Go-Live In 30 Days",
+    "body": "A structured implementation pathway turns the Cell Clinics framework into an operational program inside your practice.",
+    "step1Title": "Kick-Off",
+    "step1Body": "Access, responsibilities and the implementation timeline are established.",
+    "step2Title": "Practice Setup",
+    "step2Body": "Your team, materials and digital presence are prepared.",
+    "step3Title": "Clinical Implementation",
+    "step3Body": "Training, diagnostics and clinical workflows are introduced.",
+    "step4Title": "Go-Live",
+    "step4Body": "Your clinic launches and joins the Cell Clinics network.",
+    "support": "After launch: ongoing training, scientific updates and implementation support.",
+    "days": "Days to go-live",
+    "mockupLabel": "Cell Clinics Partner Playbook"
+  },
   "form": {
     "label": "Partner Application",
     "title": "Become A Partner Clinic",

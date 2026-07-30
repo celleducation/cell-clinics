@@ -124,6 +124,61 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </section>
 
+      <section className="section onboarding-section" id="onboarding">
+        <div className="container onboarding-grid">
+          <div className="onboarding-copy">
+            <span className="eyebrow">{t("onboarding.label")}</span>
+            <h2 className="section-title">{t("onboarding.title")}</h2>
+            <p className="lead">{t("onboarding.body")}</p>
+            <div className="onboarding-steps">
+              {[1, 2, 3, 4].map((step) => (
+                <div className="onboarding-step" key={step}>
+                  <span>{String(step).padStart(2, "0")}</span>
+                  <div>
+                    <strong>{t(`onboarding.step${step}Title`)}</strong>
+                    <p>{t(`onboarding.step${step}Body`)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="onboarding-support">
+              <Check size={18} />
+              <span>{t("onboarding.support")}</span>
+            </div>
+            <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
+          </div>
+
+          <div className="playbook-mockup" aria-label={t("onboarding.mockupLabel")}>
+            <div className="playbook-glow" />
+            <Image
+              className="playbook-sheet playbook-sheet-back"
+              src="/images/partner-playbook/partner-playbook-checklist.png"
+              alt=""
+              width={1242}
+              height={1755}
+            />
+            <Image
+              className="playbook-sheet playbook-sheet-middle"
+              src="/images/partner-playbook/partner-playbook-week-one.png"
+              alt=""
+              width={1242}
+              height={1755}
+            />
+            <Image
+              className="playbook-sheet playbook-sheet-front"
+              src="/images/partner-playbook/partner-playbook-cover.png"
+              alt={t("onboarding.mockupLabel")}
+              width={1242}
+              height={1755}
+            />
+            <div className="playbook-badge">
+              <span>30</span>
+              <small>{t("onboarding.days")}</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section application-section" id="application">
         <div className="container application-onepager">
           <div className="application-intro">
