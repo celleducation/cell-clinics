@@ -1046,46 +1046,76 @@ textarea.input {
 .onboarding-steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
   margin: 34px 0 22px;
 }
 
 .onboarding-step {
-  min-height: 148px;
+  position: relative;
+  min-height: 164px;
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 32px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
   align-content: start;
-  gap: 14px;
-  padding: 20px;
-  background: rgba(255, 255, 255, .82);
-  border: 1px solid rgba(190, 210, 235, .72);
-  border-radius: 16px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95);
+  column-gap: 13px;
+  row-gap: 18px;
+  padding: 23px 24px 24px;
+  background: rgba(255, 255, 255, .9);
+  border: 1px solid rgba(190, 210, 235, .64);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .98),
+    0 12px 34px rgba(16, 44, 78, .045);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.onboarding-step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(100, 194, 239, .52);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .98),
+    0 16px 38px rgba(16, 44, 78, .07);
 }
 
 .onboarding-step > span {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  color: var(--navy);
-  background: #eef8fd;
-  border: 1px solid rgba(100, 194, 239, .38);
+  width: 30px;
+  height: 30px;
+  color: #187eaf;
+  background: rgba(238, 248, 253, .78);
+  border: 1px solid rgba(100, 194, 239, .32);
   border-radius: 50%;
-  font-size: .75rem;
-  font-weight: 800;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.onboarding-step > div {
+  display: contents;
 }
 
 .onboarding-step strong {
   display: block;
-  margin: 6px 0 8px;
+  align-self: center;
+  margin: 0;
   color: var(--navy);
+  font-size: 1rem;
+  line-height: 1.28;
+  font-weight: 650;
+  letter-spacing: 0;
 }
 
 .onboarding-step p {
+  grid-column: 1 / -1;
+  align-self: start;
   margin: 0;
-  font-size: .9rem;
-  line-height: 1.5;
+  color: #667181;
+  font-size: .86rem;
+  line-height: 1.55;
+  max-width: 34ch;
 }
 
 .onboarding-support {
@@ -1695,6 +1725,11 @@ textarea.input {
 
   .onboarding-step {
     min-height: auto;
+    padding: 21px 22px 22px;
+  }
+
+  .onboarding-step p {
+    max-width: none;
   }
 
   .playbook-mockup {
