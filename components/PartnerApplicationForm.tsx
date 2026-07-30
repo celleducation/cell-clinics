@@ -12,7 +12,7 @@ declare global {
 
 export function PartnerApplicationForm() {
   const t = useTranslations();
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "activation" | "error">("idle");
   const [emailFallback, setEmailFallback] = useState("mailto:info@cell-education.com");
   const [turnstileToken, setTurnstileToken] = useState("");
   const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -50,7 +50,12 @@ export function PartnerApplicationForm() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
       });
+      const result = await response.json().catch(() => ({})) as {activationRequired?: boolean};
       if (!response.ok) throw new Error();
+      if (result.activationRequired) {
+        setStatus("activation");
+        return;
+      }
       setStatus("success");
       form.reset();
     } catch {
@@ -60,6 +65,10 @@ export function PartnerApplicationForm() {
 
   if (status === "success") {
     return <div className="form-success card" role="status"><h2>{t("form.success")}</h2></div>;
+  }
+
+  if (status === "activation") {
+    return <div className="form-success card" role="status"><h2>{t("form.activationRequired")}</h2></div>;
   }
 
   return (
