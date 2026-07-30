@@ -26,7 +26,10 @@ export function PartnerApplicationForm() {
     if (website && !/^https?:\/\//i.test(website)) {
       formData.set("website", `https://${website}`);
     }
-    const data = {...Object.fromEntries(formData.entries()), turnstileToken};
+    const data: Record<string, string> = Object.fromEntries(
+      Array.from(formData.entries(), ([key, value]) => [key, String(value)])
+    );
+    data.turnstileToken = turnstileToken;
     const emailBody = [
       `Clinic Name: ${data.clinicName || ""}`,
       `Website: ${data.website || ""}`,
