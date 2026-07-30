@@ -76,48 +76,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({error: "Email delivery failed"}, {status: 502});
     }
   } else {
-    const formSubmitResponse = await fetch(
-      process.env.FORMSUBMIT_ENDPOINT || "https://formsubmit.co/ajax/info@cell-education.com",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          "Clinic Name": data.clinicName,
-          Website: data.website || "—",
-          Country: data.country,
-          "Primary Contact": data.primaryContact,
-          Email: data.email,
-          Phone: data.phone || "—",
-          Profession: data.profession,
-          "Clinic Type": data.clinicType,
-          Notes: data.notes || "—",
-          "Submission Date": new Date().toISOString(),
-          _subject: "New Cell Clinics Partner Application",
-          _replyto: data.email,
-          _template: "table",
-          _captcha: "false"
-        })
-      }
+    return NextResponse.json(
+      {error: "Email service not configured", fallback: "formsubmit"},
+      {status: 503}
     );
-
-    const formSubmitResult = await formSubmitResponse
-      .json()
-      .catch(() => ({})) as {success?: boolean | string; message?: string};
-    const formSubmitFailed =
-      !formSubmitResponse.ok ||
-      formSubmitResult.success === false ||
-      formSubmitResult.success === "false";
-
-    if (formSubmitFailed) {
-      console.error("FormSubmit delivery failed", formSubmitResult);
-      return NextResponse.json({error: "Email delivery failed"}, {status: 502});
-    }
-
-    const activationRequired = /activat|confirm/i.test(formSubmitResult.message || "");
-    return NextResponse.json({ok: true, activationRequired});
   }
 
   return NextResponse.json({ok: true});
