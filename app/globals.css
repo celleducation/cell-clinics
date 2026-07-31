@@ -743,13 +743,48 @@ textarea.input {
 }
 
 .home-hero {
-  padding: 88px 0 40px;
+  position: relative;
+  padding: 76px 0 34px;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(127, 211, 240, .18), transparent 30%),
+    radial-gradient(circle at 68% 82%, rgba(214, 225, 242, .32), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%);
+  border-bottom: 1px solid rgba(210, 224, 236, .72);
+}
+
+.home-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(127, 211, 240, .75), transparent);
+  content: "";
+}
+
+.home-hero-grid {
+  min-height: 540px;
 }
 
 .home-hero-grid > :first-child,
 .page-hero-grid > :first-child {
   grid-column: span 7;
+}
+
+.home-hero-grid > :first-child {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding-right: 24px;
+}
+
+.home-hero .display {
+  max-width: 720px;
+}
+
+.home-hero .lead {
+  max-width: 61ch;
 }
 
 .home-hero-art,
@@ -761,12 +796,42 @@ textarea.input {
   justify-content: center;
 }
 
+.home-hero-art {
+  position: relative;
+  isolation: isolate;
+  padding: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .78), rgba(238, 247, 253, .44));
+  border: 1px solid rgba(255, 255, 255, .94);
+  border-radius: 30px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 28px 70px rgba(22, 38, 74, .11),
+    0 0 0 1px rgba(190, 210, 235, .34);
+  -webkit-backdrop-filter: blur(24px) saturate(108%);
+  backdrop-filter: blur(24px) saturate(108%);
+}
+
+.home-hero-art::before {
+  position: absolute;
+  z-index: -1;
+  inset: 10%;
+  border-radius: 50%;
+  background: rgba(127, 211, 240, .2);
+  filter: blur(56px);
+  content: "";
+}
+
 .home-hero-art img,
 .hero-art img {
   width: 100%;
   height: 100%;
   max-height: 480px;
   object-fit: contain;
+}
+
+.home-hero-art img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 22px 26px rgba(53, 96, 139, .12));
 }
 
 .page-hero-grid-simple > :first-child {
@@ -776,8 +841,15 @@ textarea.input {
 .trust-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 32px;
+  gap: 0;
+  margin-top: 26px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .74);
+  border: 1px solid rgba(198, 216, 232, .72);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 white, 0 16px 36px rgba(22, 38, 74, .055);
+  -webkit-backdrop-filter: blur(18px) saturate(108%);
+  backdrop-filter: blur(18px) saturate(108%);
 }
 
 .trust-item {
@@ -787,13 +859,16 @@ textarea.input {
   gap: 12px;
   padding: 16px 18px;
   color: var(--navy);
-  background: linear-gradient(145deg, rgba(255, 255, 255, .94), rgba(246, 251, 254, .72));
-  border: 1px solid rgba(198, 216, 232, .68);
-  border-radius: 14px;
-  box-shadow: inset 0 1px 0 white, 0 10px 28px rgba(22, 38, 74, .045);
-  -webkit-backdrop-filter: blur(16px) saturate(110%);
-  backdrop-filter: blur(16px) saturate(110%);
+  background: transparent;
+  border: 0;
+  border-right: 1px solid rgba(210, 224, 236, .82);
+  border-radius: 0;
+  box-shadow: none;
   font-weight: 600;
+}
+
+.trust-item:last-child {
+  border-right: 0;
 }
 
 .trust-item svg {
@@ -804,24 +879,62 @@ textarea.input {
 .module-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 16px;
   margin-top: 44px;
 }
 
 .module-card {
-  min-height: 250px;
-  padding: 28px;
+  position: relative;
+  min-height: 238px;
+  overflow: hidden;
+  padding: 30px 26px 28px;
+  border-radius: 18px;
+}
+
+.module-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sky), rgba(47, 155, 201, .28), transparent 82%);
+  content: "";
+}
+
+.module-card::after {
+  position: absolute;
+  top: -56px;
+  right: -64px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(127, 211, 240, .12);
+  filter: blur(4px);
+  pointer-events: none;
+  content: "";
+}
+
+.module-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .module-card > svg {
-  margin: 34px 0 22px;
+  width: 46px;
+  height: 46px;
+  margin: 36px 0 24px;
+  padding: 11px;
   color: var(--sky-ink);
+  background: rgba(237, 247, 252, .88);
+  border: 1px solid rgba(127, 211, 240, .3);
+  border-radius: 12px;
 }
 
 .module-card h2,
 .module-card h3 {
   margin-bottom: 10px;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  line-height: 1.24;
 }
 
 .module-card p {
@@ -836,6 +949,12 @@ textarea.input {
   letter-spacing: .12em;
 }
 
+.module-number {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
 .section-action {
   margin-top: 32px;
 }
@@ -844,20 +963,41 @@ textarea.input {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+#platform {
+  position: relative;
+  background: #fff;
+}
+
+#platform .section-heading {
+  max-width: 860px;
+}
+
 .systems-list {
   display: grid;
-  gap: 24px;
+  gap: 18px;
 }
 
 .system-row {
-  min-height: 390px;
+  min-height: 330px;
   display: grid;
   grid-template-columns: 5fr 4fr;
   overflow: hidden;
   background: linear-gradient(145deg, rgba(255, 255, 255, .97), rgba(247, 251, 254, .84));
   border: 1px solid rgba(198, 216, 232, .7);
-  border-radius: 18px;
+  border-radius: 22px;
   box-shadow: inset 0 1px 0 white, 0 22px 58px rgba(22, 38, 74, .065);
+}
+
+.system-row:nth-child(2) .system-image {
+  background: linear-gradient(145deg, #f6f8fc, #eef5fa);
+}
+
+.system-row:nth-child(3) .system-image {
+  background: linear-gradient(145deg, #fbfaf7, #f1f7fa);
+}
+
+.system-row:nth-child(4) .system-image {
+  background: linear-gradient(145deg, #f7f8fc, #eef8fb);
 }
 
 .system-row-reverse {
@@ -873,13 +1013,13 @@ textarea.input {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: clamp(32px, 5vw, 64px);
+  padding: clamp(32px, 4.2vw, 54px);
 }
 
 .system-copy h3 {
   max-width: 500px;
   margin: 18px 0 14px;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.65rem, 2.7vw, 2.25rem);
   line-height: 1.08;
 }
 
@@ -888,15 +1028,25 @@ textarea.input {
 }
 
 .system-image {
+  position: relative;
   min-height: 320px;
-  background: #f5f9fd;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f2f8fc, #edf5fb);
+  border-left: 1px solid rgba(198, 216, 232, .58);
 }
 
 .system-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 30px;
+  padding: 18px;
+  transform: scale(1.05);
+  filter: drop-shadow(0 18px 26px rgba(38, 93, 137, .09));
+}
+
+.system-row-reverse .system-image {
+  border-right: 1px solid rgba(198, 216, 232, .58);
+  border-left: 0;
 }
 
 .model-clinic-copy,
@@ -984,7 +1134,7 @@ textarea.input {
 .credential-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 24px;
+  gap: 12px;
   margin: 30px 0;
 }
 
@@ -992,7 +1142,13 @@ textarea.input {
   display: flex;
   gap: 10px;
   align-items: center;
+  min-height: 58px;
+  padding: 14px 16px;
   color: var(--navy);
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(198, 216, 232, .72);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 white;
   font-weight: 600;
 }
 
@@ -1668,6 +1824,27 @@ textarea.input {
     min-height: 300px;
   }
 
+  .home-hero-grid {
+    min-height: auto;
+  }
+
+  .home-hero-grid > :first-child {
+    max-width: 780px;
+    padding-right: 0;
+  }
+
+  .trust-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trust-item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(210, 224, 236, .82);
+  }
+
   .module-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1706,6 +1883,11 @@ textarea.input {
     padding-top: 48px;
   }
 
+  .home-hero-art {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
   .page-hero-grid,
   .home-hero-grid,
   .model-clinic-grid,
@@ -1731,6 +1913,16 @@ textarea.input {
   .clinic-contact,
   .clinic-focus-list {
     grid-template-columns: 1fr;
+  }
+
+  .trust-item,
+  .trust-item:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(210, 224, 236, .82);
+  }
+
+  .trust-item:last-child {
+    border-bottom: 0;
   }
 
   .onboarding-steps {
@@ -1790,6 +1982,9 @@ textarea.input {
 
   .system-image {
     min-height: 240px;
+    border-top: 1px solid rgba(198, 216, 232, .58);
+    border-right: 0;
+    border-left: 0;
   }
 
   .model-gallery {
