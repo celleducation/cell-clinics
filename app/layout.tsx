@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "A physician-guided implementation platform for clinics building cellular medicine programs.",
   icons: {
-    icon: "/images/faviconcellclinic.svg"
+    icon: "/images/faviconclinics.png"
   }
 };
 
