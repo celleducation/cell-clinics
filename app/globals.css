@@ -1052,6 +1052,9 @@ textarea.input {
 }
 
 .patient-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: clamp(40px, 5vw, 64px);
   border: 1px solid var(--glass-border);
   border-radius: 30px;
@@ -1060,10 +1063,22 @@ textarea.input {
   text-align: center;
 }
 
+.patient-cta-card .section-title {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
 .patient-cta-card .lead {
   max-width: 690px;
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
+}
+
+.patient-cta-card > .button {
+  width: fit-content;
+  margin-top: 8px;
 }
 
 .patient-disclaimer {
