@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import {Menu, X} from "lucide-react";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import {useState} from "react";
 import {ButtonLink} from "./ui/ButtonLink";
 import {LocaleSwitcher} from "./LocaleSwitcher";
 import {Link} from "@/i18n/navigation";
+import {usePathname} from "next/navigation";
 
 const navItems = [
   {key: "platform", href: "#platform"},
@@ -16,7 +17,23 @@ const navItems = [
 
 export function SiteHeader() {
   const t = useTranslations();
+  const locale = useLocale();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const patientSlug = locale === "de" ? "patienten" : locale === "es" ? "pacientes" : "patients";
+  const patientHref = `/${locale}/${patientSlug}`;
+  const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
+  const patientNavItems = [
+    {label: t("patient.nav.therapy"), href: "#therapy"},
+    {label: t("patient.nav.process"), href: "#process"},
+    {label: t("patient.nav.faq"), href: "#faq"}
+  ];
+  const activeNavItems = isPatientPage
+    ? patientNavItems
+    : navItems.map((item) => ({
+        label: item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`),
+        href: item.href
+      }));
 
   return (
     <header className="site-header">
@@ -25,15 +42,21 @@ export function SiteHeader() {
           <Image src="/cell-clinics-logo.svg" alt="Cell Clinics" width={875} height={153} priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <a className="nav-link" key={item.key} href={item.href}>
-              {item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`)}
+          {activeNavItems.map((item) => (
+            <a className="nav-link" key={item.href} href={item.href}>
+              {item.label}
             </a>
           ))}
         </nav>
         <div className="header-actions">
+          <div className="audience-switcher" aria-label={t("audience.label")}>
+            <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
+            <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
+          </div>
           <LocaleSwitcher />
-          <ButtonLink href="#application">{t("cta.partnerWithUs")}</ButtonLink>
+          <ButtonLink href={isPatientPage ? "#find-clinic" : "#application"}>
+            {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
+          </ButtonLink>
           <button
             className="mobile-menu-button"
             type="button"
@@ -47,19 +70,23 @@ export function SiteHeader() {
         </div>
       </div>
       <nav id="mobile-navigation" className="mobile-panel" hidden={!open} aria-label="Mobile navigation">
-        {navItems.map((item) => (
+        {activeNavItems.map((item) => (
           <a
             className="nav-link"
-            key={item.key}
+            key={item.href}
             href={item.href}
             onClick={() => setOpen(false)}
           >
-            {item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`)}
+            {item.label}
           </a>
         ))}
+        <div className="audience-switcher mobile-audience" aria-label={t("audience.label")}>
+          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
+          <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
+        </div>
         <LocaleSwitcher />
-        <a className="button button-primary" href="#application" onClick={() => setOpen(false)}>
-          {t("cta.partnerWithUs")}
+        <a className="button button-primary" href={isPatientPage ? "#find-clinic" : "#application"} onClick={() => setOpen(false)}>
+          {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
         </a>
       </nav>
     </header>

@@ -283,5 +283,39 @@
     "success": "Thank you for your application. Our team will review your information and contact you within 48 hours.",
     "error": "Your inquiry could not be sent automatically.",
     "emailFallback": "Send the completed inquiry by email"
+  },
+  "audience": {"label": "Choose audience", "patients": "For patients", "professionals": "For physicians & clinics"},
+  "patient": {
+    "meta": {"title": "Bionic Cell Therapy for Patients", "description": "Cell Clinics are physician-led practices and clinics providing Bionic Cell Therapy according to shared medical standards and each patient's individual needs."},
+    "nav": {"therapy": "The therapy", "process": "How it works", "faq": "FAQ"},
+    "hero": {"label": "For patients", "title": "Bionic Cell Therapy. Physician-guided, close to home.", "body": "Cell Clinics are medical practices and clinics offering Bionic Cell Therapy according to shared medical standards — individually aligned with your health, diagnostic findings and goals.", "note": "Personal, diagnostics-based and physician-led"},
+    "therapy": {
+      "label": "Bionic Cell Therapy", "title": "Support begins where health starts.", "intro": "Every function in your body begins at the cellular level — energy, regeneration and defence. Bionic Cell Therapy starts there. Modern diagnostics inform an individual therapy concept designed to support cellular function, from micronutrient infusions to complementary therapeutic approaches. Always physician-led and tailored to you.",
+      "card1Title": "Energy & fatigue", "card1Body": "For persistent tiredness and fatigue, targeted support of cellular metabolism may form one part of your treatment.",
+      "card2Title": "Recovery & regeneration", "card2Body": "After physical strain, illness or surgery, tailored concepts may support the body's own recovery processes.",
+      "card3Title": "Prevention & longevity", "card3Body": "Supporting health before symptoms arise through diagnostics and preventive care at the cellular level.",
+      "card4Title": "Complementary therapy", "card4Body": "As a complement to existing treatment, coordinated with the physicians already involved in your care."
+    },
+    "process": {
+      "label": "Your treatment pathway", "title": "How do I access Bionic Cell Therapy?", "intro": "Four clear steps from your first inquiry to ongoing support — all at a Cell Clinic near you.",
+      "step1Title": "Find a Cell Clinic", "step1Body": "Choose a partner practice from our network. Every Cell Clinic is trained and supported through the same medical programme, so you know what to expect.",
+      "step2Title": "Initial consultation & medical history", "step2Body": "Your physician takes time to understand your medical history, concerns and goals. Together, these create a clear picture of your individual starting point.",
+      "step3Title": "Diagnostics & an individual therapy concept", "step3Body": "Modern laboratory and cellular diagnostics help identify where support may be appropriate. Your Cell Clinic then develops a concept suited to you — not a standard programme.",
+      "step4Title": "Treatment & ongoing care", "step4Body": "Treatment takes place directly at your Cell Clinic under medical supervision. Follow-up assessments monitor progress and allow the concept to be adjusted over time."
+    },
+    "finder": {"label": "Find a Cell Clinic", "title": "Partner practices near you", "intro": "Our network continues to grow. Every Cell Clinic is physician-led and participates in a shared medical programme.", "tag": "Partner practice in the network", "clinicBody": "A holistic clinic for biological medicine and Bionic Cell Therapy — one of the first Cell Clinics in the network and a reference for our care model.", "profile": "View practice profile", "formTitle": "No Cell Clinic near you?", "formBody": "Tell us your region. We will contact you when a partner practice opens nearby and can arrange an initial consultation on request."},
+    "form": {"name": "Name", "email": "Email", "location": "Postcode / city", "interest": "Area of interest", "choose": "Please select", "energy": "Energy & fatigue", "recovery": "Recovery & regeneration", "prevention": "Prevention & longevity", "supportive": "Complementary therapy", "consent": "I agree that Cell Clinics may use my information to respond to this inquiry.", "submit": "Send inquiry", "sending": "Sending …", "privacy": "Your details will only be used to respond to your inquiry.", "success": "Thank you. We have received your inquiry and will contact you personally.", "error": "Your inquiry could not be sent automatically. Please email"},
+    "trust": {"label": "Trust", "title": "Medicine with a system — not a trend.", "item1Title": "Physician-led", "item1Body": "Every Cell Clinic is a medical practice or clinic. Diagnostics and therapy remain exclusively in medical hands.", "item2Title": "Scientific leadership", "item2Body": "The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst.", "item3Title": "A trained network", "item3Body": "All partner practices complete a structured education and implementation programme through Cell Education.", "item4Title": "International collaboration", "item4Body": "Scientific exchange with leading institutions, including Sheba Medical Center."},
+    "faq": {
+      "label": "Frequently asked questions", "title": "What you may want to know before your first consultation.", "intro": "Clear answers about physician-guided treatment at a Cell Clinic.",
+      "q1": "Who may be suitable for Bionic Cell Therapy?", "a1": "It may be considered by adults who want to support their health at the cellular level, whether for persistent fatigue, recovery or preventive care. Your physician will always decide whether and which treatment is appropriate after reviewing your medical history and diagnostic findings.",
+      "q2": "Is the treatment safe?", "a2": "Every treatment takes place in a physician-led practice or clinic and follows a shared medical programme. Before treatment, your physician will discuss the process, potential benefits and possible risks with you personally.",
+      "q3": "What does treatment cost, and is it covered by insurance?", "a3": "Costs depend on your individual therapy concept and are explained transparently before treatment begins. These services are generally self-funded; private insurers may reimburse part of the cost depending on your policy. Your Cell Clinic can advise you during the initial consultation.",
+      "q4": "How long does treatment take?", "a4": "That depends on your individual concept. A single infusion commonly takes less than an hour, while a complete programme may extend over several weeks with regular appointments and follow-up assessments.",
+      "q5": "How is a Cell Clinic different from a conventional practice?", "a5": "Cell Clinics belong to a network working within a shared medical programme: consistent diagnostic standards, aligned therapy protocols and ongoing physician education through Cell Education. This provides the same structured approach at every location."
+    },
+    "cta": {"label": "Your next step", "title": "Ready to take the first step?", "body": "Find a Cell Clinic near you and arrange a personal, no-obligation initial consultation.", "findClinic": "Find a Cell Clinic", "findNearby": "Find a Cell Clinic near you", "howItWorks": "How does treatment work?"},
+    "footerDescription": "A physician-led network for individually tailored Bionic Cell Therapy.",
+    "footerDisclaimer": "Please note: The content on this page is for general information only and does not replace medical advice, diagnosis or treatment. Only your treating physician can decide whether a therapy is suitable for you. Individual treatment outcomes may vary."
   }
 }
