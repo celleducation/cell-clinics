@@ -28,7 +28,6 @@ export function SiteFooter() {
               <a href="#therapy">{t("patient.nav.therapy")}</a>
               <a href="#process">{t("patient.nav.process")}</a>
               <a href="#find-clinic">{t("patient.cta.findClinic")}</a>
-              <a href="#faq">{t("patient.nav.faq")}</a>
             </> : <>
               <a href="#platform">{t("nav.platform")}</a>
               <a href="#systems">{t("nav.clinicalSystems")}</a>

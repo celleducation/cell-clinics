@@ -117,20 +117,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
         </div>
       </section>
 
-      <section className="section patient-faq" id="faq">
-        <div className="container patient-faq-grid">
-          <SectionHeading eyebrow={t("faq.label")} title={t("faq.title")} intro={t("faq.intro")} />
-          <div className="faq-list">
-            {[1, 2, 3, 4, 5].map((item) => (
-              <details className="faq-item" key={item}>
-                <summary>{t(`faq.q${item}`)}<span aria-hidden="true">+</span></summary>
-                <p>{t(`faq.a${item}`)}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section patient-final-cta">
         <div className="container patient-cta-card">
           <span className="eyebrow">{t("cta.label")}</span>

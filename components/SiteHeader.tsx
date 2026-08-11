@@ -25,8 +25,7 @@ export function SiteHeader() {
   const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
   const patientNavItems = [
     {label: t("patient.nav.therapy"), href: "#therapy"},
-    {label: t("patient.nav.process"), href: "#process"},
-    {label: t("patient.nav.faq"), href: "#faq"}
+    {label: t("patient.nav.process"), href: "#process"}
   ];
   const activeNavItems = isPatientPage
     ? patientNavItems
