@@ -21,8 +21,6 @@ The production HTML and local `index.html` were byte-identical at audit time.
 3. Central Model Clinic / Alpstein Clinic
    - Partner positioning, four focus areas, "What This Demonstrates",
      "Powered By Clinical Frameworks", five implementation points and three images.
-4. Sheba Medical Center news
-   - Recognition badge, announcement, supporting note, campus image and Sheba logo.
 5. Partner Ecosystem
    - Six modules: Education, Clinical Systems, Diagnostics, Products,
      Global Network and Practice Growth.
@@ -70,8 +68,6 @@ The production HTML and local `index.html` were byte-identical at audit time.
 
 ### News and leadership
 
-- `sheba-medical-center-campus.jpg`
-- `sheba-medical-center-logo.png`
 - `kay-bredehorst.jpg`
 
 ### External media

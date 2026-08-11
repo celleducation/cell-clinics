@@ -69,14 +69,6 @@
     "gallery3": "Regeneration & Wellness",
     "gallery4": "Strategic Location"
   },
-  "news": {
-    "label": "News",
-    "badge": "International Recognition",
-    "title": "Invited To Sheba Medical Center",
-    "body": "Cell Clinics has been invited to Sheba Medical Center, recognized among the world’s top hospitals, to present the Cell Clinics framework and explore opportunities for international clinical collaboration.",
-    "note": "A milestone for the international expansion of physician-guided cellular medicine.",
-    "cta": "Discuss International Partnerships"
-  },
   "ecosystem": {
     "label": "Partner Ecosystem",
     "title": "Everything You Need To Build A Successful Cellular Medicine Practice",
@@ -305,7 +297,7 @@
     },
     "finder": {"label": "Find a Cell Clinic", "title": "Partner practices near you", "intro": "Our network continues to grow. Every Cell Clinic is physician-led and participates in a shared medical programme.", "tag": "Partner practice in the network", "clinicBody": "A holistic clinic for biological medicine and Bionic Cell Therapy — one of the first Cell Clinics in the network and a reference for our care model.", "profile": "View practice profile", "formTitle": "No Cell Clinic near you?", "formBody": "Tell us your region. We will contact you when a partner practice opens nearby and can arrange an initial consultation on request."},
     "form": {"name": "Name", "email": "Email", "location": "Postcode / city", "interest": "Area of interest", "choose": "Please select", "energy": "Energy & fatigue", "recovery": "Recovery & regeneration", "prevention": "Prevention & longevity", "supportive": "Complementary therapy", "consent": "I agree that Cell Clinics may use my information to respond to this inquiry.", "submit": "Send inquiry", "sending": "Sending …", "privacy": "Your details will only be used to respond to your inquiry.", "success": "Thank you. We have received your inquiry and will contact you personally.", "error": "Your inquiry could not be sent automatically. Please email"},
-    "trust": {"label": "Trust", "title": "Medicine with a system — not a trend.", "item1Title": "Physician-led", "item1Body": "Every Cell Clinic is a medical practice or clinic. Diagnostics and therapy remain exclusively in medical hands.", "item2Title": "Scientific leadership", "item2Body": "The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst.", "item3Title": "A trained network", "item3Body": "All partner practices complete a structured education and implementation programme through Cell Education.", "item4Title": "International collaboration", "item4Body": "Scientific exchange with leading institutions, including Sheba Medical Center."},
+    "trust": {"label": "Trust", "title": "Medicine with a system — not a trend.", "item1Title": "Physician-led", "item1Body": "Every Cell Clinic is a medical practice or clinic. Diagnostics and therapy remain exclusively in medical hands.", "item2Title": "Scientific leadership", "item2Body": "The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst.", "item3Title": "A trained network", "item3Body": "All partner practices complete a structured education and implementation programme through Cell Education.", "item4Title": "International collaboration", "item4Body": "Scientific exchange and continuous professional dialogue across the international Cell Clinics network."},
     "faq": {
       "label": "Frequently asked questions", "title": "What you may want to know before your first consultation.", "intro": "Clear answers about physician-guided treatment at a Cell Clinic.",
       "q1": "Who may be suitable for Bionic Cell Therapy?", "a1": "It may be considered by adults who want to support their health at the cellular level, whether for persistent fatigue, recovery or preventive care. Your physician will always decide whether and which treatment is appropriate after reviewing your medical history and diagnostic findings.",

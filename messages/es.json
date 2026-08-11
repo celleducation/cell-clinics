@@ -69,14 +69,6 @@
     "gallery3": "Regeneración y bienestar",
     "gallery4": "Ubicación estratégica"
   },
-  "news": {
-    "label": "Noticias",
-    "badge": "Reconocimiento internacional",
-    "title": "Invitación al Sheba Medical Center",
-    "body": "Cell Clinics ha sido invitado al Sheba Medical Center, reconocido entre los mejores hospitales del mundo, para presentar el marco de Cell Clinics y explorar oportunidades de colaboración clínica internacional.",
-    "note": "Un hito para la expansión internacional de la medicina celular guiada por médicos.",
-    "cta": "Hablar sobre colaboraciones internacionales"
-  },
   "ecosystem": {
     "label": "Ecosistema de socios",
     "title": "Todo lo que necesita para construir una práctica exitosa de medicina celular",
@@ -305,7 +297,7 @@
     },
     "finder": {"label": "Encontrar una Cell Clinic", "title": "Consultas asociadas cerca de usted", "intro": "Nuestra red sigue creciendo. Todas las Cell Clinics están dirigidas por médicos y forman parte de un programa médico común.", "tag": "Consulta asociada de la red", "clinicBody": "Clínica integral de medicina biológica y Terapia Celular Biónica, una de las primeras Cell Clinics de la red y referencia de nuestro modelo asistencial.", "profile": "Ver perfil de la clínica", "formTitle": "¿No hay una Cell Clinic cerca de usted?", "formBody": "Indíquenos su zona. Le avisaremos cuando abra una consulta asociada cercana y, si lo desea, podremos facilitarle una primera orientación."},
     "form": {"name": "Nombre", "email": "Correo electrónico", "location": "Código postal / ciudad", "interest": "Área de interés", "choose": "Seleccione una opción", "energy": "Energía y cansancio", "recovery": "Recuperación y regeneración", "prevention": "Prevención y longevidad", "supportive": "Terapia complementaria", "consent": "Acepto que Cell Clinics utilice mis datos para responder a esta solicitud.", "submit": "Enviar solicitud", "sending": "Enviando …", "privacy": "Sus datos se utilizarán exclusivamente para responder a su solicitud.", "success": "Gracias. Hemos recibido su solicitud y nos pondremos en contacto personalmente.", "error": "No se pudo enviar su solicitud automáticamente. Escríbanos a"},
-    "trust": {"label": "Confianza", "title": "Medicina con método, no una tendencia.", "item1Title": "Dirección médica", "item1Body": "Cada Cell Clinic es una consulta o clínica médica. El diagnóstico y la terapia permanecen exclusivamente en manos de médicos.", "item2Title": "Dirección científica", "item2Body": "El programa médico se desarrolla y actualiza de forma continua bajo la dirección del Dr. Kay Bredehorst.", "item3Title": "Una red formada", "item3Body": "Todas las consultas asociadas completan un programa estructurado de formación e implementación a través de Cell Education.", "item4Title": "Colaboración internacional", "item4Body": "Intercambio científico con instituciones de referencia, entre ellas Sheba Medical Center."},
+    "trust": {"label": "Confianza", "title": "Medicina con método, no una tendencia.", "item1Title": "Dirección médica", "item1Body": "Cada Cell Clinic es una consulta o clínica médica. El diagnóstico y la terapia permanecen exclusivamente en manos de médicos.", "item2Title": "Dirección científica", "item2Body": "El programa médico se desarrolla y actualiza de forma continua bajo la dirección del Dr. Kay Bredehorst.", "item3Title": "Una red formada", "item3Body": "Todas las consultas asociadas completan un programa estructurado de formación e implementación a través de Cell Education.", "item4Title": "Colaboración internacional", "item4Body": "Intercambio científico y diálogo profesional continuo dentro de la red internacional de Cell Clinics."},
     "faq": {
       "label": "Preguntas frecuentes", "title": "Lo que conviene saber antes de la primera consulta.", "intro": "Respuestas claras sobre el tratamiento con acompañamiento médico en una Cell Clinic.",
       "q1": "¿Para quién puede ser adecuada la Terapia Celular Biónica?", "a1": "Puede considerarse en adultos que desean apoyar su salud a nivel celular, ya sea ante cansancio persistente, durante la recuperación o de forma preventiva. Su médico decidirá siempre si existe una opción adecuada tras revisar su historia clínica y sus resultados diagnósticos.",

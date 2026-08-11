@@ -18,7 +18,6 @@ the approved message and factual content remain present.
 | 10 | "What This Demonstrates" and five points | `/[locale]/network/alpstein` | moved | Verbatim approved content. |
 | 11 | "Powered By Clinical Frameworks" | `/[locale]/network/alpstein` | moved | Verbatim approved content. |
 | 12 | Alpstein landscape, recovery and location media | `/[locale]/network/alpstein` | moved | Directory card uses one representative image. |
-| 13 | Sheba Medical Center announcement, note, logo and image | `/[locale]/company/news` | moved | Home receives a compact news teaser. |
 | 14 | Partner Ecosystem introduction | `/[locale]/partnerships` | moved | |
 | 15 | Education module | `/[locale]/partnerships/ecosystem` | moved | |
 | 16 | Clinical Systems module | `/[locale]/partnerships/ecosystem` | moved | |
@@ -52,4 +51,3 @@ the approved message and factual content remain present.
 | 44 | Legacy `/#contact` | `/[locale]/contact` | moved | Client-side hash redirect. |
 | 45 | Statistics | relevant route | needs-review | No approved live figures found; intentionally omitted. |
 | 46 | Clinic doctors | `/[locale]/network/[clinic]` | needs-review | Data structure exists; no approved profiles added. |
-

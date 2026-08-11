@@ -69,14 +69,6 @@
     "gallery3": "Regeneration & Wellness",
     "gallery4": "Strategischer Standort"
   },
-  "news": {
-    "label": "News",
-    "badge": "Internationale Anerkennung",
-    "title": "Einladung ins Sheba Medical Center",
-    "body": "Cell Clinics wurde vom Sheba Medical Center, einem der weltweit führenden Krankenhäuser, eingeladen, das Cell Clinics Framework vorzustellen und Möglichkeiten für eine internationale klinische Zusammenarbeit auszuloten.",
-    "note": "Ein Meilenstein für die internationale Expansion ärztlich geführter zellulärer Medizin.",
-    "cta": "Internationale Partnerschaften besprechen"
-  },
   "ecosystem": {
     "label": "Partner-Ökosystem",
     "title": "Alles, was Sie für eine erfolgreiche zellmedizinische Praxis brauchen",
@@ -333,7 +325,7 @@
       "item1Title": "Ärztlich geführt", "item1Body": "Jede Cell Clinic ist eine Arztpraxis oder Klinik. Diagnostik und Therapie liegen ausschließlich in ärztlicher Hand.",
       "item2Title": "Wissenschaftliche Leitung", "item2Body": "Das medizinische Programm wird unter der Leitung von Dr. Kay Bredehorst entwickelt und laufend aktualisiert.",
       "item3Title": "Geschultes Netzwerk", "item3Body": "Alle Partnerpraxen durchlaufen ein strukturiertes Ausbildungs- und Implementierungsprogramm der Cell Education.",
-      "item4Title": "Internationale Zusammenarbeit", "item4Body": "Wissenschaftlicher Austausch mit führenden Einrichtungen – unter anderem dem Sheba Medical Center."
+      "item4Title": "Internationale Zusammenarbeit", "item4Body": "Wissenschaftlicher Austausch und kontinuierlicher fachlicher Dialog im internationalen Cell Clinics Netzwerk."
     },
     "faq": {
       "label": "Häufige Fragen", "title": "Was Sie vor dem ersten Gespräch wissen möchten.", "intro": "Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic.",

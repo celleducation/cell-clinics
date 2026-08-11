@@ -90,20 +90,6 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </section>
 
-      <section className="section news-teaser" id="news">
-        <div className="container news-card card">
-          <div className="news-copy">
-            <span className="eyebrow">{t("news.label")}</span>
-            <Image className="news-logo" src="/images/sheba-medical-center-logo.png" alt="Sheba Medical Center" width={420} height={200} />
-            <h2 className="section-title">{t("news.title")}</h2>
-            <p>{t("news.body")}</p>
-            <p className="news-note">{t("news.note")}</p>
-            <ButtonLink href="#application" variant="secondary">{t("news.cta")}</ButtonLink>
-          </div>
-          <Image className="news-image" src="/images/sheba-medical-center-campus.jpg" alt="Sheba Medical Center campus" width={900} height={600} />
-        </div>
-      </section>
-
       <section className="section section-soft" id="leadership">
         <div className="container leadership-teaser">
           <div>
