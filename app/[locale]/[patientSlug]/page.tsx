@@ -51,7 +51,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
           </div>
           <div className="patient-hero-art">
             <Image src="/images/cellclinic-mitochondria.png" alt="" width={1200} height={900} priority />
-            <div className="patient-hero-note"><Check size={18} /><span>{t("hero.note")}</span></div>
           </div>
         </div>
       </section>
