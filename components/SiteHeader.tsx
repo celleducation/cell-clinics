@@ -38,7 +38,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="site-logo" href="/" aria-label="Cell Clinics home">
-          <Image src="/cell-clinics-logo.svg" alt="Cell Clinics" width={875} height={153} priority />
+          <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {activeNavItems.map((item) => (

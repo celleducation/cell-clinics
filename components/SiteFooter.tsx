@@ -17,7 +17,7 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="footer-logo">
-              <Image src="/cell-clinics-logo.svg" alt="Cell Clinics" width={875} height={153} />
+              <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} />
             </div>
             <p>{isPatientPage ? t("patient.footerDescription") : t("footer.description")}</p>
             <p>{t("footer.groupLine")}</p>
