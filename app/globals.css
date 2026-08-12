@@ -769,15 +769,22 @@ textarea.input {
 }
 
 .patient-hero {
-  padding: 58px 0 50px;
+  padding: 76px 0 34px;
   overflow: hidden;
 }
 
 .patient-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, .88fr);
+  min-height: 540px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   align-items: center;
-  gap: clamp(44px, 6vw, 88px);
+  gap: 48px;
+}
+
+.patient-hero-copy {
+  grid-column: span 7;
+  max-width: 720px;
+  padding-right: 24px;
 }
 
 .patient-hero-copy .display {
@@ -800,7 +807,8 @@ textarea.input {
 
 .patient-hero-art {
   position: relative;
-  min-height: 380px;
+  min-height: 430px;
+  grid-column: span 5;
   display: grid;
   place-items: center;
   border: 1px solid var(--glass-border);
@@ -2296,6 +2304,7 @@ textarea.input {
 @media (max-width: 1023px) {
   .page-hero-grid > *,
   .home-hero-grid > *,
+  .patient-hero-grid > *,
   .model-clinic-grid > *,
   .leadership-teaser > *,
   .clinic-detail-grid > *,
@@ -2313,7 +2322,16 @@ textarea.input {
     min-height: auto;
   }
 
+  .patient-hero-grid {
+    min-height: auto;
+  }
+
   .home-hero-grid > :first-child {
+    max-width: 780px;
+    padding-right: 0;
+  }
+
+  .patient-hero-copy {
     max-width: 780px;
     padding-right: 0;
   }
@@ -2364,7 +2382,8 @@ textarea.input {
 }
 
 @media (max-width: 767px) {
-  .home-hero {
+  .home-hero,
+  .patient-hero {
     padding-top: 48px;
   }
 
