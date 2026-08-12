@@ -335,30 +335,17 @@ textarea {
   backdrop-filter: blur(22px) saturate(118%);
 }
 
-.header-context {
-  border-bottom: 1px solid rgba(207, 220, 233, .52);
-  background: rgba(248, 251, 253, .66);
-}
-
-.header-context-inner {
-  display: flex;
-  min-height: 34px;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 18px;
-}
-
 .header-inner {
   display: grid;
-  min-height: 68px;
+  min-height: 74px;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 
 .site-logo {
   display: inline-flex;
-  width: 132px;
+  width: 148px;
   align-items: center;
 }
 
@@ -370,7 +357,7 @@ textarea {
 .desktop-nav {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .nav-link {
@@ -400,7 +387,7 @@ textarea {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 }
 
 .locale-switcher {
@@ -620,8 +607,8 @@ textarea.input {
 }
 
 @media (max-width: 1023px) {
-  .header-context,
   .desktop-nav,
+  .header-actions > .locale-switcher,
   .header-actions > .button {
     display: none;
   }
@@ -755,18 +742,18 @@ textarea.input {
 .audience-switcher {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
 }
 
 .audience-switcher a {
   display: inline-flex;
-  min-height: 24px;
+  min-height: 36px;
   align-items: center;
   padding: 0;
   border-radius: 0;
   color: var(--slate);
-  font-size: .72rem;
-  font-weight: 500;
+  font-size: .82rem;
+  font-weight: 400;
   line-height: 1;
   transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
   white-space: nowrap;
@@ -774,7 +761,7 @@ textarea.input {
 
 .audience-switcher a.active {
   color: var(--navy);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .mobile-audience {

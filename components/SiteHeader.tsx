@@ -9,12 +9,6 @@ import {LocaleSwitcher} from "./LocaleSwitcher";
 import {Link} from "@/i18n/navigation";
 import {usePathname} from "next/navigation";
 
-const navItems = [
-  {key: "platform", href: "#platform"},
-  {key: "clinicalSystems", href: "#systems"},
-  {key: "proof", href: "#proof"}
-] as const;
-
 export function SiteHeader() {
   const t = useTranslations();
   const locale = useLocale();
@@ -23,40 +17,19 @@ export function SiteHeader() {
   const patientSlug = locale === "de" ? "patienten" : locale === "es" ? "pacientes" : "patients";
   const patientHref = `/${locale}/${patientSlug}`;
   const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
-  const patientNavItems = [
-    {label: t("patient.nav.therapy"), href: "#therapy"},
-    {label: t("patient.nav.process"), href: "#process"}
-  ];
-  const activeNavItems = isPatientPage
-    ? patientNavItems
-    : navItems.map((item) => ({
-        label: item.key === "proof" ? t("home.proofLabel") : t(`nav.${item.key}`),
-        href: item.href
-      }));
 
   return (
     <header className="site-header">
-      <div className="header-context">
-        <div className="container header-context-inner">
-          <nav className="audience-switcher" aria-label={t("audience.label")}>
-            <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
-            <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
-          </nav>
-          <LocaleSwitcher />
-        </div>
-      </div>
       <div className="container header-inner">
         <Link className="site-logo" href="/" aria-label="Cell Clinics home">
           <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
         </Link>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {activeNavItems.map((item) => (
-            <a className="nav-link" key={item.href} href={item.href}>
-              {item.label}
-            </a>
-          ))}
+        <nav className="desktop-nav audience-switcher" aria-label={t("audience.label")}>
+          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
+          <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
         </nav>
         <div className="header-actions">
+          <LocaleSwitcher />
           <ButtonLink href={isPatientPage ? "#find-clinic" : "#application"}>
             {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
           </ButtonLink>
@@ -73,16 +46,6 @@ export function SiteHeader() {
         </div>
       </div>
       <nav id="mobile-navigation" className="mobile-panel" hidden={!open} aria-label="Mobile navigation">
-        {activeNavItems.map((item) => (
-          <a
-            className="nav-link"
-            key={item.href}
-            href={item.href}
-            onClick={() => setOpen(false)}
-          >
-            {item.label}
-          </a>
-        ))}
         <div className="audience-switcher mobile-audience" aria-label={t("audience.label")}>
           <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
           <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
