@@ -36,6 +36,15 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
+      <div className="header-context">
+        <div className="container header-context-inner">
+          <nav className="audience-switcher" aria-label={t("audience.label")}>
+            <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
+            <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
+          </nav>
+          <LocaleSwitcher />
+        </div>
+      </div>
       <div className="container header-inner">
         <Link className="site-logo" href="/" aria-label="Cell Clinics home">
           <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
@@ -48,11 +57,6 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <div className="audience-switcher" aria-label={t("audience.label")}>
-            <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
-            <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
-          </div>
-          <LocaleSwitcher />
           <ButtonLink href={isPatientPage ? "#find-clinic" : "#application"}>
             {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
           </ButtonLink>
