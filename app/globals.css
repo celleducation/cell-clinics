@@ -179,25 +179,29 @@ textarea {
   font-size: .9rem;
   font-weight: 500;
   line-height: 1.2;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .58),
-    0 8px 24px rgba(22, 38, 74, .055);
-  -webkit-backdrop-filter: blur(16px) saturate(112%);
-  backdrop-filter: blur(16px) saturate(112%);
+  box-shadow: 0 4px 14px rgba(22, 38, 74, .055);
+  -webkit-backdrop-filter: blur(22px) saturate(118%);
+  backdrop-filter: blur(22px) saturate(118%);
   transition: color 220ms ease-out, background-color 220ms ease-out, border-color 220ms ease-out, transform 220ms ease-out, box-shadow 220ms ease-out;
 }
 
 .button:not(.button-text)::before {
   position: absolute;
-  z-index: -1;
-  top: 1px;
-  right: 12%;
-  left: 12%;
-  height: 46%;
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+  z-index: 0;
+  top: -16px;
+  left: 8%;
+  width: 46%;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, .2), transparent 70%);
+  filter: blur(5px);
   content: "";
   pointer-events: none;
+}
+
+.button:not(.button-text) > * {
+  position: relative;
+  z-index: 1;
 }
 
 .button-lg {
@@ -207,39 +211,37 @@ textarea {
 
 .button-primary {
   color: white;
-  background: rgba(15, 38, 79, .96);
-  border-color: rgba(255, 255, 255, .16);
+  background: linear-gradient(135deg, rgba(21, 46, 91, .97), rgba(12, 34, 73, .97));
+  border-color: rgba(152, 189, 224, .3);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .24),
-    inset 0 -1px 0 rgba(4, 20, 50, .28),
-    0 10px 26px rgba(22, 38, 74, .14);
+    inset 0 1px 0 rgba(255, 255, 255, .14),
+    0 5px 16px rgba(22, 38, 74, .12);
 }
 
 .button-primary:hover {
-  background: rgba(24, 51, 96, .98);
+  background: linear-gradient(135deg, rgba(28, 57, 105, .98), rgba(17, 43, 85, .98));
+  border-color: rgba(173, 207, 237, .38);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, .3),
-    inset 0 -1px 0 rgba(4, 20, 50, .24),
-    0 13px 30px rgba(22, 38, 74, .17);
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 7px 20px rgba(22, 38, 74, .14);
   transform: translateY(-1px);
 }
 
 .button-secondary {
   color: var(--navy);
-  background: rgba(255, 255, 255, .68);
-  border-color: rgba(190, 210, 235, .72);
+  background: rgba(255, 255, 255, .52);
+  border-color: rgba(190, 210, 235, .64);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 -1px 0 rgba(180, 205, 228, .14),
-    0 8px 24px rgba(22, 38, 74, .055);
+    inset 0 1px 0 rgba(255, 255, 255, .76),
+    0 4px 14px rgba(22, 38, 74, .045);
 }
 
 .button-secondary:hover {
-  background: rgba(239, 248, 253, .82);
-  border-color: rgba(127, 211, 240, .68);
+  background: rgba(244, 250, 253, .68);
+  border-color: rgba(127, 190, 222, .56);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    0 12px 28px rgba(22, 38, 74, .08);
+    inset 0 1px 0 rgba(255, 255, 255, .84),
+    0 6px 18px rgba(22, 38, 74, .065);
   transform: translateY(-1px);
 }
 
