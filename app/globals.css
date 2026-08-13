@@ -466,7 +466,8 @@ textarea {
 .site-footer {
   padding-block: 64px 32px;
   color: #d8e3f1;
-  background: var(--navy);
+  background: linear-gradient(145deg, #0c2348 0%, #051835 72%, #031328 100%);
+  border-top: 1px solid rgba(127, 211, 240, .16);
 }
 
 .footer-grid {

@@ -1,4 +1,6 @@
-import type {ReactNode} from "react";
+"use client";
+
+import type {MouseEvent, ReactNode} from "react";
 import {Link} from "@/i18n/navigation";
 
 type ButtonLinkProps = {
@@ -7,6 +9,7 @@ type ButtonLinkProps = {
   variant?: "primary" | "secondary" | "text";
   size?: "md" | "lg" | "large";
   className?: string;
+  onClick?: () => void;
 };
 
 export function ButtonLink({
@@ -14,13 +17,33 @@ export function ButtonLink({
   children,
   variant = "primary",
   size = "md",
-  className = ""
+  className = "",
+  onClick
 }: ButtonLinkProps) {
   const classes = `button button-${variant} ${size === "lg" || size === "large" ? "button-lg" : ""} ${className}`.trim();
 
-  if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) {
+  if (href.startsWith("#")) {
+    const handleSectionClick = (event: MouseEvent<HTMLAnchorElement>) => {
+      const target = document.querySelector(href);
+
+      if (!target) return;
+
+      event.preventDefault();
+      onClick?.();
+      target.scrollIntoView({behavior: "smooth", block: "start"});
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    };
+
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} onClick={handleSectionClick}>
+        {children}
+      </a>
+    );
+  }
+
+  if (href.startsWith("mailto:") || href.startsWith("http")) {
+    return (
+      <a href={href} className={classes} onClick={onClick}>
         {children}
       </a>
     );
@@ -30,6 +53,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={classes}
+      onClick={onClick}
     >
       {children}
     </Link>
