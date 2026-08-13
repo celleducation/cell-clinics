@@ -12,7 +12,7 @@ export default async function ApplyPage({params}: {params: Promise<{locale: stri
           <span className="eyebrow">{t("form.label")}</span>
           <h1 className="page-title">{t("form.title")}</h1>
           <p className="lead">{t("form.body")}</p>
-          <p>{t("form.note")}</p>
+          <p className="application-note">{t("form.note")}</p>
         </div>
         <PartnerApplicationForm />
       </div>

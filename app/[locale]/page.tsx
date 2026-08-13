@@ -171,7 +171,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <span className="eyebrow">{t("form.label")}</span>
             <h2 className="section-title">{t("form.title")}</h2>
             <p className="lead">{t("form.body")}</p>
-            <p>{t("form.note")}</p>
+            <p className="application-note">{t("form.note")}</p>
           </div>
           <PartnerApplicationForm />
         </div>

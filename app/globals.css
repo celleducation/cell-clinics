@@ -2162,6 +2162,13 @@ textarea.input {
   margin-bottom: 40px;
 }
 
+.application-note {
+  margin-top: 18px;
+  color: var(--slate);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
 .partner-form {
   padding: clamp(24px, 5vw, 48px);
 }

@@ -25,8 +25,8 @@ export function SiteHeader() {
           <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
         </Link>
         <nav className="desktop-nav audience-switcher" aria-label={t("audience.label")}>
-          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
           <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
+          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
         </nav>
         <div className="header-actions">
           <LocaleSwitcher />
@@ -47,8 +47,8 @@ export function SiteHeader() {
       </div>
       <nav id="mobile-navigation" className="mobile-panel" hidden={!open} aria-label="Mobile navigation">
         <div className="audience-switcher mobile-audience" aria-label={t("audience.label")}>
-          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
           <a className={!isPatientPage ? "active" : ""} href={`/${locale}`}>{t("audience.professionals")}</a>
+          <a className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</a>
         </div>
         <LocaleSwitcher />
         <a className="button button-primary" href={isPatientPage ? "#find-clinic" : "#application"} onClick={() => setOpen(false)}>
