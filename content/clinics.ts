@@ -124,6 +124,15 @@ export const clinics: Clinic[] = [
     coordinates: {lat: 53.873, lng: 10.701}
   },
   {
+    slug: "boguslaw-nikiciuk-neuruppin",
+    name: "Praxis für Rheumatologie Boguslaw Krystian Nikiciuk",
+    practitioner: "Boguslaw Nikiciuk",
+    city: "Neuruppin",
+    region: "Brandenburg",
+    countryCode: "DE",
+    coordinates: {lat: 52.9244, lng: 12.8066}
+  },
+  {
     slug: "youn-ju-lee-kassel",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
