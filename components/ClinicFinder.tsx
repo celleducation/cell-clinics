@@ -1,77 +1,136 @@
 "use client";
 
-import {MapPin, Search} from "lucide-react";
+import {ArrowUpRight, Building2, MapPin, Search} from "lucide-react";
 import {useMemo, useState} from "react";
 import {useLocale} from "next-intl";
 import {Link} from "@/i18n/navigation";
 import type {Clinic} from "@/content/clinics";
 
-export function ClinicFinder({
-  clinics,
-  labels
-}: {
-  clinics: Clinic[];
-  labels: {search: string; placeholder: string; focus: string; language: string; all: string; noResults: string; details: string};
-}) {
-  const [query, setQuery] = useState("");
+type FinderLabels = {
+  search: string;
+  placeholder: string;
+  country: string;
+  allCountries: string;
+  noResults: string;
+  details: string;
+  profileSoon: string;
+  partnerPractice: string;
+  locations: string;
+  mapLabel: string;
+  centralPartner: string;
+};
+
+const bounds = {west: 5.5, east: 15.5, south: 46, north: 55.3};
+
+function mapPosition(clinic: Clinic) {
+  const x = ((clinic.coordinates.lng - bounds.west) / (bounds.east - bounds.west)) * 100;
+  const y = ((bounds.north - clinic.coordinates.lat) / (bounds.north - bounds.south)) * 100;
+  return {left: `${x}%`, top: `${y}%`};
+}
+
+export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: FinderLabels}) {
   const locale = useLocale();
-  const [focus, setFocus] = useState("");
-  const [language, setLanguage] = useState("");
-  const focusOptions = [...new Set(clinics.flatMap((clinic) => clinic.focus))];
-  const languageOptions = [...new Set(clinics.flatMap((clinic) => clinic.languages))];
+  const [query, setQuery] = useState("");
+  const [country, setCountry] = useState("");
+  const [selected, setSelected] = useState(clinics[0]?.slug ?? "");
+  const countryNames = useMemo(() => new Intl.DisplayNames([locale], {type: "region"}), [locale]);
+  const countries = [...new Set(clinics.map((clinic) => clinic.countryCode))];
   const filtered = useMemo(() => {
-    const needle = query.trim().toLowerCase();
+    const needle = query.trim().toLocaleLowerCase(locale);
     return clinics.filter((clinic) =>
-      (!needle || [clinic.name, clinic.city, clinic.region, clinic.country, ...clinic.focus, ...clinic.languages]
+      (!needle || [clinic.name, clinic.practitioner, clinic.city, clinic.region, countryNames.of(clinic.countryCode)]
         .join(" ")
-        .toLowerCase()
+        .toLocaleLowerCase(locale)
         .includes(needle)) &&
-      (!focus || clinic.focus.includes(focus)) &&
-      (!language || clinic.languages.includes(language))
+      (!country || clinic.countryCode === country)
     );
-  }, [clinics, focus, language, query]);
+  }, [clinics, country, countryNames, locale, query]);
+
+  const selectedClinic = filtered.find((clinic) => clinic.slug === selected) ?? filtered[0];
+
+  function selectClinic(clinic: Clinic) {
+    setSelected(clinic.slug);
+    document.getElementById(`clinic-${clinic.slug}`)?.scrollIntoView({block: "nearest", behavior: "smooth"});
+  }
 
   return (
     <div className="clinic-finder">
-      <div className="clinic-map card" aria-label="Map of partner clinics">
-        <svg viewBox="0 0 800 520" role="img" aria-label="Europe clinic network map">
-          <path
-            d="M175 66l88-24 75 25 42 49 84-15 76 44 58 70-13 85-56 20-37 76-103 27-75-37-90 4-68-60-17-92 45-64-9-108z"
-            fill="#edf7fc"
-            stroke="#cddbe8"
-            strokeWidth="2"
-          />
-          <path d="M255 152l87 27 74-22 68 47-29 90-89 48-103-24-40-74 32-92z" fill="#f8fbfd" stroke="#dce7ef" />
-          {filtered.map((clinic) => (
-            <a href={`/${locale}/network/${clinic.slug}`} key={clinic.slug} aria-label={clinic.name}>
-              <circle cx={`${clinic.coordinates.x}%`} cy={`${clinic.coordinates.y}%`} r="13" fill="#16264a" />
-              <circle cx={`${clinic.coordinates.x}%`} cy={`${clinic.coordinates.y}%`} r="22" fill="none" stroke="#7fd3f0" strokeWidth="4" opacity=".55" />
-            </a>
-          ))}
-        </svg>
-      </div>
-      <div className="clinic-results">
-        <label className="search-field">
-          <span>{labels.search}</span>
-          <span className="search-input-wrap"><Search size={18} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={labels.placeholder} /></span>
-        </label>
-        <div className="finder-filters">
-          <label>{labels.focus}<select value={focus} onChange={(event) => setFocus(event.target.value)}><option value="">{labels.all}</option>{focusOptions.map((item) => <option key={item}>{item}</option>)}</select></label>
-          <label>{labels.language}<select value={language} onChange={(event) => setLanguage(event.target.value)}><option value="">{labels.all}</option>{languageOptions.map((item) => <option key={item}>{item}</option>)}</select></label>
+      <aside className="clinic-results" aria-label={labels.locations}>
+        <div className="clinic-search-panel">
+          <label className="search-field">
+            <span>{labels.search}</span>
+            <span className="search-input-wrap"><Search size={18} aria-hidden="true" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={labels.placeholder} /></span>
+          </label>
+          <label className="country-filter">
+            <span>{labels.country}</span>
+            <select value={country} onChange={(event) => setCountry(event.target.value)}>
+              <option value="">{labels.allCountries}</option>
+              {countries.map((code) => <option value={code} key={code}>{countryNames.of(code)}</option>)}
+            </select>
+          </label>
+        </div>
+        <div className="clinic-list-heading">
+          <span>{filtered.length} {labels.locations}</span>
+          <span>DACH</span>
         </div>
         <div className="clinic-list">
-          {filtered.map((clinic) => (
-            <article className="clinic-result card" key={clinic.slug}>
-              <MapPin size={22} />
-              <div>
-                <h3>{clinic.name}</h3>
-                <p>{clinic.city}, {clinic.country}</p>
-                <div className="chip-list">{clinic.focus.map((focus) => <span className="chip" key={focus}>{focus}</span>)}</div>
-              </div>
-              <Link href={`/network/${clinic.slug}`}>{labels.details}</Link>
+          {filtered.map((clinic, index) => (
+            <article
+              className={`clinic-result ${selectedClinic?.slug === clinic.slug ? "is-selected" : ""}`}
+              id={`clinic-${clinic.slug}`}
+              key={clinic.slug}
+              onMouseEnter={() => setSelected(clinic.slug)}
+            >
+              <button className="clinic-result-select" type="button" onClick={() => selectClinic(clinic)} aria-label={`${clinic.name}, ${clinic.city}`}>
+                <span className="clinic-index">{String(index + 1).padStart(2, "0")}</span>
+                <span className="clinic-result-copy">
+                  <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
+                  <strong>{clinic.name}</strong>
+                  <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}</span>
+                </span>
+              </button>
+              {clinic.profileAvailable ? (
+                <Link className="clinic-profile-link" href={`/network/${clinic.slug}`} aria-label={`${labels.details}: ${clinic.name}`}>
+                  {labels.details}<ArrowUpRight size={15} aria-hidden="true" />
+                </Link>
+              ) : <span className="clinic-profile-pending">{labels.profileSoon}</span>}
             </article>
           ))}
-          {!filtered.length && <p>{labels.noResults}</p>}
+          {!filtered.length && <div className="clinic-empty"><Building2 size={22} /><p>{labels.noResults}</p></div>}
+        </div>
+      </aside>
+
+      <div className="clinic-map" aria-label={labels.mapLabel}>
+        <div className="clinic-map-header">
+          <div><span className="eyebrow">DACH Network</span><strong>{labels.mapLabel}</strong></div>
+          <span className="clinic-map-count">{filtered.length}</span>
+        </div>
+        <div className="clinic-map-canvas">
+          <svg viewBox="0 0 720 680" role="img" aria-label={labels.mapLabel}>
+            <path className="map-country" d="M200 67l74-34 92 24 62-25 80 44 26 69 57 43-15 74 28 52-36 73-80 19-45 58-85-22-68 33-63-44-8-78-45-58 35-61-29-80z" />
+            <path className="map-country" d="M228 483l83-10 61 18 68-24 73 26 15 49-62 30-81-5-71 31-75-22-33-48z" />
+            <path className="map-country" d="M423 478l69-42 80 4 48-27 51 30-30 45-96 28-83 4z" />
+            <text x="385" y="270">DE</text>
+            <text x="324" y="538">CH</text>
+            <text x="532" y="480">AT</text>
+          </svg>
+          {filtered.map((clinic) => (
+            <button
+              className={`clinic-map-point ${selectedClinic?.slug === clinic.slug ? "is-active" : ""}`}
+              style={mapPosition(clinic)}
+              type="button"
+              key={clinic.slug}
+              onClick={() => selectClinic(clinic)}
+              aria-label={`${clinic.name}, ${clinic.city}`}
+            ><span /></button>
+          ))}
+          {selectedClinic && (
+            <div className="clinic-map-preview">
+              <span>{selectedClinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
+              <strong>{selectedClinic.name}</strong>
+              <small>{selectedClinic.city}, {countryNames.of(selectedClinic.countryCode)}</small>
+            </div>
+          )}
         </div>
       </div>
     </div>

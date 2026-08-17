@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routing.locales.flatMap((locale) => [
     {url: `${base}/${locale}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1},
-    {url: `${base}/${locale}/${patientSlugs[locale]}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9}
+    {url: `${base}/${locale}/${patientSlugs[locale]}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9},
+    {url: `${base}/${locale}/network`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8},
+    {url: `${base}/${locale}/network/alpstein`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.75}
   ]);
 }

@@ -7,6 +7,8 @@ import {ButtonLink} from "@/components/ui/ButtonLink";
 import {FeatureCard} from "@/components/ui/FeatureCard";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {PatientInquiryForm} from "@/components/PatientInquiryForm";
+import {ClinicFinder} from "@/components/ClinicFinder";
+import {clinics} from "@/content/clinics";
 
 const slugs: Record<string, string> = {de: "patienten", en: "patients", es: "pacientes"};
 
@@ -30,6 +32,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
   if (!validRoute(locale, patientSlug)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("patient");
+  const networkT = await getTranslations("networkPage");
   const therapyCards = [BatteryCharging, HeartPulse, ShieldCheck, Stethoscope].map((icon, index) => ({
     icon,
     title: t(`therapy.card${index + 1}Title`),
@@ -82,22 +85,26 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
       <section className="section" id="find-clinic">
         <div className="container">
           <SectionHeading eyebrow={t("finder.label")} title={t("finder.title")} intro={t("finder.intro")} />
-          <div className="patient-finder-grid">
-            <article className="patient-clinic-card card">
-              <Image src="/clinics/alpstein/interior-1.webp" alt="Alpstein Clinic" width={900} height={680} />
-              <div className="patient-clinic-content">
-                <span className="clinic-network-tag">{t("finder.tag")}</span>
-                <h3>Alpstein Clinic</h3>
-                <p className="clinic-location">Gais, Appenzell · Schweiz</p>
-                <p>{t("finder.clinicBody")}</p>
-                <a className="text-link" href="https://alpstein-clinic.ch" target="_blank" rel="noreferrer">{t("finder.profile")} ↗</a>
-              </div>
-            </article>
-            <div className="patient-form-column">
+          <ClinicFinder clinics={clinics} labels={{
+            search: networkT("searchLabel"),
+            placeholder: networkT("searchPlaceholder"),
+            country: networkT("countryLabel"),
+            allCountries: networkT("allCountries"),
+            noResults: networkT("noResults"),
+            details: networkT("details"),
+            profileSoon: networkT("profileSoon"),
+            partnerPractice: networkT("partnerPractice"),
+            locations: networkT("locations"),
+            mapLabel: networkT("mapLabel"),
+            centralPartner: networkT("centralPartner")
+          }} />
+          <div className="patient-network-inquiry section-soft">
+            <div>
+              <span className="eyebrow">{t("finder.label")}</span>
               <h3>{t("finder.formTitle")}</h3>
               <p>{t("finder.formBody")}</p>
-              <PatientInquiryForm />
             </div>
+            <PatientInquiryForm />
           </div>
         </div>
       </section>

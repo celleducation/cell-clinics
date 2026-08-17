@@ -1,31 +1,49 @@
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import type {Metadata} from "next";
-import {PageHero} from "@/components/PageHero";
 import {ClinicFinder} from "@/components/ClinicFinder";
 import {clinics} from "@/content/clinics";
 
-export const metadata: Metadata = {
-  title: "Partner Clinic Network",
-  description: "Find Cell Clinics partners by location, clinical focus and language."
-};
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: "networkPage"});
+  return {title: t("title"), description: t("lead")};
+}
 
 export default async function NetworkPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   setRequestLocale(locale);
-  const t = await getTranslations();
+  const t = await getTranslations("networkPage");
+
   return (
     <>
-      <PageHero eyebrow={t("networkPage.eyebrow")} title={t("networkPage.title")} lead={t("networkPage.lead")} image="/images/cellclinic-network.png" />
-      <section className="section">
+      <section className="network-hero section-soft">
+        <div className="container network-hero-inner">
+          <div>
+            <span className="eyebrow">{t("eyebrow")}</span>
+            <h1 className="display">{t("title")}</h1>
+          </div>
+          <p className="lead">{t("lead")}</p>
+        </div>
+      </section>
+      <section className="section network-directory">
         <div className="container">
+          <div className="network-directory-intro">
+            <span className="eyebrow">{t("directoryLabel")}</span>
+            <h2 className="section-title">{t("directoryTitle")}</h2>
+            <p>{t("directoryBody")}</p>
+          </div>
           <ClinicFinder clinics={clinics} labels={{
-            search: t("networkPage.searchLabel"),
-            placeholder: t("networkPage.searchPlaceholder"),
-            focus: t("networkPage.focusLabel"),
-            language: t("networkPage.languageLabel"),
-            all: t("common.all"),
-            noResults: t("networkPage.noResults"),
-            details: t("common.viewDetails")
+            search: t("searchLabel"),
+            placeholder: t("searchPlaceholder"),
+            country: t("countryLabel"),
+            allCountries: t("allCountries"),
+            noResults: t("noResults"),
+            details: t("details"),
+            profileSoon: t("profileSoon"),
+            partnerPractice: t("partnerPractice"),
+            locations: t("locations"),
+            mapLabel: t("mapLabel"),
+            centralPartner: t("centralPartner")
           }} />
         </div>
       </section>
