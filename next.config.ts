@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
       { source: "/dashboard", destination: "/en#platform", permanent: true },
       { source: "/:locale/platform", destination: "/:locale#platform", permanent: true },
       { source: "/:locale/clinical-systems/:path*", destination: "/:locale#systems", permanent: true },
-      { source: "/:locale/network/:path*", destination: "/:locale#proof", permanent: true },
       { source: "/:locale/partnerships/:path*", destination: "/:locale#application", permanent: true },
       { source: "/:locale/company/:path*", destination: "/:locale#leadership", permanent: true },
       { source: "/:locale/contact", destination: "/:locale#application", permanent: true }
