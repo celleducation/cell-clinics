@@ -16,6 +16,23 @@
   --shadow-float: 0 8px 24px rgba(22, 38, 74, 0.08);
 }
 
+@media (max-width: 359px) {
+  .section-heading h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .radius-options {
+    gap: 2px;
+    padding: 3px;
+  }
+
+  .radius-options button {
+    padding-inline: 2px;
+    font-size: .66rem;
+  }
+}
+
 :root {
   --navy: #0b1f43;
   --navy-2: #1b315b;
