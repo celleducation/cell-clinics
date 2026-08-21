@@ -151,12 +151,22 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
               {countries.map((code) => <option value={code} key={code}>{countryNames.of(code)}</option>)}
             </select>
           </label>
-          <label className="country-filter radius-filter">
-            <span>{labels.radius}</span>
-            <select value={radius} onChange={(event) => setRadius(event.target.value)}>
-              {[25, 50, 100, 200, 500].map((value) => <option value={value} key={value}>{value} km</option>)}
-            </select>
-          </label>
+          <fieldset className="radius-filter">
+            <legend>{labels.radius}</legend>
+            <div className="radius-options">
+              {[25, 50, 100, 200, 500].map((value) => (
+                <button
+                  className={radius === String(value) ? "is-active" : ""}
+                  type="button"
+                  key={value}
+                  aria-pressed={radius === String(value)}
+                  onClick={() => setRadius(String(value))}
+                >
+                  {value} km
+                </button>
+              ))}
+            </div>
+          </fieldset>
           <button className="location-button" type="button" onClick={requestLocation} disabled={locationState === "loading"}>
             <LocateFixed size={18} aria-hidden="true" />
             {locationState === "loading" ? labels.locating : labels.useLocation}

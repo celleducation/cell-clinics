@@ -2037,7 +2037,7 @@ textarea.input {
 
 .clinic-search-panel {
   display: grid;
-  grid-template-columns: minmax(240px, 1.3fr) minmax(140px, .45fr) minmax(120px, .38fr) auto;
+  grid-template-columns: minmax(240px, 1.15fr) minmax(150px, .4fr) minmax(300px, .75fr) auto;
   gap: 12px;
   padding: 18px;
   background: var(--card-alt);
@@ -2067,9 +2067,58 @@ textarea.input {
   opacity: .65;
 }
 
-.radius-filter select:disabled {
+.radius-filter {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.radius-filter legend {
+  margin-bottom: 8px;
+  color: var(--navy);
+  font-size: inherit;
+  font-weight: 600;
+}
+
+.radius-options {
+  min-height: 52px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  background: rgba(255, 255, 255, .84);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.radius-options button {
+  min-width: 0;
+  height: 42px;
+  padding: 0 7px;
   color: var(--muted);
-  background: #f7f9fb;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.radius-options button:hover,
+.radius-options button.is-active {
+  color: var(--navy);
+  background: white;
+  box-shadow: 0 4px 14px rgba(9, 31, 64, .08);
+}
+
+.radius-options button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
 }
 
 .location-error {
@@ -3542,7 +3591,7 @@ textarea.input {
 
   .search-input-wrap,
   .country-filter select,
-  .radius-filter select,
+  .radius-options,
   .location-button {
     width: 100%;
     min-height: 52px;
