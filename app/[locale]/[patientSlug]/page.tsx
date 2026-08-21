@@ -96,7 +96,12 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
             partnerPractice: networkT("partnerPractice"),
             locations: networkT("locations"),
             mapLabel: networkT("mapLabel"),
-            centralPartner: networkT("centralPartner")
+            centralPartner: networkT("centralPartner"),
+            radius: networkT("radiusLabel"),
+            useLocation: networkT("useLocation"),
+            locating: networkT("locating"),
+            locationError: networkT("locationError"),
+            distanceAway: networkT("distanceAway")
           }} />
           <div className="patient-network-inquiry section-soft">
             <div>

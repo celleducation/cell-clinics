@@ -1,6 +1,6 @@
 "use client";
 
-import {ArrowUpRight, Building2, MapPin, Search} from "lucide-react";
+import {ArrowUpRight, Building2, LocateFixed, MapPin, Search} from "lucide-react";
 import {useMemo, useState} from "react";
 import {useLocale} from "next-intl";
 import {Link} from "@/i18n/navigation";
@@ -18,24 +18,71 @@ type FinderLabels = {
   locations: string;
   mapLabel: string;
   centralPartner: string;
+  radius: string;
+  useLocation: string;
+  locating: string;
+  locationError: string;
+  distanceAway: string;
 };
+
+type UserLocation = {lat: number; lng: number};
+
+function distanceInKm(from: UserLocation, to: UserLocation) {
+  const earthRadius = 6371;
+  const toRadians = (value: number) => value * Math.PI / 180;
+  const latitudeDelta = toRadians(to.lat - from.lat);
+  const longitudeDelta = toRadians(to.lng - from.lng);
+  const latitude1 = toRadians(from.lat);
+  const latitude2 = toRadians(to.lat);
+  const haversine = Math.sin(latitudeDelta / 2) ** 2
+    + Math.cos(latitude1) * Math.cos(latitude2) * Math.sin(longitudeDelta / 2) ** 2;
+
+  return 2 * earthRadius * Math.asin(Math.sqrt(haversine));
+}
 
 export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: FinderLabels}) {
   const locale = useLocale();
   const [query, setQuery] = useState("");
   const [country, setCountry] = useState("");
+  const [radius, setRadius] = useState("100");
+  const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
+  const [locationState, setLocationState] = useState<"idle" | "loading" | "error">("idle");
   const countryNames = useMemo(() => new Intl.DisplayNames([locale], {type: "region"}), [locale]);
   const countries = [...new Set(clinics.map((clinic) => clinic.countryCode))];
   const filtered = useMemo(() => {
     const needle = query.trim().toLocaleLowerCase(locale);
-    return clinics.filter((clinic) =>
+    return clinics.map((clinic) => ({
+      ...clinic,
+      distance: userLocation ? distanceInKm(userLocation, clinic.coordinates) : null
+    })).filter((clinic) =>
       (!needle || [clinic.name, clinic.practitioner, clinic.city, clinic.region, countryNames.of(clinic.countryCode)]
         .join(" ")
         .toLocaleLowerCase(locale)
         .includes(needle)) &&
-      (!country || clinic.countryCode === country)
+      (!country || clinic.countryCode === country) &&
+      (!userLocation || clinic.distance === null || clinic.distance <= Number(radius))
+    ).sort((a, b) => {
+      if (a.distance === null || b.distance === null) return 0;
+      return a.distance - b.distance;
+    });
+  }, [clinics, country, countryNames, locale, query, radius, userLocation]);
+
+  const requestLocation = () => {
+    if (!navigator.geolocation) {
+      setLocationState("error");
+      return;
+    }
+
+    setLocationState("loading");
+    navigator.geolocation.getCurrentPosition(
+      ({coords}) => {
+        setUserLocation({lat: coords.latitude, lng: coords.longitude});
+        setLocationState("idle");
+      },
+      () => setLocationState("error"),
+      {enableHighAccuracy: false, timeout: 10000, maximumAge: 300000}
     );
-  }, [clinics, country, countryNames, locale, query]);
+  };
 
   return (
     <div className="clinic-finder">
@@ -52,7 +99,18 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
               {countries.map((code) => <option value={code} key={code}>{countryNames.of(code)}</option>)}
             </select>
           </label>
+          <label className="country-filter radius-filter">
+            <span>{labels.radius}</span>
+            <select value={radius} onChange={(event) => setRadius(event.target.value)} disabled={!userLocation}>
+              {[25, 50, 100, 200, 500].map((value) => <option value={value} key={value}>{value} km</option>)}
+            </select>
+          </label>
+          <button className="location-button" type="button" onClick={requestLocation} disabled={locationState === "loading"}>
+            <LocateFixed size={18} aria-hidden="true" />
+            {locationState === "loading" ? labels.locating : labels.useLocation}
+          </button>
         </div>
+        {locationState === "error" && <p className="location-error" role="status">{labels.locationError}</p>}
         <div className="clinic-list-heading">
           <span>{filtered.length} {labels.locations}</span>
           <span>DACH</span>
@@ -69,7 +127,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <span className="clinic-result-copy">
                   <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
                   <strong>{clinic.name}</strong>
-                  <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}</span>
+                  <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}{clinic.distance !== null ? ` · ${Math.round(clinic.distance)} ${labels.distanceAway}` : ""}</span>
                 </span>
               </div>
               {clinic.profileAvailable ? (

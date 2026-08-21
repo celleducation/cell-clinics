@@ -17,7 +17,7 @@ export function SiteFooter() {
     if (!target) return;
 
     event.preventDefault();
-    target.scrollIntoView({behavior: "smooth", block: "start"});
+    target.scrollIntoView({behavior: "auto", block: "start"});
     window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
   };
 
@@ -30,7 +30,10 @@ export function SiteFooter() {
               <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} />
             </div>
             <p>{isPatientPage ? t("patient.footerDescription") : t("footer.description")}</p>
-            <p>{t("footer.groupLine")}</p>
+            <p className="footer-parent-brand">{t("footer.productOf")}</p>
+            <a className="footer-education-logo" href="https://cell-education.com" target="_blank" rel="noreferrer" aria-label="Cell Education">
+              <Image src="/images/cell-education-logo.svg" alt="Cell Education" width={220} height={54} />
+            </a>
           </div>
           <nav className="footer-nav" aria-label="Platform">
             <strong>{isPatientPage ? t("patient.hero.label") : t("nav.platform")}</strong>

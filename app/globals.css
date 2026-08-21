@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #16264a;
-  --color-navy-2: #24365c;
+  --color-navy: #0b1f43;
+  --color-navy-2: #1b315b;
   --color-slate: #586274;
   --color-muted: #9aa6b6;
   --color-sky: #7fd3f0;
@@ -17,8 +17,8 @@
 }
 
 :root {
-  --navy: #16264a;
-  --navy-2: #24365c;
+  --navy: #0b1f43;
+  --navy-2: #1b315b;
   --slate: #586274;
   --muted: #9aa6b6;
   --sky: #7fd3f0;
@@ -40,7 +40,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: 96px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -466,7 +466,7 @@ textarea {
 .site-footer {
   padding-block: 64px 32px;
   color: #d8e3f1;
-  background: linear-gradient(145deg, #0c2348 0%, #051835 72%, #031328 100%);
+  background: linear-gradient(145deg, #071b3a 0%, #03142e 72%, #020e21 100%);
   border-top: 1px solid rgba(127, 211, 240, .16);
 }
 
@@ -490,6 +490,26 @@ textarea {
 .footer-brand p {
   max-width: 48ch;
   margin-block: 24px 0;
+}
+
+.footer-parent-brand {
+  margin-bottom: 10px !important;
+  color: white;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.footer-education-logo {
+  display: inline-flex;
+  width: 156px;
+}
+
+.footer-education-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .footer-nav {
@@ -905,13 +925,7 @@ textarea.input {
 }
 
 .patient-steps::before {
-  position: absolute;
-  top: 39px;
-  right: 10%;
-  left: 10%;
-  height: 1px;
-  content: "";
-  background: var(--sky);
+  content: none;
 }
 
 .patient-step {
@@ -922,7 +936,7 @@ textarea.input {
 
 .patient-step-number {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: grid;
   width: 48px;
   height: 48px;
@@ -933,6 +947,17 @@ textarea.input {
   background: var(--white);
   color: var(--navy);
   font-weight: 800;
+}
+
+.patient-step:not(:last-child)::after {
+  position: absolute;
+  z-index: 2;
+  top: 49px;
+  left: 72px;
+  width: calc(100% + 18px - 48px);
+  height: 1px;
+  content: "";
+  background: var(--sky);
 }
 
 .patient-step h3,
@@ -1103,9 +1128,16 @@ textarea.input {
 
 .patient-trust-grid article {
   display: flex;
+  align-items: flex-start;
   gap: 16px;
   padding: 24px 28px 24px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.patient-trust-grid article > svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
 }
 
 .patient-trust-grid article:nth-child(odd) {
@@ -1196,6 +1228,10 @@ textarea.input {
   }
 
   .patient-steps::before {
+    display: none;
+  }
+
+  .patient-step::after {
     display: none;
   }
 }
@@ -2001,12 +2037,45 @@ textarea.input {
 
 .clinic-search-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(150px, .55fr);
+  grid-template-columns: minmax(240px, 1.3fr) minmax(140px, .45fr) minmax(120px, .38fr) auto;
   gap: 12px;
   padding: 18px;
   background: var(--card-alt);
   border: 1px solid var(--line);
   border-radius: 18px;
+}
+
+.location-button {
+  min-height: 52px;
+  align-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: white;
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  border-radius: 10px;
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.location-button:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.radius-filter select:disabled {
+  color: var(--muted);
+  background: #f7f9fb;
+}
+
+.location-error {
+  margin: -6px 4px 0;
+  color: var(--danger);
+  font-size: .8rem;
 }
 
 .search-field {
@@ -2809,6 +2878,10 @@ textarea.input {
 
   .clinic-finder {
     grid-template-columns: 1fr;
+  }
+
+  .clinic-search-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(160px, .5fr);
   }
 
   .alpstein-hero-grid,

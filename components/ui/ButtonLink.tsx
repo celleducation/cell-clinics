@@ -30,7 +30,7 @@ export function ButtonLink({
 
       event.preventDefault();
       onClick?.();
-      target.scrollIntoView({behavior: "smooth", block: "start"});
+      target.scrollIntoView({behavior: "auto", block: "start"});
       window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
     };
 
