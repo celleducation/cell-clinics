@@ -64,11 +64,10 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
     !needle || [clinic.name, clinic.practitioner, clinic.city, clinic.region, countryNames.of(clinic.countryCode)]
       .some((value) => normalizeSearchValue(value || "").includes(needle))
   ), [clinics, countryNames, needle]);
-  const hasDirectMatch = Boolean(needle && textMatches.length);
   const activeLocation = needle ? searchLocation : userLocation;
 
   useEffect(() => {
-    if (needle.length < 2 || hasDirectMatch) {
+    if (needle.length < 2) {
       setSearchLocation(null);
       setSearchState("idle");
       return;
@@ -97,23 +96,23 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
       window.clearTimeout(timeout);
       controller.abort();
     };
-  }, [country, hasDirectMatch, needle, query]);
+  }, [country, needle, query]);
 
   const filtered = useMemo(() => {
     return clinics.map((clinic) => ({
       ...clinic,
       distance: activeLocation ? distanceInKm(activeLocation, clinic.coordinates) : null
     })).filter((clinic) =>
-      (!needle || (hasDirectMatch
-        ? textMatches.some((match) => match.slug === clinic.slug)
-        : Boolean(searchLocation))) &&
+      (!needle || (searchLocation
+        ? true
+        : textMatches.some((match) => match.slug === clinic.slug))) &&
       (!country || clinic.countryCode === country) &&
       (!activeLocation || clinic.distance === null || clinic.distance <= Number(radius))
     ).sort((a, b) => {
       if (a.distance === null || b.distance === null) return 0;
       return a.distance - b.distance;
     });
-  }, [activeLocation, clinics, country, hasDirectMatch, needle, radius, searchLocation, textMatches]);
+  }, [activeLocation, clinics, country, needle, radius, searchLocation, textMatches]);
 
   const requestLocation = () => {
     if (!navigator.geolocation) {
@@ -154,7 +153,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
           </label>
           <label className="country-filter radius-filter">
             <span>{labels.radius}</span>
-            <select value={radius} onChange={(event) => setRadius(event.target.value)} disabled={!activeLocation}>
+            <select value={radius} onChange={(event) => setRadius(event.target.value)}>
               {[25, 50, 100, 200, 500].map((value) => <option value={value} key={value}>{value} km</option>)}
             </select>
           </label>
