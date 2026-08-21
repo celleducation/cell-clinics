@@ -3,7 +3,7 @@
 import Image from "next/image";
 import {Menu, X} from "lucide-react";
 import {useLocale, useTranslations} from "next-intl";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {ButtonLink} from "./ui/ButtonLink";
 import {LocaleSwitcher} from "./LocaleSwitcher";
 import {Link, usePathname} from "@/i18n/navigation";
@@ -16,6 +16,19 @@ export function SiteHeader() {
   const patientSlug = locale === "de" ? "patienten" : locale === "es" ? "pacientes" : "patients";
   const patientHref = `/${patientSlug}`;
   const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   return (
     <header className="site-header">
