@@ -3420,6 +3420,34 @@ textarea.input {
     padding-right: 0;
   }
 
+  .patient-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .patient-hero-copy .eyebrow {
+    align-self: center;
+  }
+
+  .patient-hero-copy .display {
+    max-width: 21rem;
+    font-size: clamp(1.78rem, 7.8vw, 2rem);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .patient-hero-copy .lead {
+    max-width: 35rem;
+    text-wrap: pretty;
+  }
+
+  .patient-hero-copy .button-row {
+    width: 100%;
+    justify-content: center;
+  }
+
   .home-hero-art,
   .patient-hero-art,
   .hero-art {
