@@ -19,7 +19,8 @@
     "explorePlatform": "Explore The Platform",
     "viewSystems": "View Clinical Systems",
     "learnEducation": "Learn About Cell Education",
-    "requestInfo": "Request Partnership Information"
+    "requestInfo": "Request Partnership Information",
+    "discussImplementation": "Discuss Implementation"
   },
   "hero": {
     "label": "Physician-Guided Implementation Platform",
@@ -224,6 +225,9 @@
     "countryLabel": "Country",
     "allCountries": "All countries",
     "noResults": "No partner practice matches your search.",
+    "nearestTitle": "Nearest available locations",
+    "nearestBody": "There is no partner practice within the selected radius. These locations are closest to your search.",
+    "expandRadius": "Expand radius to",
     "profileSoon": "Profile coming soon",
     "partnerPractice": "Partner practice",
     "locations": "locations",

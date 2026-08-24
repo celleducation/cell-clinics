@@ -19,7 +19,8 @@
     "explorePlatform": "Plattform ansehen",
     "viewSystems": "Klinische Systeme ansehen",
     "learnEducation": "Mehr über Cell Education",
-    "requestInfo": "Partnerschaftsinformationen anfordern"
+    "requestInfo": "Partnerschaftsinformationen anfordern",
+    "discussImplementation": "Implementierung besprechen"
   },
   "hero": {
     "label": "Ärztlich geführte Implementierungsplattform",
@@ -224,6 +225,9 @@
     "countryLabel": "Land",
     "allCountries": "Alle Länder",
     "noResults": "Zu Ihrer Suche wurde keine Partnerpraxis gefunden.",
+    "nearestTitle": "Die nächsten verfügbaren Standorte",
+    "nearestBody": "Im gewählten Umkreis liegt noch keine Partnerpraxis. Diese Standorte sind Ihrer Suche am nächsten.",
+    "expandRadius": "Umkreis erweitern auf",
     "profileSoon": "Profil folgt",
     "partnerPractice": "Partnerpraxis",
     "locations": "Standorte",

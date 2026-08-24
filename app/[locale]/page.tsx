@@ -9,10 +9,37 @@ import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {partnerModules} from "@/content/site";
 
-export const metadata: Metadata = {
-  title: "The Operating System for Modern Cellular Medicine",
-  description: "Clinical frameworks, physician education, diagnostics and implementation support for modern cellular medicine programs."
+const localeNames: Record<string, string> = {
+  de: "de_DE",
+  en: "en_US",
+  es: "es_ES"
 };
+
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: "meta"});
+  const title = t("title");
+  const description = t("description");
+
+  return {
+    title: {absolute: title},
+    description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {de: "/de", en: "/en", es: "/es", "x-default": "/en"}
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}`,
+      siteName: "Cell Clinics",
+      locale: localeNames[locale] || "en_US",
+      type: "website",
+      images: [{url: "/images/cellclinic-platform.png", width: 1400, height: 1080, alt: "Cell Clinics"}]
+    },
+    twitter: {card: "summary_large_image", title, description, images: ["/images/cellclinic-platform.png"]}
+  };
+}
 
 export default async function HomePage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
@@ -25,9 +52,20 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
     title: t(`ecosystem.card${index + 1}Title`),
     body: t(`ecosystem.card${index + 1}Body`)
   }));
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Cell Clinics",
+    url: "https://cell-clinics.com",
+    logo: "https://cell-clinics.com/cell-clinics-logo.png",
+    email: "info@cell-education.com",
+    description: t("meta.description"),
+    parentOrganization: {"@type": "Organization", name: "Cell Education", url: "https://www.cell-education.com"}
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData).replace(/</g, "\\u003c")}} />
       <section className="home-hero section-soft">
         <div className="container home-hero-grid">
           <div>
@@ -53,7 +91,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
           <ModuleGrid items={modules.slice(0, 4)} />
           <div className="section-action">
-            <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
+            <ButtonLink href="#systems" variant="secondary">{t("cta.explorePlatform")}</ButtonLink>
           </div>
         </div>
       </section>
@@ -63,7 +101,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           <SectionHeading eyebrow={t("systems.label")} title={t("systems.title")} />
           <ClinicalSystems compact />
           <div className="section-action">
-            <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
+            <ButtonLink href="#application" variant="secondary">{t("cta.discussImplementation")}</ButtonLink>
           </div>
         </div>
       </section>
@@ -100,7 +138,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               ))}
             </div>
             <div className="button-row">
-              <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
+              <ButtonLink href="https://www.cell-education.com" variant="secondary">{t("cta.learnEducation")}</ButtonLink>
             </div>
           </div>
           <div className="leadership-portrait">

@@ -23,6 +23,9 @@ type FinderLabels = {
   locating: string;
   locationError: string;
   distanceAway: string;
+  nearestTitle: string;
+  nearestBody: string;
+  expandRadius: string;
 };
 
 type UserLocation = {lat: number; lng: number};
@@ -113,6 +116,18 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
       return a.distance - b.distance;
     });
   }, [activeLocation, clinics, country, needle, radius, searchLocation, textMatches]);
+  const nearestClinics = useMemo(() => {
+    if (filtered.length || !activeLocation || searchState === "loading") return [];
+    return clinics
+      .filter((clinic) => !country || clinic.countryCode === country)
+      .map((clinic) => ({...clinic, distance: distanceInKm(activeLocation, clinic.coordinates)}))
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 3);
+  }, [activeLocation, clinics, country, filtered.length, searchState]);
+  const displayedClinics = filtered.length ? filtered : nearestClinics;
+  const expandedRadius = nearestClinics.length
+    ? [25, 50, 100, 200, 500].find((value) => value >= nearestClinics[0].distance)
+    : null;
 
   const requestLocation = () => {
     if (!navigator.geolocation) {
@@ -174,11 +189,24 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
         </div>
         {locationState === "error" && <p className="location-error" role="status">{labels.locationError}</p>}
         <div className="clinic-list-heading">
-          <span>{filtered.length} {labels.locations}</span>
+          <span>{displayedClinics.length} {labels.locations}</span>
           <span>DACH</span>
         </div>
         <div className="clinic-list">
-          {filtered.map((clinic, index) => (
+          {!!nearestClinics.length && (
+            <div className="clinic-nearest-note" role="status">
+              <div>
+                <strong>{labels.nearestTitle}</strong>
+                <p>{labels.nearestBody}</p>
+              </div>
+              {expandedRadius && (
+                <button type="button" onClick={() => setRadius(String(expandedRadius))}>
+                  {labels.expandRadius} {expandedRadius} km
+                </button>
+              )}
+            </div>
+          )}
+          {displayedClinics.map((clinic, index) => (
             <article
               className="clinic-result"
               id={`clinic-${clinic.slug}`}
@@ -199,7 +227,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
               ) : <span className="clinic-profile-pending">{labels.profileSoon}</span>}
             </article>
           ))}
-          {!filtered.length && (
+          {!displayedClinics.length && (
             <div className="clinic-empty" role="status">
               {searchState === "loading" ? <Search size={22} /> : <Building2 size={22} />}
               <p>{searchState === "loading" ? labels.locating : labels.noResults}</p>

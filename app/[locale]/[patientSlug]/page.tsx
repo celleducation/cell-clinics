@@ -24,7 +24,25 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, patientSlug} = await params;
   if (!validRoute(locale, patientSlug)) return {};
   const t = await getTranslations({locale, namespace: "patient.meta"});
-  return {title: t("title"), description: t("description")};
+  const title = t("title");
+  const description = t("description");
+  return {
+    title: {absolute: title},
+    description,
+    alternates: {
+      canonical: `/${locale}/${patientSlug}`,
+      languages: {de: "/de/patienten", en: "/en/patients", es: "/es/pacientes", "x-default": "/en/patients"}
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}/${patientSlug}`,
+      siteName: "Cell Clinics",
+      type: "website",
+      images: [{url: "/images/cellclinic-mitochondria.png", width: 1200, height: 900, alt: "Cell Clinics"}]
+    },
+    twitter: {card: "summary_large_image", title, description, images: ["/images/cellclinic-mitochondria.png"]}
+  };
 }
 
 export default async function PatientPage({params}: {params: Promise<{locale: string; patientSlug: string}>}) {
@@ -101,7 +119,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
             useLocation: networkT("useLocation"),
             locating: networkT("locating"),
             locationError: networkT("locationError"),
-            distanceAway: networkT("distanceAway")
+            distanceAway: networkT("distanceAway"),
+            nearestTitle: networkT("nearestTitle"),
+            nearestBody: networkT("nearestBody"),
+            expandRadius: networkT("expandRadius")
           }} />
           <div className="patient-network-inquiry section-soft">
             <div>

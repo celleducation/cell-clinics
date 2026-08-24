@@ -19,7 +19,8 @@
     "explorePlatform": "Explorar la plataforma",
     "viewSystems": "Ver sistemas clínicos",
     "learnEducation": "Conocer Cell Education",
-    "requestInfo": "Solicitar información de colaboración"
+    "requestInfo": "Solicitar información de colaboración",
+    "discussImplementation": "Hablar sobre la implementación"
   },
   "hero": {
     "label": "Plataforma de implementación guiada por médicos",
@@ -224,6 +225,9 @@
     "countryLabel": "País",
     "allCountries": "Todos los países",
     "noResults": "No se ha encontrado ninguna consulta asociada.",
+    "nearestTitle": "Centros disponibles más cercanos",
+    "nearestBody": "No hay ninguna consulta asociada dentro del radio seleccionado. Estos son los centros más próximos a su búsqueda.",
+    "expandRadius": "Ampliar el radio a",
     "profileSoon": "Perfil próximamente",
     "partnerPractice": "Consulta asociada",
     "locations": "ubicaciones",

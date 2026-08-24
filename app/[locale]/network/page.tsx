@@ -48,7 +48,10 @@ export default async function NetworkPage({params}: {params: Promise<{locale: st
             useLocation: t("useLocation"),
             locating: t("locating"),
             locationError: t("locationError"),
-            distanceAway: t("distanceAway")
+            distanceAway: t("distanceAway"),
+            nearestTitle: t("nearestTitle"),
+            nearestBody: t("nearestBody"),
+            expandRadius: t("expandRadius")
           }} />
         </div>
       </section>
