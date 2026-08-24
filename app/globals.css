@@ -201,7 +201,7 @@ textarea {
   box-shadow: 0 4px 14px rgba(22, 38, 74, .055);
   -webkit-backdrop-filter: blur(22px) saturate(118%);
   backdrop-filter: blur(22px) saturate(118%);
-  transition: color 280ms var(--ease-premium), background-color 280ms var(--ease-premium), border-color 280ms var(--ease-premium), transform 280ms var(--ease-premium), box-shadow 280ms var(--ease-premium);
+  transition: color 520ms var(--ease-premium), background-color 520ms var(--ease-premium), border-color 520ms var(--ease-premium), transform 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium);
 }
 
 .button:not(.button-text)::before {
@@ -218,7 +218,7 @@ textarea {
   pointer-events: none;
   opacity: .72;
   transform: translate3d(0, 0, 0);
-  transition: opacity 320ms var(--ease-premium), transform 420ms var(--ease-premium);
+  transition: opacity 620ms var(--ease-premium), transform 720ms var(--ease-premium);
 }
 
 .button:not(.button-text) > * {
@@ -281,7 +281,7 @@ textarea {
 .button-text::after {
   display: inline-block;
   content: "→";
-  transition: transform 280ms var(--ease-premium);
+  transition: transform 520ms var(--ease-premium);
 }
 
 .button:active {
@@ -298,11 +298,11 @@ textarea {
 }
 
 .interactive-card {
-  transition: transform 300ms var(--ease-premium), box-shadow 300ms var(--ease-premium), border-color 300ms var(--ease-premium);
+  transition: transform 620ms var(--ease-premium), box-shadow 620ms var(--ease-premium), border-color 620ms var(--ease-premium);
 }
 
 .interactive-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   border-color: rgba(127, 211, 240, .58);
   box-shadow: inset 0 1px 0 white, 0 22px 54px rgba(22, 38, 74, .09);
 }
@@ -446,7 +446,7 @@ textarea {
   content: "";
   opacity: 0;
   transform: scaleX(.35);
-  transition: opacity 240ms var(--ease-premium), transform 320ms var(--ease-premium);
+  transition: opacity 560ms var(--ease-premium), transform 680ms var(--ease-premium);
 }
 
 .nav-link:hover,
@@ -483,7 +483,7 @@ textarea {
   color: var(--slate);
   font-size: .7rem;
   font-weight: 500;
-  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  transition: color 520ms var(--ease-premium), background-color 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium);
 }
 
 .locale-switcher a[data-active="true"] {
@@ -664,7 +664,7 @@ textarea {
   background: white;
   border: 1px solid var(--line);
   border-radius: 12px;
-  transition: border-color 240ms var(--ease-premium), box-shadow 240ms var(--ease-premium), background-color 240ms var(--ease-premium);
+  transition: border-color 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium), background-color 520ms var(--ease-premium);
 }
 
 textarea.input {
@@ -862,7 +862,7 @@ textarea.input {
   font-size: .82rem;
   font-weight: 400;
   line-height: 1;
-  transition: color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  transition: color 520ms var(--ease-premium), background-color 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium);
   white-space: nowrap;
 }
 
@@ -1783,8 +1783,8 @@ textarea.input {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  min-height: 170px;
-  padding: 20px;
+  min-height: 0;
+  padding: 19px 20px;
   color: var(--navy);
   background: rgba(255, 255, 255, .72);
   border: 1px solid rgba(198, 216, 232, .72);
@@ -1809,9 +1809,9 @@ textarea.input {
 }
 
 .credential-item p {
-  margin: 9px 0 0;
+  margin: 7px 0 0;
   color: var(--text-muted);
-  font-size: .91rem;
+  font-size: .88rem;
   font-weight: 400;
   line-height: 1.52;
 }
@@ -1897,13 +1897,13 @@ textarea.input {
   -webkit-backdrop-filter: blur(18px) saturate(112%);
   backdrop-filter: blur(18px) saturate(112%);
   transition:
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    transform 220ms ease;
+    border-color 620ms var(--ease-premium),
+    box-shadow 620ms var(--ease-premium),
+    transform 620ms var(--ease-premium);
 }
 
 .onboarding-step:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   border-color: rgba(100, 194, 239, .52);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .98),
@@ -2169,7 +2169,7 @@ textarea.input {
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  transition: color 520ms var(--ease-premium), background 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium);
 }
 
 .radius-options button:hover,
@@ -2284,7 +2284,7 @@ textarea.input {
   border-radius: 999px;
   font-size: .76rem;
   font-weight: 700;
-  transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+  transition: border-color 520ms var(--ease-premium), background-color 520ms var(--ease-premium), transform 520ms var(--ease-premium);
 }
 
 .clinic-nearest-note button:hover {
@@ -2302,7 +2302,7 @@ textarea.input {
   background: white;
   border: 1px solid var(--line);
   border-radius: 14px;
-  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  transition: border-color 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium), transform 520ms var(--ease-premium);
 }
 
 .clinic-result:hover,
@@ -4029,11 +4029,14 @@ textarea.input {
 .system-row,
 .patient-step,
 .clinic-area-card,
-.credential-list > div,
 .contact-card,
 .event-card,
 .news-card {
-  transition: transform 300ms var(--ease-premium), border-color 300ms var(--ease-premium), box-shadow 300ms var(--ease-premium), background-color 300ms var(--ease-premium);
+  transition: transform 620ms var(--ease-premium), border-color 620ms var(--ease-premium), box-shadow 620ms var(--ease-premium), background-color 620ms var(--ease-premium);
+}
+
+.credential-list > div {
+  transition: border-color 620ms var(--ease-premium), box-shadow 620ms var(--ease-premium), background-color 620ms var(--ease-premium);
 }
 
 .feature-icon,
@@ -4044,7 +4047,7 @@ textarea.input {
 .leadership-portrait img,
 .clinic-profile-image-wrap img,
 .clinic-profile-link svg {
-  transition: transform 420ms var(--ease-premium), color 280ms var(--ease-premium), background-color 280ms var(--ease-premium), border-color 280ms var(--ease-premium), filter 420ms var(--ease-premium);
+  transition: transform 720ms var(--ease-premium), color 520ms var(--ease-premium), background-color 520ms var(--ease-premium), border-color 520ms var(--ease-premium), filter 720ms var(--ease-premium);
 }
 
 .media-frame,
@@ -4055,13 +4058,13 @@ textarea.input {
 
 .footer-nav a,
 .clinic-profile-link {
-  transition: color 240ms var(--ease-premium), opacity 240ms var(--ease-premium);
+  transition: color 520ms var(--ease-premium), opacity 520ms var(--ease-premium);
 }
 
 .search-input-wrap,
 .country-filter select,
 .radius-options {
-  transition: border-color 240ms var(--ease-premium), box-shadow 240ms var(--ease-premium), background-color 240ms var(--ease-premium);
+  transition: border-color 520ms var(--ease-premium), box-shadow 520ms var(--ease-premium), background-color 520ms var(--ease-premium);
 }
 
 .input:hover,
@@ -4080,31 +4083,13 @@ textarea.input {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .credential-item p {
-    max-height: 0;
-    margin-top: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(7px);
-    transition: max-height 360ms var(--ease-premium), margin-top 360ms var(--ease-premium), opacity 220ms ease, transform 360ms var(--ease-premium);
-  }
-
-  .credential-item:hover p,
-  .credential-item:focus p,
-  .credential-item:focus-within p {
-    max-height: 8em;
-    margin-top: 9px;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   .system-row-compact .system-copy p {
     max-height: 0;
     margin-bottom: 0;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(8px);
-    transition: max-height 380ms var(--ease-premium), margin-bottom 380ms var(--ease-premium), opacity 220ms ease, transform 380ms var(--ease-premium);
+    transform: translateY(4px);
+    transition: max-height 920ms var(--ease-premium), margin-bottom 920ms var(--ease-premium), opacity 720ms ease 100ms, transform 860ms var(--ease-premium);
   }
 
   .system-row-compact:hover .system-copy p,
@@ -4128,28 +4113,28 @@ textarea.input {
 
   .interactive-card:hover,
   .interactive-card:focus-within {
-    transform: translateY(-3px);
+    transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .64);
     box-shadow: var(--glass-shadow-hover);
   }
 
   .interactive-card:hover .feature-icon,
   .interactive-card:hover > svg {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .54);
   }
 
   .system-row:hover,
   .system-row:focus,
   .system-row:focus-within {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .56);
     box-shadow: var(--glass-shadow-hover);
   }
 
   .system-row:hover .system-image img,
   .system-row:focus .system-image img {
-    transform: scale(.85) translateY(-2px);
+    transform: scale(.84);
     filter: drop-shadow(0 20px 30px rgba(38, 93, 137, .12));
   }
 
@@ -4163,15 +4148,14 @@ textarea.input {
     color: var(--navy);
     background: var(--sky-soft);
     border-color: var(--sky-ink);
-    transform: scale(1.035);
+    transform: scale(1.015);
   }
 
-  .credential-list > div:hover,
   .clinic-area-card:hover,
   .contact-card:hover,
   .event-card:hover,
   .news-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .52);
     box-shadow: 0 16px 38px rgba(22, 38, 74, .075), inset 0 1px 0 white;
   }
@@ -4179,7 +4163,7 @@ textarea.input {
   .media-frame:hover img,
   .leadership-portrait:hover img,
   .clinic-profile-image-wrap:hover img {
-    transform: scale(1.018);
+    transform: scale(1.008);
   }
 
   .footer-nav a:hover,
