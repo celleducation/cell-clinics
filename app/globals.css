@@ -4061,6 +4061,24 @@ textarea.input {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .system-row-compact .system-copy p {
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: max-height 380ms var(--ease-premium), margin-bottom 380ms var(--ease-premium), opacity 220ms ease, transform 380ms var(--ease-premium);
+  }
+
+  .system-row-compact:hover .system-copy p,
+  .system-row-compact:focus .system-copy p,
+  .system-row-compact:focus-within .system-copy p {
+    max-height: 5.2em;
+    margin-bottom: 1em;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .button:not(.button-text):hover::before {
     opacity: .95;
     transform: translate3d(18%, 2px, 0);
@@ -4085,13 +4103,15 @@ textarea.input {
   }
 
   .system-row:hover,
+  .system-row:focus,
   .system-row:focus-within {
     transform: translateY(-2px);
     border-color: rgba(127, 211, 240, .56);
     box-shadow: var(--glass-shadow-hover);
   }
 
-  .system-row:hover .system-image img {
+  .system-row:hover .system-image img,
+  .system-row:focus .system-image img {
     transform: scale(.85) translateY(-2px);
     filter: drop-shadow(0 20px 30px rgba(38, 93, 137, .12));
   }
@@ -4128,6 +4148,16 @@ textarea.input {
   .footer-nav a:hover,
   .clinic-profile-link:hover {
     opacity: .78;
+  }
+}
+
+@media (max-width: 767px) {
+  .system-row-compact .system-copy p {
+    max-height: none;
+    margin-bottom: 1em;
+    overflow: visible;
+    opacity: 1;
+    transform: none;
   }
 }
 

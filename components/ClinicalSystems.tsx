@@ -8,7 +8,11 @@ export async function ClinicalSystems({compact = false}: {compact?: boolean}) {
   return (
     <div className="systems-list">
       {clinicalSystems.map((system, index) => (
-        <article className={`system-row${index % 2 ? " system-row-reverse" : ""}`} key={system.slug}>
+        <article
+          className={`system-row${compact ? " system-row-compact" : ""}${index % 2 ? " system-row-reverse" : ""}`}
+          key={system.slug}
+          tabIndex={compact ? 0 : undefined}
+        >
           <div className="system-copy">
             <span className="system-index">{String(index + 1).padStart(2, "0")}</span>
             <h3>{t(`systems.card${index + 1}Title`)}</h3>
