@@ -951,7 +951,15 @@ textarea.input {
 }
 
 .patient-steps::before {
-  content: none;
+  position: absolute;
+  z-index: 2;
+  top: 49px;
+  right: 24px;
+  left: 24px;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, rgba(111, 203, 238, .22), var(--sky) 5%, var(--sky) 95%, rgba(111, 203, 238, .22));
+  pointer-events: none;
 }
 
 .patient-step {
@@ -973,17 +981,6 @@ textarea.input {
   background: var(--white);
   color: var(--navy);
   font-weight: 800;
-}
-
-.patient-step:not(:last-child)::after {
-  position: absolute;
-  z-index: 2;
-  top: 49px;
-  left: 72px;
-  width: calc(100% + 18px - 48px);
-  height: 1px;
-  content: "";
-  background: var(--sky);
 }
 
 .patient-step h3,
