@@ -1604,6 +1604,7 @@ textarea.input {
 }
 
 .system-row {
+  height: 176px;
   min-height: 176px;
   display: grid;
   grid-template-columns: 1.38fr .62fr;
@@ -3160,6 +3161,7 @@ textarea.input {
 
   .system-row,
   .system-row-reverse {
+    height: auto;
     min-height: auto;
     grid-template-columns: 1fr;
   }
