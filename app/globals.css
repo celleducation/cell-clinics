@@ -1781,10 +1781,10 @@ textarea.input {
 
 .credential-list > div {
   display: flex;
-  gap: 10px;
-  align-items: center;
-  min-height: 58px;
-  padding: 14px 16px;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: 170px;
+  padding: 20px;
   color: var(--navy);
   background: rgba(255, 255, 255, .72);
   border: 1px solid rgba(198, 216, 232, .72);
@@ -1794,7 +1794,26 @@ textarea.input {
 }
 
 .credential-list svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
   color: var(--sky-ink);
+}
+
+.credential-item > div {
+  min-width: 0;
+}
+
+.credential-item strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.credential-item p {
+  margin: 9px 0 0;
+  color: var(--text-muted);
+  font-size: .91rem;
+  font-weight: 400;
+  line-height: 1.52;
 }
 
 .leadership-portrait {
@@ -4061,6 +4080,24 @@ textarea.input {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .credential-item p {
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(7px);
+    transition: max-height 360ms var(--ease-premium), margin-top 360ms var(--ease-premium), opacity 220ms ease, transform 360ms var(--ease-premium);
+  }
+
+  .credential-item:hover p,
+  .credential-item:focus p,
+  .credential-item:focus-within p {
+    max-height: 8em;
+    margin-top: 9px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .system-row-compact .system-copy p {
     max-height: 0;
     margin-bottom: 0;

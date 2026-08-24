@@ -133,9 +133,13 @@
     "title": "Liderazgo médico",
     "body": "El marco de Cell Clinics se basa en décadas de formación médica, desarrollo de marcos clínicos y experiencia en medicina celular.",
     "stat1": "Formación médica",
+    "stat1Body": "La formación estructurada aborda el diagnóstico, los principios terapéuticos y su aplicación segura en la práctica clínica.",
     "stat2": "Desarrollo de marcos clínicos",
+    "stat2Body": "Los procesos basados en evidencia conectan la evaluación, la interpretación médica y la implementación terapéutica.",
     "stat3": "Docencia internacional",
+    "stat3Body": "La formación y el intercambio profesional establecen un estándar médico común entre distintos países.",
     "stat4": "Experiencia en medicina celular",
+    "stat4Body": "Décadas de experiencia en medicina mitocondrial, terapia de infusión y regulación biológica.",
     "cardLabel": "Autoridad científica y educativa",
     "cardBody": "Formación médica y desarrollo de marcos clínicos para la implementación de medicina celular."
   },

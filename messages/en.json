@@ -133,9 +133,13 @@
     "title": "Medical Leadership",
     "body": "The Cell Clinics framework is built upon decades of physician education, clinical framework development and cellular medicine expertise.",
     "stat1": "Physician Education",
+    "stat1Body": "Structured training covers diagnostics, therapeutic principles and safe implementation in daily clinical practice.",
     "stat2": "Clinical Framework Development",
+    "stat2Body": "Evidence-based workflows connect assessment, physician interpretation and therapeutic implementation.",
     "stat3": "International Teaching",
+    "stat3Body": "Education and expert exchange establish a shared medical standard across international markets.",
     "stat4": "Cellular Medicine Expertise",
+    "stat4Body": "Decades of experience in mitochondrial medicine, infusion therapy and biological regulation.",
     "cardLabel": "Scientific & Educational Authority",
     "cardBody": "Medical education and clinical framework development for cellular medicine implementation."
   },

@@ -133,8 +133,14 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           <div>
             <SectionHeading eyebrow={t("leadership.label")} title={t("leadership.title")} intro={t("leadership.body")} />
             <div className="credential-list">
-              {[t("leadership.stat1"), t("leadership.stat2"), t("leadership.stat3"), t("leadership.stat4")].map((item) => (
-                <div key={item}><Check size={17} />{item}</div>
+              {[1, 2, 3, 4].map((item) => (
+                <div className="credential-item" key={item} tabIndex={0}>
+                  <Check size={17} />
+                  <div>
+                    <strong>{t(`leadership.stat${item}`)}</strong>
+                    <p>{t(`leadership.stat${item}Body`)}</p>
+                  </div>
+                </div>
               ))}
             </div>
             <div className="button-row">

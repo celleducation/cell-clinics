@@ -133,9 +133,13 @@
     "title": "Medizinische Leitung",
     "body": "Das Cell Clinics Framework basiert auf jahrzehntelanger ärztlicher Weiterbildung, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
     "stat1": "Ärztliche Fortbildung",
+    "stat1Body": "Strukturierte Schulungen vermitteln Diagnostik, Therapieprinzipien und die sichere Anwendung im Praxisalltag.",
     "stat2": "Klinische Framework-Entwicklung",
+    "stat2Body": "Evidenzbasierte Abläufe verbinden Befunderhebung, ärztliche Interpretation und therapeutische Umsetzung.",
     "stat3": "Internationale Lehre",
+    "stat3Body": "Fortbildungen und fachlicher Austausch schaffen einen gemeinsamen medizinischen Standard über Ländergrenzen hinweg.",
     "stat4": "Zellmedizinische Expertise",
+    "stat4Body": "Jahrzehntelange Erfahrung in mitochondrialer Medizin, Infusionstherapie und biologischer Regulation.",
     "cardLabel": "Wissenschaftliche & medizinische Leitung",
     "cardBody": "Ärztliche Weiterbildung und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
   },
