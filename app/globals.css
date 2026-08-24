@@ -4084,21 +4084,24 @@ textarea.input {
 
 @media (hover: hover) and (pointer: fine) {
   .system-row-compact .system-copy p {
-    max-height: 0;
-    margin-bottom: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: max-height 920ms var(--ease-premium), margin-bottom 920ms var(--ease-premium), opacity 720ms ease 100ms, transform 860ms var(--ease-premium);
+    clip-path: inset(0 0 100% 0);
+    opacity: 1;
+    pointer-events: none;
+    transition: clip-path 1050ms cubic-bezier(.22, .61, .36, 1);
+    will-change: clip-path;
   }
 
   .system-row-compact:hover .system-copy p,
   .system-row-compact:focus .system-copy p,
   .system-row-compact:focus-within .system-copy p {
-    max-height: 5.2em;
-    margin-bottom: 1em;
-    opacity: 1;
-    transform: translateY(0);
+    clip-path: inset(0);
+    transition-delay: 140ms;
+  }
+
+  .system-row-compact:hover,
+  .system-row-compact:focus,
+  .system-row-compact:focus-within {
+    transform: none;
   }
 
   .button:not(.button-text):hover::before {
@@ -4130,6 +4133,12 @@ textarea.input {
     transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .56);
     box-shadow: var(--glass-shadow-hover);
+  }
+
+  .system-row.system-row-compact:hover,
+  .system-row.system-row-compact:focus,
+  .system-row.system-row-compact:focus-within {
+    transform: none;
   }
 
   .system-row:hover .system-image img,
@@ -4174,11 +4183,15 @@ textarea.input {
 
 @media (max-width: 767px) {
   .system-row-compact .system-copy p {
+    clip-path: none;
     max-height: none;
     margin-bottom: 1em;
     overflow: visible;
     opacity: 1;
+    pointer-events: auto;
     transform: none;
+    transition: none;
+    will-change: auto;
   }
 }
 
