@@ -4113,22 +4113,22 @@ textarea.input {
   .system-row-compact {
     height: 132px;
     min-height: 132px;
-    transition: height 1050ms cubic-bezier(.22, .61, .36, 1), min-height 1050ms cubic-bezier(.22, .61, .36, 1), border-color 720ms var(--ease-premium), box-shadow 720ms var(--ease-premium), background-color 720ms var(--ease-premium);
+    transition: height 1300ms cubic-bezier(.22, .61, .36, 1), min-height 1300ms cubic-bezier(.22, .61, .36, 1), border-color 850ms var(--ease-premium), box-shadow 850ms var(--ease-premium), background-color 850ms var(--ease-premium);
   }
 
   .system-row-compact .system-image {
     min-height: 132px;
-    transition: min-height 1050ms cubic-bezier(.22, .61, .36, 1);
+    transition: min-height 1300ms cubic-bezier(.22, .61, .36, 1);
   }
 
   .system-row-compact .system-copy p {
     max-height: 0;
     margin: 0;
     overflow: hidden;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
-    transition: max-height 1050ms cubic-bezier(.22, .61, .36, 1), margin-top 1050ms cubic-bezier(.22, .61, .36, 1), opacity 420ms ease;
-    will-change: max-height, opacity;
+    transition: max-height 1300ms cubic-bezier(.22, .61, .36, 1), margin-top 1300ms cubic-bezier(.22, .61, .36, 1);
+    will-change: max-height;
   }
 
   .system-row-compact:hover,
@@ -4150,8 +4150,6 @@ textarea.input {
   .system-row-compact:focus-within .system-copy p {
     max-height: 4.5rem;
     margin-top: 8px;
-    opacity: 1;
-    transition-delay: 0ms, 0ms, 260ms;
   }
 
   .button:not(.button-text):hover::before {
