@@ -4110,25 +4110,48 @@ textarea.input {
     transform: translate3d(3px, -4px, 0);
   }
 
-  .system-row-compact .system-copy p {
-    clip-path: inset(0 0 100% 0);
-    opacity: 1;
-    pointer-events: none;
-    transition: clip-path 1050ms cubic-bezier(.22, .61, .36, 1);
-    will-change: clip-path;
+  .system-row-compact {
+    height: 132px;
+    min-height: 132px;
+    transition: height 1050ms cubic-bezier(.22, .61, .36, 1), min-height 1050ms cubic-bezier(.22, .61, .36, 1), border-color 720ms var(--ease-premium), box-shadow 720ms var(--ease-premium), background-color 720ms var(--ease-premium);
   }
 
-  .system-row-compact:hover .system-copy p,
-  .system-row-compact:focus .system-copy p,
-  .system-row-compact:focus-within .system-copy p {
-    clip-path: inset(0);
-    transition-delay: 140ms;
+  .system-row-compact .system-image {
+    min-height: 132px;
+    transition: min-height 1050ms cubic-bezier(.22, .61, .36, 1);
+  }
+
+  .system-row-compact .system-copy p {
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 1050ms cubic-bezier(.22, .61, .36, 1), margin-top 1050ms cubic-bezier(.22, .61, .36, 1), opacity 420ms ease;
+    will-change: max-height, opacity;
   }
 
   .system-row-compact:hover,
   .system-row-compact:focus,
   .system-row-compact:focus-within {
+    height: 176px;
+    min-height: 176px;
     transform: none;
+  }
+
+  .system-row-compact:hover .system-image,
+  .system-row-compact:focus .system-image,
+  .system-row-compact:focus-within .system-image {
+    min-height: 176px;
+  }
+
+  .system-row-compact:hover .system-copy p,
+  .system-row-compact:focus .system-copy p,
+  .system-row-compact:focus-within .system-copy p {
+    max-height: 4.5rem;
+    margin-top: 8px;
+    opacity: 1;
+    transition-delay: 0ms, 0ms, 260ms;
   }
 
   .button:not(.button-text):hover::before {
