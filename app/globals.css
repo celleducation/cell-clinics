@@ -967,35 +967,10 @@ textarea.input {
   gap: 18px;
 }
 
-.patient-steps::before {
-  position: absolute;
-  z-index: 0;
-  top: 49px;
-  right: 24px;
-  left: 24px;
-  height: 1px;
-  content: "";
-  background: linear-gradient(90deg, rgba(111, 203, 238, .22), var(--sky) 5%, var(--sky) 95%, rgba(111, 203, 238, .22));
-  pointer-events: none;
-}
-
 .patient-step {
   position: relative;
-  z-index: 1;
   min-height: 260px;
   padding: 26px 24px;
-}
-
-.patient-step::before {
-  position: absolute;
-  z-index: 1;
-  top: 49px;
-  right: 0;
-  left: 0;
-  height: 1px;
-  content: "";
-  background: var(--sky);
-  pointer-events: none;
 }
 
 .patient-step-number {
@@ -1280,11 +1255,6 @@ textarea.input {
     grid-template-columns: 1fr 1fr;
   }
 
-  .patient-steps::before {
-    display: none;
-  }
-
-  .patient-step::before,
   .patient-step::after {
     display: none;
   }
