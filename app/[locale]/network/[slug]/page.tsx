@@ -12,16 +12,18 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params}: {params: Promise<{locale: string; slug: string}>}): Promise<Metadata> {
   const {locale, slug} = await params;
-  if (slug !== "alpstein") return {};
-  const t = await getTranslations({locale, namespace: "clinicProfiles.alpstein"});
+  const clinic = getClinic(slug);
+  if (!clinic?.profileAvailable) return {};
+  const profileKey = slug === "medivium-stuttgart" ? "medivium" : "alpstein";
+  const t = await getTranslations({locale, namespace: `clinicProfiles.${profileKey}`});
   return {
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {canonical: `https://cell-clinics.com/${locale}/network/alpstein`},
+    alternates: {canonical: `https://cell-clinics.com/${locale}/network/${slug}`},
     openGraph: {
       title: t("metaTitle"),
       description: t("metaDescription"),
-      images: ["/clinics/alpstein/interior-1.webp"]
+      images: [clinic.images?.[0] || "/clinics/alpstein/interior-1.webp"]
     }
   };
 }
@@ -30,9 +32,24 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const {locale, slug} = await params;
   setRequestLocale(locale);
   const clinic = getClinic(slug);
-  if (!clinic?.profileAvailable || slug !== "alpstein") notFound();
-  const t = await getTranslations("clinicProfiles.alpstein");
+  if (!clinic?.profileAvailable) notFound();
+  const isMedivium = slug === "medivium-stuttgart";
+  const profileKey = isMedivium ? "medivium" : "alpstein";
+  const t = await getTranslations(`clinicProfiles.${profileKey}`);
   const networkT = await getTranslations("networkPage");
+  const assets = isMedivium ? {
+    logo: "/clinics/medivium/logo.png",
+    main: "/clinics/medivium/ha4a6318.jpg",
+    portrait: "/clinics/medivium/enrico-thiele.webp",
+    galleryThird: "/clinics/medivium/logo.png",
+    context: "/clinics/medivium/ha4a6318.jpg"
+  } : {
+    logo: "/clinics/alpstein/logo.webp",
+    main: "/clinics/alpstein/interior-1.webp",
+    portrait: "/clinics/alpstein/recovery.webp",
+    galleryThird: "/clinics/alpstein/landscape.webp",
+    context: "/clinics/alpstein/landscape.webp"
+  };
 
   const areas = [Microscope, Stethoscope, RefreshCw, Activity].map((Icon, index) => ({
     Icon,
@@ -44,19 +61,19 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["MedicalOrganization", "MedicalClinic"],
+    "@type": isMedivium ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
     name: clinic.name,
     url: clinic.website,
     email: clinic.contactEmail,
     telephone: clinic.phone,
-    image: "https://cell-clinics.com/clinics/alpstein/interior-1.webp",
+    image: `https://cell-clinics.com${assets.main}`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Dorfplatz 5",
-      postalCode: "9056",
-      addressLocality: "Gais",
-      addressRegion: "Appenzell Ausserrhoden",
-      addressCountry: "CH"
+      streetAddress: isMedivium ? "Kirchheimer Straße 42" : "Dorfplatz 5",
+      postalCode: isMedivium ? "70619" : "9056",
+      addressLocality: isMedivium ? "Stuttgart" : "Gais",
+      addressRegion: isMedivium ? "Baden-Württemberg" : "Appenzell Ausserrhoden",
+      addressCountry: isMedivium ? "DE" : "CH"
     }
   };
 
@@ -70,8 +87,8 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           <div className="alpstein-hero-grid">
             <div className="alpstein-hero-copy">
               <span className="eyebrow">{t("eyebrow")}</span>
-              <Image className="alpstein-logo" src="/clinics/alpstein/logo.webp" alt="Alpstein Clinic" width={500} height={220} priority />
-              <h1 className="display">Alpstein Clinic</h1>
+              <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />
+              <h1 className="display">{clinic.name}</h1>
               <p className="clinic-profile-location">{t("location")}</p>
               <p className="lead">{t("heroBody")}</p>
               <div className="button-row">
@@ -80,9 +97,9 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
               </div>
             </div>
             <div className="alpstein-hero-gallery">
-              <Image className="alpstein-gallery-main" src="/clinics/alpstein/interior-1.webp" alt="Lounge at Alpstein Clinic in Gais" width={900} height={1100} priority />
-              <Image src="/clinics/alpstein/recovery.webp" alt="Recovery area at Alpstein Clinic" width={800} height={600} />
-              <Image src="/clinics/alpstein/landscape.webp" alt="Appenzell landscape near Alpstein Clinic" width={800} height={600} />
+              <Image className="alpstein-gallery-main" src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
+              <Image className={isMedivium ? "medivium-portrait" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
+              <Image className={isMedivium ? "medivium-gallery-logo" : ""} src={assets.galleryThird} alt={isMedivium ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
             </div>
           </div>
           <div className="clinic-fact-strip" aria-label={t("factsLabel")}>
@@ -94,7 +111,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
       <section className="section clinic-profile-story" id="clinical-profile">
         <div className="container clinic-profile-split">
           <div className="clinic-profile-image-wrap">
-            <Image src="/clinics/alpstein/recovery.webp" alt="Integrative clinical environment at Alpstein Clinic" width={1000} height={900} />
+            <Image className={isMedivium ? "medivium-profile-portrait" : ""} src={assets.portrait} alt={t("portraitAlt")} width={1000} height={900} />
             <span>{t("profileLabel")}</span>
           </div>
           <div className="clinic-profile-copy">
@@ -143,7 +160,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <h2 className="section-title">{t("leadershipTitle")}</h2>
             <p>{t("leadershipBody")}</p>
           </div>
-          <Image src="/clinics/alpstein/landscape.webp" alt="Landscape surrounding Gais in Appenzell" width={900} height={900} />
+          <Image src={assets.context} alt={t("contextImageAlt")} width={900} height={900} />
           <div className="clinic-setting-card">
             <span className="eyebrow">{t("settingLabel")}</span>
             <h2>{t("settingTitle")}</h2>
@@ -160,7 +177,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <p>{t("contactBody")}</p>
           </div>
           <address>
-            <strong>Alpstein Clinic</strong>
+            <strong>{clinic.name}</strong>
             <span>{clinic.address}</span>
             <a href={`tel:${clinic.phone?.replaceAll(" ", "")}`}>{clinic.phone}</a>
             <a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>

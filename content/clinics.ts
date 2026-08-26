@@ -106,13 +106,25 @@ export const clinics: Clinic[] = [
     coordinates: {lat: 47.331, lng: 9.4099}
   },
   {
-    slug: "enrico-thiele-stuttgart",
-    name: "Enrico Thiele",
-    practitioner: "Enrico Thiele",
+    slug: "medivium-stuttgart",
+    name: "MEDIVIUM",
+    practitioner: "Enrico Thiele · Heilpraktiker",
     city: "Stuttgart",
     region: "Baden-Württemberg",
     countryCode: "DE",
-    coordinates: {lat: 48.781, lng: 9.194}
+    profileAvailable: true,
+    coordinates: {lat: 48.7448, lng: 9.2317},
+    summary: "Präzise Diagnostik, strukturierte Infusionskonzepte und moderne Prävention für Performance, Regeneration und Longevity.",
+    intro: "MEDIVIUM entwickelt aus über 25 Jahren Praxiserfahrung individuelle Gesundheitsstrategien mit messbarer Entwicklung.",
+    images: [
+      "/clinics/medivium/ha4a6318.jpg",
+      "/clinics/medivium/enrico-thiele.webp",
+      "/clinics/medivium/logo.png"
+    ],
+    website: "https://www.medivium.de",
+    contactEmail: "info@medivium.de",
+    phone: "+49 711 1622244",
+    address: "Kirchheimer Straße 42, 70619 Stuttgart, Deutschland"
   },
   {
     slug: "maja-koebel-aink-luebeck",
