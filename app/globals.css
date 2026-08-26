@@ -2612,8 +2612,8 @@ textarea.input {
 .clinic-stage-flow::before {
   position: absolute;
   top: 31px;
-  right: 12%;
-  left: 12%;
+  right: 31px;
+  left: 31px;
   height: 1px;
   content: "";
   background: linear-gradient(90deg, var(--sky), #cbdbe8);
