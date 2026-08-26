@@ -969,7 +969,7 @@ textarea.input {
 
 .patient-steps::before {
   position: absolute;
-  z-index: 2;
+  z-index: 0;
   top: 49px;
   right: 24px;
   left: 24px;
@@ -981,13 +981,26 @@ textarea.input {
 
 .patient-step {
   position: relative;
+  z-index: 1;
   min-height: 260px;
   padding: 26px 24px;
 }
 
+.patient-step::before {
+  position: absolute;
+  z-index: 1;
+  top: 49px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--sky);
+  pointer-events: none;
+}
+
 .patient-step-number {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   display: grid;
   width: 48px;
   height: 48px;
@@ -1271,6 +1284,7 @@ textarea.input {
     display: none;
   }
 
+  .patient-step::before,
   .patient-step::after {
     display: none;
   }
