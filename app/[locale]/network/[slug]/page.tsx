@@ -145,7 +145,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           </div>
           <div className="clinic-area-grid">
             {areas.map(({Icon, title, body}, index) => (
-              <article className="clinic-area-card" key={title} tabIndex={0}>
+              <article className="clinic-area-card" key={title}>
                 <div className="clinic-area-top"><Icon size={21} /><span>{String(index + 1).padStart(2, "0")}</span></div>
                 <h3>{title}</h3><p>{body}</p>
               </article>
