@@ -133,7 +133,7 @@ export const clinics: Clinic[] = [
     city: "Palma de Mallorca",
     region: "Balearen",
     countryCode: "ES",
-    profileAvailable: true,
+    profileAvailable: false,
     coordinates: {lat: 39.5904, lng: 2.6268},
     summary: "Dermatologie, Hautkrebsvorsorge und ästhetische Medizin mit mehr als 20 Jahren Erfahrung in Palma de Mallorca.",
     intro: "Dr. Monika Brück verbindet moderne dermatologische Diagnostik mit individueller Beratung und sanften ästhetischen Verfahren.",
