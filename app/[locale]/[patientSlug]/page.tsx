@@ -122,7 +122,8 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
             distanceAway: networkT("distanceAway"),
             nearestTitle: networkT("nearestTitle"),
             nearestBody: networkT("nearestBody"),
-            expandRadius: networkT("expandRadius")
+            expandRadius: networkT("expandRadius"),
+            region: networkT("regionLabel")
           }} />
           <div className="patient-network-inquiry section-soft">
             <div>

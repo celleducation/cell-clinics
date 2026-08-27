@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {url: `${base}/${locale}/${patientSlugs[locale]}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9},
     {url: `${base}/${locale}/network`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8},
     {url: `${base}/${locale}/network/alpstein`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.75},
-    {url: `${base}/${locale}/network/medivium-stuttgart`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.75}
+    {url: `${base}/${locale}/network/medivium-stuttgart`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.75},
+    {url: `${base}/${locale}/network/monika-brueck-mallorca`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.75}
   ]);
 }

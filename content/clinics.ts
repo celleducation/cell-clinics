@@ -4,7 +4,7 @@ export type Clinic = {
   practitioner: string;
   city: string;
   region: string;
-  countryCode: "DE" | "AT" | "CH";
+  countryCode: "DE" | "AT" | "CH" | "ES";
   profileAvailable?: boolean;
   modelClinic?: boolean;
   coordinates: {lat: number; lng: number};
@@ -125,6 +125,27 @@ export const clinics: Clinic[] = [
     contactEmail: "info@medivium.de",
     phone: "+49 711 1622244",
     address: "Kirchheimer Straße 42, 70619 Stuttgart, Deutschland"
+  },
+  {
+    slug: "monika-brueck-mallorca",
+    name: "Hautarztpraxis Dr. Monika Brück",
+    practitioner: "Dr. Monika Brück · Fachärztin für Dermatologie",
+    city: "Palma de Mallorca",
+    region: "Balearen",
+    countryCode: "ES",
+    profileAvailable: true,
+    coordinates: {lat: 39.5904, lng: 2.6268},
+    summary: "Dermatologie, Hautkrebsvorsorge und ästhetische Medizin mit mehr als 20 Jahren Erfahrung in Palma de Mallorca.",
+    intro: "Dr. Monika Brück verbindet moderne dermatologische Diagnostik mit individueller Beratung und sanften ästhetischen Verfahren.",
+    images: [
+      "/clinics/monika-brueck/hero.webp",
+      "/clinics/monika-brueck/monika-brueck.jpeg",
+      "/clinics/monika-brueck/practice.jpg"
+    ],
+    website: "https://www.hautarzt-mallorca.com",
+    contactEmail: "info@hautarzt-mallorca.com",
+    phone: "+34 971 905 202",
+    address: "Camí dels Reis 308, Edificio 3A Norte, 07011 Palma, Baleares, Spanien"
   },
   {
     slug: "maja-koebel-aink-luebeck",

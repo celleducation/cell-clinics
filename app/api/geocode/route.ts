@@ -5,7 +5,7 @@ type NominatimResult = {
   lon: string;
 };
 
-const allowedCountries = new Set(["DE", "AT", "CH"]);
+const allowedCountries = new Set(["DE", "AT", "CH", "ES"]);
 
 export async function GET(request: NextRequest) {
   const query = request.nextUrl.searchParams.get("q")?.trim();
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
 
   const countryCodes = requestedCountry && allowedCountries.has(requestedCountry)
     ? requestedCountry.toLowerCase()
-    : "de,at,ch";
+    : "de,at,ch,es";
   const params = new URLSearchParams({
     q: query,
     format: "jsonv2",

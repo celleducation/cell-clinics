@@ -26,6 +26,7 @@ type FinderLabels = {
   nearestTitle: string;
   nearestBody: string;
   expandRadius: string;
+  region: string;
 };
 
 type UserLocation = {lat: number; lng: number};
@@ -190,7 +191,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
         {locationState === "error" && <p className="location-error" role="status">{labels.locationError}</p>}
         <div className="clinic-list-heading">
           <span>{displayedClinics.length} {labels.locations}</span>
-          <span>DACH</span>
+          <span>{labels.region}</span>
         </div>
         <div className="clinic-list">
           {!!nearestClinics.length && (
