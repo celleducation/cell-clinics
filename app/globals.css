@@ -2560,6 +2560,36 @@ textarea.input {
   max-width: 520px;
 }
 
+.clinic-network-context {
+  padding: 0 0 clamp(64px, 7vw, 96px);
+}
+
+.clinic-network-context-card {
+  display: grid;
+  grid-template-columns: minmax(180px, .34fr) minmax(280px, .8fr) minmax(320px, 1fr);
+  gap: 32px;
+  align-items: center;
+  padding: 38px 42px;
+  color: rgba(255, 255, 255, .76);
+  background: var(--navy);
+  border-radius: 20px;
+}
+
+.clinic-network-context-card .eyebrow {
+  margin: 0;
+}
+
+.clinic-network-context-card .section-title {
+  margin: 0;
+  color: white;
+}
+
+.clinic-network-context-card .lead {
+  margin: 0;
+  color: rgba(255, 255, 255, .76);
+  font-size: 1rem;
+}
+
 .clinic-section-heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
@@ -3061,6 +3091,7 @@ textarea.input {
   .alpstein-hero-grid,
   .clinic-profile-split,
   .clinic-section-heading,
+  .clinic-network-context-card,
   .clinic-profile-contact-card {
     grid-template-columns: 1fr;
   }
@@ -3333,6 +3364,11 @@ textarea.input {
   .clinic-profile-contact-card {
     gap: 32px;
     padding: 30px 24px;
+  }
+
+  .clinic-network-context-card {
+    gap: 18px;
+    padding: 28px 24px;
   }
 
   .patient-network-inquiry {

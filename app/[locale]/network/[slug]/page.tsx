@@ -129,6 +129,14 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
         </div>
       </section>
 
+      <section className="clinic-network-context">
+        <div className="container clinic-network-context-card">
+          <span className="eyebrow">{t("cellClinicsLabel")}</span>
+          <h2 className="section-title">{t("cellClinicsTitle")}</h2>
+          <p className="lead">{t("cellClinicsBody")}</p>
+        </div>
+      </section>
+
       <section className="section section-alt clinic-areas-section">
         <div className="container">
           <div className="clinic-section-heading">
