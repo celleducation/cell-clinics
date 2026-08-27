@@ -4124,43 +4124,16 @@ textarea.input {
   .system-row-compact {
     height: 132px;
     min-height: 132px;
-    transition: height 1300ms cubic-bezier(.22, .61, .36, 1), min-height 1300ms cubic-bezier(.22, .61, .36, 1), border-color 850ms var(--ease-premium), box-shadow 850ms var(--ease-premium), background-color 850ms var(--ease-premium);
+    transition: transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
+    will-change: transform;
   }
 
   .system-row-compact .system-image {
     min-height: 132px;
-    transition: min-height 1300ms cubic-bezier(.22, .61, .36, 1);
   }
 
   .system-row-compact .system-copy p {
-    max-height: 0;
-    margin: 0;
-    overflow: hidden;
-    opacity: 1;
-    pointer-events: none;
-    transition: max-height 1300ms cubic-bezier(.22, .61, .36, 1), margin-top 1300ms cubic-bezier(.22, .61, .36, 1);
-    will-change: max-height;
-  }
-
-  .system-row-compact:hover,
-  .system-row-compact:focus,
-  .system-row-compact:focus-within {
-    height: 176px;
-    min-height: 176px;
-    transform: none;
-  }
-
-  .system-row-compact:hover .system-image,
-  .system-row-compact:focus .system-image,
-  .system-row-compact:focus-within .system-image {
-    min-height: 176px;
-  }
-
-  .system-row-compact:hover .system-copy p,
-  .system-row-compact:focus .system-copy p,
-  .system-row-compact:focus-within .system-copy p {
-    max-height: 4.5rem;
-    margin-top: 8px;
+    display: none;
   }
 
   .button:not(.button-text):hover::before {
@@ -4197,7 +4170,7 @@ textarea.input {
   .system-row.system-row-compact:hover,
   .system-row.system-row-compact:focus,
   .system-row.system-row-compact:focus-within {
-    transform: none;
+    transform: scale(1.012);
   }
 
   .system-row:hover .system-image img,
