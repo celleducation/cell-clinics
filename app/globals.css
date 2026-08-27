@@ -4160,22 +4160,16 @@ textarea.input {
   .system-row-compact {
     height: 132px;
     min-height: 132px;
-    transition: height 180ms ease-out, min-height 180ms ease-out, transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
-    will-change: height, transform;
+    transition: transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
+    will-change: transform;
   }
 
   .system-row-compact .system-image {
     min-height: 132px;
-    transition: min-height 180ms ease-out;
   }
 
   .system-row-compact .system-copy p {
-    max-height: 0;
-    margin: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: max-height 180ms ease-out, margin 180ms ease-out, opacity 120ms ease-out, transform 180ms ease-out;
+    display: none;
   }
 
   .button:not(.button-text):hover::before {
@@ -4212,24 +4206,7 @@ textarea.input {
   .system-row.system-row-compact:hover,
   .system-row.system-row-compact:focus,
   .system-row.system-row-compact:focus-within {
-    height: 176px;
-    min-height: 176px;
-    transform: translateY(-1px);
-  }
-
-  .system-row.system-row-compact:hover .system-image,
-  .system-row.system-row-compact:focus .system-image,
-  .system-row.system-row-compact:focus-within .system-image {
-    min-height: 176px;
-  }
-
-  .system-row.system-row-compact:hover .system-copy p,
-  .system-row.system-row-compact:focus .system-copy p,
-  .system-row.system-row-compact:focus-within .system-copy p {
-    max-height: 64px;
-    margin: 0 0 1em;
-    opacity: 1;
-    transform: translateY(0);
+    transform: scale(1.012);
   }
 
   .system-row:hover .system-image img,
@@ -4251,13 +4228,41 @@ textarea.input {
     transform: scale(1.015);
   }
 
+  .clinic-area-card {
+    transition: transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
+  }
+
+  .clinic-area-card p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: max-height 180ms ease-out, opacity 120ms ease-out, transform 180ms ease-out;
+  }
+
   .clinic-area-card:hover,
+  .clinic-area-card:focus,
+  .clinic-area-card:focus-within,
   .contact-card:hover,
   .event-card:hover,
   .news-card:hover {
     transform: translateY(-1px);
     border-color: rgba(127, 211, 240, .52);
     box-shadow: 0 16px 38px rgba(22, 38, 74, .075), inset 0 1px 0 white;
+  }
+
+  .clinic-area-card:hover,
+  .clinic-area-card:focus,
+  .clinic-area-card:focus-within {
+    transform: scale(1.012);
+  }
+
+  .clinic-area-card:hover p,
+  .clinic-area-card:focus p,
+  .clinic-area-card:focus-within p {
+    max-height: 130px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .media-frame:hover img,
