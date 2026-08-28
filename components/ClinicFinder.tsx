@@ -13,7 +13,6 @@ type FinderLabels = {
   allCountries: string;
   noResults: string;
   details: string;
-  profileSoon: string;
   partnerPractice: string;
   locations: string;
   mapLabel: string;
@@ -226,7 +225,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <Link className="clinic-profile-link" href={`/network/${clinic.slug}`} aria-label={`${labels.details}: ${clinic.name}`}>
                   {labels.details}<ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
-              ) : clinic.listingOnly ? null : <span className="clinic-profile-pending">{labels.profileSoon}</span>}
+              ) : null}
             </article>
           ))}
           {!displayedClinics.length && (

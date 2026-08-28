@@ -39,7 +39,6 @@ export default async function NetworkPage({params}: {params: Promise<{locale: st
             allCountries: t("allCountries"),
             noResults: t("noResults"),
             details: t("details"),
-            profileSoon: t("profileSoon"),
             partnerPractice: t("partnerPractice"),
             locations: t("locations"),
             mapLabel: t("mapLabel"),

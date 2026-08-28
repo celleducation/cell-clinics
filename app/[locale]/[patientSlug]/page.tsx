@@ -110,7 +110,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
             allCountries: networkT("allCountries"),
             noResults: networkT("noResults"),
             details: networkT("details"),
-            profileSoon: networkT("profileSoon"),
             partnerPractice: networkT("partnerPractice"),
             locations: networkT("locations"),
             mapLabel: networkT("mapLabel"),
