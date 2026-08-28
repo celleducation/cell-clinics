@@ -170,7 +170,8 @@ export const clinics: Clinic[] = [
     intro: "Boguslaw Krystian Nikiciuk und sein Team verbinden rheumatologische Frühdiagnostik mit individuell abgestimmter, leitlinienorientierter Behandlung und kontinuierlicher Betreuung.",
     images: [
       "/clinics/nikiciuk/portrait-wide.jpg",
-      "/clinics/nikiciuk/portrait.jpg",
+      "/clinics/nikiciuk/cell-mitochondria.png",
+      "/clinics/nikiciuk/cell-receptors.png",
       "/clinics/nikiciuk/logo.png"
     ],
     website: "https://rheumatologie-neuruppin.de/",

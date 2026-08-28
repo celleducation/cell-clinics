@@ -49,24 +49,28 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     logo: "/clinics/medivium/logo.png",
     main: "/clinics/medivium/ha4a6318.jpg",
     portrait: "/clinics/medivium/enrico-thiele.webp",
+    profile: "/clinics/medivium/enrico-thiele.webp",
     galleryThird: "/clinics/medivium/logo.png",
     context: "/clinics/medivium/ha4a6318.jpg"
   } : isMonikaBrueck ? {
     logo: "/clinics/monika-brueck/logo.svg",
     main: "/clinics/monika-brueck/hero.webp",
     portrait: "/clinics/monika-brueck/monika-brueck.jpeg",
+    profile: "/clinics/monika-brueck/monika-brueck.jpeg",
     galleryThird: "/clinics/monika-brueck/practice.jpg",
     context: "/clinics/monika-brueck/practice.jpg"
   } : isNikiciuk ? {
     logo: "/clinics/nikiciuk/logo.png",
     main: "/clinics/nikiciuk/portrait-wide.jpg",
-    portrait: "/clinics/nikiciuk/portrait.jpg",
+    portrait: "/clinics/nikiciuk/cell-mitochondria.png",
+    profile: "/clinics/nikiciuk/cell-receptors.png",
     galleryThird: "/clinics/nikiciuk/logo.png",
-    context: "/clinics/nikiciuk/portrait-wide.jpg"
+    context: "/clinics/nikiciuk/cell-transport.png"
   } : {
     logo: "/clinics/alpstein/logo.webp",
     main: "/clinics/alpstein/interior-1.webp",
     portrait: "/clinics/alpstein/recovery.webp",
+    profile: "/clinics/alpstein/recovery.webp",
     galleryThird: "/clinics/alpstein/landscape.webp",
     context: "/clinics/alpstein/landscape.webp"
   };
@@ -81,7 +85,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-      "@type": isMedivium ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
+    "@type": isMedivium ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
     name: clinic.name,
     url: clinic.website,
     email: clinic.contactEmail,
@@ -118,7 +122,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             </div>
             <div className="alpstein-hero-gallery">
               <Image className="alpstein-gallery-main" src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
-              <Image className={isMedivium ? "medivium-portrait" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
+              <Image className={isMedivium ? "medivium-portrait" : isNikiciuk ? "nikiciuk-cell-art" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
               <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
             </div>
           </div>
@@ -131,7 +135,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
       <section className="section clinic-profile-story" id="clinical-profile">
         <div className="container clinic-profile-split">
           <div className="clinic-profile-image-wrap">
-            <Image className={isMedivium ? "medivium-profile-portrait" : ""} src={assets.portrait} alt={t("portraitAlt")} width={1000} height={900} />
+            <Image className={isMedivium ? "medivium-profile-portrait" : isNikiciuk ? "nikiciuk-profile-art" : ""} src={assets.profile} alt={isNikiciuk ? t("profileImageAlt") : t("portraitAlt")} width={1000} height={900} />
             <span>{t("profileLabel")}</span>
           </div>
           <div className="clinic-profile-copy">
@@ -188,7 +192,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <h2 className="section-title">{t("leadershipTitle")}</h2>
             <p>{t("leadershipBody")}</p>
           </div>
-          <Image src={assets.context} alt={t("contextImageAlt")} width={900} height={900} />
+          <Image className={isNikiciuk ? "nikiciuk-context-art" : ""} src={assets.context} alt={t("contextImageAlt")} width={900} height={900} />
           <div className="clinic-setting-card">
             <span className="eyebrow">{t("settingLabel")}</span>
             <h2>{t("settingTitle")}</h2>

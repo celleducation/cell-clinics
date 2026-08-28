@@ -2477,6 +2477,14 @@ textarea.input {
   background: white;
 }
 
+.alpstein-hero-gallery .nikiciuk-cell-art,
+.clinic-profile-image-wrap .nikiciuk-profile-art,
+.clinic-context-grid > .nikiciuk-context-art {
+  padding: clamp(18px, 2.5vw, 34px);
+  object-fit: contain;
+  background: linear-gradient(145deg, #f9fcff, #eef7fc);
+}
+
 .alpstein-hero-copy .display {
   margin-bottom: 8px;
 }
