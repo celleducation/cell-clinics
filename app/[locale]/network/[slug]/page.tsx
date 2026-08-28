@@ -61,7 +61,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     context: "/clinics/monika-brueck/practice.jpg"
   } : isNikiciuk ? {
     logo: "/clinics/nikiciuk/logo.png",
-    main: "/clinics/nikiciuk/portrait-wide.jpg",
+    main: "/clinics/nikiciuk/portrait.jpg",
     portrait: "/clinics/nikiciuk/cell-mitochondria.png",
     profile: "/clinics/nikiciuk/cell-receptors.png",
     galleryThird: "/clinics/nikiciuk/logo.png",
@@ -121,7 +121,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
               </div>
             </div>
             <div className="alpstein-hero-gallery">
-              <Image className="alpstein-gallery-main" src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
+              <Image className={`alpstein-gallery-main${isNikiciuk ? " nikiciuk-main-portrait" : ""}`} src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
               <Image className={isMedivium ? "medivium-portrait" : isNikiciuk ? "nikiciuk-cell-art" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
               <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
             </div>

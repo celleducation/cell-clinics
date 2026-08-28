@@ -2514,6 +2514,10 @@ textarea.input {
   grid-row: 1 / 3;
 }
 
+.alpstein-hero-gallery .alpstein-gallery-main.nikiciuk-main-portrait {
+  object-position: center 22%;
+}
+
 .clinic-fact-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

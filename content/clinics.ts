@@ -169,7 +169,7 @@ export const clinics: Clinic[] = [
     summary: "Internistische Facharztpraxis für die Diagnostik und Behandlung entzündlich-rheumatischer Erkrankungen in allen Stadien.",
     intro: "Boguslaw Krystian Nikiciuk und sein Team verbinden rheumatologische Frühdiagnostik mit individuell abgestimmter, leitlinienorientierter Behandlung und kontinuierlicher Betreuung.",
     images: [
-      "/clinics/nikiciuk/portrait-wide.jpg",
+      "/clinics/nikiciuk/portrait.jpg",
       "/clinics/nikiciuk/cell-mitochondria.png",
       "/clinics/nikiciuk/cell-receptors.png",
       "/clinics/nikiciuk/logo.png"
