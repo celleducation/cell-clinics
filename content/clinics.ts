@@ -179,9 +179,9 @@ export const clinics: Clinic[] = [
     address: "An der Seepromenade 24, 16816 Neuruppin, Deutschland"
   },
   {
-    slug: "hopmann-maak-lemfoerde",
-    name: "Zahnarztpraxis Dr. Michael Maak und Kollegen",
-    practitioner: "Dr. Michael Maak · Dr. Sabine Hopmann · ZÄ Antje Knof",
+    slug: "michael-maak-lemfoerde",
+    name: "Dr. Michael Maak",
+    practitioner: "Zahnarztpraxis Hopmann & Maak",
     city: "Lemförde",
     region: "Niedersachsen",
     countryCode: "DE",
@@ -190,9 +190,31 @@ export const clinics: Clinic[] = [
     website: "https://www.hopmann-maak.de/"
   },
   {
-    slug: "res-vitalis-tegernsee",
-    name: "ResVitalis",
-    practitioner: "Dr. rer. nat. Anke Stockhausen · Apothekerin und Heilpraktikerin",
+    slug: "sabine-hopmann-lemfoerde",
+    name: "Dr. Sabine Hopmann",
+    practitioner: "Zahnarztpraxis Hopmann & Maak",
+    city: "Lemförde",
+    region: "Niedersachsen",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 52.4657, lng: 8.3768},
+    website: "https://www.hopmann-maak.de/"
+  },
+  {
+    slug: "antje-knof-lemfoerde",
+    name: "ZÄ Antje Knof",
+    practitioner: "Zahnarztpraxis Hopmann & Maak",
+    city: "Lemförde",
+    region: "Niedersachsen",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 52.4657, lng: 8.3768},
+    website: "https://www.hopmann-maak.de/"
+  },
+  {
+    slug: "anke-stockhausen-tegernsee",
+    name: "Dr. rer. nat. Anke Stockhausen",
+    practitioner: "ResVitalis · Apothekerin und Heilpraktikerin",
     city: "Tegernsee",
     region: "Bayern",
     countryCode: "DE",
@@ -201,9 +223,31 @@ export const clinics: Clinic[] = [
     website: "https://res-vitalis.de/"
   },
   {
-    slug: "dres-neumeyer-eschlkam",
-    name: "Zahnarztpraxis Dr. Neumeyer & Partner",
-    practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr · MUDr. Jana Vanicky",
+    slug: "stefan-neumeyer-eschlkam",
+    name: "Dr. med. dent. Stefan Neumeyer",
+    practitioner: "Zahnarztpraxis Dr. Neumeyer & Partner",
+    city: "Eschlkam",
+    region: "Bayern",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 49.2983, lng: 12.9157},
+    website: "https://www.dres-neumeyer.de/"
+  },
+  {
+    slug: "stefanie-neumeyer-wuehr-eschlkam",
+    name: "Dr. med. dent. Stefanie Neumeyer-Wühr",
+    practitioner: "Zahnarztpraxis Dr. Neumeyer & Partner",
+    city: "Eschlkam",
+    region: "Bayern",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 49.2983, lng: 12.9157},
+    website: "https://www.dres-neumeyer.de/"
+  },
+  {
+    slug: "jana-vanicky-eschlkam",
+    name: "MUDr. (Univ. Prag) Jana Vanicky",
+    practitioner: "Zahnarztpraxis Dr. Neumeyer & Partner",
     city: "Eschlkam",
     region: "Bayern",
     countryCode: "DE",
