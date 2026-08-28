@@ -14,7 +14,13 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
-  const profileKey = slug === "medivium-stuttgart" ? "medivium" : slug === "monika-brueck-mallorca" ? "monikaBrueck" : "alpstein";
+  const profileKey = slug === "medivium-stuttgart"
+    ? "medivium"
+    : slug === "monika-brueck-mallorca"
+      ? "monikaBrueck"
+      : slug === "boguslaw-nikiciuk-neuruppin"
+        ? "nikiciuk"
+        : "alpstein";
   const t = await getTranslations({locale, namespace: `clinicProfiles.${profileKey}`});
   return {
     title: t("metaTitle"),
@@ -35,7 +41,8 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   if (!clinic?.profileAvailable) notFound();
   const isMedivium = slug === "medivium-stuttgart";
   const isMonikaBrueck = slug === "monika-brueck-mallorca";
-  const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : "alpstein";
+  const isNikiciuk = slug === "boguslaw-nikiciuk-neuruppin";
+  const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : isNikiciuk ? "nikiciuk" : "alpstein";
   const t = await getTranslations(`clinicProfiles.${profileKey}`);
   const networkT = await getTranslations("networkPage");
   const assets = isMedivium ? {
@@ -50,6 +57,12 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     portrait: "/clinics/monika-brueck/monika-brueck.jpeg",
     galleryThird: "/clinics/monika-brueck/practice.jpg",
     context: "/clinics/monika-brueck/practice.jpg"
+  } : isNikiciuk ? {
+    logo: "/clinics/nikiciuk/logo.png",
+    main: "/clinics/nikiciuk/portrait-wide.jpg",
+    portrait: "/clinics/nikiciuk/portrait.jpg",
+    galleryThird: "/clinics/nikiciuk/logo.png",
+    context: "/clinics/nikiciuk/portrait-wide.jpg"
   } : {
     logo: "/clinics/alpstein/logo.webp",
     main: "/clinics/alpstein/interior-1.webp",
@@ -68,7 +81,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": isMedivium ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
+      "@type": isMedivium ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
     name: clinic.name,
     url: clinic.website,
     email: clinic.contactEmail,
@@ -76,11 +89,11 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     image: `https://cell-clinics.com${assets.main}`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: isMedivium ? "Kirchheimer Straße 42" : isMonikaBrueck ? "Camí dels Reis 308, Edificio 3A Norte" : "Dorfplatz 5",
-      postalCode: isMedivium ? "70619" : isMonikaBrueck ? "07011" : "9056",
-      addressLocality: isMedivium ? "Stuttgart" : isMonikaBrueck ? "Palma" : "Gais",
-      addressRegion: isMedivium ? "Baden-Württemberg" : isMonikaBrueck ? "Baleares" : "Appenzell Ausserrhoden",
-      addressCountry: isMedivium ? "DE" : isMonikaBrueck ? "ES" : "CH"
+      streetAddress: isMedivium ? "Kirchheimer Straße 42" : isMonikaBrueck ? "Camí dels Reis 308, Edificio 3A Norte" : isNikiciuk ? "An der Seepromenade 24" : "Dorfplatz 5",
+      postalCode: isMedivium ? "70619" : isMonikaBrueck ? "07011" : isNikiciuk ? "16816" : "9056",
+      addressLocality: isMedivium ? "Stuttgart" : isMonikaBrueck ? "Palma" : isNikiciuk ? "Neuruppin" : "Gais",
+      addressRegion: isMedivium ? "Baden-Württemberg" : isMonikaBrueck ? "Baleares" : isNikiciuk ? "Brandenburg" : "Appenzell Ausserrhoden",
+      addressCountry: isMedivium || isNikiciuk ? "DE" : isMonikaBrueck ? "ES" : "CH"
     }
   };
 
@@ -94,7 +107,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           <div className="alpstein-hero-grid">
             <div className="alpstein-hero-copy">
               <span className="eyebrow">{t("eyebrow")}</span>
-              <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />
+              <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />
               <h1 className="display">{clinic.name}</h1>
               <p className="clinic-profile-location">{t("location")}</p>
               <p className="lead">{t("heroBody")}</p>
@@ -106,7 +119,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <div className="alpstein-hero-gallery">
               <Image className="alpstein-gallery-main" src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
               <Image className={isMedivium ? "medivium-portrait" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
-              <Image className={isMedivium ? "medivium-gallery-logo" : ""} src={assets.galleryThird} alt={isMedivium ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
+              <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
             </div>
           </div>
           <div className="clinic-fact-strip" aria-label={t("factsLabel")}>

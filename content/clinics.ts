@@ -6,6 +6,7 @@ export type Clinic = {
   region: string;
   countryCode: "DE" | "AT" | "CH" | "ES";
   profileAvailable?: boolean;
+  listingOnly?: boolean;
   modelClinic?: boolean;
   coordinates: {lat: number; lng: number};
   summary?: string;
@@ -159,11 +160,56 @@ export const clinics: Clinic[] = [
   {
     slug: "boguslaw-nikiciuk-neuruppin",
     name: "Praxis für Rheumatologie Boguslaw Krystian Nikiciuk",
-    practitioner: "Boguslaw Nikiciuk",
+    practitioner: "Boguslaw Krystian Nikiciuk · Facharzt für Innere Medizin und Rheumatologie",
     city: "Neuruppin",
     region: "Brandenburg",
     countryCode: "DE",
-    coordinates: {lat: 52.9244, lng: 12.8066}
+    profileAvailable: true,
+    coordinates: {lat: 52.9244, lng: 12.8066},
+    summary: "Internistische Facharztpraxis für die Diagnostik und Behandlung entzündlich-rheumatischer Erkrankungen in allen Stadien.",
+    intro: "Boguslaw Krystian Nikiciuk und sein Team verbinden rheumatologische Frühdiagnostik mit individuell abgestimmter, leitlinienorientierter Behandlung und kontinuierlicher Betreuung.",
+    images: [
+      "/clinics/nikiciuk/portrait-wide.jpg",
+      "/clinics/nikiciuk/portrait.jpg",
+      "/clinics/nikiciuk/logo.png"
+    ],
+    website: "https://rheumatologie-neuruppin.de/",
+    contactEmail: "praxis@rheumatologie-neuruppin.de",
+    phone: "+49 3391 40 45 882",
+    address: "An der Seepromenade 24, 16816 Neuruppin, Deutschland"
+  },
+  {
+    slug: "hopmann-maak-lemfoerde",
+    name: "Zahnarztpraxis Dr. Michael Maak und Kollegen",
+    practitioner: "Dr. Michael Maak · Dr. Sabine Hopmann · ZÄ Antje Knof",
+    city: "Lemförde",
+    region: "Niedersachsen",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 52.4657, lng: 8.3768},
+    website: "https://www.hopmann-maak.de/"
+  },
+  {
+    slug: "res-vitalis-tegernsee",
+    name: "ResVitalis",
+    practitioner: "Dr. rer. nat. Anke Stockhausen · Apothekerin und Heilpraktikerin",
+    city: "Tegernsee",
+    region: "Bayern",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 47.7098, lng: 11.7582},
+    website: "https://res-vitalis.de/"
+  },
+  {
+    slug: "dres-neumeyer-eschlkam",
+    name: "Zahnarztpraxis Dr. Neumeyer & Partner",
+    practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr · MUDr. Jana Vanicky",
+    city: "Eschlkam",
+    region: "Bayern",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 49.2983, lng: 12.9157},
+    website: "https://www.dres-neumeyer.de/"
   },
   {
     slug: "youn-ju-lee-kassel",

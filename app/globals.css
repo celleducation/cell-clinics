@@ -2339,6 +2339,14 @@ textarea.input {
   white-space: nowrap;
 }
 
+.clinic-result-copy .clinic-practitioners {
+  overflow: hidden;
+  color: var(--slate);
+  font-size: .75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .clinic-result-copy > span:last-child {
   display: flex;
   align-items: center;
@@ -2447,6 +2455,11 @@ textarea.input {
   border-radius: 12px;
 }
 
+.alpstein-logo.nikiciuk-logo {
+  width: 220px;
+  height: 94px;
+}
+
 .alpstein-hero-gallery .medivium-portrait,
 .clinic-profile-image-wrap .medivium-profile-portrait {
   object-position: center 20%;
@@ -2454,6 +2467,12 @@ textarea.input {
 
 .alpstein-hero-gallery .medivium-gallery-logo {
   padding: 24px;
+  object-fit: contain;
+  background: white;
+}
+
+.alpstein-hero-gallery .nikiciuk-gallery-logo {
+  padding: 28px;
   object-fit: contain;
   background: white;
 }
@@ -4160,13 +4179,18 @@ textarea.input {
   .system-row-compact {
     height: 132px;
     min-height: 132px;
-    transition: height 180ms ease-out, min-height 180ms ease-out, transform 180ms ease-out, border-color 180ms ease-out, box-shadow 180ms ease-out;
+    transition:
+      height 520ms var(--ease-premium),
+      min-height 520ms var(--ease-premium),
+      transform 420ms var(--ease-premium),
+      border-color 420ms var(--ease-premium),
+      box-shadow 520ms var(--ease-premium);
     will-change: height, transform;
   }
 
   .system-row-compact .system-image {
     min-height: 132px;
-    transition: min-height 180ms ease-out;
+    transition: min-height 520ms var(--ease-premium);
   }
 
   .system-row-compact .system-copy p {
@@ -4174,8 +4198,12 @@ textarea.input {
     margin: 0;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(4px);
-    transition: max-height 180ms ease-out, margin 180ms ease-out, opacity 120ms ease-out, transform 180ms ease-out;
+    transform: translateY(8px);
+    transition:
+      max-height 520ms var(--ease-premium),
+      margin 480ms var(--ease-premium),
+      opacity 300ms ease 100ms,
+      transform 440ms var(--ease-premium) 60ms;
   }
 
   .button:not(.button-text):hover::before {
@@ -4236,6 +4264,12 @@ textarea.input {
   .system-row:focus .system-image img {
     transform: scale(.84);
     filter: drop-shadow(0 20px 30px rgba(38, 93, 137, .12));
+  }
+
+  .system-row.system-row-compact:hover .system-image img,
+  .system-row.system-row-compact:focus .system-image img,
+  .system-row.system-row-compact:focus-within .system-image img {
+    transform: scale(.82);
   }
 
   .patient-step:hover,

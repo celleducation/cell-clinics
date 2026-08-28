@@ -218,6 +218,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <span className="clinic-result-copy">
                   <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
                   <strong>{clinic.name}</strong>
+                  {clinic.listingOnly && <span className="clinic-practitioners">{clinic.practitioner}</span>}
                   <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}{clinic.distance !== null ? ` · ${Math.round(clinic.distance)} ${labels.distanceAway}` : ""}</span>
                 </span>
               </div>
@@ -225,7 +226,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <Link className="clinic-profile-link" href={`/network/${clinic.slug}`} aria-label={`${labels.details}: ${clinic.name}`}>
                   {labels.details}<ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
-              ) : <span className="clinic-profile-pending">{labels.profileSoon}</span>}
+              ) : clinic.listingOnly ? null : <span className="clinic-profile-pending">{labels.profileSoon}</span>}
             </article>
           ))}
           {!displayedClinics.length && (
