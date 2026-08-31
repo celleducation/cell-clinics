@@ -244,6 +244,17 @@ export const clinics: Clinic[] = [
     website: "https://www.internist-am-dom.de/home"
   },
   {
+    slug: "elena-bucur-karlsruhe",
+    name: "Praxisklinik Bucur",
+    practitioner: "Doctor medic Elena Bucur · Zahnärztin, Implantologie und zahnärztliche Chirurgie",
+    city: "Karlsruhe",
+    region: "Baden-Württemberg",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 48.9722, lng: 8.4044},
+    website: "https://www.praxisklinik-bucur.de/"
+  },
+  {
     slug: "youn-ju-lee-kassel",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
