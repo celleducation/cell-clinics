@@ -204,7 +204,7 @@ export const clinics: Clinic[] = [
   {
     slug: "dres-neumeyer-eschlkam",
     name: "Zahnarztpraxis Dr. Neumeyer & Partner",
-    practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr · MUDr. Jana Vanicky",
+    practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr",
     city: "Eschlkam",
     region: "Bayern",
     countryCode: "DE",
