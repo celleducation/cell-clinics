@@ -2460,6 +2460,14 @@ textarea.input {
   height: 94px;
 }
 
+.alpstein-logo.mihriban-logo {
+  width: 176px;
+  height: 112px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 12px;
+}
+
 .alpstein-hero-gallery .medivium-portrait,
 .clinic-profile-image-wrap .medivium-profile-portrait {
   object-position: center 20%;
@@ -2477,12 +2485,24 @@ textarea.input {
   background: white;
 }
 
+.alpstein-hero-gallery .mihriban-gallery-logo {
+  padding: 26px;
+  object-fit: contain;
+  background: white;
+}
+
 .alpstein-hero-gallery .nikiciuk-cell-art,
 .clinic-profile-image-wrap .nikiciuk-profile-art,
 .clinic-context-grid > .nikiciuk-context-art {
   padding: clamp(18px, 2.5vw, 34px);
   object-fit: contain;
   background: linear-gradient(145deg, #f9fcff, #eef7fc);
+}
+
+.clinic-profile-image-wrap .mihriban-profile-art {
+  padding: clamp(22px, 3vw, 42px);
+  object-fit: contain;
+  background: linear-gradient(145deg, #fbfdff, #eef7fc);
 }
 
 .alpstein-hero-copy .display {
@@ -2516,6 +2536,10 @@ textarea.input {
 
 .alpstein-hero-gallery .alpstein-gallery-main.nikiciuk-main-portrait {
   object-position: center 22%;
+}
+
+.alpstein-hero-gallery .alpstein-gallery-main.mihriban-main-portrait {
+  object-position: center 24%;
 }
 
 .clinic-fact-strip {

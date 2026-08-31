@@ -80,13 +80,22 @@ export const clinics: Clinic[] = [
     coordinates: {lat: 50.1791, lng: 8.4668}
   },
   {
-    slug: "mirihban-ciftci-stuttgart",
-    name: "Mirihban Ciftci",
-    practitioner: "Mirihban Ciftci",
+    slug: "mihriban-ciftci-stuttgart",
+    name: "Schön Gesund",
+    practitioner: "Mihriban Ciftci",
     city: "Stuttgart",
     region: "Baden-Württemberg",
     countryCode: "DE",
-    coordinates: {lat: 48.7758, lng: 9.1829}
+    coordinates: {lat: 48.8106, lng: 9.2513},
+    address: "Obere Waiblinger Straße 107 a, 70374 Stuttgart",
+    phone: "+49 1575 6691906",
+    website: "https://www.jameda.de/mihriban-ciftci/heilpraktiker/stuttgart",
+    profileAvailable: true,
+    images: [
+      "/clinics/mihriban-ciftci/portrait.jpg",
+      "/clinics/mihriban-ciftci/interior.jpg",
+      "/clinics/mihriban-ciftci/logo.jpg"
+    ]
   },
   {
     slug: "marco-hartl-regensburg",
