@@ -222,6 +222,17 @@ export const clinics: Clinic[] = [
     website: "https://www.dres-neumeyer.de/"
   },
   {
+    slug: "claudia-curth-hamburg",
+    name: "Praxis für Ganzheitliche Medizin",
+    practitioner: "Claudia Curth · Fachärztin für Allgemeinmedizin und Naturheilverfahren",
+    city: "Hamburg",
+    region: "Hamburg",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 53.653, lng: 10.112},
+    website: "https://www.ganzheitliche-medizin-hamburg-curth.de/"
+  },
+  {
     slug: "youn-ju-lee-kassel",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
