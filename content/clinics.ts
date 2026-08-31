@@ -118,7 +118,7 @@ export const clinics: Clinic[] = [
   {
     slug: "medivium-stuttgart",
     name: "MEDIVIUM",
-    practitioner: "Enrico Thiele · Heilpraktiker",
+    practitioner: "Enrico Thiele",
     city: "Stuttgart",
     region: "Baden-Württemberg",
     countryCode: "DE",
