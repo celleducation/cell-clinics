@@ -2622,15 +2622,16 @@ textarea.input {
 }
 
 .clinic-section-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, .78fr);
-  gap: 56px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
   margin-bottom: 42px;
 }
 
 .clinic-section-heading p {
-  margin: 0 0 3px;
+  max-width: 72ch;
+  margin: 0;
 }
 
 .clinic-area-grid {
