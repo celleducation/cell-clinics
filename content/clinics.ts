@@ -233,6 +233,17 @@ export const clinics: Clinic[] = [
     website: "https://www.ganzheitliche-medizin-hamburg-curth.de/"
   },
   {
+    slug: "matthias-salewski-koeln",
+    name: "Internistische Hausarztpraxis am Dom",
+    practitioner: "Matthias Salewski · Facharzt für Innere Medizin und Nephrologie",
+    city: "Köln",
+    region: "Nordrhein-Westfalen",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 50.9413, lng: 6.9583},
+    website: "https://www.internist-am-dom.de/home"
+  },
+  {
     slug: "youn-ju-lee-kassel",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
