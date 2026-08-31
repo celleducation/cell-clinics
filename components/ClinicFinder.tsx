@@ -217,7 +217,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <span className="clinic-result-copy">
                   <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
                   <strong>{clinic.name}</strong>
-                  {(clinic.listingOnly || clinic.slug === "medivium-stuttgart") && <span className="clinic-practitioners">{clinic.practitioner}</span>}
+                  {(clinic.listingOnly || clinic.slug === "medivium-stuttgart" || clinic.slug === "mihriban-ciftci-stuttgart") && <span className="clinic-practitioners">{clinic.practitioner}</span>}
                   <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}{clinic.distance !== null ? ` · ${Math.round(clinic.distance)} ${labels.distanceAway}` : ""}</span>
                 </span>
               </div>
