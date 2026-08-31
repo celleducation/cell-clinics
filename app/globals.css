@@ -4216,31 +4216,37 @@ textarea.input {
   .system-row-compact {
     height: 132px;
     min-height: 132px;
+    contain: layout paint;
     transition:
-      height 520ms var(--ease-premium),
-      min-height 520ms var(--ease-premium),
-      transform 420ms var(--ease-premium),
-      border-color 420ms var(--ease-premium),
-      box-shadow 520ms var(--ease-premium);
-    will-change: height, transform;
+      height 620ms var(--ease-premium),
+      min-height 620ms var(--ease-premium),
+      transform 520ms var(--ease-premium),
+      border-color 520ms var(--ease-premium),
+      box-shadow 620ms var(--ease-premium);
+    will-change: height;
+  }
+
+  .system-row-compact .system-copy {
+    justify-content: flex-start;
   }
 
   .system-row-compact .system-image {
     min-height: 132px;
-    transition: min-height 520ms var(--ease-premium);
+    transition: min-height 620ms var(--ease-premium);
   }
 
   .system-row-compact .system-copy p {
-    max-height: 0;
-    margin: 0;
+    max-height: 64px;
+    margin: 0 0 1em;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(8px);
+    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, 6px, 0);
     transition:
-      max-height 520ms var(--ease-premium),
-      margin 480ms var(--ease-premium),
-      opacity 300ms ease 100ms,
-      transform 440ms var(--ease-premium) 60ms;
+      clip-path 520ms var(--ease-premium) 80ms,
+      opacity 360ms ease 100ms,
+      transform 520ms var(--ease-premium) 80ms;
+    will-change: clip-path, opacity, transform;
   }
 
   .button:not(.button-text):hover::before {
@@ -4291,10 +4297,9 @@ textarea.input {
   .system-row.system-row-compact:hover .system-copy p,
   .system-row.system-row-compact:focus .system-copy p,
   .system-row.system-row-compact:focus-within .system-copy p {
-    max-height: 64px;
-    margin: 0 0 1em;
     opacity: 1;
-    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .system-row:hover .system-image img,
