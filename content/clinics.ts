@@ -191,7 +191,7 @@ export const clinics: Clinic[] = [
   {
     slug: "hopmann-maak-lemfoerde",
     name: "Zahnarztpraxis Dr. Michael Maak und Kollegen",
-    practitioner: "Dr. Michael Maak · Dr. Sabine Hopmann · ZÄ Antje Knof",
+    practitioner: "Dr. Michael Maak · Dr. Sabine Hopmann",
     city: "Lemförde",
     region: "Niedersachsen",
     countryCode: "DE",
