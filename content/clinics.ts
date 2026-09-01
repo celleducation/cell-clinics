@@ -81,7 +81,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "mihriban-ciftci-stuttgart",
-    name: "Schön Gesund",
+    name: "SchönGesund",
     practitioner: "Mihriban Ciftci",
     city: "Stuttgart",
     region: "Baden-Württemberg",
