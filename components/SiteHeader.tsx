@@ -16,6 +16,9 @@ export function SiteHeader() {
   const patientSlug = locale === "de" ? "patienten" : locale === "es" ? "pacientes" : "patients";
   const patientHref = `/${patientSlug}`;
   const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
+  const isPartnerProfile = /^\/network\/[^/]+\/?$/.test(pathname);
+  const isPatientAudience = isPatientPage || isPartnerProfile;
+  const patientCtaHref = isPatientPage ? "#find-clinic" : `${patientHref}#find-clinic`;
 
   useEffect(() => {
     setOpen(false);
@@ -37,13 +40,13 @@ export function SiteHeader() {
           <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
         </Link>
         <nav className="desktop-nav audience-switcher" aria-label={t("audience.label")}>
-          <Link className={!isPatientPage ? "active" : ""} href="/">{t("audience.professionals")}</Link>
-          <Link className={isPatientPage ? "active" : ""} href={patientHref}>{t("audience.patients")}</Link>
+          <Link className={!isPatientAudience ? "active" : ""} href="/">{t("audience.professionals")}</Link>
+          <Link className={isPatientAudience ? "active" : ""} href={patientHref}>{t("audience.patients")}</Link>
         </nav>
         <div className="header-actions">
           <LocaleSwitcher />
-          <ButtonLink href={isPatientPage ? "#find-clinic" : "#application"}>
-            {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
+          <ButtonLink href={isPatientAudience ? patientCtaHref : "#application"}>
+            {isPatientAudience ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
           </ButtonLink>
           <button
             className="mobile-menu-button"
@@ -59,12 +62,12 @@ export function SiteHeader() {
       </div>
       <nav id="mobile-navigation" className="mobile-panel" hidden={!open} aria-label="Mobile navigation">
         <div className="audience-switcher mobile-audience" aria-label={t("audience.label")}>
-          <Link className={!isPatientPage ? "active" : ""} href="/" onClick={() => setOpen(false)}>{t("audience.professionals")}</Link>
-          <Link className={isPatientPage ? "active" : ""} href={patientHref} onClick={() => setOpen(false)}>{t("audience.patients")}</Link>
+          <Link className={!isPatientAudience ? "active" : ""} href="/" onClick={() => setOpen(false)}>{t("audience.professionals")}</Link>
+          <Link className={isPatientAudience ? "active" : ""} href={patientHref} onClick={() => setOpen(false)}>{t("audience.patients")}</Link>
         </div>
         <LocaleSwitcher />
-        <ButtonLink href={isPatientPage ? "#find-clinic" : "#application"} onClick={() => setOpen(false)}>
-          {isPatientPage ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
+        <ButtonLink href={isPatientAudience ? patientCtaHref : "#application"} onClick={() => setOpen(false)}>
+          {isPatientAudience ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
         </ButtonLink>
       </nav>
     </header>
