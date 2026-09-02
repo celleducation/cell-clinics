@@ -168,9 +168,9 @@ export const clinics: Clinic[] = [
     coordinates: {lat: 53.8634, lng: 10.6675},
     summary: "Mund-, Kiefer- und Gesichtschirurgie mit biologischen Konzepten, Implantologie und regenerativer PRGF-Behandlung.",
     images: [
-      "/clinics/maja-koebel-aink/portrait.webp",
-      "/clinics/maja-koebel-aink/team.webp",
-      "/clinics/maja-koebel-aink/prgf.webp"
+      "/clinics/maja-koebel-aink/portrait-hd.png",
+      "/clinics/maja-koebel-aink/team-hd.png",
+      "/clinics/maja-koebel-aink/prgf-hd.png"
     ],
     website: "https://kieferchirurgie-luebeck.de/",
     phone: "+49 451 899 3272",

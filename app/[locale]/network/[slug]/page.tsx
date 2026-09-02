@@ -80,12 +80,12 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     galleryThird: "/clinics/mihriban-ciftci/logo.jpg",
     context: "/clinics/mihriban-ciftci/interior.jpg"
   } : isMaja ? {
-    logo: "/clinics/maja-koebel-aink/portrait.webp",
-    main: "/clinics/maja-koebel-aink/portrait.webp",
-    portrait: "/clinics/maja-koebel-aink/team.webp",
-    profile: "/clinics/maja-koebel-aink/prgf.webp",
+    logo: "/clinics/maja-koebel-aink/portrait-hd.png",
+    main: "/clinics/maja-koebel-aink/portrait-hd.png",
+    portrait: "/clinics/maja-koebel-aink/team-hd.png",
+    profile: "/clinics/maja-koebel-aink/prgf-hd.png",
     galleryThird: "/images/cellclinic-therapy.png",
-    context: "/clinics/maja-koebel-aink/team.webp"
+    context: "/clinics/maja-koebel-aink/team-hd.png"
   } : {
     logo: "/clinics/alpstein/logo.webp",
     main: "/clinics/alpstein/interior-1.webp",
@@ -102,6 +102,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   }));
   const stages = [1, 2, 3, 4].map((index) => ({title: t(`stage${index}Title`), body: t(`stage${index}Body`)}));
   const facts = [1, 2, 3, 4].map((index) => t(`fact${index}`));
+  const networkPartnerTitle = t("cellClinicsTitle").replace(/\s*×\s*Cell Clinics$/, "");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -169,7 +170,13 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
       <section className="clinic-network-context">
         <div className="container clinic-network-context-card">
           <span className="eyebrow">{t("cellClinicsLabel")}</span>
-          <h2 className="section-title">{t("cellClinicsTitle")}</h2>
+          <h2 className="section-title clinic-network-title">
+            <span>{networkPartnerTitle}</span>
+            <span className="clinic-network-brand">
+              <span aria-hidden="true">×</span>
+              <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} />
+            </span>
+          </h2>
           <p className="lead">{t("cellClinicsBody")}</p>
         </div>
       </section>

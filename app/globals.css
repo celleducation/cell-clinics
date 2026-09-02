@@ -2649,6 +2649,34 @@ textarea.input {
   color: white;
 }
 
+.clinic-network-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.clinic-network-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.clinic-network-brand > span {
+  color: var(--sky-ink);
+  font-weight: 400;
+}
+
+.clinic-network-brand img {
+  width: clamp(148px, 16vw, 205px);
+  height: auto;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, .96);
+  border-radius: 10px;
+}
+
 .clinic-network-context-card .lead {
   margin: 0;
   color: rgba(255, 255, 255, .76);
