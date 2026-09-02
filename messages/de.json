@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cell Clinics | Ärztlich geführte Plattform für Zellmedizin",
-    "description": "Cell Clinics unterstützt Kliniken, Ärzte und Gesundheitsanbieter bei der Implementierung ärztlich geführter Zellmedizin durch Diagnostik, klinische Frameworks, Weiterbildung und therapeutische Systeme."
+    "description": "Cell Clinics unterstützt Kliniken, Ärzte und Gesundheitsanbieter bei der Implementierung ärztlich geführter Zellmedizin durch Diagnostik, klinische Frameworks, Schulungen und therapeutische Systeme."
   },
   "nav": {
     "platform": "Plattform",
@@ -25,13 +25,13 @@
   "hero": {
     "label": "Ärztlich geführte Implementierungsplattform",
     "title": "Die Infrastruktur für moderne Zellmedizin",
-    "body": "Cell Clinics bietet klinische Frameworks, ärztliche Weiterbildung, diagnostische Systeme und Implementierungsunterstützung für Kliniken, Ärzte und Gesundheitsanbieter, die moderne Programme für Zellmedizin aufbauen möchten.",
+    "body": "Cell Clinics bietet klinische Frameworks, ärztliche Schulungen, diagnostische Systeme und Implementierungsunterstützung für Kliniken, Ärzte und Gesundheitsanbieter, die moderne Programme für Zellmedizin aufbauen möchten.",
     "trust1": "Ärztlich geführt",
     "trust2": "Klinische Standards",
     "trust3": "Internationales Netzwerk",
     "trust4": "Auf Cell Education aufgebaut",
     "panelLabel": "Ökosystem für zelluläre Medizin",
-    "panelText": "Weiterbildung · Diagnostik · Ärzte · Klinische Systeme"
+    "panelText": "Schulungen · Diagnostik · Ärzte · Klinische Systeme"
   },
   "lab": {
     "label": "Longevity Lab",
@@ -55,14 +55,14 @@
     "feature4": "Longevity-Programme",
     "demonstratesTitle": "Was dieses Modell zeigt",
     "demonstratesBody": "Das Cell Clinics Modell unterstützt Gesundheitsanbieter dabei, strukturierte Programme für Zellmedizin in bestehende Praxen und Kliniken zu integrieren.",
-    "demonstratesBody2": "Dazu gehören ärztliche Weiterbildung, diagnostische Standards, klinische Behandlungspfade und operative Implementierungsunterstützung.",
+    "demonstratesBody2": "Dazu gehören ärztliche Schulungen, diagnostische Standards, klinische Behandlungspfade und operative Implementierungsunterstützung.",
     "point1": "Strukturierte diagnostische Pfade",
     "point2": "Ärztlich geführte Implementierung",
-    "point3": "Frameworks für klinische Weiterbildung",
+    "point3": "Frameworks für klinische Schulungen",
     "point4": "Hochwertiges Patientenerlebnis",
     "point5": "Skalierbares Betriebsmodell",
     "poweredTitle": "Auf klinischen Frameworks aufgebaut",
-    "poweredBody": "Cell Clinics stellt Weiterbildungs-, Diagnostik- und Implementierungsframeworks bereit, mit denen Gesundheitsanbieter strukturierte Programme für Zellmedizin in ihrer eigenen klinischen Umgebung aufbauen können.",
+    "poweredBody": "Cell Clinics stellt Schulungs-, Diagnostik- und Implementierungsframeworks bereit, mit denen Gesundheitsanbieter strukturierte Programme für Zellmedizin in ihrer eigenen klinischen Umgebung aufbauen können.",
     "poweredBody2": "Ziel ist nicht, Kliniken zu standardisieren, sondern ein bewährtes Framework bereitzustellen, das an lokale medizinische Expertise, Patientengruppen und klinische Ziele angepasst werden kann.",
     "cta": "Partnermodell ansehen",
     "gallery1": "Landschaft & Regeneration",
@@ -74,9 +74,9 @@
     "label": "Partner-Ökosystem",
     "title": "Alles, was Sie für eine erfolgreiche zellmedizinische Praxis brauchen",
     "body1": "Werden Sie Teil einer Implementierungsplattform, die speziell für Ärztinnen und Ärzte, Kliniken und Gesundheitsanbieter entwickelt wurde.",
-    "body2": "Cell Clinics vereint Weiterbildung, klinische Systeme, Diagnostik, Produkte und ein internationales Expertennetzwerk in einem integrierten Ökosystem und ermöglicht so die erfolgreiche Umsetzung von Zellmedizin im klinischen Alltag.",
-    "card1Title": "Weiterbildung",
-    "card1Body": "Umfassende ärztliche Weiterbildung durch Circle, Campus, Infusionstrainings, Webinare und kontinuierliche wissenschaftliche Updates.",
+    "body2": "Cell Clinics vereint Schulungen, klinische Systeme, Diagnostik, Produkte und ein internationales Expertennetzwerk in einem integrierten Ökosystem und ermöglicht so die erfolgreiche Umsetzung von Zellmedizin im klinischen Alltag.",
+    "card1Title": "Schulungen",
+    "card1Body": "Umfassende ärztliche Schulungen durch Circle, Campus, Infusionsseminare, Webinare und kontinuierliche wissenschaftliche Updates.",
     "card2Title": "Klinische Systeme",
     "card2Body": "Standardisierte klinische Frameworks, Behandlungskonzepte und Implementierungsprotokolle für die Integration von Zellmedizin in den Praxisalltag.",
     "card3Title": "Diagnostik",
@@ -88,8 +88,8 @@
     "card6Title": "Praxisausbau",
     "card6Body": "Marketingressourcen, Patientenaufklärung und Implementierungsunterstützung, um Zellmedizin erfolgreich in Ihrer Praxis zu etablieren.",
     "ctaLabel": "Integrierte Plattform",
-    "ctaTitle": "Mehr als Produkte. Mehr als Weiterbildung.",
-    "ctaBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter dabei unterstützt, Zellmedizin durch Weiterbildung, Diagnostik, klinische Systeme und ein internationales Expertennetzwerk erfolgreich in die Praxis zu integrieren."
+    "ctaTitle": "Mehr als Produkte. Mehr als Schulungen.",
+    "ctaBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter dabei unterstützt, Zellmedizin durch Schulungen, Diagnostik, klinische Systeme und ein internationales Expertennetzwerk erfolgreich in die Praxis zu integrieren."
   },
   "brand": {
     "platformKicker": "Plattform-Ökosystem",
@@ -99,10 +99,10 @@
   "platform": {
     "label": "So funktioniert die Plattform",
     "title": "Ein integriertes Ökosystem für moderne Zellmedizin",
-    "body": "Cell Clinics verbindet Weiterbildung, Diagnostik, klinische Systeme, Produkte und ein internationales Ärztenetzwerk zu einer durchgängigen Implementierungsplattform. Jede Komponente unterstützt Gesundheitsanbieter entlang der gesamten Patient Journey.",
+    "body": "Cell Clinics verbindet Schulungen, Diagnostik, klinische Systeme, Produkte und ein internationales Ärztenetzwerk zu einer durchgängigen Implementierungsplattform. Jede Komponente unterstützt Gesundheitsanbieter entlang der gesamten Patient Journey.",
     "coreLabel": "Cell Clinics",
     "module1Title": "Cell Education",
-    "module1Body": "Wissenschaftliche Weiterbildung und kontinuierliches ärztliches Training.",
+    "module1Body": "Wissenschaftliche Seminare und kontinuierliche ärztliche Schulungen.",
     "module2Title": "Klinische Systeme",
     "module2Body": "Standardisierte Frameworks für die Implementierung im Praxisalltag.",
     "module3Title": "Diagnostik",
@@ -114,7 +114,7 @@
     "module6Title": "Partnerkliniken",
     "module6Body": "Klinische Umsetzung in der täglichen Versorgungspraxis.",
     "closingTitle": "Eine Plattform. Ein Standard. Ein Netzwerk.",
-    "closingBody": "Cell Clinics ist mehr als eine Sammlung einzelner Produkte oder Fortbildungsangebote. Die Plattform vereint alle Bausteine, die Gesundheitsanbieter für die erfolgreiche Implementierung von Zellmedizin im klinischen Alltag benötigen."
+    "closingBody": "Cell Clinics ist mehr als eine Sammlung einzelner Produkte oder Schulungsangebote. Die Plattform vereint alle Bausteine, die Gesundheitsanbieter für die erfolgreiche Implementierung von Zellmedizin im klinischen Alltag benötigen."
   },
   "systems": {
     "label": "Klinische Systeme",
@@ -131,17 +131,17 @@
   "leadership": {
     "label": "Medizinische Leitung",
     "title": "Medizinische Leitung",
-    "body": "Das Cell Clinics Framework basiert auf jahrzehntelanger ärztlicher Weiterbildung, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
-    "stat1": "Ärztliche Fortbildung",
+    "body": "Das Cell Clinics Framework basiert auf jahrzehntelanger Erfahrung mit ärztlichen Schulungen, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
+    "stat1": "Ärztliche Schulungen",
     "stat1Body": "Strukturierte Schulungen vermitteln Diagnostik, Therapieprinzipien und die sichere Anwendung im Praxisalltag.",
     "stat2": "Klinische Framework-Entwicklung",
     "stat2Body": "Evidenzbasierte Abläufe verbinden Befunderhebung, ärztliche Interpretation und therapeutische Umsetzung.",
     "stat3": "Internationale Lehre",
-    "stat3Body": "Fortbildungen und fachlicher Austausch schaffen einen gemeinsamen medizinischen Standard über Ländergrenzen hinweg.",
+    "stat3Body": "Schulungen und fachlicher Austausch schaffen einen gemeinsamen medizinischen Standard über Ländergrenzen hinweg.",
     "stat4": "Zellmedizinische Expertise",
     "stat4Body": "Jahrzehntelange Erfahrung in mitochondrialer Medizin, Infusionstherapie und biologischer Regulation.",
     "cardLabel": "Wissenschaftliche & medizinische Leitung",
-    "cardBody": "Ärztliche Weiterbildung und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
+    "cardBody": "Ärztliche Schulungen und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
   },
   "onboarding": {
     "label": "Partner-Onboarding",
@@ -209,7 +209,7 @@
   "home": {
     "whatLabel": "Plattform",
     "whatTitle": "Die vollständige Implementierungsebene für moderne Zellmedizin.",
-    "whatBody": "Weiterbildung, Diagnostik, klinische Systeme, Produkte und ein internationales Netzwerk werden in einer ärztlich geführten Plattform verbunden.",
+    "whatBody": "Schulungen, Diagnostik, klinische Systeme, Produkte und ein internationales Netzwerk werden in einer ärztlich geführten Plattform verbunden.",
     "proofLabel": "Klinische Umsetzung",
     "proofTitle": "Für reale Implementierung entwickelt."
   },
@@ -217,8 +217,8 @@
     "eyebrow": "Plattform",
     "title": "Ärztlich geführte Implementierungsplattform",
     "lead": "Cell Clinics verbindet alle Komponenten, die erforderlich sind, um strukturierte Zellmedizin in den klinischen Alltag zu integrieren.",
-    "integratedTitle": "Mehr als Produkte. Mehr als Weiterbildung.",
-    "integratedBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter mit Weiterbildung, Diagnostik, klinischen Systemen und einem internationalen Expertennetzwerk bei der erfolgreichen Integration von Zellmedizin unterstützt."
+    "integratedTitle": "Mehr als Produkte. Mehr als Schulungen.",
+    "integratedBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter mit Schulungen, Diagnostik, klinischen Systemen und einem internationalen Expertennetzwerk bei der erfolgreichen Integration von Zellmedizin unterstützt."
   },
   "networkPage": {
     "eyebrow": "Netzwerk",
@@ -267,7 +267,7 @@
       "profileBody": "Die Klinik verbindet evidenzbasierte Diagnostik mit biologischer und integrativer Medizin. Medizinische Befunde werden nicht isoliert, sondern im Zusammenhang betrachtet und bilden die strukturierte Grundlage für eine individuelle Therapieplanung.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "Alpstein Clinic × Cell Clinics",
-      "cellClinicsBody": "Die Alpstein Clinic bringt ihre integrative klinische Expertise und den Standort in Gais ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Ausbildungs- und Protokollrahmen sowie die Begleitung der klinischen Implementierung bereit. Diagnostik und Therapieentscheidungen liegen bei den behandelnden Ärztinnen und Ärzten der Klinik.",
+      "cellClinicsBody": "Die Alpstein Clinic bringt ihre integrative klinische Expertise und den Standort in Gais ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Schulungs- und Protokollrahmen sowie die Begleitung der klinischen Implementierung bereit. Diagnostik und Therapieentscheidungen liegen bei den behandelnden Ärztinnen und Ärzten der Klinik.",
       "areasLabel": "Klinische Schwerpunkte",
       "areasTitle": "Diagnostik und Therapie unter einem Dach",
       "area1Title": "Umfassende Diagnostik",
@@ -321,7 +321,7 @@
       "profileBody": "MEDIVIUM begleitet gesundheitsbewusste Menschen, Unternehmerinnen und Unternehmer, Führungskräfte, Menschen mit chronischen Beschwerden sowie Leistungs- und ambitionierte Freizeitsportler. Moderne Diagnostik, persönliche Begleitung und gezielte Maßnahmen bilden die Grundlage einer individuellen Gesundheitsstrategie.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "MEDIVIUM × Cell Clinics",
-      "cellClinicsBody": "MEDIVIUM verbindet seine Erfahrung in Diagnostik, Infusionskonzepten und Prävention mit dem von Cell Clinics entwickelten Konzept der Bionic Cell Therapy. Cell Clinics stellt Ausbildung, Protokollrahmen und Implementierungsbegleitung bereit. Enrico Thiele arbeitet dabei als Heilpraktiker innerhalb seiner beruflichen Befugnisse; ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
+      "cellClinicsBody": "MEDIVIUM verbindet seine Erfahrung in Diagnostik, Infusionskonzepten und Prävention mit dem von Cell Clinics entwickelten Konzept der Bionic Cell Therapy. Cell Clinics stellt Schulungen, Protokollrahmen und Implementierungsbegleitung bereit. Enrico Thiele arbeitet dabei als Heilpraktiker innerhalb seiner beruflichen Befugnisse; ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Schwerpunkte. Ein individueller Ansatz.",
       "area1Title": "Präzise Diagnostik",
@@ -375,7 +375,7 @@
       "profileBody": "Die Hautarztpraxis Dr. Monika Brück in Palma de Mallorca verbindet allgemeine Dermatologie, moderne Hautkrebsdiagnostik und ästhetische Medizin. Im Mittelpunkt stehen ausführliche Information, eine individuelle Beratung und schonende Behandlungsverfahren, die auf die persönliche Situation abgestimmt werden.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "Dr. Monika Brück × Cell Clinics",
-      "cellClinicsBody": "Die Praxis bringt ihre dermatologische und ästhetisch-medizinische Expertise in das Netzwerk ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Ausbildungs- und Protokollrahmen sowie die Implementierungsbegleitung bereit. Die ärztliche Beurteilung und Behandlung verantwortet Dr. Monika Brück.",
+      "cellClinicsBody": "Die Praxis bringt ihre dermatologische und ästhetisch-medizinische Expertise in das Netzwerk ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Schulungs- und Protokollrahmen sowie die Implementierungsbegleitung bereit. Die ärztliche Beurteilung und Behandlung verantwortet Dr. Monika Brück.",
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Schwerpunkte für gesunde und schöne Haut",
       "area1Title": "Dermatologische Diagnostik",
@@ -388,7 +388,7 @@
       "area4Body": "Individuelle Konzepte für Hautregeneration, Prävention und den langfristigen Erhalt gesunder Haut.",
       "approachLabel": "Der Ansatz",
       "approachTitle": "Individuell beraten. Präzise behandeln.",
-      "approachBody": "Die Praxis verbindet medizinische Verantwortung, kontinuierliche Weiterbildung und ein tiefes Verständnis für die individuellen Wünsche und Bedürfnisse ihrer Patientinnen und Patienten.",
+      "approachBody": "Die Praxis verbindet medizinische Verantwortung, regelmäßige Schulungen und ein tiefes Verständnis für die individuellen Wünsche und Bedürfnisse ihrer Patientinnen und Patienten.",
       "stage1Title": "Beraten",
       "stage1Body": "Ziele, Beschwerden und Erwartungen werden ausführlich besprochen.",
       "stage2Title": "Diagnostizieren",
@@ -430,7 +430,7 @@
       "profileImageAlt": "Zellmedizinische Illustration von Cell Clinics",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "SchönGesund × Cell Clinics",
-      "cellClinicsBody": "Cell Clinics ergänzt den ganzheitlichen Ansatz der Praxis durch Fortbildung, strukturierte Protokollrahmen und den fachlichen Austausch zu zellmedizinischen Zusammenhängen. Mihriban Ciftci arbeitet im Rahmen ihrer heilpraktischen Tätigkeit; ärztlich vorbehaltene Leistungen verbleiben in ärztlicher Verantwortung.",
+      "cellClinicsBody": "Cell Clinics ergänzt den ganzheitlichen Ansatz der Praxis durch Schulungen, strukturierte Protokollrahmen und den fachlichen Austausch zu zellmedizinischen Zusammenhängen. Mihriban Ciftci arbeitet im Rahmen ihrer heilpraktischen Tätigkeit; ärztlich vorbehaltene Leistungen verbleiben in ärztlicher Verantwortung.",
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Perspektiven auf Schönheit von innen",
       "area1Title": "Schönheit von innen",
@@ -440,7 +440,7 @@
       "area3Title": "Darm & Stoffwechsel",
       "area3Body": "Individuelle Konzepte für Darmgesundheit, Stoffwechsel und Gewichtsregulation – abgestimmt auf persönliche Ziele und Voraussetzungen.",
       "area4Title": "Zellulärer Kontext",
-      "area4Body": "Fortbildung und strukturierte Cell Clinics Protokollrahmen ergänzen den Blick auf zellmedizinische Zusammenhänge.",
+      "area4Body": "Schulungen und strukturierte Cell Clinics Protokollrahmen ergänzen den Blick auf zellmedizinische Zusammenhänge.",
       "approachLabel": "Der Ablauf",
       "approachTitle": "Kennenlernen. Einordnen. Individuell begleiten.",
       "approachBody": "Der Weg beginnt mit einem persönlichen Gespräch. Darauf aufbauend werden Ziele, Möglichkeiten und die nächsten Schritte nachvollziehbar abgestimmt.",
@@ -484,7 +484,7 @@
       "profileBody": "Rheuma umfasst zahlreiche entzündliche Erkrankungen der Gelenke, des Bindegewebes und der Gefäße. Die Praxis verbindet eine sorgfältige internistische und rheumatologische Abklärung mit moderner Diagnostik und einer Therapieplanung, die an Krankheitsstadium, Befunde und persönliche Voraussetzungen angepasst wird.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "Rheumatologie Nikiciuk × Cell Clinics",
-      "cellClinicsBody": "Die Praxis bringt ihre fachärztliche Erfahrung in Innerer Medizin und Rheumatologie in das Netzwerk ein. Cell Clinics ergänzt diesen Schwerpunkt durch Fortbildung, strukturierte Protokollrahmen und den fachlichen Austausch rund um zellmedizinische Zusammenhänge. Diagnostik und sämtliche Therapieentscheidungen verantwortet der behandelnde Facharzt.",
+      "cellClinicsBody": "Die Praxis bringt ihre fachärztliche Erfahrung in Innerer Medizin und Rheumatologie in das Netzwerk ein. Cell Clinics ergänzt diesen Schwerpunkt durch Schulungen, strukturierte Protokollrahmen und den fachlichen Austausch rund um zellmedizinische Zusammenhänge. Diagnostik und sämtliche Therapieentscheidungen verantwortet der behandelnde Facharzt.",
       "areasLabel": "Medizinische Schwerpunkte",
       "areasTitle": "Strukturierte Rheumatologie von der Diagnostik bis zur Therapie",
       "area1Title": "Frühdiagnostik",
@@ -536,8 +536,8 @@
   "companyPage": {
     "eyebrow": "Unternehmen",
     "title": "Das Ökosystem der Cell Group",
-    "lead": "Die Cell Group verbindet Weiterbildung, Produktzugang und klinische Implementierung in drei spezialisierten Marken.",
-    "education": "Ärztliche Weiterbildung, Leitlinien und Protokolle.",
+    "lead": "Die Cell Group verbindet Schulungen, Produktzugang und klinische Implementierung in drei spezialisierten Marken.",
+    "education": "Ärztliche Schulungen, Leitlinien und Protokolle.",
     "supply": "Produktplattform, Beschaffung und Distribution.",
     "clinics": "Partnerpraxen, Patientenversorgung und Implementierung."
   },
@@ -549,8 +549,8 @@
   "leadershipPage": {
     "eyebrow": "Medizinische Leitung",
     "title": "Wissenschaftliche und medizinische Autorität",
-    "lead": "Das Cell Clinics Framework basiert auf jahrzehntelanger ärztlicher Weiterbildung und zellmedizinischer Expertise.",
-    "role": "Medizinische Leitung für ärztliche Weiterbildung und klinische Framework-Entwicklung."
+    "lead": "Das Cell Clinics Framework basiert auf jahrzehntelanger Erfahrung mit ärztlichen Schulungen und zellmedizinischer Expertise.",
+    "role": "Medizinische Leitung für ärztliche Schulungen und klinische Framework-Entwicklung."
   },
   "contactPage": {
     "eyebrow": "Kontakt",
@@ -620,7 +620,7 @@
       "label": "Vertrauen", "title": "Behandlung mit System – kein Trend.",
       "item1Title": "Qualifiziert geführt", "item1Body": "Jede Cell Clinic wird von qualifizierten Behandlerinnen und Behandlern geführt. Ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
       "item2Title": "Wissenschaftliche Leitung", "item2Body": "Das medizinische Programm wird unter der Leitung von Dr. Kay Bredehorst entwickelt und laufend aktualisiert.",
-      "item3Title": "Geschultes Netzwerk", "item3Body": "Alle Partnerpraxen durchlaufen ein strukturiertes Ausbildungs- und Implementierungsprogramm der Cell Education.",
+      "item3Title": "Geschultes Netzwerk", "item3Body": "Alle Partnerpraxen durchlaufen ein strukturiertes Schulungs- und Implementierungsprogramm der Cell Education.",
       "item4Title": "Internationale Zusammenarbeit", "item4Body": "Wissenschaftlicher Austausch und kontinuierlicher fachlicher Dialog im internationalen Cell Clinics Netzwerk."
     },
     "faq": {
@@ -629,7 +629,7 @@
       "q2": "Ist die Behandlung sicher?", "a2": "Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf.",
       "q3": "Was kostet die Behandlung – zahlt meine Krankenkasse?", "a3": "Die Kosten richten sich nach Ihrem individuellen Therapiekonzept und werden Ihnen vor Behandlungsbeginn transparent dargelegt. In der Regel handelt es sich um Selbstzahlerleistungen; private Versicherungen erstatten je nach Tarif anteilig. Ihre Cell Clinic berät Sie dazu im Erstgespräch.",
       "q4": "Wie lange dauert eine Behandlung?", "a4": "Das hängt von Ihrem Konzept ab: Eine einzelne Infusionsanwendung dauert meist unter einer Stunde, ein vollständiges Therapiekonzept erstreckt sich häufig über mehrere Wochen mit regelmäßigen Terminen und Verlaufskontrollen.",
-      "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Fortbildung über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz."
+      "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Schulungen über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz."
     },
     "cta": {"label": "Ihr nächster Schritt", "title": "Bereit für den ersten Schritt?", "body": "Finden Sie eine Cell Clinic in Ihrer Nähe und vereinbaren Sie ein Erstgespräch – unverbindlich und persönlich.", "findClinic": "Cell Clinic finden", "findNearby": "Cell Clinic in Ihrer Nähe finden", "howItWorks": "Wie läuft die Behandlung ab?"},
     "footerDescription": "Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy.",
