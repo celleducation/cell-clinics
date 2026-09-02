@@ -30,6 +30,24 @@ type FinderLabels = {
 
 type UserLocation = {lat: number; lng: number};
 
+const preferredClinicOrder = [
+  "alpstein",
+  "maja-koebel-aink-luebeck",
+  "youn-ju-lee-kassel",
+  "boguslaw-nikiciuk-neuruppin",
+  "marco-hartl-regensburg",
+  "heidelinde-klein-appenzeller-land",
+  "medivium-stuttgart",
+  "marc-stracke-luebeck",
+  "julia-napolitano-gil-esslingen",
+  "elena-bucur-karlsruhe",
+  "matthias-salewski-koeln"
+] as const;
+
+const preferredClinicRanks = new Map<string, number>(
+  preferredClinicOrder.map((slug, index) => [slug, index])
+);
+
 function normalizeSearchValue(value: string) {
   return value
     .normalize("NFD")
@@ -112,7 +130,10 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
       (!country || clinic.countryCode === country) &&
       (!activeLocation || clinic.distance === null || clinic.distance <= Number(radius))
     ).sort((a, b) => {
-      if (a.distance === null || b.distance === null) return 0;
+      if (a.distance === null || b.distance === null) {
+        const fallbackRank = preferredClinicOrder.length;
+        return (preferredClinicRanks.get(a.slug) ?? fallbackRank) - (preferredClinicRanks.get(b.slug) ?? fallbackRank);
+      }
       return a.distance - b.distance;
     });
   }, [activeLocation, clinics, country, needle, radius, searchLocation, textMatches]);
