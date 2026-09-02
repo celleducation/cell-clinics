@@ -267,7 +267,7 @@
       "profileBody": "Die Klinik verbindet evidenzbasierte Diagnostik mit biologischer und integrativer Medizin. Medizinische Befunde werden nicht isoliert, sondern im Zusammenhang betrachtet und bilden die strukturierte Grundlage für eine individuelle Therapieplanung.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "Alpstein Clinic × Cell Clinics",
-      "cellClinicsBody": "Die Alpstein Clinic bringt ihre integrative klinische Expertise und den Standort in Gais ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionischen Zelltherapie, den Ausbildungs- und Protokollrahmen sowie die Begleitung der klinischen Implementierung bereit. Diagnostik und Therapieentscheidungen liegen bei den behandelnden Ärztinnen und Ärzten der Klinik.",
+      "cellClinicsBody": "Die Alpstein Clinic bringt ihre integrative klinische Expertise und den Standort in Gais ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Ausbildungs- und Protokollrahmen sowie die Begleitung der klinischen Implementierung bereit. Diagnostik und Therapieentscheidungen liegen bei den behandelnden Ärztinnen und Ärzten der Klinik.",
       "areasLabel": "Klinische Schwerpunkte",
       "areasTitle": "Diagnostik und Therapie unter einem Dach",
       "area1Title": "Umfassende Diagnostik",
@@ -321,7 +321,7 @@
       "profileBody": "MEDIVIUM begleitet gesundheitsbewusste Menschen, Unternehmerinnen und Unternehmer, Führungskräfte, Menschen mit chronischen Beschwerden sowie Leistungs- und ambitionierte Freizeitsportler. Moderne Diagnostik, persönliche Begleitung und gezielte Maßnahmen bilden die Grundlage einer individuellen Gesundheitsstrategie.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "MEDIVIUM × Cell Clinics",
-      "cellClinicsBody": "MEDIVIUM verbindet seine Erfahrung in Diagnostik, Infusionskonzepten und Prävention mit dem von Cell Clinics entwickelten Konzept der Bionischen Zelltherapie. Cell Clinics stellt Ausbildung, Protokollrahmen und Implementierungsbegleitung bereit. Enrico Thiele arbeitet dabei als Heilpraktiker innerhalb seiner beruflichen Befugnisse; ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
+      "cellClinicsBody": "MEDIVIUM verbindet seine Erfahrung in Diagnostik, Infusionskonzepten und Prävention mit dem von Cell Clinics entwickelten Konzept der Bionic Cell Therapy. Cell Clinics stellt Ausbildung, Protokollrahmen und Implementierungsbegleitung bereit. Enrico Thiele arbeitet dabei als Heilpraktiker innerhalb seiner beruflichen Befugnisse; ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Schwerpunkte. Ein individueller Ansatz.",
       "area1Title": "Präzise Diagnostik",
@@ -375,7 +375,7 @@
       "profileBody": "Die Hautarztpraxis Dr. Monika Brück in Palma de Mallorca verbindet allgemeine Dermatologie, moderne Hautkrebsdiagnostik und ästhetische Medizin. Im Mittelpunkt stehen ausführliche Information, eine individuelle Beratung und schonende Behandlungsverfahren, die auf die persönliche Situation abgestimmt werden.",
       "cellClinicsLabel": "Cell Clinics Netzwerk",
       "cellClinicsTitle": "Dr. Monika Brück × Cell Clinics",
-      "cellClinicsBody": "Die Praxis bringt ihre dermatologische und ästhetisch-medizinische Expertise in das Netzwerk ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionischen Zelltherapie, den Ausbildungs- und Protokollrahmen sowie die Implementierungsbegleitung bereit. Die ärztliche Beurteilung und Behandlung verantwortet Dr. Monika Brück.",
+      "cellClinicsBody": "Die Praxis bringt ihre dermatologische und ästhetisch-medizinische Expertise in das Netzwerk ein. Cell Clinics stellt das von uns entwickelte Konzept der Bionic Cell Therapy, den Ausbildungs- und Protokollrahmen sowie die Implementierungsbegleitung bereit. Die ärztliche Beurteilung und Behandlung verantwortet Dr. Monika Brück.",
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Schwerpunkte für gesunde und schöne Haut",
       "area1Title": "Dermatologische Diagnostik",
@@ -579,27 +579,27 @@
   },
   "patient": {
     "meta": {
-      "title": "Bionische Zelltherapie für Patienten",
-      "description": "Cell Clinics sind ärztlich geführte Praxen und Kliniken, die Bionische Zelltherapie nach gemeinsamen medizinischen Standards und individuell abgestimmt anbieten."
+      "title": "Bionic Cell Therapy für Patienten",
+      "description": "Cell Clinics sind ärztlich geführte Praxen und Kliniken, die Bionic Cell Therapy nach gemeinsamen medizinischen Standards und individuell abgestimmt anbieten."
     },
     "nav": {"therapy": "Die Therapie", "process": "So funktioniert's", "faq": "FAQ"},
     "hero": {
       "label": "Für Patienten",
-      "title": "Bionische Zelltherapie. Ärztlich begleitet, in Ihrer Nähe.",
-      "body": "Cell Clinics sind Arztpraxen und Kliniken, die Bionische Zelltherapie nach einheitlichen medizinischen Standards anbieten – individuell abgestimmt auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele.",
+      "title": "Bionic Cell Therapy. Ärztlich begleitet, in Ihrer Nähe.",
+      "body": "Cell Clinics sind Arztpraxen und Kliniken, die Bionic Cell Therapy nach einheitlichen medizinischen Standards anbieten – individuell abgestimmt auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele.",
       "note": "Persönlich, diagnostikbasiert und ärztlich geführt"
     },
     "therapy": {
-      "label": "Bionische Zelltherapie",
+      "label": "Bionic Cell Therapy",
       "title": "Unterstützung beginnt dort, wo Gesundheit entsteht.",
-      "intro": "Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionische Zelltherapie setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer ärztlich geführt, immer auf Sie abgestimmt.",
+      "intro": "Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionic Cell Therapy setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer ärztlich geführt, immer auf Sie abgestimmt.",
       "card1Title": "Energie & Erschöpfung", "card1Body": "Bei anhaltender Müdigkeit und Erschöpfungszuständen kann die gezielte Unterstützung des Zellstoffwechsels ein Baustein Ihrer Behandlung sein.",
       "card2Title": "Regeneration & Erholung", "card2Body": "Nach Belastung, Erkrankung oder Operation – Therapiekonzepte, die die körpereigene Regeneration begleiten können.",
       "card3Title": "Prävention & Langlebigkeit", "card3Body": "Gesund bleiben, bevor Beschwerden entstehen: Diagnostik und Vorsorge auf zellulärer Ebene.",
       "card4Title": "Begleitende Therapie", "card4Body": "Als Ergänzung zu bestehenden Behandlungen – in Abstimmung mit Ihren behandelnden Ärztinnen und Ärzten."
     },
     "process": {
-      "label": "Ihr Weg zur Behandlung", "title": "Wie bekomme ich Bionische Zelltherapie?", "intro": "In vier Schritten – von der ersten Anfrage bis zur laufenden Begleitung. Alles in einer Cell Clinic in Ihrer Nähe.",
+      "label": "Ihr Weg zur Behandlung", "title": "Wie bekomme ich Bionic Cell Therapy?", "intro": "In vier Schritten – von der ersten Anfrage bis zur laufenden Begleitung. Alles in einer Cell Clinic in Ihrer Nähe.",
       "step1Title": "Cell Clinic finden", "step1Body": "Wählen Sie eine Partnerpraxis aus unserem Netzwerk. Jede Cell Clinic wird nach dem gleichen medizinischen Programm geschult und begleitet – Sie wissen also immer, was Sie erwartet.",
       "step2Title": "Erstgespräch & Anamnese", "step2Body": "Ihre Ärztin oder Ihr Arzt nimmt sich Zeit: für Ihre Vorgeschichte, Ihre Beschwerden und Ihre Ziele. Daraus entsteht das Bild Ihrer individuellen Ausgangslage.",
       "step3Title": "Diagnostik & individuelles Therapiekonzept", "step3Body": "Moderne Labor- und Zelldiagnostik zeigt, wo Ihr Körper Unterstützung braucht. Auf dieser Basis erstellt Ihre Cell Clinic ein Therapiekonzept, das zu Ihnen passt – kein Standardprogramm.",
@@ -607,7 +607,7 @@
     },
     "finder": {
       "label": "Cell Clinic finden", "title": "Partnerpraxen in Ihrer Nähe", "intro": "Unser Netzwerk wächst laufend. Alle Cell Clinics werden von qualifizierten Behandlerinnen und Behandlern geführt und sind Teil eines strukturierten Fachprogramms.",
-      "tag": "Partnerpraxis im Netzwerk", "clinicBody": "Ganzheitliche Klinik für biologische Medizin und Bionische Zelltherapie – eine der ersten Cell Clinics im Netzwerk und Referenz für unser Behandlungsmodell.", "profile": "Praxisprofil ansehen",
+      "tag": "Partnerpraxis im Netzwerk", "clinicBody": "Ganzheitliche Klinik für biologische Medizin und Bionic Cell Therapy – eine der ersten Cell Clinics im Netzwerk und Referenz für unser Behandlungsmodell.", "profile": "Praxisprofil ansehen",
       "formTitle": "Keine Cell Clinic in Ihrer Nähe?", "formBody": "Hinterlassen Sie uns Ihre Region – wir melden uns, sobald eine Partnerpraxis bei Ihnen eröffnet, und vermitteln auf Wunsch eine Erstberatung."
     },
     "form": {
@@ -625,14 +625,14 @@
     },
     "faq": {
       "label": "Häufige Fragen", "title": "Was Sie vor dem ersten Gespräch wissen möchten.", "intro": "Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic.",
-      "q1": "Für wen ist die Bionische Zelltherapie geeignet?", "a1": "Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik.",
+      "q1": "Für wen ist die Bionic Cell Therapy geeignet?", "a1": "Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik.",
       "q2": "Ist die Behandlung sicher?", "a2": "Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf.",
       "q3": "Was kostet die Behandlung – zahlt meine Krankenkasse?", "a3": "Die Kosten richten sich nach Ihrem individuellen Therapiekonzept und werden Ihnen vor Behandlungsbeginn transparent dargelegt. In der Regel handelt es sich um Selbstzahlerleistungen; private Versicherungen erstatten je nach Tarif anteilig. Ihre Cell Clinic berät Sie dazu im Erstgespräch.",
       "q4": "Wie lange dauert eine Behandlung?", "a4": "Das hängt von Ihrem Konzept ab: Eine einzelne Infusionsanwendung dauert meist unter einer Stunde, ein vollständiges Therapiekonzept erstreckt sich häufig über mehrere Wochen mit regelmäßigen Terminen und Verlaufskontrollen.",
       "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Fortbildung über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz."
     },
     "cta": {"label": "Ihr nächster Schritt", "title": "Bereit für den ersten Schritt?", "body": "Finden Sie eine Cell Clinic in Ihrer Nähe und vereinbaren Sie ein Erstgespräch – unverbindlich und persönlich.", "findClinic": "Cell Clinic finden", "findNearby": "Cell Clinic in Ihrer Nähe finden", "howItWorks": "Wie läuft die Behandlung ab?"},
-    "footerDescription": "Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionische Zelltherapie.",
+    "footerDescription": "Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy.",
     "footerDisclaimer": "Hinweis: Die Inhalte dieser Seite dienen der allgemeinen Information und ersetzen keine ärztliche Beratung, Diagnose oder Behandlung. Ob eine Therapie für Sie geeignet ist, entscheidet ausschließlich Ihre behandelnde Ärztin bzw. Ihr behandelnder Arzt. Individuelle Behandlungsergebnisse können variieren."
   }
 }
