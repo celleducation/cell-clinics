@@ -160,11 +160,21 @@ export const clinics: Clinic[] = [
   {
     slug: "maja-koebel-aink-luebeck",
     name: "Dr. Maja Köbel-Aink",
-    practitioner: "Dr. Maja Köbel-Aink",
+    practitioner: "Dr. Maja Köbel-Aink · Fachärztin für MKG-Chirurgie und Anästhesie",
     city: "Lübeck",
     region: "Schleswig-Holstein",
     countryCode: "DE",
-    coordinates: {lat: 53.873, lng: 10.701}
+    profileAvailable: true,
+    coordinates: {lat: 53.8634, lng: 10.6675},
+    summary: "Mund-, Kiefer- und Gesichtschirurgie mit biologischen Konzepten, Implantologie und regenerativer PRGF-Behandlung.",
+    images: [
+      "/clinics/maja-koebel-aink/portrait.webp",
+      "/clinics/maja-koebel-aink/team.webp",
+      "/clinics/maja-koebel-aink/prgf.webp"
+    ],
+    website: "https://kieferchirurgie-luebeck.de/",
+    phone: "+49 451 899 3272",
+    address: "Hansestraße 43 A, 23558 Lübeck, Deutschland"
   },
   {
     slug: "boguslaw-nikiciuk-neuruppin",
