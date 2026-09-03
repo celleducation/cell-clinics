@@ -24,6 +24,8 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
           ? "mihribanCiftci"
         : slug === "maja-koebel-aink-luebeck"
           ? "majaKoebelAink"
+        : slug === "lars-gienger-bretten"
+          ? "larsGienger"
         : "alpstein";
   const t = await getTranslations({locale, namespace: `clinicProfiles.${profileKey}`});
   return {
@@ -48,7 +50,8 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const isNikiciuk = slug === "boguslaw-nikiciuk-neuruppin";
   const isMihriban = slug === "mihriban-ciftci-stuttgart";
   const isMaja = slug === "maja-koebel-aink-luebeck";
-  const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : isNikiciuk ? "nikiciuk" : isMihriban ? "mihribanCiftci" : isMaja ? "majaKoebelAink" : "alpstein";
+  const isLars = slug === "lars-gienger-bretten";
+  const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : isNikiciuk ? "nikiciuk" : isMihriban ? "mihribanCiftci" : isMaja ? "majaKoebelAink" : isLars ? "larsGienger" : "alpstein";
   const t = await getTranslations(`clinicProfiles.${profileKey}`);
   const networkT = await getTranslations("networkPage");
   const assets = isMedivium ? {
@@ -86,6 +89,13 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     profile: "/clinics/maja-koebel-aink/prgf-hd.png",
     galleryThird: "/images/cellclinic-therapy.png",
     context: "/clinics/maja-koebel-aink/team-hd.png"
+  } : isLars ? {
+    logo: "/clinics/lars-gienger/reception.jpeg",
+    main: "/clinics/lars-gienger/lars-gienger.jpeg",
+    portrait: "/clinics/lars-gienger/reception.jpeg",
+    profile: "/clinics/lars-gienger/infusion-room.jpeg",
+    galleryThird: "/clinics/lars-gienger/treatment-room.jpeg",
+    context: "/clinics/lars-gienger/reception.jpeg"
   } : {
     logo: "/clinics/alpstein/logo.webp",
     main: "/clinics/alpstein/interior-1.webp",
@@ -106,7 +116,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": isMedivium || isMihriban ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
+    "@type": isMedivium || isMihriban || isLars ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
     name: clinic.name,
     url: clinic.website,
     email: clinic.contactEmail,
@@ -114,11 +124,11 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     image: `https://cell-clinics.com${assets.main}`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: isMedivium ? "Kirchheimer Straße 42" : isMonikaBrueck ? "Camí dels Reis 308, Edificio 3A Norte" : isNikiciuk ? "An der Seepromenade 24" : isMihriban ? "Obere Waiblinger Straße 107 a" : isMaja ? "Hansestraße 43 A" : "Dorfplatz 5",
-      postalCode: isMedivium ? "70619" : isMonikaBrueck ? "07011" : isNikiciuk ? "16816" : isMihriban ? "70374" : isMaja ? "23558" : "9056",
-      addressLocality: isMedivium || isMihriban ? "Stuttgart" : isMonikaBrueck ? "Palma" : isNikiciuk ? "Neuruppin" : isMaja ? "Lübeck" : "Gais",
-      addressRegion: isMedivium || isMihriban ? "Baden-Württemberg" : isMonikaBrueck ? "Baleares" : isNikiciuk ? "Brandenburg" : isMaja ? "Schleswig-Holstein" : "Appenzell Ausserrhoden",
-      addressCountry: isMedivium || isNikiciuk || isMihriban || isMaja ? "DE" : isMonikaBrueck ? "ES" : "CH"
+      streetAddress: isMedivium ? "Kirchheimer Straße 42" : isMonikaBrueck ? "Camí dels Reis 308, Edificio 3A Norte" : isNikiciuk ? "An der Seepromenade 24" : isMihriban ? "Obere Waiblinger Straße 107 a" : isMaja ? "Hansestraße 43 A" : isLars ? "Bahnhofstraße 24" : "Dorfplatz 5",
+      postalCode: isMedivium ? "70619" : isMonikaBrueck ? "07011" : isNikiciuk ? "16816" : isMihriban ? "70374" : isMaja ? "23558" : isLars ? "75015" : "9056",
+      addressLocality: isMedivium || isMihriban ? "Stuttgart" : isMonikaBrueck ? "Palma" : isNikiciuk ? "Neuruppin" : isMaja ? "Lübeck" : isLars ? "Bretten" : "Gais",
+      addressRegion: isMedivium || isMihriban || isLars ? "Baden-Württemberg" : isMonikaBrueck ? "Baleares" : isNikiciuk ? "Brandenburg" : isMaja ? "Schleswig-Holstein" : "Appenzell Ausserrhoden",
+      addressCountry: isMedivium || isNikiciuk || isMihriban || isMaja || isLars ? "DE" : isMonikaBrueck ? "ES" : "CH"
     }
   };
 
@@ -132,7 +142,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           <div className="alpstein-hero-grid">
             <div className="alpstein-hero-copy">
               <span className="eyebrow">{t("eyebrow")}</span>
-              {!isMaja && <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}${isMihriban ? " mihriban-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />}
+              {!isMaja && !isLars && <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}${isMihriban ? " mihriban-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />}
               <h1 className="display">{clinic.name}</h1>
               <p className="clinic-profile-location">{t("location")}</p>
               <p className="lead">{t("heroBody")}</p>
@@ -142,7 +152,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
               </div>
             </div>
             <div className="alpstein-hero-gallery">
-              <Image className={`alpstein-gallery-main${isNikiciuk ? " nikiciuk-main-portrait" : ""}${isMihriban ? " mihriban-main-portrait" : ""}${isMaja ? " maja-main-portrait" : ""}`} src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
+              <Image className={`alpstein-gallery-main${isNikiciuk ? " nikiciuk-main-portrait" : ""}${isMihriban ? " mihriban-main-portrait" : ""}${isMaja ? " maja-main-portrait" : ""}${isLars ? " lars-main-portrait" : ""}`} src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
               <Image className={isMedivium ? "medivium-portrait" : isNikiciuk ? "nikiciuk-cell-art" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
               <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : isMihriban ? "mihriban-gallery-logo" : isMaja ? "maja-cell-art" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk || isMihriban ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
             </div>

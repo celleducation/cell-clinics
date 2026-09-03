@@ -177,6 +177,28 @@ export const clinics: Clinic[] = [
     address: "Hansestraße 43 A, 23558 Lübeck, Deutschland"
   },
   {
+    slug: "lars-gienger-bretten",
+    name: "CURAPRAX",
+    practitioner: "Lars Gienger · Heilpraktiker, Osteopath und Physiotherapeut",
+    city: "Bretten",
+    region: "Baden-Württemberg",
+    countryCode: "DE",
+    profileAvailable: true,
+    coordinates: {lat: 49.0369, lng: 8.7062},
+    summary: "Naturheilkunde, funktionelle Medizin, Osteopathie und Physiotherapie mit strukturierter Diagnostik und individueller Behandlungsplanung.",
+    intro: "Lars Gienger verbindet bei CURAPRAX über 20 Jahre praktische Erfahrung mit präziser Diagnostik, moderner Prävention und einem klar strukturierten Vorgehen.",
+    images: [
+      "/clinics/lars-gienger/lars-gienger.jpeg",
+      "/clinics/lars-gienger/reception.jpeg",
+      "/clinics/lars-gienger/infusion-room.jpeg",
+      "/clinics/lars-gienger/treatment-room.jpeg"
+    ],
+    website: "https://www.curaprax.de",
+    contactEmail: "curaprax@gmx.de",
+    phone: "+49 7252 900 88 74",
+    address: "Bahnhofstraße 24, 75015 Bretten, Deutschland"
+  },
+  {
     slug: "boguslaw-nikiciuk-neuruppin",
     name: "Praxis für Rheumatologie Boguslaw Krystian Nikiciuk",
     practitioner: "Boguslaw Krystian Nikiciuk · Facharzt für Innere Medizin und Rheumatologie",

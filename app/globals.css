@@ -2546,6 +2546,10 @@ textarea.input {
   object-position: center 22%;
 }
 
+.alpstein-hero-gallery .alpstein-gallery-main.lars-main-portrait {
+  object-position: center 36%;
+}
+
 .alpstein-hero-gallery .maja-cell-art {
   padding: clamp(18px, 2.5vw, 30px);
   object-fit: contain;
