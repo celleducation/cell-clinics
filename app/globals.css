@@ -2674,9 +2674,9 @@ textarea.input {
 }
 
 .clinic-network-brand img {
-  width: clamp(148px, 16vw, 205px);
+  width: clamp(150px, 15vw, 190px);
   height: auto;
-  padding: 7px 10px;
+  padding: 7px 9px;
   background: rgba(255, 255, 255, .96);
   border-radius: 10px;
 }

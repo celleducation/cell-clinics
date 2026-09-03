@@ -184,7 +184,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <span>{networkPartnerTitle}</span>
             <span className="clinic-network-brand">
               <span aria-hidden="true">×</span>
-              <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} />
+              <Image src="/cell-clinics-logo.svg" alt="Cell Clinics" width={875} height={153} />
             </span>
           </h2>
           <p className="lead">{t("cellClinicsBody")}</p>
