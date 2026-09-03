@@ -2304,26 +2304,12 @@ textarea.input {
 .clinic-result-select {
   min-width: 0;
   flex: 1;
-  display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 13px;
+  display: block;
   align-items: center;
   padding: 0;
   text-align: left;
   background: transparent;
   border: 0;
-}
-
-.clinic-index {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  color: var(--sky-ink);
-  background: var(--sky-soft);
-  border-radius: 50%;
-  font-size: .72rem;
-  font-weight: 700;
 }
 
 .clinic-result-copy {
@@ -3913,13 +3899,7 @@ textarea.input {
   }
 
   .clinic-result-select {
-    grid-template-columns: 36px minmax(0, 1fr);
-    gap: 11px;
-  }
-
-  .clinic-index {
-    width: 36px;
-    height: 36px;
+    display: block;
   }
 
   .clinic-result-copy strong {

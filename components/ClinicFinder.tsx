@@ -227,14 +227,13 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
               )}
             </div>
           )}
-          {displayedClinics.map((clinic, index) => (
+          {displayedClinics.map((clinic) => (
             <article
               className="clinic-result"
               id={`clinic-${clinic.slug}`}
               key={clinic.slug}
             >
               <div className="clinic-result-select">
-                <span className="clinic-index">{String(index + 1).padStart(2, "0")}</span>
                 <span className="clinic-result-copy">
                   <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
                   <strong>{clinic.name}</strong>
