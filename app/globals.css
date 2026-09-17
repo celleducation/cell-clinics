@@ -940,45 +940,6 @@ textarea.input {
   object-fit: contain;
 }
 
-.patient-hero-collage {
-  min-height: 460px;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(12, minmax(0, 1fr));
-  gap: 12px;
-  padding: 14px;
-  place-items: stretch;
-}
-
-.patient-hero-collage::before {
-  inset: 4%;
-}
-
-.patient-hero-collage > img {
-  width: 100%;
-  height: 100%;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 14px 32px rgba(22, 38, 74, .11);
-}
-
-.patient-editorial-main {
-  grid-column: 1 / 9;
-  grid-row: 1 / 13;
-  object-position: 52% center;
-}
-
-.patient-editorial-recovery {
-  grid-column: 9 / 13;
-  grid-row: 1 / 7;
-  object-position: center 38%;
-}
-
-.patient-editorial-support {
-  grid-column: 9 / 13;
-  grid-row: 7 / 13;
-  object-position: center;
-}
-
 .patient-trust-grid svg {
   flex: 0 0 auto;
   color: var(--sky-ink);
@@ -993,23 +954,6 @@ textarea.input {
 .patient-feature-grid .feature-card {
   min-height: 230px;
   padding: 26px;
-}
-
-.patient-vitality-images {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 32px;
-}
-
-.patient-vitality-images > img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 22px;
 }
 
 .patient-process .section-heading {
@@ -1393,7 +1337,6 @@ textarea.input {
   }
 
   .patient-feature-grid,
-  .patient-vitality-images,
   .patient-steps,
   .patient-form-grid,
   .patient-trust-grid {
@@ -1442,6 +1385,181 @@ textarea.input {
     scroll-behavior: auto !important;
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* Large photography gives the main pages their editorial rhythm. */
+.photo-hero.home-hero,
+.photo-hero.patient-hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 0;
+  background: #fff;
+}
+
+.photo-hero::after {
+  content: none;
+}
+
+.photo-hero .photo-hero-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  padding-block: clamp(40px, 4.5vw, 72px);
+}
+
+.photo-hero-intro .display {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 4.3vw, 4.5rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+}
+
+.photo-hero-description .lead {
+  margin-bottom: 24px;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.photo-hero-description .button-row {
+  gap: 12px;
+}
+
+.photo-hero-image,
+.editorial-photo-break {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #e8ece8;
+}
+
+.photo-hero-image {
+  height: clamp(440px, 49vw, 820px);
+}
+
+.photo-hero-image > img,
+.editorial-photo-break > img {
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.photo-hero-patient .photo-hero-image > img {
+  object-position: 54% 42%;
+}
+
+.home-trust-strip {
+  padding-block: 28px;
+  background: var(--sky-soft);
+}
+
+.home-trust-strip .trust-row {
+  margin-top: 0;
+}
+
+.editorial-photo-break {
+  height: clamp(420px, 44vw, 700px);
+}
+
+.editorial-photo-break > img {
+  object-position: center 38%;
+}
+
+.patient-therapy-editorial {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  margin-bottom: 64px;
+  background: #f4f7f3;
+}
+
+.patient-therapy-photo {
+  position: relative;
+  align-self: stretch;
+  min-height: clamp(560px, 48vw, 780px);
+}
+
+.patient-therapy-photo > img {
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.patient-hero ~ .patient-therapy-story .patient-therapy-editorial > .section-heading {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 80px);
+}
+
+.patient-therapy-editorial .section-title {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+.patient-therapy-editorial .lead {
+  margin-bottom: 0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .photo-hero .photo-hero-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .photo-hero-intro .display {
+    max-width: 22ch;
+  }
+
+  .patient-therapy-editorial {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .patient-therapy-photo {
+    min-height: 0;
+    height: clamp(420px, 75vw, 620px);
+  }
+}
+
+@media (max-width: 767px) {
+  .photo-hero .photo-hero-image {
+    order: -1;
+    height: clamp(300px, 90vw, 480px);
+  }
+
+  .photo-hero .photo-hero-intro {
+    padding-block: 32px 40px;
+    gap: 18px;
+  }
+
+  .photo-hero-intro .display {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+  }
+
+  .photo-hero-description .lead {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .photo-hero-description .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .editorial-photo-break {
+    height: 420px;
+  }
+
+  .patient-therapy-editorial {
+    margin-bottom: 36px;
+  }
+
+  .home-trust-strip {
+    padding-block: 16px;
   }
 }
 
@@ -1549,45 +1667,6 @@ textarea.input {
 .home-hero-art img {
   transform: scale(1.06);
   filter: drop-shadow(0 22px 26px rgba(53, 96, 139, .12));
-}
-
-.home-hero-collage {
-  min-height: 460px;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(12, minmax(0, 1fr));
-  gap: 12px;
-  padding: 14px;
-  align-items: stretch;
-}
-
-.home-hero-collage img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  border-radius: 18px;
-  object-fit: cover;
-  transform: none;
-  filter: none;
-  box-shadow: 0 14px 32px rgba(22, 38, 74, .11);
-}
-
-.home-hero-collage .editorial-main {
-  grid-column: 1 / 10;
-  grid-row: 1 / 13;
-  object-position: 54% center;
-}
-
-.home-hero-collage .editorial-performance {
-  grid-column: 10 / 13;
-  grid-row: 1 / 7;
-  object-position: 58% center;
-}
-
-.home-hero-collage .editorial-detail {
-  grid-column: 10 / 13;
-  grid-row: 7 / 13;
-  object-position: center;
 }
 
 .page-hero-grid-simple > :first-child {
@@ -3260,11 +3339,6 @@ textarea.input {
     min-height: 300px;
   }
 
-  .home-hero-collage,
-  .patient-hero-collage {
-    min-height: 420px;
-  }
-
   .home-hero-grid {
     min-height: auto;
   }
@@ -3403,18 +3477,6 @@ textarea.input {
   .home-hero-art,
   .hero-art {
     min-height: 230px;
-  }
-
-  .home-hero-collage,
-  .patient-hero-collage {
-    min-height: 330px;
-    gap: 8px;
-    padding: 9px;
-  }
-
-  .home-hero-collage img,
-  .patient-hero-collage > img {
-    border-radius: 13px;
   }
 
   .trust-row,

@@ -8,6 +8,7 @@ import {FeatureCard} from "@/components/ui/FeatureCard";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {PatientInquiryForm} from "@/components/PatientInquiryForm";
 import {ClinicFinder} from "@/components/ClinicFinder";
+import {PhotographicHero} from "@/components/PhotographicHero";
 import {clinics} from "@/content/clinics";
 
 const slugs: Record<string, string> = {de: "patienten", en: "patients", es: "pacientes"};
@@ -59,34 +60,27 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
   return (
     <>
-      <section className="patient-hero section-soft">
-        <div className="container patient-hero-grid">
-          <div className="patient-hero-copy">
-            <span className="eyebrow">{t("hero.label")}</span>
-            <h1 className="display">{t("hero.title")}</h1>
-            <p className="lead">{t("hero.body")}</p>
-            <div className="button-row">
-              <ButtonLink href="#find-clinic" size="large">{t("cta.findNearby")}</ButtonLink>
-              <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
-            </div>
-          </div>
-          <div className="patient-hero-art patient-hero-collage">
-            <Image className="patient-editorial-main" src="/images/editorial/vitality-swimming.webp" alt="" width={880} height={1168} priority />
-            <Image className="patient-editorial-recovery" src="/images/editorial/recovery-red-light.webp" alt="" width={880} height={1168} priority />
-            <Image className="patient-editorial-support" src="/images/editorial/patient-support.webp" alt="" width={1600} height={904} priority />
-          </div>
-        </div>
-      </section>
+      <PhotographicHero
+        audience="patient"
+        eyebrow={t("hero.label")}
+        title={t("hero.title")}
+        body={t("hero.body")}
+        image="/images/editorial/vitality-running-front.webp"
+      >
+        <ButtonLink href="#find-clinic" size="large">{t("cta.findNearby")}</ButtonLink>
+        <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
+      </PhotographicHero>
 
-      <section className="section" id="therapy">
-        <div className="container">
+      <section className="section patient-therapy-story" id="therapy">
+        <div className="patient-therapy-editorial">
+          <div className="patient-therapy-photo">
+            <Image src="/images/editorial/vitality-swimming.webp" alt="" fill sizes="(max-width: 900px) 100vw, 50vw" />
+          </div>
           <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
+        </div>
+        <div className="container">
           <div className="patient-feature-grid">
             {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
-          </div>
-          <div className="patient-vitality-images" aria-hidden="true">
-            <Image src="/images/editorial/vitality-running-front.webp" alt="" width={1600} height={900} sizes="(max-width: 767px) 100vw, 50vw" />
-            <Image src="/images/editorial/vitality-running-profile.webp" alt="" width={1600} height={900} sizes="(max-width: 767px) 100vw, 50vw" />
           </div>
         </div>
       </section>

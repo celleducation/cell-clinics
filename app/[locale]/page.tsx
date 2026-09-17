@@ -6,6 +6,7 @@ import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {ModuleGrid} from "@/components/ModuleGrid";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
+import {PhotographicHero} from "@/components/PhotographicHero";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {partnerModules} from "@/content/site";
 
@@ -66,27 +67,21 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData).replace(/</g, "\\u003c")}} />
-      <section className="home-hero section-soft">
-        <div className="container home-hero-grid">
-          <div>
-            <span className="eyebrow">{t("hero.label")}</span>
-            <h1 className="display">{t("hero.title")}</h1>
-            <p className="lead">{t("hero.body")}</p>
-            <div className="button-row">
-              <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
-              <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
-            </div>
-          </div>
-          <div className="home-hero-art home-hero-collage">
-            <Image className="editorial-main" src="/images/editorial/clinical-collaboration.webp" alt="" width={1600} height={900} priority />
-            <Image className="editorial-performance" src="/images/editorial/performance-running.webp" alt="" width={1600} height={900} priority />
-            <Image className="editorial-detail" src="/images/editorial/clinical-vials.webp" alt="" width={1600} height={904} priority />
-          </div>
-        </div>
+      <PhotographicHero
+        audience="home"
+        eyebrow={t("hero.label")}
+        title={t("hero.title")}
+        body={t("hero.body")}
+        image="/images/editorial/clinical-collaboration.webp"
+      >
+        <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
+        <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
+      </PhotographicHero>
+      <div className="home-trust-strip">
         <div className="container trust-row">
           {trust.map((item) => <div className="trust-item" key={item}><Check size={17} /> <span>{item}</span></div>)}
         </div>
-      </section>
+      </div>
 
       <section className="section" id="platform">
         <div className="container">
@@ -97,6 +92,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           </div>
         </div>
       </section>
+
+      <div className="editorial-photo-break" aria-hidden="true">
+        <Image src="/images/editorial/vitality-running-profile.webp" alt="" fill sizes="100vw" />
+      </div>
 
       <section className="section section-alt" id="systems">
         <div className="container">
