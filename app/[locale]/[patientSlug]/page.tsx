@@ -71,30 +71,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
         <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
       </PhotographicHero>
 
-      <section className="section patient-therapy-story" id="therapy">
-        <div className="container">
-          <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
-          <div className="patient-feature-grid">
-            {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-alt patient-process" id="process">
-        <div className="container">
-          <SectionHeading eyebrow={t("process.label")} title={t("process.title")} intro={t("process.intro")} />
-          <div className="patient-steps">
-            {[1, 2, 3, 4].map((step) => (
-              <article className="patient-step card" key={step}>
-                <span className="patient-step-number">{String(step).padStart(2, "0")}</span>
-                <h3>{t(`process.step${step}Title`)}</h3>
-                <p>{t(`process.step${step}Body`)}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section" id="find-clinic">
         <div className="container">
           <SectionHeading eyebrow={t("finder.label")} title={t("finder.title")} intro={t("finder.intro")} />
@@ -126,6 +102,33 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
               <p>{t("finder.formBody")}</p>
             </div>
             <PatientInquiryForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="section patient-therapy-story" id="therapy">
+        <div className="container">
+          <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
+          <div className="patient-feature-grid">
+            {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt patient-process" id="process">
+        <div className="patient-process-image" aria-hidden="true">
+          <Image src="/images/editorial/patient-treatment-background.webp" alt="" fill sizes="100vw" />
+        </div>
+        <div className="container">
+          <SectionHeading eyebrow={t("process.label")} title={t("process.title")} intro={t("process.intro")} />
+          <div className="patient-steps">
+            {[1, 2, 3, 4].map((step) => (
+              <article className="patient-step card" key={step}>
+                <span className="patient-step-number">{String(step).padStart(2, "0")}</span>
+                <h3>{t(`process.step${step}Title`)}</h3>
+                <p>{t(`process.step${step}Body`)}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

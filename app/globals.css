@@ -958,8 +958,59 @@ textarea.input {
   padding: 26px;
 }
 
+.patient-process {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.patient-process-image {
+  position: absolute;
+  inset: 0 0 auto auto;
+  width: min(720px, 62vw);
+  aspect-ratio: 2720 / 1536;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(#000 72%, transparent);
+  mask-image: linear-gradient(#000 72%, transparent);
+}
+
+.patient-process-image > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.patient-process-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(245,248,252,.96) 0%, rgba(245,248,252,.88) 38%, rgba(245,248,252,.1) 72%);
+}
+
 .patient-process .section-heading {
-  max-width: 840px;
+  max-width: min(840px, 64%);
+}
+
+@media (max-width: 767px) {
+  .patient-process-image {
+    bottom: auto;
+    width: 100%;
+    height: 420px;
+    mask-image: linear-gradient(#000 65%, transparent);
+    -webkit-mask-image: linear-gradient(#000 65%, transparent);
+  }
+
+  .patient-process-image > img {
+    object-position: 65% center;
+  }
+
+  .patient-process-image::after {
+    background: rgba(245,248,252,.88);
+  }
+
+  .patient-process .section-heading {
+    max-width: 100%;
+  }
 }
 
 .patient-steps {
