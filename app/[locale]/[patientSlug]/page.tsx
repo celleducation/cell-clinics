@@ -65,7 +65,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
         eyebrow={t("hero.label")}
         title={t("hero.title")}
         body={t("hero.body")}
-        image="/images/editorial/vitality-running-front.webp"
+        image="/images/editorial/patient-cell-membrane.webp"
       >
         <ButtonLink href="#find-clinic" size="large">{t("cta.findNearby")}</ButtonLink>
         <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
@@ -146,7 +146,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
       <section className="section patient-final-cta">
         <div className="patient-final-image" aria-hidden="true">
-          <Image src="/images/editorial/vitality-running-outdoors.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
+          <Image src="/images/editorial/patient-cell-nucleus.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
         </div>
         <div className="container patient-final-copy">
           <span className="eyebrow">{t("cta.label")}</span>

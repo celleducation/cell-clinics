@@ -84,7 +84,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </div>
 
-      <section className="section" id="platform">
+      <section className="section platform-cell-section" id="platform">
+        <div className="platform-cell-art" aria-hidden="true">
+          <Image src="/images/editorial/platform-cell.webp" alt="" fill sizes="(max-width: 767px) 600px, 980px" />
+        </div>
         <div className="container">
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
           <ModuleGrid items={modules.slice(0, 4)} />

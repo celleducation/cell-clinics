@@ -112,7 +112,9 @@ textarea {
 }
 
 ::selection {
-  background: var(--sky-soft);
+  color: var(--navy);
+  background: var(--sky);
+  text-shadow: none;
 }
 
 .container {
@@ -971,6 +973,10 @@ textarea.input {
   position: relative;
   min-height: 260px;
   padding: 26px 24px;
+  /* A solid surface avoids transient backdrop-filter repaint gaps on load. */
+  background: linear-gradient(145deg, #fff, #f7fbfe);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .patient-step-number {
@@ -1471,8 +1477,26 @@ textarea.input {
   margin-top: 28px;
 }
 
+.photo-hero.photo-hero-patient {
+  background: #fff;
+}
+
+.photo-hero.photo-hero-patient .photo-hero-image {
+  inset: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.photo-hero.photo-hero-patient::before {
+  content: none;
+}
+
 .photo-hero-patient .photo-hero-image > img {
-  object-position: 57% 40%;
+  object-position: center;
+}
+
+.photo-hero-patient .photo-hero-description .lead {
+  color: var(--navy);
 }
 
 .home-trust-strip {
@@ -1504,7 +1528,7 @@ textarea.input {
   isolation: isolate;
   overflow: hidden;
   padding-block: 72px;
-  background: #102b28;
+  background: var(--navy);
 }
 
 .patient-final-image {
@@ -1515,8 +1539,8 @@ textarea.input {
 }
 
 .patient-final-image > img {
-  object-fit: cover;
-  object-position: center 40%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .patient-final-cta::before {
@@ -1524,7 +1548,7 @@ textarea.input {
   inset: 0;
   z-index: -1;
   content: "";
-  background: linear-gradient(90deg, #102b28 15%, rgba(16,43,40,.97) 36%, rgba(16,43,40,.72) 53%, rgba(16,43,40,.1));
+  background: none;
 }
 
 .patient-final-copy > * {
@@ -1623,7 +1647,7 @@ textarea.input {
   }
 
   .patient-final-cta::before {
-    background: rgba(16,43,40,.78);
+    background: rgba(11,31,67,.78);
   }
 
   .patient-final-copy > * {
@@ -1777,6 +1801,50 @@ textarea.input {
 .trust-item svg {
   flex: 0 0 auto;
   color: var(--sky-ink);
+}
+
+.platform-cell-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.platform-cell-art {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: -180px;
+  width: min(980px, 72vw);
+  aspect-ratio: 1427 / 976;
+  pointer-events: none;
+}
+
+.platform-cell-art img {
+  object-fit: contain;
+}
+
+#platform.platform-cell-section .section-heading {
+  max-width: 560px;
+}
+
+.platform-cell-section .module-card {
+  background: #fff;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .platform-cell-art {
+    top: 360px;
+    right: -260px;
+    width: 880px;
+  }
+}
+
+@media (max-width: 767px) {
+  .platform-cell-art {
+    top: 270px;
+    right: -200px;
+    width: 600px;
+  }
 }
 
 .module-grid {
