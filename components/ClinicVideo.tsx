@@ -1,6 +1,7 @@
 "use client";
 
 import {useEffect, useState} from "react";
+import Image from "next/image";
 import {Play, ArrowUpRight} from "lucide-react";
 
 type ClinicVideoProps = {
@@ -40,9 +41,11 @@ export function ClinicVideo({title, loadLabel, privacyNote, externalLabel, loadi
           />
         ) : (
           <button type="button" className="clinic-video-load" onClick={() => setLoaded(true)} aria-label={`${loadLabel}: ${title}`}>
-            <span className="clinic-video-wordmark" aria-hidden="true">Longevity Lab <span>2026</span></span>
-            <span className="clinic-video-play" aria-hidden="true"><Play size={26} fill="currentColor" /></span>
-            <span>{loadLabel}</span>
+            <Image src="/images/editorial/longevity-lab-video-poster.webp" alt="" fill sizes="(max-width: 767px) 100vw, 720px" className="clinic-video-poster" />
+            <span className="clinic-video-play">
+              <Play size={18} fill="currentColor" aria-hidden="true" />
+              <span>{loadLabel}</span>
+            </span>
           </button>
         )}
         {loaded && !ready && (

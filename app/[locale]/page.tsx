@@ -73,7 +73,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         eyebrow={t("hero.label")}
         title={t("hero.title")}
         body={t("hero.body")}
-        image="/images/editorial/clinical-welcome.webp"
+        image="/images/editorial/clinical-portrait.webp"
       >
         <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
         <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
