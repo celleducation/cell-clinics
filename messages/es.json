@@ -1,4 +1,11 @@
 {
+  "video": {
+    "loading": "Cargando vídeo …",
+    "fallback": "¿El vídeo no carga? Utilice el enlace de YouTube debajo del reproductor.",
+    "load": "Cargar vídeo",
+    "privacy": "Solo se establece una conexión con YouTube al cargar el vídeo.",
+    "external": "Ver en YouTube"
+  },
   "meta": {
     "title": "Cell Clinics | Plataforma médica para medicina celular",
     "description": "Cell Clinics ayuda a clínicas, médicos y proveedores sanitarios a implementar medicina celular guiada por médicos mediante diagnóstico, marcos clínicos, formación médica y sistemas terapéuticos."

@@ -1,4 +1,11 @@
 {
+  "video": {
+    "loading": "Loading video …",
+    "fallback": "Video not loading? Use the YouTube link below the player.",
+    "load": "Load video",
+    "privacy": "A connection to YouTube is only established when you load the video.",
+    "external": "Watch on YouTube"
+  },
   "meta": {
     "title": "Cell Clinics | Physician-Guided Cellular Medicine Platform",
     "description": "Cell Clinics helps healthcare providers implement physician-guided cellular medicine through diagnostics, clinical frameworks, physician education and therapeutic systems."

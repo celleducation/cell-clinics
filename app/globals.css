@@ -1388,70 +1388,83 @@ textarea.input {
   }
 }
 
-/* Large photography gives the main pages their editorial rhythm. */
+/* Photography supports the content; it never occupies a standalone row. */
 .photo-hero.home-hero,
 .photo-hero.patient-hero {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 0;
   border: 0;
-  background: #fff;
+  background: #f3f7f8;
 }
 
 .photo-hero::after {
   content: none;
 }
 
+.photo-hero .photo-hero-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 70%;
+  height: 100%;
+  z-index: -2;
+}
+
+.photo-hero-image > img {
+  object-fit: cover;
+  object-position: 62% center;
+}
+
+.photo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #f3f7f8 0%, #f3f7f8 30%, rgba(243,247,248,.98) 40%, rgba(243,247,248,.82) 51%, rgba(243,247,248,.12) 70%, transparent 100%);
+}
+
 .photo-hero .photo-hero-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(32px, 6vw, 96px);
-  padding-block: clamp(40px, 4.5vw, 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 570px;
+  gap: 24px;
+  padding-block: 64px;
+}
+
+.photo-hero-intro > div {
+  width: min(52%, 620px);
 }
 
 .photo-hero-intro .display {
-  max-width: 15ch;
+  max-width: 17ch;
   margin: 0;
-  font-size: clamp(2.5rem, 4.3vw, 4.5rem);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
   line-height: 1.06;
   letter-spacing: -.035em;
+  text-wrap: balance;
 }
 
 .photo-hero-description .lead {
-  margin-bottom: 24px;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  max-width: 52ch;
+  margin-bottom: 0;
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
 .photo-hero-description .button-row {
   gap: 12px;
-}
-
-.photo-hero-image,
-.editorial-photo-break {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #e8ece8;
-}
-
-.photo-hero-image {
-  height: clamp(440px, 49vw, 820px);
-}
-
-.photo-hero-image > img,
-.editorial-photo-break > img {
-  object-fit: cover;
-  object-position: center 45%;
+  margin-top: 28px;
 }
 
 .photo-hero-patient .photo-hero-image > img {
-  object-position: 54% 42%;
+  object-position: 57% 40%;
 }
 
 .home-trust-strip {
-  padding-block: 28px;
+  padding-block: 24px;
   background: var(--sky-soft);
 }
 
@@ -1459,85 +1472,112 @@ textarea.input {
   margin-top: 0;
 }
 
-.editorial-photo-break {
-  height: clamp(420px, 44vw, 700px);
+
+.patient-trust .patient-trust-layout {
+  display: block;
 }
 
-.editorial-photo-break > img {
-  object-position: center 38%;
-}
-
-.patient-therapy-editorial {
-  display: grid;
+.patient-trust .patient-trust-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
-  margin-bottom: 64px;
-  background: #f4f7f3;
+  gap: 0 48px;
+  margin-top: 32px;
 }
 
-.patient-therapy-photo {
+.patient-trust .patient-trust-grid article {
+  padding-block: 24px;
+}
+
+.patient-final-cta {
   position: relative;
-  align-self: stretch;
-  min-height: clamp(560px, 48vw, 780px);
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 72px;
+  background: #102b28;
 }
 
-.patient-therapy-photo > img {
+.patient-final-image {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 65%;
+  z-index: -2;
+}
+
+.patient-final-image > img {
   object-fit: cover;
-  object-position: center 48%;
+  object-position: center 40%;
 }
 
-.patient-hero ~ .patient-therapy-story .patient-therapy-editorial > .section-heading {
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto;
-  padding: clamp(32px, 5vw, 80px);
+.patient-final-cta::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(90deg, #102b28 15%, rgba(16,43,40,.97) 36%, rgba(16,43,40,.72) 53%, rgba(16,43,40,.1));
 }
 
-.patient-therapy-editorial .section-title {
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -.025em;
+.patient-final-copy > * {
+  max-width: 49%;
 }
 
-.patient-therapy-editorial .lead {
-  margin-bottom: 0;
-  font-size: 1.08rem;
-  line-height: 1.8;
+.patient-final-copy .eyebrow {
+  color: #afe0ed;
+}
+
+.patient-final-copy .section-title,
+.patient-final-copy .lead {
+  color: #fff;
+}
+
+.patient-final-copy .lead {
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.patient-final-copy .button-primary {
+  color: var(--navy);
+  background: #fff;
+  border-color: #fff;
 }
 
 @media (max-width: 900px) {
+  .photo-hero-intro > div {
+    width: 60%;
+  }
+
   .photo-hero .photo-hero-intro {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    min-height: 530px;
+    padding-block: 48px;
   }
 
-  .photo-hero-intro .display {
-    max-width: 22ch;
-  }
-
-  .patient-therapy-editorial {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .patient-therapy-photo {
-    min-height: 0;
-    height: clamp(420px, 75vw, 620px);
+  .photo-hero::before {
+    background: linear-gradient(90deg, #f3f7f8 12%, rgba(243,247,248,.98) 38%, rgba(243,247,248,.87) 52%, rgba(243,247,248,.2) 90%);
   }
 }
 
 @media (max-width: 767px) {
-  .photo-hero .photo-hero-image {
-    order: -1;
-    height: clamp(300px, 90vw, 480px);
+  .photo-hero .photo-hero-intro {
+    min-height: 0;
+    padding-block: 48px;
+    gap: 20px;
   }
 
-  .photo-hero .photo-hero-intro {
-    padding-block: 32px 40px;
-    gap: 18px;
+  .photo-hero-intro > div {
+    width: 100%;
+  }
+
+  .photo-hero .photo-hero-image {
+    width: 100%;
+    opacity: .22;
+  }
+
+  .photo-hero::before {
+    background: linear-gradient(90deg, rgba(243,247,248,.96), rgba(243,247,248,.76));
   }
 
   .photo-hero-intro .display {
-    font-size: clamp(2rem, 8.5vw, 3rem);
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    max-width: 20ch;
   }
 
   .photo-hero-description .lead {
@@ -1548,18 +1588,34 @@ textarea.input {
   .photo-hero-description .button-row {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .editorial-photo-break {
-    height: 420px;
-  }
-
-  .patient-therapy-editorial {
-    margin-bottom: 36px;
+    margin-top: 24px;
   }
 
   .home-trust-strip {
     padding-block: 16px;
+  }
+
+
+  .patient-trust .patient-trust-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 24px;
+  }
+
+  .patient-final-cta {
+    padding-block: 48px;
+  }
+
+  .patient-final-image {
+    width: 100%;
+    opacity: .4;
+  }
+
+  .patient-final-cta::before {
+    background: rgba(16,43,40,.78);
+  }
+
+  .patient-final-copy > * {
+    max-width: 100%;
   }
 }
 
@@ -3320,6 +3376,133 @@ textarea.input {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.clinic-video-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.clinic-video-layout .lead {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.clinic-video-player {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: var(--navy);
+}
+
+.clinic-video-status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #fff;
+  background: var(--navy);
+  text-align: center;
+  pointer-events: none;
+}
+
+.clinic-video-player iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.clinic-video-load {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px;
+  border: 0;
+  color: #fff;
+  background: radial-gradient(ellipse at 85% 0%, #214e63, transparent 65%), var(--navy);
+  font: inherit;
+  cursor: pointer;
+}
+
+.clinic-video-wordmark {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+.clinic-video-wordmark > span {
+  color: var(--sky);
+}
+
+.clinic-video-play {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding-left: 3px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+}
+
+.clinic-video-load:hover .clinic-video-play {
+  background: rgba(255,255,255,.15);
+}
+
+.clinic-video-load:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: -6px;
+}
+
+.clinic-video-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 18px;
+  margin-top: 14px;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
+.clinic-video-caption p {
+  flex: 1 1 240px;
+  margin: 0;
+}
+
+.clinic-video-caption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .clinic-video-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .clinic-video-load {
+    gap: 10px;
+    padding: 16px;
+    font-size: .85rem;
+  }
+
+  .clinic-video-play {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 @media (max-width: 1023px) {

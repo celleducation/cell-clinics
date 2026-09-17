@@ -7,6 +7,7 @@ import {SectionHeading} from "@/components/ui/SectionHeading";
 import {ModuleGrid} from "@/components/ModuleGrid";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PhotographicHero} from "@/components/PhotographicHero";
+import {ClinicVideo} from "@/components/ClinicVideo";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {partnerModules} from "@/content/site";
 
@@ -72,7 +73,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         eyebrow={t("hero.label")}
         title={t("hero.title")}
         body={t("hero.body")}
-        image="/images/editorial/clinical-collaboration.webp"
+        image="/images/editorial/clinical-welcome.webp"
       >
         <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
         <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
@@ -92,10 +93,6 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           </div>
         </div>
       </section>
-
-      <div className="editorial-photo-break" aria-hidden="true">
-        <Image src="/images/editorial/vitality-running-profile.webp" alt="" fill sizes="100vw" />
-      </div>
 
       <section className="section section-alt" id="systems">
         <div className="container">
@@ -152,6 +149,24 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <Image src="/images/kay-bredehorst.jpg" alt="Dr. Kay Bredehorst" width={900} height={1100} />
             <div><strong>Dr. Kay Bredehorst</strong><span>{t("leadershipPage.role")}</span></div>
           </div>
+        </div>
+      </section>
+
+      <section className="section section-alt clinic-video-section" aria-labelledby="clinic-video-title">
+        <div className="container clinic-video-layout">
+          <div>
+            <span className="eyebrow">{t("lab.label")}</span>
+            <h2 id="clinic-video-title" className="section-title">{t("lab.title")}</h2>
+            <p className="lead">{t("lab.body1")}</p>
+          </div>
+          <ClinicVideo
+            title={t("lab.title")}
+            loadLabel={t("video.load")}
+            privacyNote={t("video.privacy")}
+            externalLabel={t("video.external")}
+            loadingLabel={t("video.loading")}
+            fallbackLabel={t("video.fallback")}
+          />
         </div>
       </section>
 

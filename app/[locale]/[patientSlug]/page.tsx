@@ -72,13 +72,8 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
       </PhotographicHero>
 
       <section className="section patient-therapy-story" id="therapy">
-        <div className="patient-therapy-editorial">
-          <div className="patient-therapy-photo">
-            <Image src="/images/editorial/vitality-swimming.webp" alt="" fill sizes="(max-width: 900px) 100vw, 50vw" />
-          </div>
-          <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
-        </div>
         <div className="container">
+          <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
           <div className="patient-feature-grid">
             {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
           </div>
@@ -138,9 +133,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
       <section className="section section-soft patient-trust">
         <div className="container patient-trust-layout">
           <SectionHeading eyebrow={t("trust.label")} title={t("trust.title")} />
-          <div className="patient-trust-image">
-            <Image src="/images/editorial/clinical-welcome.webp" alt="" fill sizes="(max-width: 900px) 100vw, 42vw" />
-          </div>
           <div className="patient-trust-grid">
             {[1, 2, 3, 4].map((item) => (
               <article key={item}>
@@ -153,7 +145,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
       </section>
 
       <section className="section patient-final-cta">
-        <div className="container patient-cta-card">
+        <div className="patient-final-image" aria-hidden="true">
+          <Image src="/images/editorial/vitality-running-outdoors.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
+        </div>
+        <div className="container patient-final-copy">
           <span className="eyebrow">{t("cta.label")}</span>
           <h2 className="section-title">{t("cta.title")}</h2>
           <p className="lead">{t("cta.body")}</p>

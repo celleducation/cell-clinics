@@ -6,13 +6,18 @@ type PhotographicHeroProps = {
   eyebrow: string;
   title: string;
   body: string;
-  image: string;
+  image?: string;
   children: ReactNode;
 };
 
 export function PhotographicHero({audience, eyebrow, title, body, image, children}: PhotographicHeroProps) {
   return (
     <section className={`${audience}-hero photo-hero photo-hero-${audience}`}>
+      {image && (
+        <div className="photo-hero-image" aria-hidden="true">
+          <Image src={image} alt="" fill sizes="(max-width: 767px) 100vw, 70vw" priority />
+        </div>
+      )}
       <div className="container photo-hero-intro">
         <div>
           <span className="eyebrow">{eyebrow}</span>
@@ -22,9 +27,6 @@ export function PhotographicHero({audience, eyebrow, title, body, image, childre
           <p className="lead">{body}</p>
           <div className="button-row">{children}</div>
         </div>
-      </div>
-      <div className="photo-hero-image">
-        <Image src={image} alt="" fill sizes="100vw" priority />
       </div>
     </section>
   );

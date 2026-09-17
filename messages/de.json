@@ -1,4 +1,11 @@
 {
+  "video": {
+    "loading": "Video wird geladen …",
+    "fallback": "Video lädt nicht? Nutzen Sie den YouTube-Link unter dem Player.",
+    "load": "Video laden",
+    "privacy": "Erst beim Laden wird eine Verbindung zu YouTube hergestellt.",
+    "external": "Auf YouTube ansehen"
+  },
   "meta": {
     "title": "Cell Clinics | Ärztlich geführte Plattform für Zellmedizin",
     "description": "Cell Clinics unterstützt Kliniken, Ärzte und Gesundheitsanbieter bei der Implementierung ärztlich geführter Zellmedizin durch Diagnostik, klinische Frameworks, Schulungen und therapeutische Systeme."
