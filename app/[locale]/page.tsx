@@ -86,7 +86,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
       <section className="section platform-cell-section" id="platform">
         <div className="platform-cell-art" aria-hidden="true">
-          <Image src="/images/editorial/platform-cell.webp" alt="" fill sizes="(max-width: 767px) 600px, 980px" />
+          <Image src="/images/editorial/platform-cell.webp" alt="" fill sizes="(max-width: 767px) 500px, (max-width: 1100px) 720px, (max-width: 1333px) 60vw, 800px" />
         </div>
         <div className="container">
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
