@@ -84,6 +84,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
           <div className="patient-feature-grid">
             {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
           </div>
+          <div className="patient-vitality-images" aria-hidden="true">
+            <Image src="/images/editorial/vitality-running-front.webp" alt="" width={1600} height={900} sizes="(max-width: 767px) 100vw, 50vw" />
+            <Image src="/images/editorial/vitality-running-profile.webp" alt="" width={1600} height={900} sizes="(max-width: 767px) 100vw, 50vw" />
+          </div>
         </div>
       </section>
 
