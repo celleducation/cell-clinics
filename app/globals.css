@@ -1203,28 +1203,40 @@ textarea.input {
   font-size: .8rem;
 }
 
-.patient-trust-intro {
+.patient-trust-layout {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 32px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  grid-template-areas: "heading image" "points image";
+  grid-template-rows: auto 1fr;
+  gap: 24px 56px;
 }
 
-.patient-trust-intro .section-heading {
+.patient-hero ~ .patient-trust .patient-trust-layout > .section-heading {
+  grid-area: heading;
   margin-bottom: 0;
 }
 
-.patient-trust-intro > img {
-  display: block;
-  width: 100%;
-  height: auto;
+.patient-trust-layout .section-title {
+  margin-bottom: 0;
+}
+
+.patient-trust-image {
+  grid-area: image;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
   border-radius: 22px;
 }
 
+.patient-trust-image > img {
+  object-fit: cover;
+  object-position: 62% center;
+}
+
 .patient-trust-grid {
+  grid-area: points;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 0;
   border-top: 1px solid var(--line);
 }
@@ -1233,7 +1245,7 @@ textarea.input {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 24px 28px 24px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1243,15 +1255,6 @@ textarea.input {
   margin-top: 4px;
 }
 
-.patient-trust-grid article:nth-child(odd) {
-  padding-right: 42px;
-  border-right: 1px solid var(--line);
-}
-
-.patient-trust-grid article:nth-child(even) {
-  padding-left: 42px;
-}
-
 .patient-trust-grid h3 {
   margin-bottom: 7px;
   font-size: 1.1rem;
@@ -1259,6 +1262,20 @@ textarea.input {
 
 .patient-trust-grid p {
   color: var(--slate);
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .patient-trust-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "heading" "image" "points";
+    grid-template-rows: auto;
+  }
+
+  .patient-trust-image {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .patient-final-cta {
@@ -1377,7 +1394,6 @@ textarea.input {
 
   .patient-feature-grid,
   .patient-vitality-images,
-  .patient-trust-intro,
   .patient-steps,
   .patient-form-grid,
   .patient-trust-grid {

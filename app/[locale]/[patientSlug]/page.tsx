@@ -142,10 +142,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
       </section>
 
       <section className="section section-soft patient-trust">
-        <div className="container">
-          <div className="patient-trust-intro">
-            <SectionHeading eyebrow={t("trust.label")} title={t("trust.title")} />
-            <Image src="/images/editorial/clinical-welcome.webp" alt="" width={1600} height={900} sizes="(max-width: 767px) 100vw, 55vw" />
+        <div className="container patient-trust-layout">
+          <SectionHeading eyebrow={t("trust.label")} title={t("trust.title")} />
+          <div className="patient-trust-image">
+            <Image src="/images/editorial/clinical-welcome.webp" alt="" fill sizes="(max-width: 900px) 100vw, 42vw" />
           </div>
           <div className="patient-trust-grid">
             {[1, 2, 3, 4].map((item) => (
