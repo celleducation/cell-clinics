@@ -1486,6 +1486,8 @@ textarea.input {
   width: 44%;
   overflow: hidden;
   opacity: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 18%);
 }
 
 .photo-hero.photo-hero-patient::before {

@@ -92,7 +92,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
           <ModuleGrid items={modules.slice(0, 4)} />
           <div className="section-action">
-            <ButtonLink href="#systems" variant="secondary">{t("cta.explorePlatform")}</ButtonLink>
+            <ButtonLink href="#application" variant="secondary">{t("cta.partnerWithUs")}</ButtonLink>
           </div>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               <span>{t("implementation.poweredBy")}</span>
             </div>
             <div className="button-row">
-              <ButtonLink href="#application" variant="secondary">{t("implementation.cta")}</ButtonLink>
+              <ButtonLink href="#application" variant="secondary">{t("cta.partnerWithUs")}</ButtonLink>
             </div>
           </div>
           <div className="model-gallery">
