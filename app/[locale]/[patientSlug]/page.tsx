@@ -70,8 +70,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
               <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
             </div>
           </div>
-          <div className="patient-hero-art">
-            <Image src="/images/cellclinic-mitochondria.png" alt="" width={1200} height={900} priority />
+          <div className="patient-hero-art patient-hero-collage">
+            <Image className="patient-editorial-main" src="/images/editorial/vitality-swimming.webp" alt="" width={880} height={1168} priority />
+            <Image className="patient-editorial-recovery" src="/images/editorial/recovery-red-light.webp" alt="" width={880} height={1168} priority />
+            <Image className="patient-editorial-support" src="/images/editorial/patient-support.webp" alt="" width={1600} height={904} priority />
           </div>
         </div>
       </section>

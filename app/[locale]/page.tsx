@@ -77,8 +77,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
             </div>
           </div>
-          <div className="home-hero-art">
-            <Image src="/images/cellclinic-platform.png" alt="" width={1400} height={1080} priority />
+          <div className="home-hero-art home-hero-collage">
+            <Image className="editorial-main" src="/images/editorial/clinical-collaboration.webp" alt="" width={1600} height={900} priority />
+            <Image className="editorial-performance" src="/images/editorial/performance-running.webp" alt="" width={1600} height={900} priority />
+            <Image className="editorial-detail" src="/images/editorial/clinical-vials.webp" alt="" width={1600} height={904} priority />
           </div>
         </div>
         <div className="container trust-row">
