@@ -1203,6 +1203,25 @@ textarea.input {
   font-size: .8rem;
 }
 
+.patient-trust-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.patient-trust-intro .section-heading {
+  margin-bottom: 0;
+}
+
+.patient-trust-intro > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+
 .patient-trust-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1358,6 +1377,7 @@ textarea.input {
 
   .patient-feature-grid,
   .patient-vitality-images,
+  .patient-trust-intro,
   .patient-steps,
   .patient-form-grid,
   .patient-trust-grid {
