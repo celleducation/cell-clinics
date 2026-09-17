@@ -146,7 +146,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
       <section className="section patient-final-cta">
         <div className="patient-final-image" aria-hidden="true">
-          <Image src="/images/editorial/patient-cell-nucleus.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
+          <Image src="/images/editorial/patient-nucleus.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
         </div>
         <div className="container patient-final-copy">
           <span className="eyebrow">{t("cta.label")}</span>
