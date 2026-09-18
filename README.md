@@ -41,6 +41,13 @@ fallback was restored with explicit owner approval. There is no browser-side
 delivery fallback that bypasses these checks. Errors preserve the form values
 and offer the existing manual email contact.
 
+Resend setup: the existing `cell-education.com` domain was verified in the
+owner's dashboard on 2026-09-18. The default sender for both forms is
+`Cell Clinics <forms@cell-education.com>`. Set a domain-restricted sending key
+directly as the Production secret `RESEND_API_KEY` in Vercel, then deploy.
+With a Resend key present, neither route falls back to FormSubmit on errors;
+both require a returned email ID before reporting provider acceptance.
+
 Server-side FormSubmit delivery explicitly supplies the fixed public website
 URL (`_url`, Origin and Referer). Never forward incoming request headers or
 query strings to the provider. Both routes require an explicit positive

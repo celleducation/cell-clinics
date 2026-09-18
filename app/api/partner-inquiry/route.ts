@@ -31,18 +31,21 @@ export async function POST(request: NextRequest) {
     .join("");
 
   if (process.env.RESEND_API_KEY) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const result = await resend.emails.send({
-      from: process.env.PARTNER_INQUIRY_FROM || "Cell Clinics <forms@cell-clinics.com>",
-      to: process.env.PARTNER_INQUIRY_TO || "info@cell-education.com",
-      replyTo: data.email,
-      subject: "New Cell Clinics Partner Application",
-      html: `<h1>New Cell Clinics Partner Application</h1><table style="border-collapse:collapse;width:100%">${rows}</table>`
-    });
-    if (result.error) {
-      console.error("Partner inquiry email failed", result.error);
-      return NextResponse.json({error: "Email delivery failed"}, {status: 502});
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      const result = await resend.emails.send({
+        from: process.env.PARTNER_INQUIRY_FROM || "Cell Clinics <forms@cell-education.com>",
+        to: process.env.PARTNER_INQUIRY_TO || "info@cell-education.com",
+        replyTo: data.email,
+        subject: "New Cell Clinics Partner Application",
+        html: `<h1>New Cell Clinics Partner Application</h1><table style="border-collapse:collapse;width:100%">${rows}</table>`
+      });
+      if (!result.error && result.data?.id) return NextResponse.json({ok: true});
+      console.error("Form delivery failed", {provider: "resend", form: "partner", reason: "not-acknowledged"});
+    } catch {
+      console.error("Form delivery failed", {provider: "resend", form: "partner", reason: "request-failed"});
     }
+    return NextResponse.json({error: "Email delivery failed"}, {status: 502});
   } else {
     const delivered = await sendViaFormSubmit({
       "Clinic Name": clinicName, Website: website, Country: country,

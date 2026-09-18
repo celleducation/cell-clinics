@@ -33,16 +33,19 @@ export async function POST(request: NextRequest) {
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
       const result = await resend.emails.send({
-        from: process.env.PARTNER_INQUIRY_FROM || "Cell Clinics <forms@cell-clinics.com>",
+        from: process.env.PARTNER_INQUIRY_FROM || "Cell Clinics <forms@cell-education.com>",
         to: process.env.PARTNER_INQUIRY_TO || "info@cell-education.com",
         replyTo: data.email,
         subject: "New Cell Clinics Patient Inquiry",
         html: `<h1>New Cell Clinics Patient Inquiry</h1><table style="border-collapse:collapse;width:100%">${rows}</table>`
       });
-      if (!result.error) return NextResponse.json({ok: true});
+      if (!result.error && result.data?.id) return NextResponse.json({ok: true});
+      console.error("Form delivery failed", {provider: "resend", form: "patient", reason: "not-acknowledged"});
     } catch {
-      // Continue with the independent fallback delivery below.
+      console.error("Form delivery failed", {provider: "resend", form: "patient", reason: "request-failed"});
     }
+    // Never retry through another provider after an uncertain delivery result.
+    return NextResponse.json({error: "Email delivery failed"}, {status: 502});
   }
 
   const delivered = await sendViaFormSubmit({

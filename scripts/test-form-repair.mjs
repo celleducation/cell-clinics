@@ -57,7 +57,18 @@ const originalFetch = globalThis.fetch;
 const deliveries = [];
 let providerReply = {success: 'true', message: 'Form submitted successfully'};
 let providerStatus = 200;
+let resendReply = {id: 'test-email-id'};
+let resendStatus = 200;
+let resendThrows = false;
+const resendDeliveries = [];
 globalThis.fetch = async (url, options) => {
+  if (url === 'https://api.resend.com/emails') {
+    assert.equal(options.method, 'POST');
+    const payload = JSON.parse(options.body);
+    resendDeliveries.push(payload);
+    if (resendThrows) throw new Error('Mock network failure');
+    return Response.json(resendReply, {status: resendStatus});
+  }
   assert.equal(url, 'https://formsubmit.co/ajax/info@cell-education.com');
   assert.equal(options.method, 'POST');
   assert.equal(options.headers.Origin, 'https://cell-clinics.com');
@@ -114,5 +125,28 @@ try {
     providerReply = reply;
     assert.equal((await postPatient()).status, 502);
   }
+  process.env.RESEND_API_KEY = 're_fake_test_key';
+  delete process.env.PARTNER_INQUIRY_FROM;
+  delete process.env.PARTNER_INQUIRY_TO;
+  const formsubmitCount = deliveries.length;
+  for (const send of [postPatient, post]) {
+    resendReply = {id: 'test-email-id'}; resendStatus = 200; resendThrows = false;
+    const beforeRejected = resendDeliveries.length;
+    assert.equal((await send({formToken: 'forged'})).status, 400);
+    assert.equal(resendDeliveries.length, beforeRejected);
+    assert.equal((await send()).status, 200);
+    const mail = resendDeliveries.at(-1);
+    assert.equal(mail.from, 'Cell Clinics <forms@cell-education.com>');
+    assert.equal(mail.to, 'info@cell-education.com');
+    assert.equal(mail.reply_to, 'test@example.invalid');
+    assert.ok(!mail.html.includes('formToken'));
+    resendReply = {};
+    assert.equal((await send()).status, 502, 'No success without provider message ID');
+    resendReply = {name: 'validation_error', message: 'Mock rejection'}; resendStatus = 403;
+    assert.equal((await send()).status, 502);
+    resendThrows = true;
+    assert.equal((await send()).status, 502);
+    assert.equal(deliveries.length, formsubmitCount, 'No FormSubmit fallback while Resend is configured');
+  }
 } finally { globalThis.fetch = originalFetch; }
-console.log('PASS: both forms distinguish preparation/submission; both guarded routes identify the website to FormSubmit and require explicit acknowledgement; invalid requests cannot send. Provider mocked, zero emails.');
+console.log('PASS: both forms distinguish preparation/submission; both guarded routes validate provider acknowledgements; Resend uses the verified sender and never falls back on failure; invalid requests cannot send. Providers mocked, zero emails.');

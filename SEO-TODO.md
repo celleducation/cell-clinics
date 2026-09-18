@@ -133,6 +133,23 @@ Tools, Google Business Profiles und Änderungen an Partner-Websites bleiben auß
 
 ## Formularreparatur vom 18.09.2026
 
+- Resend-Umstellung vorbereitet: `cell-education.com` am 18.09.2026 im
+  angemeldeten Resend-Konto als Verified bestätigt. Beide Formularrouten
+  verwenden standardmäßig `Cell Clinics <forms@cell-education.com>` und
+  `info@cell-education.com` als Empfänger. Bei konfiguriertem Resend erfolgt
+  kein Zweitversand über FormSubmit; Erfolg setzt eine Resend-Mail-ID voraus.
+  Schlüssel wird vom Nutzer direkt in Vercel als Production-Secret hinterlegt,
+  nicht im Chat oder Repository. Aktivierung, Deployment und neue Live-Abnahme
+  bleiben bis zur Bestätigung dieser Konfiguration offen.
+- OFFEN: Der ausdrückliche Live-Technik-Test nach Deployment `26e4da7` konnte
+  weiterhin nicht zugestellt werden. Vercel protokolliert für den Patienten-
+  Test um 14:53 MESZ eine Antwort HTTP 403 von FormSubmit; die eigene API
+  übersetzt diese korrekt in 502. Auch der zweite freigegebene Partner-Test
+  zeigt einen Versandfehler. Keine Annahme oder Zustellung behaupten.
+  Die Ergänzung der Website-Angabe allein löst die Provider-Ablehnung nicht.
+  Nächster Schritt erfordert Provider-Freigabe oder die Einrichtung des bereits
+  unterstützten Resend-Versands mit verifiziertem Absender durch den Betreiber.
+  Kein browserseitiger Bypass, keine Wiederholungs-Testsendungen ohne Freigabe.
 - Nachkontrolle der Nutzer-Tests um 14:44 MESZ: Beide POST-Anfragen liefen durch
   die Schutzprüfungen, scheiterten aber beim Provider mit HTTP 502. Die vorherige
   Live-Kontrolle prüfte nur die Challenge-GETs, nicht den tatsächlichen Versand.
