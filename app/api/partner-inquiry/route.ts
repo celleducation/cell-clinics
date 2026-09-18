@@ -1,25 +1,14 @@
 import {NextRequest, NextResponse} from "next/server";
 import {Resend} from "resend";
-import {z} from "zod";
+import {partnerInquirySchema} from "@/lib/partner-inquiry";
+import {checkFormSubmission, formChallenge, readFormBody} from "@/lib/form-guard";
 
-const inquirySchema = z.object({
-  clinicName: z.string().min(2).max(160),
-  website: z.string().max(240).optional().or(z.literal("")),
-  country: z.string().min(2).max(100),
-  clinicType: z.string().min(2).max(120),
-  profession: z.string().min(2).max(120),
-  primaryContact: z.string().min(2).max(160),
-  email: z.string().email().max(200),
-  phone: z.string().max(80).optional(),
-  notes: z.string().max(3000).optional(),
-  companyFax: z.string().max(0).optional(),
-  turnstileToken: z.string().optional()
-});
-
-const requests = new Map<string, number[]>();
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export function GET(request: NextRequest) { return formChallenge(request, "partner"); }
 
 function escapeHtml(value: unknown) {
-  return String(value || "—")
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -27,38 +16,16 @@ function escapeHtml(value: unknown) {
     .replaceAll("'", "&#039;");
 }
 
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const recent = (requests.get(ip) || []).filter((timestamp) => now - timestamp < 60 * 60 * 1000);
-  recent.push(now);
-  requests.set(ip, recent);
-  return recent.length > 5;
-}
-
 export async function POST(request: NextRequest) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  if (rateLimited(ip)) return NextResponse.json({error: "Too many requests"}, {status: 429});
-
-  const parsed = inquirySchema.safeParse(await request.json());
+  const body = await readFormBody(request);
+  const blocked = checkFormSubmission(request, body, "partner");
+  if (blocked) return blocked;
+  const parsed = partnerInquirySchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({error: "Invalid submission"}, {status: 400});
-  if (parsed.data.companyFax) return NextResponse.json({ok: true});
-
-  if (process.env.TURNSTILE_SECRET_KEY) {
-    const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-      method: "POST",
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: new URLSearchParams({
-        secret: process.env.TURNSTILE_SECRET_KEY,
-        response: parsed.data.turnstileToken || "",
-        remoteip: ip
-      })
-    });
-    const result = (await verification.json()) as {success?: boolean};
-    if (!result.success) return NextResponse.json({error: "Spam verification failed"}, {status: 400});
-  }
-
-  const {companyFax: _, turnstileToken: __, ...data} = parsed.data;
+  const {clinicName, website, country, clinicType, profession, primaryContact, email, phone, consent} = parsed.data;
+  const data = {clinicName, website, country, clinicType, profession, primaryContact, email, phone, consent};
   const rows = Object.entries({...data, submissionDate: new Date().toISOString()})
+    .filter(([, value]) => value !== undefined && value !== "")
     .map(([key, value]) => `<tr><th style="text-align:left;padding:8px;border-bottom:1px solid #e5ebf2">${escapeHtml(key)}</th><td style="padding:8px;border-bottom:1px solid #e5ebf2">${escapeHtml(value)}</td></tr>`)
     .join("");
 
@@ -77,7 +44,7 @@ export async function POST(request: NextRequest) {
     }
   } else {
     return NextResponse.json(
-      {error: "Email service not configured", fallback: "formsubmit"},
+      {error: "Email service not configured"},
       {status: 503}
     );
   }

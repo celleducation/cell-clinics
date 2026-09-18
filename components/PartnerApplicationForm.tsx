@@ -2,56 +2,13 @@
 
 import {FormEvent, useState} from "react";
 import {useTranslations} from "next-intl";
-import Script from "next/script";
-
-declare global {
-  interface Window {
-    turnstile?: {render: (element: HTMLElement, options: {sitekey: string; callback: (token: string) => void}) => string};
-  }
-}
-
-type SubmissionResult = {
-  activationRequired?: boolean;
-  message?: string;
-  success?: boolean | string;
-};
+import {useFormChallenge} from "./useFormChallenge";
 
 export function PartnerApplicationForm() {
   const t = useTranslations();
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "activation" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const {token, failed} = useFormChallenge("/api/partner-inquiry");
   const [emailFallback, setEmailFallback] = useState("mailto:info@cell-education.com");
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-
-  async function submitViaFormSubmit(data: Record<string, string>) {
-    const response = await fetch("https://formsubmit.co/ajax/info@cell-education.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        "Clinic Name": data.clinicName,
-        Website: data.website || "—",
-        Country: data.country,
-        "Primary Contact": data.primaryContact,
-        Email: data.email,
-        Phone: data.phone || "—",
-        Profession: data.profession,
-        "Clinic Type": data.clinicType,
-        Notes: data.notes || "—",
-        "Submission Date": new Date().toISOString(),
-        _subject: "New Cell Clinics Partner Application",
-        _replyto: data.email,
-        _template: "table",
-        _captcha: "false"
-      })
-    });
-    const result = await response.json().catch(() => ({})) as SubmissionResult;
-    const failed = !response.ok || result.success === false || result.success === "false";
-    if (failed) throw new Error("FormSubmit delivery failed");
-    return result;
-  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -65,7 +22,6 @@ export function PartnerApplicationForm() {
     const data: Record<string, string> = Object.fromEntries(
       Array.from(formData.entries(), ([key, value]) => [key, String(value)])
     );
-    data.turnstileToken = turnstileToken;
     const emailBody = [
       `Clinic Name: ${data.clinicName || ""}`,
       `Website: ${data.website || ""}`,
@@ -74,8 +30,7 @@ export function PartnerApplicationForm() {
       `Email: ${data.email || ""}`,
       `Phone: ${data.phone || ""}`,
       `Profession: ${data.profession || ""}`,
-      `Clinic Type: ${data.clinicType || ""}`,
-      `Notes: ${data.notes || ""}`
+      `Clinic Type: ${data.clinicType || ""}`
     ].join("\n");
     setEmailFallback(
       `mailto:info@cell-education.com?subject=${encodeURIComponent("New Cell Clinics Partner Application")}&body=${encodeURIComponent(emailBody)}`
@@ -86,21 +41,7 @@ export function PartnerApplicationForm() {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
       });
-      const result = await response.json().catch(() => ({})) as SubmissionResult;
-      if (!response.ok) {
-        const fallbackResult = await submitViaFormSubmit(data);
-        if (/activat|confirm/i.test(fallbackResult.message || "")) {
-          setStatus("activation");
-          return;
-        }
-        setStatus("success");
-        form.reset();
-        return;
-      }
-      if (result.activationRequired) {
-        setStatus("activation");
-        return;
-      }
+      if (!response.ok) throw new Error("Submission failed");
       setStatus("success");
       form.reset();
     } catch {
@@ -112,24 +53,9 @@ export function PartnerApplicationForm() {
     return <div className="form-success card" role="status"><h2>{t("form.success")}</h2></div>;
   }
 
-  if (status === "activation") {
-    return <div className="form-success card" role="status"><h2>{t("form.activationRequired")}</h2></div>;
-  }
-
   return (
     <form className="partner-form card" onSubmit={submit}>
-      {turnstileSiteKey && (
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-          strategy="lazyOnload"
-          onLoad={() => {
-            const target = document.querySelector<HTMLElement>("#partner-turnstile");
-            if (target && window.turnstile) {
-              window.turnstile.render(target, {sitekey: turnstileSiteKey, callback: setTurnstileToken});
-            }
-          }}
-        />
-      )}
+      <input type="hidden" name="formToken" value={token} />
       <input className="honeypot" type="text" name="companyFax" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <div className="form-grid">
         <label>{t("form.clinicName")}<input name="clinicName" autoComplete="organization" required /></label>
@@ -140,14 +66,12 @@ export function PartnerApplicationForm() {
         <label>{t("form.phone")}<input name="phone" type="tel" autoComplete="tel" /></label>
         <label>{t("form.profession")}<select name="profession" required defaultValue=""><option value="" disabled>{t("form.profession")}</option><option>{t("form.professionPhysician")}</option><option>{t("form.professionOwner")}</option><option>{t("form.professionLongevity")}</option><option>{t("form.professionHealth")}</option><option>{t("form.professionFunctional")}</option><option>{t("form.professionOther")}</option></select></label>
         <label>{t("form.clinicType")}<input name="clinicType" required placeholder={t("form.clinicTypePlaceholder")} /></label>
-        <label className="form-span">{t("form.notes")}<textarea name="notes" rows={4} placeholder={t("form.notesPlaceholder")} /></label>
       </div>
-      {turnstileSiteKey && <div id="partner-turnstile" className="turnstile" />}
-      <label className="consent"><input type="checkbox" name="consent" required /> <span>{t("apply.consent")}</span></label>
-      <button className="button button-primary form-submit" type="submit" disabled={status === "sending"}>
+      <label className="consent"><input type="checkbox" name="consent" required /> <span>{t("apply.consent")} <a href="https://cell-education.com/datenschutz">{t("footer.privacy")}</a></span></label>
+      <button className="button button-primary form-submit" type="submit" disabled={!token || status === "sending"}>
         {status === "sending" ? t("form.sending") : t("apply.submit")}
       </button>
-      {status === "error" && (
+      {(status === "error" || failed) && (
         <div className="form-error" role="alert">
           <p>{t("formApi.error")}</p>
           <a className="text-link" href={emailFallback}>{t("formApi.emailFallback")}</a>

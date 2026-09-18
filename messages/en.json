@@ -1,14 +1,33 @@
 {
+  "seo": {
+    "breadcrumbs": "Breadcrumb navigation",
+    "home": "Home",
+    "knowsAbout": [
+      "Cellular medicine",
+      "Infusion therapy",
+      "Mitochondrial medicine",
+      "Preventive medicine"
+    ],
+    "images": {
+      "alpsteinInterior": "Interior of Alpstein Clinic in Gais",
+      "alpsteinRecovery": "Rest and recovery area at Alpstein Clinic",
+      "appenzell": "Mountain landscape in the Appenzell region",
+      "system1": "Illustration of a mitochondrion and its energy supply",
+      "system2": "Illustration of DNA and cellular structures",
+      "system3": "Illustration of a nerve cell with branching extensions",
+      "system4": "Illustration of cellular transport and uptake processes"
+    }
+  },
   "video": {
     "loading": "Loading video …",
     "fallback": "Video not loading? Use the YouTube link below the player.",
     "load": "Load video",
-    "privacy": "A connection to YouTube is only established when you load the video.",
+    "privacy": "The video opens on YouTube in a new tab. No YouTube player is loaded on this page.",
     "external": "Watch on YouTube"
   },
   "meta": {
     "title": "Cell Clinics | Physician-Guided Cellular Medicine Platform",
-    "description": "Cell Clinics helps healthcare providers implement physician-guided cellular medicine through diagnostics, clinical frameworks, physician education and therapeutic systems."
+    "description": "Explore physician-guided cellular medicine for your practice: training, diagnostics and clinical programmes from Cell Clinics. Ask about becoming a partner."
   },
   "nav": {
     "platform": "Platform",
@@ -228,6 +247,7 @@
     "integratedBody": "Cell Clinics is a complete implementation platform that helps healthcare providers successfully integrate cellular medicine into clinical practice through education, diagnostics, clinical systems and an international expert network."
   },
   "networkPage": {
+    "metaDescription": "Find a Cell Clinic near you. Explore partner practices, locations and contact details across our network, and contact a practice to arrange a consultation.",
     "eyebrow": "Network",
     "title": "Find a Cell Clinic near you",
     "lead": "Explore qualified partner practices across Germany, Switzerland and Spain.",
@@ -257,8 +277,8 @@
   },
   "clinicProfiles": {
     "alpstein": {
-      "metaTitle": "Alpstein Clinic Gais | Cell Clinics Partner",
-      "metaDescription": "Discover Alpstein Clinic in Gais, an integrative medical centre and central partner within the Cell Clinics network.",
+      "metaTitle": "Alpstein Clinic Gais | Partner Practice",
+      "metaDescription": "Explore Alpstein Clinic in Gais: integrative diagnostics, biological medicine and individual advice. Contact the clinic to discuss your needs and next steps.",
       "eyebrow": "Central partner clinic",
       "location": "Gais · Appenzell Ausserrhoden · Switzerland",
       "heroBody": "Integrative medicine in the Swiss Appenzell region: Alpstein Clinic combines comprehensive diagnostics, biological medicine and interdisciplinary clinical expertise in one centre.",
@@ -311,8 +331,8 @@
       "contextImageAlt": "Appenzell landscape surrounding Gais"
     },
     "medivium": {
-      "metaTitle": "MEDIVIUM Stuttgart | Cell Clinics Partner",
-      "metaDescription": "Discover MEDIVIUM in Stuttgart: precise diagnostics, structured infusion concepts and modern prevention with Enrico Thiele, Heilpraktiker.",
+      "metaTitle": "MEDIVIUM Stuttgart | Partner Practice",
+      "metaDescription": "Discover MEDIVIUM in Stuttgart: diagnostics and structured infusion concepts with Enrico Thiele, Heilpraktiker. Contact the practice for a consultation.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Stuttgart · Baden-Württemberg · Germany",
       "heroBody": "Precise diagnostics, structured infusion concepts and modern prevention: drawing on more than 25 years of practical experience, MEDIVIUM develops individual strategies for energy, performance and healthier years of life.",
@@ -365,8 +385,8 @@
       "contextImageAlt": "Infusion spaces at MEDIVIUM in Stuttgart"
     },
     "monikaBrueck": {
-      "metaTitle": "Dr Monika Brück Palma de Mallorca | Cell Clinics Partner",
-      "metaDescription": "Discover Dr Monika Brück's dermatology practice in Palma: dermatology, skin cancer screening, aesthetic medicine and longevity.",
+      "metaTitle": "Dr Monika Brück Palma | Partner Practice",
+      "metaDescription": "Explore Dr Monika Brück’s practice in Palma: dermatology, skin cancer screening and aesthetic medicine. Contact the practice to request individual advice.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Palma de Mallorca · Balearic Islands · Spain",
       "heroBody": "Modern dermatology with personal care: Dr Monika Brück combines advanced diagnostics, skin cancer screening and gentle aesthetic medicine with more than 20 years of experience.",
@@ -419,8 +439,8 @@
       "contextImageAlt": "Dr Monika Brück's dermatology practice in Palma de Mallorca"
     },
     "majaKoebelAink": {
-      "metaTitle": "Dr Maja Köbel-Aink | Oral and Maxillofacial Surgery Lübeck · Cell Clinics Partner",
-      "metaDescription": "Meet Dr Maja Köbel-Aink and the Lübeck oral and maxillofacial surgery practice: implantology, biological concepts and PRGF regeneration.",
+      "metaTitle": "Dr Maja Köbel-Aink Lübeck",
+      "metaDescription": "Meet Dr Maja Köbel-Aink in Lübeck: oral and maxillofacial surgery, implantology and biological concepts. Contact the practice to discuss a consultation.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Lübeck · Schleswig-Holstein · Germany",
       "heroBody": "Specialist oral and maxillofacial surgery with a holistic perspective: Dr Maja Köbel-Aink combines surgical expertise, anaesthesiology and biological treatment concepts in a personal practice setting.",
@@ -474,8 +494,8 @@
       "contextImageAlt": "Specialist team and Lübeck practice"
     },
     "larsGienger": {
-      "metaTitle": "CURAPRAX Bretten | Lars Gienger · Cell Clinics Partner",
-      "metaDescription": "Meet Lars Gienger and CURAPRAX in Bretten: naturopathy, functional medicine, osteopathy, physiotherapy and individual health strategies.",
+      "metaTitle": "CURAPRAX Bretten | Partner Practice",
+      "metaDescription": "Explore CURAPRAX in Bretten with Lars Gienger: naturopathy, functional medicine, osteopathy and physiotherapy. Contact the practice to request personal advice.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Bretten · Baden-Württemberg · Germany",
       "heroBody": "Naturopathy, functional medicine, osteopathy and physiotherapy under one roof: at CURAPRAX, Lars Gienger combines many years of practical experience with precise diagnostics and clearly structured treatment planning.",
@@ -529,8 +549,8 @@
       "contextImageAlt": "Practice rooms at CURAPRAX in Bretten"
     },
     "mihribanCiftci": {
-      "metaTitle": "SchönGesund Stuttgart | Mihriban Ciftci · Cell Clinics Partner",
-      "metaDescription": "Meet Mihriban Ciftci and her SchönGesund natural health practice in Stuttgart: aesthetics, wellbeing and beauty from within.",
+      "metaTitle": "SchönGesund Stuttgart | Partner Practice",
+      "metaDescription": "Meet Mihriban Ciftci at SchönGesund in Stuttgart: a natural health practice focused on aesthetics and individual wellbeing. Contact the practice for advice.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Stuttgart · Baden-Württemberg · Germany",
       "heroBody": "A holistic view of aesthetics and wellbeing: at SchönGesund, Mihriban Ciftci combines naturopathic support with the guiding idea that radiance and beauty begin from within.",
@@ -584,8 +604,8 @@
       "contextImageAlt": "Consultation room at SchönGesund in Stuttgart"
     },
     "nikiciuk": {
-      "metaTitle": "Nikiciuk Rheumatology Neuruppin | Cell Clinics Partner",
-      "metaDescription": "Discover Boguslaw Krystian Nikiciuk's rheumatology practice in Neuruppin: early diagnostics, internal medicine and individual rheumatology care.",
+      "metaTitle": "Nikiciuk Rheumatology Neuruppin",
+      "metaDescription": "Explore the Nikiciuk practice in Neuruppin: internal medicine, rheumatology diagnostics and individual care. Contact the practice to discuss your next steps.",
       "eyebrow": "Cell Clinics partner practice",
       "location": "Neuruppin · Brandenburg · Germany",
       "heroBody": "Specialist internal medicine and rheumatology in Neuruppin: Boguslaw Krystian Nikiciuk and his team support people with inflammatory rheumatic diseases from early diagnosis through long-term treatment.",
@@ -691,7 +711,7 @@
   },
   "audience": {"label": "Choose audience", "patients": "For patients", "professionals": "For physicians & clinics"},
   "patient": {
-    "meta": {"title": "Bionic Cell Therapy for Patients", "description": "Cell Clinics are physician-led practices and clinics providing Bionic Cell Therapy according to shared medical standards and each patient's individual needs."},
+    "meta": {"title": "Bionic Cell Therapy Near You", "description": "Learn about Bionic Cell Therapy, the care pathway and individual advice. Find a Cell Clinic near you, explore practice profiles and request a consultation."},
     "nav": {"therapy": "The therapy", "process": "How it works", "faq": "FAQ"},
     "hero": {"label": "For patients", "title": "Bionic Cell Therapy. Physician-guided, close to home.", "body": "Cell Clinics are medical practices and clinics offering Bionic Cell Therapy according to shared medical standards — individually aligned with your health, diagnostic findings and goals.", "note": "Personal, diagnostics-based and physician-led"},
     "therapy": {
@@ -711,14 +731,6 @@
     "finder": {"label": "Find a Cell Clinic", "title": "Partner practices near you", "intro": "Our network continues to grow. Every Cell Clinic is led by qualified practitioners and participates in a structured professional programme.", "tag": "Partner practice in the network", "clinicBody": "A holistic clinic for biological medicine and Bionic Cell Therapy — one of the first Cell Clinics in the network and a reference for our care model.", "profile": "View practice profile", "formTitle": "No Cell Clinic near you?", "formBody": "Tell us your region. We will contact you when a partner practice opens nearby and can arrange an initial consultation on request."},
     "form": {"name": "Name", "email": "Email", "location": "Postcode / city", "interest": "Area of interest", "choose": "Please select", "energy": "Energy & fatigue", "recovery": "Recovery & regeneration", "prevention": "Prevention & longevity", "supportive": "Complementary therapy", "consent": "I agree that Cell Clinics may use my information to respond to this inquiry.", "submit": "Send inquiry", "sending": "Sending …", "privacy": "Your details will only be used to respond to your inquiry.", "success": "Thank you. We have received your inquiry and will contact you personally.", "error": "Your inquiry could not be sent automatically. Please email"},
     "trust": {"label": "Trust", "title": "Care with a system.", "item1Title": "Professionally led", "item1Body": "Every Cell Clinic is led by qualified practitioners. Services reserved for physicians remain in medical hands.", "item2Title": "Scientific leadership", "item2Body": "The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst.", "item3Title": "A trained network", "item3Body": "All partner practices complete a structured education and implementation programme through Cell Education.", "item4Title": "International collaboration", "item4Body": "Scientific exchange and continuous professional dialogue across the international Cell Clinics network."},
-    "faq": {
-      "label": "Frequently asked questions", "title": "What you may want to know before your first consultation.", "intro": "Clear answers about physician-guided treatment at a Cell Clinic.",
-      "q1": "Who may be suitable for Bionic Cell Therapy?", "a1": "It may be considered by adults who want to support their health at the cellular level, whether for persistent fatigue, recovery or preventive care. Your physician will always decide whether and which treatment is appropriate after reviewing your medical history and diagnostic findings.",
-      "q2": "Is the treatment safe?", "a2": "Every treatment takes place in a physician-led practice or clinic and follows a shared medical programme. Before treatment, your physician will discuss the process, potential benefits and possible risks with you personally.",
-      "q3": "What does treatment cost, and is it covered by insurance?", "a3": "Costs depend on your individual therapy concept and are explained transparently before treatment begins. These services are generally self-funded; private insurers may reimburse part of the cost depending on your policy. Your Cell Clinic can advise you during the initial consultation.",
-      "q4": "How long does treatment take?", "a4": "That depends on your individual concept. A single infusion commonly takes less than an hour, while a complete programme may extend over several weeks with regular appointments and follow-up assessments.",
-      "q5": "How is a Cell Clinic different from a conventional practice?", "a5": "Cell Clinics belong to a network working within a shared medical programme: consistent diagnostic standards, aligned therapy protocols and ongoing physician education through Cell Education. This provides the same structured approach at every location."
-    },
     "cta": {"label": "Your next step", "title": "Ready to take the first step?", "body": "Find a Cell Clinic near you and arrange a personal, no-obligation initial consultation.", "findClinic": "Find a Cell Clinic", "findNearby": "Find a Cell Clinic near you", "howItWorks": "How does treatment work?"},
     "footerDescription": "A physician-led network for individually tailored Bionic Cell Therapy.",
     "footerDisclaimer": "Please note: The content on this page is for general information only and does not replace medical advice, diagnosis or treatment. Only your treating physician can decide whether a therapy is suitable for you. Individual treatment outcomes may vary."

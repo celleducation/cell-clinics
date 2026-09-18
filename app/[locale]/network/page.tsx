@@ -2,20 +2,26 @@ import {getTranslations, setRequestLocale} from "next-intl/server";
 import type {Metadata} from "next";
 import {ClinicFinder} from "@/components/ClinicFinder";
 import {clinics} from "@/content/clinics";
+import {pageMetadata} from "@/lib/seo";
+import {Breadcrumbs} from "@/components/Breadcrumbs";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: "networkPage"});
-  return {title: t("title"), description: t("lead")};
+  return pageMetadata({locale, path: "/network", title: t("title"), description: t("metaDescription")});
 }
 
 export default async function NetworkPage({params}: {params: Promise<{locale: string}>}) {
   const {locale} = await params;
   setRequestLocale(locale);
   const t = await getTranslations("networkPage");
+  const seoT = await getTranslations("seo");
 
   return (
     <>
+      <Breadcrumbs locale={locale} items={[
+        {name: seoT("home"), path: ""}, {name: t("directoryLabel"), path: "/network"}
+      ]} />
       <section className="network-hero section-soft">
         <div className="container network-hero-inner">
           <div>

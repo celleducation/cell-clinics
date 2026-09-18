@@ -1,14 +1,33 @@
 {
+  "seo": {
+    "breadcrumbs": "Brotkrumennavigation",
+    "home": "Start",
+    "knowsAbout": [
+      "Zellmedizin",
+      "Infusionstherapie",
+      "Mitochondriale Medizin",
+      "Präventionsmedizin"
+    ],
+    "images": {
+      "alpsteinInterior": "Innenräume der Alpstein Clinic in Gais",
+      "alpsteinRecovery": "Ruhe- und Regenerationsbereich der Alpstein Clinic",
+      "appenzell": "Berglandschaft im Appenzeller Land",
+      "system1": "Illustration eines Mitochondriums und seiner Energieversorgung",
+      "system2": "Illustration von DNA und zellulären Strukturen",
+      "system3": "Illustration einer Nervenzelle mit verzweigten Fortsätzen",
+      "system4": "Illustration zellulärer Transport- und Aufnahmeprozesse"
+    }
+  },
   "video": {
     "loading": "Video wird geladen …",
     "fallback": "Video lädt nicht? Nutzen Sie den YouTube-Link unter dem Player.",
     "load": "Video laden",
-    "privacy": "Erst beim Laden wird eine Verbindung zu YouTube hergestellt.",
+    "privacy": "Das Video öffnet sich auf YouTube in einem neuen Tab. Auf dieser Seite wird kein YouTube-Player geladen.",
     "external": "Auf YouTube ansehen"
   },
   "meta": {
     "title": "Cell Clinics | Ärztlich geführte Plattform für Zellmedizin",
-    "description": "Cell Clinics unterstützt Kliniken, Ärzte und Gesundheitsanbieter bei der Implementierung ärztlich geführter Zellmedizin durch Diagnostik, klinische Frameworks, Schulungen und therapeutische Systeme."
+    "description": "Zellmedizin für Ihre Praxis: Entdecken Sie Schulungen, Diagnostik und klinische Programme von Cell Clinics. Informieren Sie sich jetzt zur Partnerschaft."
   },
   "nav": {
     "platform": "Plattform",
@@ -228,6 +247,7 @@
     "integratedBody": "Cell Clinics ist eine vollständige Implementierungsplattform, die Gesundheitsanbieter mit Schulungen, Diagnostik, klinischen Systemen und einem internationalen Expertennetzwerk bei der erfolgreichen Integration von Zellmedizin unterstützt."
   },
   "networkPage": {
+    "metaDescription": "Finden Sie eine Cell Clinic in Ihrer Nähe. Vergleichen Sie Partnerpraxen, Standorte und Kontaktdaten im Netzwerk und fragen Sie ein Erstgespräch an.",
     "eyebrow": "Netzwerk",
     "title": "Cell Clinic in Ihrer Nähe finden",
     "lead": "Entdecken Sie qualifizierte Partnerpraxen in Deutschland, der Schweiz und Spanien.",
@@ -257,8 +277,8 @@
   },
   "clinicProfiles": {
     "alpstein": {
-      "metaTitle": "Alpstein Clinic Gais | Cell Clinics Partner",
-      "metaDescription": "Lernen Sie die Alpstein Clinic in Gais kennen: ein integratives medizinisches Zentrum und zentraler Partner im Cell Clinics Netzwerk.",
+      "metaTitle": "Alpstein Clinic Gais | Partnerpraxis",
+      "metaDescription": "Entdecken Sie die Alpstein Clinic in Gais: integrative Diagnostik, biologische Medizin und persönliche Beratung. Nehmen Sie jetzt Kontakt mit der Klinik auf.",
       "eyebrow": "Zentrale Partnerklinik",
       "location": "Gais · Appenzell Ausserrhoden · Schweiz",
       "heroBody": "Integrative Medizin im Schweizer Appenzellerland: Die Alpstein Clinic verbindet umfassende Diagnostik, biologische Medizin und interdisziplinäre klinische Expertise an einem Ort.",
@@ -311,8 +331,8 @@
       "contextImageAlt": "Appenzeller Landschaft rund um Gais"
     },
     "medivium": {
-      "metaTitle": "MEDIVIUM Stuttgart | Cell Clinics Partner",
-      "metaDescription": "Lernen Sie MEDIVIUM in Stuttgart kennen: präzise Diagnostik, strukturierte Infusionskonzepte und moderne Prävention mit Heilpraktiker Enrico Thiele.",
+      "metaTitle": "MEDIVIUM Stuttgart | Partnerpraxis",
+      "metaDescription": "Lernen Sie MEDIVIUM in Stuttgart kennen: Diagnostik und Infusionskonzepte mit Heilpraktiker Enrico Thiele. Informieren Sie sich und fragen Sie ein Gespräch an.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Stuttgart · Baden-Württemberg · Deutschland",
       "heroBody": "Präzise Diagnostik, strukturierte Infusionskonzepte und moderne Prävention: MEDIVIUM entwickelt aus über 25 Jahren Praxiserfahrung individuelle Strategien für mehr Energie, Leistungsfähigkeit und gesunde Lebensjahre.",
@@ -365,8 +385,8 @@
       "contextImageAlt": "Infusionsplätze bei MEDIVIUM in Stuttgart"
     },
     "monikaBrueck": {
-      "metaTitle": "Dr. Monika Brück Palma de Mallorca | Cell Clinics Partner",
-      "metaDescription": "Lernen Sie die Hautarztpraxis Dr. Monika Brück in Palma kennen: Dermatologie, Hautkrebsvorsorge, ästhetische Medizin und Longevity.",
+      "metaTitle": "Dr. Monika Brück Palma | Partnerpraxis",
+      "metaDescription": "Entdecken Sie die Hautarztpraxis Dr. Monika Brück in Palma: Dermatologie, Hautkrebsvorsorge und ästhetische Medizin. Fragen Sie eine persönliche Beratung an.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Palma de Mallorca · Balearen · Spanien",
       "heroBody": "Moderne Dermatologie mit persönlicher Betreuung: Dr. Monika Brück verbindet fundierte Diagnostik, Hautkrebsvorsorge und sanfte ästhetische Medizin mit mehr als 20 Jahren Erfahrung.",
@@ -419,8 +439,8 @@
       "contextImageAlt": "Hautarztpraxis Dr. Monika Brück in Palma de Mallorca"
     },
     "majaKoebelAink": {
-      "metaTitle": "Dr. Maja Köbel-Aink | MKG-Chirurgie Lübeck · Cell Clinics Partner",
-      "metaDescription": "Lernen Sie Dr. Maja Köbel-Aink und die MKG-Chirurgie Lübeck kennen: Mund-, Kiefer- und Gesichtschirurgie, Implantologie, biologische Konzepte und PRGF-Regeneration.",
+      "metaTitle": "Dr. Maja Köbel-Aink Lübeck",
+      "metaDescription": "Lernen Sie Dr. Maja Köbel-Aink in Lübeck kennen: Mund-, Kiefer- und Gesichtschirurgie, Implantologie und biologische Konzepte. Fragen Sie eine Beratung an.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Lübeck · Schleswig-Holstein · Deutschland",
       "heroBody": "Spezialisierte Mund-, Kiefer- und Gesichtschirurgie mit ganzheitlichem Blick: Dr. Maja Köbel-Aink verbindet chirurgische Expertise, Anästhesie und biologische Behandlungskonzepte in einer persönlichen Praxisumgebung.",
@@ -474,8 +494,8 @@
       "contextImageAlt": "Fachärzteteam und Praxis der MKG-Chirurgie Lübeck"
     },
     "larsGienger": {
-      "metaTitle": "CURAPRAX Bretten | Lars Gienger · Cell Clinics Partner",
-      "metaDescription": "Lernen Sie Lars Gienger und CURAPRAX in Bretten kennen: Naturheilkunde, funktionelle Medizin, Osteopathie, Physiotherapie und individuelle Gesundheitsstrategien.",
+      "metaTitle": "CURAPRAX Bretten | Partnerpraxis",
+      "metaDescription": "Entdecken Sie CURAPRAX in Bretten mit Lars Gienger: Naturheilkunde, funktionelle Medizin, Osteopathie und Physiotherapie. Fragen Sie eine Beratung an.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Bretten · Baden-Württemberg · Deutschland",
       "heroBody": "Naturheilkunde, funktionelle Medizin, Osteopathie und Physiotherapie unter einem Dach: Lars Gienger verbindet bei CURAPRAX langjährige praktische Erfahrung mit präziser Diagnostik und einer klar strukturierten Behandlungsplanung.",
@@ -529,8 +549,8 @@
       "contextImageAlt": "Praxisräume von CURAPRAX in Bretten"
     },
     "mihribanCiftci": {
-      "metaTitle": "SchönGesund Stuttgart | Mihriban Ciftci · Cell Clinics Partner",
-      "metaDescription": "Lernen Sie Mihriban Ciftci und ihre SchönGesund Heilpraxis in Stuttgart kennen: Ästhetik, Wohlbefinden und Schönheit von innen.",
+      "metaTitle": "SchönGesund Stuttgart | Partnerpraxis",
+      "metaDescription": "Lernen Sie die Heilpraxis SchönGesund mit Mihriban Ciftci in Stuttgart kennen: Ästhetik und individuelles Wohlbefinden. Fragen Sie ein Beratungsgespräch an.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Stuttgart · Baden-Württemberg · Deutschland",
       "heroBody": "Ästhetik und Wohlbefinden ganzheitlich gedacht: Mihriban Ciftci verbindet in ihrer SchönGesund Heilpraxis naturheilkundliche Begleitung mit dem Leitgedanken, dass Ausstrahlung und Schönheit von innen beginnen.",
@@ -584,8 +604,8 @@
       "contextImageAlt": "Praxisraum von SchönGesund in Stuttgart"
     },
     "nikiciuk": {
-      "metaTitle": "Rheumatologie Nikiciuk Neuruppin | Cell Clinics Partner",
-      "metaDescription": "Lernen Sie die Praxis für Rheumatologie von Boguslaw Krystian Nikiciuk in Neuruppin kennen: Frühdiagnostik, internistische Rheumatologie und individuelle Therapie.",
+      "metaTitle": "Rheumatologie Nikiciuk Neuruppin",
+      "metaDescription": "Informieren Sie sich über die Praxis Nikiciuk in Neuruppin: internistische Rheumatologie, Diagnostik und individuelle Begleitung. Nehmen Sie jetzt Kontakt auf.",
       "eyebrow": "Cell Clinics Partnerpraxis",
       "location": "Neuruppin · Brandenburg · Deutschland",
       "heroBody": "Spezialisierte internistische Rheumatologie in Neuruppin: Boguslaw Krystian Nikiciuk und sein Team begleiten Menschen mit entzündlich-rheumatischen Erkrankungen von der Frühdiagnostik bis zur langfristigen Therapie.",
@@ -696,8 +716,8 @@
   },
   "patient": {
     "meta": {
-      "title": "Bionic Cell Therapy für Patienten",
-      "description": "Cell Clinics sind ärztlich geführte Praxen und Kliniken, die Bionic Cell Therapy nach gemeinsamen medizinischen Standards und individuell abgestimmt anbieten."
+      "title": "Bionische Zelltherapie in Ihrer Nähe",
+      "description": "Informieren Sie sich über Bionische Zelltherapie, den Ablauf und Beratung. Finden Sie eine Cell Clinic in Ihrer Nähe und fragen Sie einen Termin an."
     },
     "nav": {"therapy": "Die Therapie", "process": "So funktioniert's", "faq": "FAQ"},
     "hero": {
@@ -739,14 +759,6 @@
       "item2Title": "Wissenschaftliche Leitung", "item2Body": "Das medizinische Programm wird unter der Leitung von Dr. Kay Bredehorst entwickelt und laufend aktualisiert.",
       "item3Title": "Geschultes Netzwerk", "item3Body": "Alle Partnerpraxen durchlaufen ein strukturiertes Schulungs- und Implementierungsprogramm der Cell Education.",
       "item4Title": "Internationale Zusammenarbeit", "item4Body": "Wissenschaftlicher Austausch und kontinuierlicher fachlicher Dialog im internationalen Cell Clinics Netzwerk."
-    },
-    "faq": {
-      "label": "Häufige Fragen", "title": "Was Sie vor dem ersten Gespräch wissen möchten.", "intro": "Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic.",
-      "q1": "Für wen ist die Bionic Cell Therapy geeignet?", "a1": "Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik.",
-      "q2": "Ist die Behandlung sicher?", "a2": "Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf.",
-      "q3": "Was kostet die Behandlung – zahlt meine Krankenkasse?", "a3": "Die Kosten richten sich nach Ihrem individuellen Therapiekonzept und werden Ihnen vor Behandlungsbeginn transparent dargelegt. In der Regel handelt es sich um Selbstzahlerleistungen; private Versicherungen erstatten je nach Tarif anteilig. Ihre Cell Clinic berät Sie dazu im Erstgespräch.",
-      "q4": "Wie lange dauert eine Behandlung?", "a4": "Das hängt von Ihrem Konzept ab: Eine einzelne Infusionsanwendung dauert meist unter einer Stunde, ein vollständiges Therapiekonzept erstreckt sich häufig über mehrere Wochen mit regelmäßigen Terminen und Verlaufskontrollen.",
-      "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Schulungen über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz."
     },
     "cta": {"label": "Ihr nächster Schritt", "title": "Bereit für den ersten Schritt?", "body": "Finden Sie eine Cell Clinic in Ihrer Nähe und vereinbaren Sie ein Erstgespräch – unverbindlich und persönlich.", "findClinic": "Cell Clinic finden", "findNearby": "Cell Clinic in Ihrer Nähe finden", "howItWorks": "Wie läuft die Behandlung ab?"},
     "footerDescription": "Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy.",

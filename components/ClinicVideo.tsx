@@ -1,56 +1,23 @@
-"use client";
-
-import {useEffect, useState} from "react";
 import Image from "next/image";
 import {Play, ArrowUpRight} from "lucide-react";
 
 type ClinicVideoProps = {
   title: string;
-  loadLabel: string;
   privacyNote: string;
   externalLabel: string;
-  loadingLabel: string;
-  fallbackLabel: string;
 };
 
-export function ClinicVideo({title, loadLabel, privacyNote, externalLabel, loadingLabel, fallbackLabel}: ClinicVideoProps) {
-  const [loaded, setLoaded] = useState(false);
-  const [ready, setReady] = useState(false);
-  const [delayed, setDelayed] = useState(false);
-
-  useEffect(() => {
-    if (!loaded || ready) return;
-    const timer = window.setTimeout(() => setDelayed(true), 10000);
-    return () => window.clearTimeout(timer);
-  }, [loaded, ready]);
-
+export function ClinicVideo({title, privacyNote, externalLabel}: ClinicVideoProps) {
   return (
     <div className="clinic-video">
       <div className="clinic-video-player">
-        {loaded ? (
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/g4iJK9b6_y0?start=2&rel=0"
-            title={title}
-            allow="encrypted-media; picture-in-picture; fullscreen"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            onLoad={(event) => {
-              setReady(true);
-              event.currentTarget.focus();
-            }}
-          />
-        ) : (
-          <button type="button" className="clinic-video-load" onClick={() => setLoaded(true)} aria-label={`${loadLabel}: ${title}`}>
-            <Image src="/images/editorial/longevity-lab-video-poster.webp" alt="" fill sizes="(max-width: 767px) 100vw, 720px" className="clinic-video-poster" />
+          <a className="clinic-video-load" href="https://www.youtube.com/watch?v=g4iJK9b6_y0&t=2s" target="_blank" rel="noopener noreferrer" aria-label={`${externalLabel}: ${title}`}>
+            <Image src="/images/editorial/longevity-lab-video-poster.webp" alt="" aria-hidden="true" fill sizes="(max-width: 767px) 100vw, 720px" className="clinic-video-poster" />
             <span className="clinic-video-play">
               <Play size={18} fill="currentColor" aria-hidden="true" />
-              <span>{loadLabel}</span>
+              <span>{externalLabel}</span>
             </span>
-          </button>
-        )}
-        {loaded && !ready && (
-          <div className="clinic-video-status" role="status">{delayed ? fallbackLabel : loadingLabel}</div>
-        )}
+          </a>
       </div>
       <div className="clinic-video-caption">
         <p>{privacyNote}</p>

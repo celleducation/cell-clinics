@@ -26,11 +26,37 @@ Copy `.env.example` to `.env.local`.
 - `RESEND_API_KEY`: server-side Resend API key.
 - `PARTNER_INQUIRY_FROM`: verified sender address.
 - `PARTNER_INQUIRY_TO`: application recipient; defaults to `info@cell-education.com`.
-- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`: Cloudflare Turnstile site key.
-- `TURNSTILE_SECRET_KEY`: Cloudflare Turnstile server secret.
+- `FORM_GUARD_SECRET`: random signing secret (at least 32 characters), identical
+  on all instances. Falls back to the existing server-side `RESEND_API_KEY`.
+- `FORM_TRUSTED_IP_HEADER`: self-hosted deployments only; name of an IP header
+  overwritten by your trusted ingress. Never enable on an unprotected direct
+  Node server. Vercel uses its own `x-forwarded-for` automatically.
 - `NEXT_PUBLIC_SITE_URL`: canonical production origin.
 
-In development, form submissions are logged when Resend is unset. Production returns a clear service error until email delivery is configured.
+Production form endpoints fail closed if the signing secret or trusted client
+IP is missing. No submission contents or raw IPs are logged. Partner delivery
+requires Resend; the patient route retains its existing server-side FormSubmit
+fallback, but only AFTER validation and spam checks. There is no browser-side
+delivery fallback that bypasses these checks. Errors preserve the form values
+and offer the existing manual email contact.
+
+Both forms use a hidden honeypot, an IP- and form-bound signed timestamp
+(minimum 3 seconds, expiry 24 hours), and 5 POST attempts per IP per hour.
+Challenge issuance is limited to 30 per IP per hour. The bounded rate store
+retains HMAC IP digests and counters for at most one hour, not raw IPs or form
+data. **This quota is per Node process, not global across Vercel instances and
+cold starts.** A shared first-party store or host-side limit is a deployment
+prerequisite for a global guarantee; neither is provisioned by this PR.
+See https://vercel.com/docs/headers/request-headers#x-forwarded-for for the
+ingress-header trust assumption. Intentional text entered in contact fields
+cannot be semantically guaranteed to be non-medical; there is no notes/message
+field and unknown medical fields are rejected by the strict schemas.
+
+Offline form tests (no email): `node scripts/test-form-guard.mjs` and
+`node scripts/test-patient-inquiry.mjs`. Local production API tests:
+`node scripts/test-form-api.mjs http://localhost:3012` (rejections only).
+After deployment: `node scripts/audit-seo.mjs https://cell-clinics.com` uses
+real public URLs including HTTPS www, with curl and no browser execution.
 
 ## Add a clinic
 

@@ -10,11 +10,13 @@ import {PatientInquiryForm} from "@/components/PatientInquiryForm";
 import {ClinicFinder} from "@/components/ClinicFinder";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {clinics} from "@/content/clinics";
-
-const slugs: Record<string, string> = {de: "patienten", en: "patients", es: "pacientes"};
+import {patientSlugs as slugs} from "@/i18n/paths";
+import type {Locale} from "@/i18n/routing";
+import {pageMetadata} from "@/lib/seo";
+import {Breadcrumbs} from "@/components/Breadcrumbs";
 
 function validRoute(locale: string, patientSlug: string) {
-  return slugs[locale] === patientSlug;
+  return slugs[locale as Locale] === patientSlug;
 }
 
 export function generateStaticParams() {
@@ -27,23 +29,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const t = await getTranslations({locale, namespace: "patient.meta"});
   const title = t("title");
   const description = t("description");
-  return {
-    title: {absolute: title},
-    description,
-    alternates: {
-      canonical: `/${locale}/${patientSlug}`,
-      languages: {de: "/de/patienten", en: "/en/patients", es: "/es/pacientes", "x-default": "/en/patients"}
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/${locale}/${patientSlug}`,
-      siteName: "Cell Clinics",
-      type: "website",
-      images: [{url: "/images/cellclinic-mitochondria.png", width: 1200, height: 900, alt: "Cell Clinics"}]
-    },
-    twitter: {card: "summary_large_image", title, description, images: ["/images/cellclinic-mitochondria.png"]}
-  };
+  return pageMetadata({locale, path: `/${patientSlug}`, title, description, image: "/images/cellclinic-mitochondria.png"});
 }
 
 export default async function PatientPage({params}: {params: Promise<{locale: string; patientSlug: string}>}) {
@@ -52,6 +38,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
   setRequestLocale(locale);
   const t = await getTranslations("patient");
   const networkT = await getTranslations("networkPage");
+  const seoT = await getTranslations("seo");
   const therapyCards = [BatteryCharging, HeartPulse, ShieldCheck, Stethoscope].map((icon, index) => ({
     icon,
     title: t(`therapy.card${index + 1}Title`),
@@ -60,6 +47,9 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
   return (
     <>
+      <Breadcrumbs locale={locale} items={[
+        {name: seoT("home"), path: ""}, {name: t("hero.label"), path: `/${patientSlug}`}
+      ]} />
       <PhotographicHero
         audience="patient"
         eyebrow={t("hero.label")}
@@ -117,7 +107,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
       <section className="section section-alt patient-process" id="process">
         <div className="patient-process-image" aria-hidden="true">
-          <Image src="/images/editorial/patient-treatment-background.webp" alt="" fill sizes="100vw" />
+          <Image src="/images/editorial/patient-treatment-background.webp" alt="" aria-hidden="true" fill sizes="100vw" />
         </div>
         <div className="container">
           <SectionHeading eyebrow={t("process.label")} title={t("process.title")} intro={t("process.intro")} />
@@ -149,7 +139,7 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
       <section className="section patient-final-cta">
         <div className="patient-final-image" aria-hidden="true">
-          <Image src="/images/editorial/patient-nucleus.webp" alt="" fill sizes="(max-width: 767px) 100vw, 65vw" />
+          <Image src="/images/editorial/patient-nucleus.webp" alt="" aria-hidden="true" fill sizes="(max-width: 767px) 100vw, 65vw" />
         </div>
         <div className="container patient-final-copy">
           <span className="eyebrow">{t("cta.label")}</span>

@@ -4,11 +4,19 @@ import type { NextConfig } from "next";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Render metadata in the initial head for all clients, not streamed later.
+  htmlLimitedBots: /.*/,
   images: {
     formats: ["image/avif", "image/webp"],
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{type: "host", value: "www.cell-clinics.com"}],
+        destination: "https://cell-clinics.com/:path*",
+        statusCode: 301
+      },
       { source: "/access", destination: "/en#application", permanent: true },
       { source: "/experts", destination: "/en#leadership", permanent: true },
       { source: "/science", destination: "/en#systems", permanent: true },

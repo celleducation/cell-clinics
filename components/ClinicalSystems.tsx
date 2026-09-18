@@ -24,7 +24,7 @@ export async function ClinicalSystems({compact = false}: {compact?: boolean}) {
             )}
           </div>
           <div className="system-image">
-            <Image src={system.image} alt="" width={1200} height={900} />
+            <Image src={system.image} alt={t(`seo.images.system${index + 1}`)} width={1200} height={900} sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1248px) 31vw, 372px" />
           </div>
         </article>
       ))}

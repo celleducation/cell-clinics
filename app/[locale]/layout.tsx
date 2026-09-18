@@ -4,7 +4,21 @@ import {notFound} from "next/navigation";
 import {routing} from "@/i18n/routing";
 import {SiteFooter} from "@/components/SiteFooter";
 import {SiteHeader} from "@/components/SiteHeader";
-import {LocaleDocumentLanguage} from "@/components/LocaleDocumentLanguage";
+import type {Metadata} from "next";
+import {DM_Sans} from "next/font/google";
+import {SITE_URL} from "@/lib/seo";
+import "../globals.css";
+
+const dmSans = DM_Sans({subsets: ["latin"], variable: "--font-dm-sans", display: "swap"});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  icons: {icon: "/images/faviconclinics.png"},
+  robots: {
+    index: true, follow: true, "max-image-preview": "large",
+    googleBot: {index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1}
+  }
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -24,11 +38,14 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <LocaleDocumentLanguage locale={locale} />
-      <SiteHeader />
-      <main>{children}</main>
-      <SiteFooter />
-    </NextIntlClientProvider>
+    <html lang={locale} className={dmSans.variable}>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

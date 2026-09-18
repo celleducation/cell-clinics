@@ -15,7 +15,7 @@ export function PhotographicHero({audience, eyebrow, title, body, image, childre
     <section className={`${audience}-hero photo-hero photo-hero-${audience}`}>
       {image && (
         <div className="photo-hero-image" aria-hidden="true">
-          <Image src={image} alt="" fill sizes="(max-width: 767px) 100vw, 50vw" priority />
+          <Image src={image} alt="" aria-hidden="true" fill sizes="(max-width: 767px) 100vw, 50vw" priority fetchPriority="high" />
         </div>
       )}
       <div className="container photo-hero-intro">

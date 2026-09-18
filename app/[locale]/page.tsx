@@ -10,12 +10,7 @@ import {PhotographicHero} from "@/components/PhotographicHero";
 import {ClinicVideo} from "@/components/ClinicVideo";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {partnerModules} from "@/content/site";
-
-const localeNames: Record<string, string> = {
-  de: "de_DE",
-  en: "en_US",
-  es: "es_ES"
-};
+import {pageMetadata, ORGANIZATION_ID, jsonLd} from "@/lib/seo";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
   const {locale} = await params;
@@ -23,24 +18,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const title = t("title");
   const description = t("description");
 
-  return {
-    title: {absolute: title},
-    description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {de: "/de", en: "/en", es: "/es", "x-default": "/en"}
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/${locale}`,
-      siteName: "Cell Clinics",
-      locale: localeNames[locale] || "en_US",
-      type: "website",
-      images: [{url: "/images/cellclinic-platform.png", width: 1400, height: 1080, alt: "Cell Clinics"}]
-    },
-    twitter: {card: "summary_large_image", title, description, images: ["/images/cellclinic-platform.png"]}
-  };
+  return pageMetadata({locale, title, description});
 }
 
 export default async function HomePage({params}: {params: Promise<{locale: string}>}) {
@@ -57,17 +35,25 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: "Cell Clinics",
     url: "https://cell-clinics.com",
     logo: "https://cell-clinics.com/cell-clinics-logo.png",
     email: "info@cell-education.com",
     description: t("meta.description"),
+    areaServed: ["DE", "CH", "AT", "ES"],
+    knowsAbout: t.raw("seo.knowsAbout"),
+    contactPoint: {"@type": "ContactPoint", email: "info@cell-education.com", contactType: "business inquiries", availableLanguage: ["de", "en", "es"]},
     parentOrganization: {"@type": "Organization", name: "Cell Education", url: "https://www.cell-education.com"}
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(structuredData).replace(/</g, "\\u003c")}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd([structuredData, {
+        "@context": "https://schema.org", "@type": "WebSite", "@id": `https://cell-clinics.com/${locale}/#website`,
+        name: "Cell Clinics", url: `https://cell-clinics.com/${locale}`, inLanguage: locale,
+        publisher: {"@id": ORGANIZATION_ID}
+      }])}} />
       <PhotographicHero
         audience="home"
         eyebrow={t("hero.label")}
@@ -86,7 +72,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
       <section className="section platform-cell-section" id="platform">
         <div className="platform-cell-art" aria-hidden="true">
-          <Image src="/images/editorial/platform-cell.webp" alt="" fill sizes="(max-width: 767px) 500px, (max-width: 1100px) 720px, (max-width: 1333px) 60vw, 800px" />
+          <Image src="/images/editorial/platform-cell.webp" alt="" aria-hidden="true" fill sizes="(max-width: 767px) 500px, (max-width: 1100px) 720px, (max-width: 1333px) 60vw, 800px" />
         </div>
         <div className="container">
           <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
@@ -122,9 +108,9 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             </div>
           </div>
           <div className="model-gallery">
-            <Image src="/clinics/alpstein/interior-1.webp" alt="Alpstein Clinic interior" width={900} height={760} />
-            <Image src="/clinics/alpstein/recovery.webp" alt="Alpstein Clinic recovery area" width={900} height={760} />
-            <Image src="/clinics/alpstein/landscape.webp" alt="Appenzell landscape" width={900} height={760} />
+            <Image src="/clinics/alpstein/interior-1.webp" alt={t("seo.images.alpsteinInterior")} width={900} height={760} />
+            <Image src="/clinics/alpstein/recovery.webp" alt={t("seo.images.alpsteinRecovery")} width={900} height={760} />
+            <Image src="/clinics/alpstein/landscape.webp" alt={t("seo.images.appenzell")} width={900} height={760} />
           </div>
         </div>
       </section>
@@ -164,11 +150,8 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           </div>
           <ClinicVideo
             title={t("lab.title")}
-            loadLabel={t("video.load")}
             privacyNote={t("video.privacy")}
             externalLabel={t("video.external")}
-            loadingLabel={t("video.loading")}
-            fallbackLabel={t("video.fallback")}
           />
         </div>
       </section>
@@ -203,6 +186,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               className="playbook-sheet playbook-sheet-back"
               src="/images/partner-playbook/partner-playbook-checklist.png"
               alt=""
+              aria-hidden="true"
               width={1242}
               height={1755}
             />
@@ -210,6 +194,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
               className="playbook-sheet playbook-sheet-middle"
               src="/images/partner-playbook/partner-playbook-week-one.png"
               alt=""
+              aria-hidden="true"
               width={1242}
               height={1755}
             />

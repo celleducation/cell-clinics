@@ -1435,6 +1435,12 @@ textarea.input {
   }
 }
 
+.breadcrumbs { padding-top: 16px; padding-bottom: 16px; font-size: .875rem; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.breadcrumbs li { display: inline-flex; align-items: baseline; gap: .5rem; min-width: 0; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: 3px; }
+.breadcrumbs [aria-current="page"] { overflow-wrap: anywhere; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

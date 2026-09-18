@@ -37,7 +37,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="site-logo" href="/" aria-label="Cell Clinics home">
-          <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} priority />
+          <Image src="/cell-clinics-logo.png" alt="Cell Clinics" width={2064} height={391} sizes="(max-width: 767px) 132px, 148px" priority />
         </Link>
         <nav className="desktop-nav audience-switcher" aria-label={t("audience.label")}>
           <Link className={!isPatientAudience ? "active" : ""} href="/">{t("audience.professionals")}</Link>

@@ -5,6 +5,8 @@ import {Activity, ArrowLeft, ArrowUpRight, Microscope, RefreshCw, Stethoscope} f
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {clinics, getClinic} from "@/content/clinics";
 import {Link} from "@/i18n/navigation";
+import {pageMetadata, ORGANIZATION_ID, jsonLd as serializeJsonLd} from "@/lib/seo";
+import {Breadcrumbs} from "@/components/Breadcrumbs";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -28,16 +30,8 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
           ? "larsGienger"
         : "alpstein";
   const t = await getTranslations({locale, namespace: `clinicProfiles.${profileKey}`});
-  return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-    alternates: {canonical: `https://cell-clinics.com/${locale}/network/${slug}`},
-    openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      images: [clinic.images?.[0] || "/clinics/alpstein/interior-1.webp"]
-    }
-  };
+  return pageMetadata({locale, path: `/network/${slug}`, title: t("metaTitle"),
+    description: t("metaDescription"), image: clinic.images?.[0] || "/images/cellclinic-platform.png"});
 }
 
 export default async function ClinicPage({params}: {params: Promise<{locale: string; slug: string}>}) {
@@ -54,6 +48,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : isNikiciuk ? "nikiciuk" : isMihriban ? "mihribanCiftci" : isMaja ? "majaKoebelAink" : isLars ? "larsGienger" : "alpstein";
   const t = await getTranslations(`clinicProfiles.${profileKey}`);
   const networkT = await getTranslations("networkPage");
+  const seoT = await getTranslations("seo");
   const assets = isMedivium ? {
     logo: "/clinics/medivium/logo.png",
     main: "/clinics/medivium/ha4a6318.jpg",
@@ -117,11 +112,14 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": isMedivium || isMihriban || isLars ? ["MedicalBusiness", "LocalBusiness"] : ["MedicalOrganization", "MedicalClinic"],
+    "@id": `https://cell-clinics.com/${locale}/network/${slug}#clinic`,
     name: clinic.name,
     url: clinic.website,
     email: clinic.contactEmail,
     telephone: clinic.phone,
     image: `https://cell-clinics.com${assets.main}`,
+    geo: {"@type": "GeoCoordinates", latitude: clinic.coordinates.lat, longitude: clinic.coordinates.lng},
+    memberOf: {"@type": "Organization", "@id": ORGANIZATION_ID, name: "Cell Clinics", url: "https://cell-clinics.com"},
     address: {
       "@type": "PostalAddress",
       streetAddress: isMedivium ? "Kirchheimer Straße 42" : isMonikaBrueck ? "Camí dels Reis 308, Edificio 3A Norte" : isNikiciuk ? "An der Seepromenade 24" : isMihriban ? "Obere Waiblinger Straße 107 a" : isMaja ? "Hansestraße 43 A" : isLars ? "Bahnhofstraße 24" : "Dorfplatz 5",
@@ -134,7 +132,11 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: serializeJsonLd(jsonLd)}} />
+      <Breadcrumbs locale={locale} items={[
+        {name: seoT("home"), path: ""}, {name: networkT("directoryLabel"), path: "/network"},
+        {name: clinic.name, path: `/network/${slug}`}
+      ]} />
 
       <section className="alpstein-hero section-soft">
         <div className="container">
@@ -142,19 +144,19 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           <div className="alpstein-hero-grid">
             <div className="alpstein-hero-copy">
               <span className="eyebrow">{t("eyebrow")}</span>
-              {!isMaja && !isLars && <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}${isMihriban ? " mihriban-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} priority />}
+              {!isMaja && !isLars && <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}${isMihriban ? " mihriban-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} sizes="(max-width: 767px) 150px, 230px" priority />}
               <h1 className="display">{clinic.name}</h1>
               <p className="clinic-profile-location">{t("location")}</p>
               <p className="lead">{t("heroBody")}</p>
               <div className="button-row">
-                <a className="button button-primary button-lg" href={clinic.website} target="_blank" rel="noreferrer">{t("visitWebsite")}<ArrowUpRight size={16} /></a>
-                <a className="button button-secondary button-lg" href={clinic.contactEmail ? `mailto:${clinic.contactEmail}` : `tel:${clinic.phone?.replaceAll(" ", "")}`}>{t("contact")}</a>
+                {clinic.website && <a className="button button-primary button-lg" href={clinic.website} target="_blank" rel="noreferrer">{t("visitWebsite")}<ArrowUpRight size={16} /></a>}
+                {(clinic.contactEmail || clinic.phone) && <a className="button button-secondary button-lg" href={clinic.contactEmail ? `mailto:${clinic.contactEmail}` : `tel:${clinic.phone?.replaceAll(" ", "")}`}>{t("contact")}</a>}
               </div>
             </div>
             <div className="alpstein-hero-gallery">
-              <Image className={`alpstein-gallery-main${isNikiciuk ? " nikiciuk-main-portrait" : ""}${isMihriban ? " mihriban-main-portrait" : ""}${isMaja ? " maja-main-portrait" : ""}${isLars ? " lars-main-portrait" : ""}`} src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} priority />
-              <Image className={isMedivium ? "medivium-portrait" : isNikiciuk ? "nikiciuk-cell-art" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} priority={isMedivium} />
-              <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : isMihriban ? "mihriban-gallery-logo" : isMaja ? "maja-cell-art" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk || isMihriban ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} />
+              <Image className={`alpstein-gallery-main${isNikiciuk ? " nikiciuk-main-portrait" : ""}${isMihriban ? " mihriban-main-portrait" : ""}${isMaja ? " maja-main-portrait" : ""}${isLars ? " lars-main-portrait" : ""}`} src={assets.main} alt={t("mainImageAlt")} width={1200} height={1100} sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) 50vw, 600px" priority fetchPriority="high" />
+              <Image className={isMedivium ? "medivium-portrait" : isNikiciuk ? "nikiciuk-cell-art" : ""} src={assets.portrait} alt={t("portraitAlt")} width={800} height={600} sizes="(max-width: 767px) 50vw, 400px" priority={isMedivium} />
+              <Image className={isMedivium ? "medivium-gallery-logo" : isNikiciuk ? "nikiciuk-gallery-logo" : isMihriban ? "mihriban-gallery-logo" : isMaja ? "maja-cell-art" : ""} src={assets.galleryThird} alt={isMedivium || isNikiciuk || isMihriban ? `${clinic.name} Logo` : t("contextImageAlt")} width={800} height={600} sizes="(max-width: 767px) 50vw, 400px" />
             </div>
           </div>
           <div className="clinic-fact-strip" aria-label={t("factsLabel")}>
@@ -166,7 +168,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
       <section className="section clinic-profile-story" id="clinical-profile">
         <div className="container clinic-profile-split">
           <div className="clinic-profile-image-wrap">
-            <Image className={isMedivium ? "medivium-profile-portrait" : isNikiciuk ? "nikiciuk-profile-art" : isMihriban ? "mihriban-profile-art" : ""} src={assets.profile} alt={isNikiciuk || isMihriban ? t("profileImageAlt") : t("portraitAlt")} width={1000} height={900} />
+            <Image className={isMedivium ? "medivium-profile-portrait" : isNikiciuk ? "nikiciuk-profile-art" : isMihriban ? "mihriban-profile-art" : ""} src={assets.profile} alt={isNikiciuk || isMihriban ? t("profileImageAlt") : t("portraitAlt")} width={1000} height={900} sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1248px) 55vw, 650px" />
             <span>{t("profileLabel")}</span>
           </div>
           <div className="clinic-profile-copy">
@@ -229,7 +231,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
             <h2 className="section-title">{t("leadershipTitle")}</h2>
             <p>{t("leadershipBody")}</p>
           </div>
-          <Image className={isNikiciuk ? "nikiciuk-context-art" : ""} src={assets.context} alt={t("contextImageAlt")} width={900} height={900} />
+          <Image className={isNikiciuk ? "nikiciuk-context-art" : ""} src={assets.context} alt={t("contextImageAlt")} width={900} height={900} sizes="(max-width: 767px) calc(100vw - 32px), 500px" />
           <div className="clinic-setting-card">
             <span className="eyebrow">{t("settingLabel")}</span>
             <h2>{t("settingTitle")}</h2>
@@ -238,7 +240,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
         </div>
       </section>
 
-      <section className="section clinic-profile-contact">
+      {(clinic.address || clinic.phone || clinic.contactEmail || clinic.website) && <section className="section clinic-profile-contact">
         <div className="container clinic-profile-contact-card">
           <div>
             <span className="eyebrow">{t("contactLabel")}</span>
@@ -247,14 +249,14 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           </div>
           <address>
             <strong>{clinic.name}</strong>
-            <span>{clinic.address}</span>
-            <a href={`tel:${clinic.phone?.replaceAll(" ", "")}`}>{clinic.phone}</a>
+            {clinic.address && <span>{clinic.address}</span>}
+            {clinic.phone && <a href={`tel:${clinic.phone.replaceAll(" ", "")}`}>{clinic.phone}</a>}
             {clinic.contactEmail && <a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>}
-            <a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{t("visitWebsite")}<ArrowUpRight size={16} /></a>
+            {clinic.website && <a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{t("visitWebsite")}<ArrowUpRight size={16} /></a>}
           </address>
           <small>{t("sourceNote")}</small>
         </div>
-      </section>
+      </section>}
     </>
   );
 }
