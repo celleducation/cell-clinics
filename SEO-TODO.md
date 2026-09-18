@@ -117,13 +117,10 @@ Punkte des ursprünglichen SEO-Auftrags.
   zurück; `components/SiteHeader.tsx:24` setzt den Menüzustand in einem
   pathname-Effekt zurück. Beide: `react-hooks/set-state-in-effect`, potenziell
   unnötige Folgerenderings. Zusätzlich eine bestehende PostCSS-Export-Warnung.
-- Datenschutzprüfung des bestehenden Formularversands über Resend/FormSubmit
-  und der serverseitigen Standortsuche separat abstimmen. Es wurden weder neue
-  Anbieter noch neue Zwecke eingeführt. Keine echten Testanfragen versenden.
-- FormSubmit bleibt als bestehender Versandweg für Patienten und Partner
-  serverseitig NACH allen Prüfungen erhalten; Wiederherstellung des Partner-
-  Versands am 18.09.2026 ausdrücklich freigegeben. Anbieter-/Datenschutzprüfung
-  weiterhin separat. Kein externer Dienst für die neue Spamprüfung.
+- Datenschutzprüfung des Formularversands über Resend und der serverseitigen
+  Standortsuche separat abstimmen. Der Versand läuft seit dem 18.09.2026 über
+  den verifizierten Absender `forms@cell-education.com`; Resend ist damit als
+  Anbieter aktiv. Kein externer Dienst für die neue Spamprüfung.
 
 ## Abgrenzung
 
@@ -133,23 +130,21 @@ Tools, Google Business Profiles und Änderungen an Partner-Websites bleiben auß
 
 ## Formularreparatur vom 18.09.2026
 
-- Resend-Umstellung vorbereitet: `cell-education.com` am 18.09.2026 im
+- Resend-Umstellung abgeschlossen: `cell-education.com` am 18.09.2026 im
   angemeldeten Resend-Konto als Verified bestätigt. Beide Formularrouten
   verwenden standardmäßig `Cell Clinics <forms@cell-education.com>` und
   `info@cell-education.com` als Empfänger. Bei konfiguriertem Resend erfolgt
   kein Zweitversand über FormSubmit; Erfolg setzt eine Resend-Mail-ID voraus.
-  Schlüssel wird vom Nutzer direkt in Vercel als Production-Secret hinterlegt,
-  nicht im Chat oder Repository. Aktivierung, Deployment und neue Live-Abnahme
-  bleiben bis zur Bestätigung dieser Konfiguration offen.
-- OFFEN: Der ausdrückliche Live-Technik-Test nach Deployment `26e4da7` konnte
-  weiterhin nicht zugestellt werden. Vercel protokolliert für den Patienten-
-  Test um 14:53 MESZ eine Antwort HTTP 403 von FormSubmit; die eigene API
-  übersetzt diese korrekt in 502. Auch der zweite freigegebene Partner-Test
-  zeigt einen Versandfehler. Keine Annahme oder Zustellung behaupten.
-  Die Ergänzung der Website-Angabe allein löst die Provider-Ablehnung nicht.
-  Nächster Schritt erfordert Provider-Freigabe oder die Einrichtung des bereits
-  unterstützten Resend-Versands mit verifiziertem Absender durch den Betreiber.
-  Kein browserseitiger Bypass, keine Wiederholungs-Testsendungen ohne Freigabe.
+  Der Schlüssel wurde vom Nutzer direkt in Vercel als Production-Secret
+  hinterlegt, nicht im Chat oder Repository. Production-Deployment `6bb680a`
+  war am 18.09.2026 um 15:08 MESZ bereit. Die beiden ausdrücklich freigegebenen,
+  synthetischen Live-Testanfragen wurden anschließend von den Formularen
+  bestätigt und im angemeldeten Resend-Dashboard jeweils mit Status `Delivered`
+  angezeigt: `New Cell Clinics Patient Inquiry` und
+  `New Cell Clinics Partner Application`, beide an `info@cell-education.com`.
+- Historie: Der vorherige Technik-Test nach Deployment `26e4da7` scheiterte
+  korrekt sichtbar, weil FormSubmit beide Anfragen mit HTTP 403 ablehnte. Diese
+  Provider-Störung ist durch den aktivierten Resend-Versand abgelöst.
 - Nachkontrolle der Nutzer-Tests um 14:44 MESZ: Beide POST-Anfragen liefen durch
   die Schutzprüfungen, scheiterten aber beim Provider mit HTTP 502. Die vorherige
   Live-Kontrolle prüfte nur die Challenge-GETs, nicht den tatsächlichen Versand.
