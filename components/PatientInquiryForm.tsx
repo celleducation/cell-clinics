@@ -9,7 +9,8 @@ type Status = "idle" | "sending" | "success" | "error";
 export function PatientInquiryForm() {
   const t = useTranslations("patient.form");
   const privacyT = useTranslations("footer");
-  const {token, failed} = useFormChallenge("/api/patient-inquiry");
+  const apiT = useTranslations("formApi");
+  const {token, failed, retry} = useFormChallenge("/api/patient-inquiry");
   const [status, setStatus] = useState<Status>("idle");
   const [emailFallback, setEmailFallback] = useState("mailto:info@cell-education.com");
 
@@ -61,7 +62,12 @@ export function PatientInquiryForm() {
         {status === "sending" ? t("sending") : t("submit")}
       </button>
       <p className="form-privacy">{t("privacy")}</p>
-      {status === "error" || failed ? <p className="form-error" role="alert">{t("error")} <a href={emailFallback}>info@cell-education.com</a></p> : null}
+      {failed && status !== "error" ? <div className="form-privacy" role="status">
+        <p>{apiT("unavailable")}</p>
+        <button className="button button-secondary" type="button" onClick={retry}>{apiT("retry")}</button>
+        <p><a href="mailto:info@cell-education.com">info@cell-education.com</a></p>
+      </div> : null}
+      {status === "error" ? <p className="form-error" role="alert">{t("error")} <a href={emailFallback}>info@cell-education.com</a></p> : null}
     </form>
   );
 }

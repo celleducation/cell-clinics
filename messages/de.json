@@ -705,6 +705,8 @@
     "submit": "Partnerschaftsinformationen anfordern"
   },
   "formApi": {
+    "unavailable": "Das Formular ist momentan nicht verfügbar. Es wurde noch keine Anfrage gesendet. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.",
+    "retry": "Formular erneut laden",
     "success": "Vielen Dank für Ihre Anfrage. Unser Team prüft Ihre Angaben und meldet sich innerhalb von 48 Stunden.",
     "error": "Ihre Anfrage konnte nicht automatisch gesendet werden.",
     "emailFallback": "Ausgefüllte Anfrage per E-Mail senden"

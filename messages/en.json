@@ -705,6 +705,8 @@
     "submit": "Request Partnership Information"
   },
   "formApi": {
+    "unavailable": "The form is temporarily unavailable. No inquiry has been sent. Please try again or contact us by email.",
+    "retry": "Reload form",
     "success": "Thank you for your application. Our team will review your information and contact you within 48 hours.",
     "error": "Your inquiry could not be sent automatically.",
     "emailFallback": "Send the completed inquiry by email"

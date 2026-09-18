@@ -89,7 +89,8 @@ Punkte des ursprünglichen SEO-Auftrags.
 - Produktionskonfiguration prüfen: `FORM_GUARD_SECRET` (mindestens 32 Zeichen,
   auf allen Instanzen gleich) oder bestehender `RESEND_API_KEY` erforderlich;
   bei fehlendem Secret oder vertrauenswürdiger IP bleiben Formulare gesperrt.
-  Partner-Versand benötigt Resend. Kein E-Mail-End-to-End-Test ohne Freigabe.
+  Ohne Resend verwenden beide Formulare den bestehenden FormSubmit-Versand
+  nach den serverseitigen Prüfungen. Kein E-Mail-End-to-End-Test ohne Freigabe.
 - Ein Notiz-/Gesundheitsdatenkanal existiert nicht mehr. Absichtlicher Missbrauch
   verbleibender Kontaktfelder kann technisch nicht vollständig ausgeschlossen
   werden; keine gegenteilige Garantie formulieren.
@@ -119,15 +120,33 @@ Punkte des ursprünglichen SEO-Auftrags.
 - Datenschutzprüfung des bestehenden Formularversands über Resend/FormSubmit
   und der serverseitigen Standortsuche separat abstimmen. Es wurden weder neue
   Anbieter noch neue Zwecke eingeführt. Keine echten Testanfragen versenden.
-- FormSubmit bleibt nur als bereits vorhandener serverseitiger Patienten-
-  Versand-Fallback NACH allen Prüfungen erhalten; Anbieter-/Datenschutzprüfung
+- FormSubmit bleibt als bestehender Versandweg für Patienten und Partner
+  serverseitig NACH allen Prüfungen erhalten; Wiederherstellung des Partner-
+  Versands am 18.09.2026 ausdrücklich freigegeben. Anbieter-/Datenschutzprüfung
   weiterhin separat. Kein externer Dienst für die neue Spamprüfung.
 
 ## Abgrenzung
 
-Nur den bestehenden Branch veröffentlichen, keinen PR anlegen, main nicht ändern.
-Deployment und Merge durch den Nutzer. Search Console, Bing Webmaster
+Die ursprüngliche Branch-Beschränkung wurde durch die spätere ausdrückliche
+Freigabe „ja push auf main“ ersetzt. Kein PR durch den Agenten. Search Console, Bing Webmaster
 Tools, Google Business Profiles und Änderungen an Partner-Websites bleiben außen vor.
+
+## Formularreparatur vom 18.09.2026
+
+- Ursache: Auf Vercel waren keine Umgebungsvariablen eingerichtet. Die neue
+  Challenge-Prüfung blieb deshalb sicher gesperrt; die UI zeigte irreführend
+  bereits vor einer Anfrage einen Versandfehler. Zusätzlich fehlte beim
+  Partnerformular der bisherige FormSubmit-Versand, obwohl Resend nicht
+  eingerichtet war.
+- `FORM_GUARD_SECRET` wurde im Vercel-Projekt als Production-Secret gespeichert.
+  Es wird mit dem nächsten Production-Deployment aktiv; Preview ist damit
+  nicht automatisch konfiguriert. Keine Schlüsselwerte im Repository.
+- Vorbereitungsfehler und Versandfehler werden getrennt angezeigt, mit
+  Wiederholen-Button und E-Mail-Kontakt. Honeypot, Mindestzeit, Einwilligung,
+  strikte Feldauswahl und IP-Limit bleiben erhalten. Breadcrumbs unverändert.
+- Build, gezieltes Linting, lokale SEO-/API-Prüfung und Offline-Regressionstests
+  erfolgreich. Providerantworten werden nur simuliert; keine echte Anfrage
+  und kein E-Mail-End-to-End-Test versendet. Live-Prüfung nach Deployment.
 
 ## www-Domainzuordnung – geprüfter Stand und noch erforderlicher Zugriff
 
@@ -228,25 +247,25 @@ Stand nach Wiederherstellung des freigegebenen FAQ am 18.09.2026. Zeilen beziehe
 | `messages/de.json:688` | `leadershipPage.title` | Wissenschaftliche und medizinische Autorität |
 | `messages/de.json:689` | `leadershipPage.lead` | Das Cell Clinics Framework basiert auf jahrzehntelanger Erfahrung mit ärztlichen Schulungen und zellmedizinischer Expertise. |
 | `messages/de.json:690` | `leadershipPage.role` | Medizinische Leitung für ärztliche Schulungen und klinische Framework-Entwicklung. |
-| `messages/de.json:715` | `audience.professionals` | Für Ärzte & Kliniken |
-| `messages/de.json:725` | `patient.hero.title` | Bionic Cell Therapy. Ärztlich begleitet, in Ihrer Nähe. |
-| `messages/de.json:726` | `patient.hero.body` | Cell Clinics sind Arztpraxen und Kliniken, die Bionic Cell Therapy nach einheitlichen medizinischen Standards anbieten – individuell abgestimmt auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele. |
-| `messages/de.json:727` | `patient.hero.note` | Persönlich, diagnostikbasiert und ärztlich geführt |
-| `messages/de.json:732` | `patient.therapy.intro` | Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionic Cell Therapy setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer ärztlich geführt, immer auf Sie abgestimmt. |
-| `messages/de.json:736` | `patient.therapy.card4Body` | Als Ergänzung zu bestehenden Behandlungen – in Abstimmung mit Ihren behandelnden Ärztinnen und Ärzten. |
-| `messages/de.json:740` | `patient.process.step1Body` | Wählen Sie eine Partnerpraxis aus unserem Netzwerk. Jede Cell Clinic wird nach dem gleichen medizinischen Programm geschult und begleitet – Sie wissen also immer, was Sie erwartet. |
-| `messages/de.json:741` | `patient.process.step2Body` | Ihre Ärztin oder Ihr Arzt nimmt sich Zeit: für Ihre Vorgeschichte, Ihre Beschwerden und Ihre Ziele. Daraus entsteht das Bild Ihrer individuellen Ausgangslage. |
-| `messages/de.json:743` | `patient.process.step4Body` | Die Behandlung findet direkt in Ihrer Cell Clinic statt und wird ärztlich begleitet. Verlaufskontrollen zeigen die Entwicklung und ermöglichen eine laufende Anpassung des Konzepts. |
-| `messages/de.json:746` | `patient.finder.intro` | Unser Netzwerk wächst laufend. Alle Cell Clinics werden von qualifizierten Behandlerinnen und Behandlern geführt und sind Teil eines strukturierten Fachprogramms. |
-| `messages/de.json:758` | `patient.trust.item1Body` | Jede Cell Clinic wird von qualifizierten Behandlerinnen und Behandlern geführt. Ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten. |
-| `messages/de.json:759` | `patient.trust.item2Body` | Das medizinische Programm wird unter der Leitung von Dr. Kay Bredehorst entwickelt und laufend aktualisiert. |
-| `messages/de.json:761` | `patient.trust.item4Body` | Wissenschaftlicher Austausch und kontinuierlicher fachlicher Dialog im internationalen Cell Clinics Netzwerk. |
-| `messages/de.json:764` | `patient.faq.intro` | Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic. |
-| `messages/de.json:765` | `patient.faq.a1` | Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik. |
-| `messages/de.json:766` | `patient.faq.a2` | Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf. |
-| `messages/de.json:769` | `patient.faq.a5` | Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Schulungen über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz. |
-| `messages/de.json:772` | `patient.footerDescription` | Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy. |
-| `messages/de.json:773` | `patient.footerDisclaimer` | Hinweis: Die Inhalte dieser Seite dienen der allgemeinen Information und ersetzen keine ärztliche Beratung, Diagnose oder Behandlung. Ob eine Therapie für Sie geeignet ist, entscheidet ausschließlich Ihre behandelnde Ärztin bzw. Ihr behandelnder Arzt. Individuelle Behandlungsergebnisse können variieren. |
+| `messages/de.json:717` | `audience.professionals` | Für Ärzte & Kliniken |
+| `messages/de.json:727` | `patient.hero.title` | Bionic Cell Therapy. Ärztlich begleitet, in Ihrer Nähe. |
+| `messages/de.json:728` | `patient.hero.body` | Cell Clinics sind Arztpraxen und Kliniken, die Bionic Cell Therapy nach einheitlichen medizinischen Standards anbieten – individuell abgestimmt auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele. |
+| `messages/de.json:729` | `patient.hero.note` | Persönlich, diagnostikbasiert und ärztlich geführt |
+| `messages/de.json:734` | `patient.therapy.intro` | Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionic Cell Therapy setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer ärztlich geführt, immer auf Sie abgestimmt. |
+| `messages/de.json:738` | `patient.therapy.card4Body` | Als Ergänzung zu bestehenden Behandlungen – in Abstimmung mit Ihren behandelnden Ärztinnen und Ärzten. |
+| `messages/de.json:742` | `patient.process.step1Body` | Wählen Sie eine Partnerpraxis aus unserem Netzwerk. Jede Cell Clinic wird nach dem gleichen medizinischen Programm geschult und begleitet – Sie wissen also immer, was Sie erwartet. |
+| `messages/de.json:743` | `patient.process.step2Body` | Ihre Ärztin oder Ihr Arzt nimmt sich Zeit: für Ihre Vorgeschichte, Ihre Beschwerden und Ihre Ziele. Daraus entsteht das Bild Ihrer individuellen Ausgangslage. |
+| `messages/de.json:745` | `patient.process.step4Body` | Die Behandlung findet direkt in Ihrer Cell Clinic statt und wird ärztlich begleitet. Verlaufskontrollen zeigen die Entwicklung und ermöglichen eine laufende Anpassung des Konzepts. |
+| `messages/de.json:748` | `patient.finder.intro` | Unser Netzwerk wächst laufend. Alle Cell Clinics werden von qualifizierten Behandlerinnen und Behandlern geführt und sind Teil eines strukturierten Fachprogramms. |
+| `messages/de.json:760` | `patient.trust.item1Body` | Jede Cell Clinic wird von qualifizierten Behandlerinnen und Behandlern geführt. Ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten. |
+| `messages/de.json:761` | `patient.trust.item2Body` | Das medizinische Programm wird unter der Leitung von Dr. Kay Bredehorst entwickelt und laufend aktualisiert. |
+| `messages/de.json:763` | `patient.trust.item4Body` | Wissenschaftlicher Austausch und kontinuierlicher fachlicher Dialog im internationalen Cell Clinics Netzwerk. |
+| `messages/de.json:766` | `patient.faq.intro` | Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic. |
+| `messages/de.json:767` | `patient.faq.a1` | Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik. |
+| `messages/de.json:768` | `patient.faq.a2` | Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf. |
+| `messages/de.json:771` | `patient.faq.a5` | Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Schulungen über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz. |
+| `messages/de.json:774` | `patient.footerDescription` | Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy. |
+| `messages/de.json:775` | `patient.footerDisclaimer` | Hinweis: Die Inhalte dieser Seite dienen der allgemeinen Information und ersetzen keine ärztliche Beratung, Diagnose oder Behandlung. Ob eine Therapie für Sie geeignet ist, entscheidet ausschließlich Ihre behandelnde Ärztin bzw. Ihr behandelnder Arzt. Individuelle Behandlungsergebnisse können variieren. |
 
 #### EN
 
@@ -285,25 +304,25 @@ Stand nach Wiederherstellung des freigegebenen FAQ am 18.09.2026. Zeilen beziehe
 | `messages/en.json:687` | `leadershipPage.eyebrow` | Medical Leadership |
 | `messages/en.json:689` | `leadershipPage.lead` | The Cell Clinics framework is built on decades of physician education and cellular medicine expertise. |
 | `messages/en.json:690` | `leadershipPage.role` | Medical leadership for physician education and clinical framework development. |
-| `messages/en.json:712` | `audience.professionals` | For physicians & clinics |
-| `messages/en.json:716` | `patient.hero.title` | Bionic Cell Therapy. Physician-guided, close to home. |
-| `messages/en.json:716` | `patient.hero.body` | Cell Clinics are medical practices and clinics offering Bionic Cell Therapy according to shared medical standards — individually aligned with your health, diagnostic findings and goals. |
-| `messages/en.json:716` | `patient.hero.note` | Personal, diagnostics-based and physician-led |
-| `messages/en.json:718` | `patient.therapy.intro` | Every function in your body begins at the cellular level — energy, regeneration and defence. Bionic Cell Therapy starts there. Modern diagnostics inform an individual therapy concept designed to support cellular function, from micronutrient infusions to complementary therapeutic approaches. Always physician-led and tailored to you. |
-| `messages/en.json:722` | `patient.therapy.card4Body` | As a complement to existing treatment, coordinated with the physicians already involved in your care. |
-| `messages/en.json:726` | `patient.process.step1Body` | Choose a partner practice from our network. Every Cell Clinic is trained and supported through the same medical programme, so you know what to expect. |
-| `messages/en.json:727` | `patient.process.step2Title` | Initial consultation & medical history |
-| `messages/en.json:727` | `patient.process.step2Body` | Your physician takes time to understand your medical history, concerns and goals. Together, these create a clear picture of your individual starting point. |
-| `messages/en.json:729` | `patient.process.step4Body` | Treatment takes place directly at your Cell Clinic under medical supervision. Follow-up assessments monitor progress and allow the concept to be adjusted over time. |
-| `messages/en.json:731` | `patient.finder.intro` | Our network continues to grow. Every Cell Clinic is led by qualified practitioners and participates in a structured professional programme. |
-| `messages/en.json:733` | `patient.trust.item1Body` | Every Cell Clinic is led by qualified practitioners. Services reserved for physicians remain in medical hands. |
-| `messages/en.json:733` | `patient.trust.item2Body` | The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst. |
-| `messages/en.json:735` | `patient.faq.intro` | Clear answers about physician-guided treatment at a Cell Clinic. |
-| `messages/en.json:736` | `patient.faq.a1` | It may be considered by adults who want to support their health at the cellular level, whether for persistent fatigue, recovery or preventive care. Your physician will always decide whether and which treatment is appropriate after reviewing your medical history and diagnostic findings. |
-| `messages/en.json:737` | `patient.faq.a2` | Every treatment takes place in a physician-led practice or clinic and follows a shared medical programme. Before treatment, your physician will discuss the process, potential benefits and possible risks with you personally. |
-| `messages/en.json:740` | `patient.faq.a5` | Cell Clinics belong to a network working within a shared medical programme: consistent diagnostic standards, aligned therapy protocols and ongoing physician education through Cell Education. This provides the same structured approach at every location. |
-| `messages/en.json:743` | `patient.footerDescription` | A physician-led network for individually tailored Bionic Cell Therapy. |
-| `messages/en.json:744` | `patient.footerDisclaimer` | Please note: The content on this page is for general information only and does not replace medical advice, diagnosis or treatment. Only your treating physician can decide whether a therapy is suitable for you. Individual treatment outcomes may vary. |
+| `messages/en.json:714` | `audience.professionals` | For physicians & clinics |
+| `messages/en.json:718` | `patient.hero.title` | Bionic Cell Therapy. Physician-guided, close to home. |
+| `messages/en.json:718` | `patient.hero.body` | Cell Clinics are medical practices and clinics offering Bionic Cell Therapy according to shared medical standards — individually aligned with your health, diagnostic findings and goals. |
+| `messages/en.json:718` | `patient.hero.note` | Personal, diagnostics-based and physician-led |
+| `messages/en.json:720` | `patient.therapy.intro` | Every function in your body begins at the cellular level — energy, regeneration and defence. Bionic Cell Therapy starts there. Modern diagnostics inform an individual therapy concept designed to support cellular function, from micronutrient infusions to complementary therapeutic approaches. Always physician-led and tailored to you. |
+| `messages/en.json:724` | `patient.therapy.card4Body` | As a complement to existing treatment, coordinated with the physicians already involved in your care. |
+| `messages/en.json:728` | `patient.process.step1Body` | Choose a partner practice from our network. Every Cell Clinic is trained and supported through the same medical programme, so you know what to expect. |
+| `messages/en.json:729` | `patient.process.step2Title` | Initial consultation & medical history |
+| `messages/en.json:729` | `patient.process.step2Body` | Your physician takes time to understand your medical history, concerns and goals. Together, these create a clear picture of your individual starting point. |
+| `messages/en.json:731` | `patient.process.step4Body` | Treatment takes place directly at your Cell Clinic under medical supervision. Follow-up assessments monitor progress and allow the concept to be adjusted over time. |
+| `messages/en.json:733` | `patient.finder.intro` | Our network continues to grow. Every Cell Clinic is led by qualified practitioners and participates in a structured professional programme. |
+| `messages/en.json:735` | `patient.trust.item1Body` | Every Cell Clinic is led by qualified practitioners. Services reserved for physicians remain in medical hands. |
+| `messages/en.json:735` | `patient.trust.item2Body` | The medical programme is developed and continuously updated under the leadership of Dr Kay Bredehorst. |
+| `messages/en.json:737` | `patient.faq.intro` | Clear answers about physician-guided treatment at a Cell Clinic. |
+| `messages/en.json:738` | `patient.faq.a1` | It may be considered by adults who want to support their health at the cellular level, whether for persistent fatigue, recovery or preventive care. Your physician will always decide whether and which treatment is appropriate after reviewing your medical history and diagnostic findings. |
+| `messages/en.json:739` | `patient.faq.a2` | Every treatment takes place in a physician-led practice or clinic and follows a shared medical programme. Before treatment, your physician will discuss the process, potential benefits and possible risks with you personally. |
+| `messages/en.json:742` | `patient.faq.a5` | Cell Clinics belong to a network working within a shared medical programme: consistent diagnostic standards, aligned therapy protocols and ongoing physician education through Cell Education. This provides the same structured approach at every location. |
+| `messages/en.json:745` | `patient.footerDescription` | A physician-led network for individually tailored Bionic Cell Therapy. |
+| `messages/en.json:746` | `patient.footerDisclaimer` | Please note: The content on this page is for general information only and does not replace medical advice, diagnosis or treatment. Only your treating physician can decide whether a therapy is suitable for you. Individual treatment outcomes may vary. |
 
 #### ES
 
@@ -341,25 +360,25 @@ Stand nach Wiederherstellung des freigegebenen FAQ am 18.09.2026. Zeilen beziehe
 | `messages/es.json:687` | `leadershipPage.eyebrow` | Liderazgo médico |
 | `messages/es.json:689` | `leadershipPage.lead` | El marco de Cell Clinics se basa en décadas de formación médica y experiencia en medicina celular. |
 | `messages/es.json:690` | `leadershipPage.role` | Dirección médica para la formación profesional y el desarrollo de marcos clínicos. |
-| `messages/es.json:712` | `audience.professionals` | Para médicos y clínicas |
-| `messages/es.json:716` | `patient.hero.title` | Bionic Cell Therapy. Con acompañamiento médico, cerca de usted. |
-| `messages/es.json:716` | `patient.hero.body` | Las Cell Clinics son consultas y clínicas que ofrecen Bionic Cell Therapy conforme a criterios médicos comunes, adaptada a su salud, sus resultados diagnósticos y sus objetivos. |
-| `messages/es.json:716` | `patient.hero.note` | Personal, basada en el diagnóstico y dirigida por médicos |
-| `messages/es.json:718` | `patient.therapy.intro` | Cada función del organismo comienza en la célula: la energía, la regeneración y las defensas. Bionic Cell Therapy parte de ahí. A partir de diagnósticos modernos se diseña un concepto terapéutico individual que puede contribuir al funcionamiento celular, desde infusiones de micronutrientes hasta procedimientos complementarios. Siempre bajo dirección médica y adaptado a cada persona. |
-| `messages/es.json:722` | `patient.therapy.card4Body` | Como complemento de tratamientos existentes y en coordinación con los profesionales médicos que ya le atienden. |
-| `messages/es.json:726` | `patient.process.step1Body` | Elija una consulta asociada de nuestra red. Todas las Cell Clinics reciben formación y acompañamiento conforme al mismo programa médico, para que sepa qué puede esperar. |
-| `messages/es.json:727` | `patient.process.step2Body` | Su médico dedica tiempo a conocer sus antecedentes, sus molestias y sus objetivos. Así se obtiene una imagen clara de su situación individual. |
-| `messages/es.json:729` | `patient.process.step4Body` | El tratamiento se realiza directamente en su Cell Clinic bajo supervisión médica. Los controles permiten observar la evolución y adaptar el concepto cuando sea necesario. |
-| `messages/es.json:731` | `patient.finder.intro` | Nuestra red sigue creciendo. Cada Cell Clinic está dirigida por profesionales cualificados y participa en un programa profesional estructurado. |
-| `messages/es.json:733` | `patient.trust.item1Title` | Dirección profesional |
-| `messages/es.json:733` | `patient.trust.item1Body` | Cada Cell Clinic está dirigida por profesionales cualificados. Los servicios reservados a médicos permanecen en manos médicas. |
-| `messages/es.json:733` | `patient.trust.item2Body` | El programa médico se desarrolla y actualiza de forma continua bajo la dirección del Dr. Kay Bredehorst. |
-| `messages/es.json:735` | `patient.faq.intro` | Respuestas claras sobre el tratamiento con acompañamiento médico en una Cell Clinic. |
-| `messages/es.json:736` | `patient.faq.a1` | Puede considerarse en adultos que desean apoyar su salud a nivel celular, ya sea ante cansancio persistente, durante la recuperación o de forma preventiva. Su médico decidirá siempre si existe una opción adecuada tras revisar su historia clínica y sus resultados diagnósticos. |
-| `messages/es.json:737` | `patient.faq.a2` | Cada tratamiento se realiza en una consulta o clínica dirigida por médicos y sigue un programa médico común. Antes de comenzar, su médico le explicará personalmente el procedimiento, los posibles beneficios y los riesgos. |
-| `messages/es.json:740` | `patient.faq.a5` | Las Cell Clinics forman parte de una red que trabaja con un programa médico común: criterios diagnósticos consistentes, protocolos terapéuticos coordinados y formación médica continua a través de Cell Education. Así se mantiene el mismo enfoque estructurado en cada centro. |
-| `messages/es.json:743` | `patient.footerDescription` | Una red dirigida por médicos para Bionic Cell Therapy adaptada a cada persona. |
-| `messages/es.json:744` | `patient.footerDisclaimer` | Aviso: El contenido de esta página es meramente informativo y no sustituye el asesoramiento, el diagnóstico ni el tratamiento médico. Solo su médico puede determinar si una terapia es adecuada para usted. Los resultados individuales pueden variar. |
+| `messages/es.json:714` | `audience.professionals` | Para médicos y clínicas |
+| `messages/es.json:718` | `patient.hero.title` | Bionic Cell Therapy. Con acompañamiento médico, cerca de usted. |
+| `messages/es.json:718` | `patient.hero.body` | Las Cell Clinics son consultas y clínicas que ofrecen Bionic Cell Therapy conforme a criterios médicos comunes, adaptada a su salud, sus resultados diagnósticos y sus objetivos. |
+| `messages/es.json:718` | `patient.hero.note` | Personal, basada en el diagnóstico y dirigida por médicos |
+| `messages/es.json:720` | `patient.therapy.intro` | Cada función del organismo comienza en la célula: la energía, la regeneración y las defensas. Bionic Cell Therapy parte de ahí. A partir de diagnósticos modernos se diseña un concepto terapéutico individual que puede contribuir al funcionamiento celular, desde infusiones de micronutrientes hasta procedimientos complementarios. Siempre bajo dirección médica y adaptado a cada persona. |
+| `messages/es.json:724` | `patient.therapy.card4Body` | Como complemento de tratamientos existentes y en coordinación con los profesionales médicos que ya le atienden. |
+| `messages/es.json:728` | `patient.process.step1Body` | Elija una consulta asociada de nuestra red. Todas las Cell Clinics reciben formación y acompañamiento conforme al mismo programa médico, para que sepa qué puede esperar. |
+| `messages/es.json:729` | `patient.process.step2Body` | Su médico dedica tiempo a conocer sus antecedentes, sus molestias y sus objetivos. Así se obtiene una imagen clara de su situación individual. |
+| `messages/es.json:731` | `patient.process.step4Body` | El tratamiento se realiza directamente en su Cell Clinic bajo supervisión médica. Los controles permiten observar la evolución y adaptar el concepto cuando sea necesario. |
+| `messages/es.json:733` | `patient.finder.intro` | Nuestra red sigue creciendo. Cada Cell Clinic está dirigida por profesionales cualificados y participa en un programa profesional estructurado. |
+| `messages/es.json:735` | `patient.trust.item1Title` | Dirección profesional |
+| `messages/es.json:735` | `patient.trust.item1Body` | Cada Cell Clinic está dirigida por profesionales cualificados. Los servicios reservados a médicos permanecen en manos médicas. |
+| `messages/es.json:735` | `patient.trust.item2Body` | El programa médico se desarrolla y actualiza de forma continua bajo la dirección del Dr. Kay Bredehorst. |
+| `messages/es.json:737` | `patient.faq.intro` | Respuestas claras sobre el tratamiento con acompañamiento médico en una Cell Clinic. |
+| `messages/es.json:738` | `patient.faq.a1` | Puede considerarse en adultos que desean apoyar su salud a nivel celular, ya sea ante cansancio persistente, durante la recuperación o de forma preventiva. Su médico decidirá siempre si existe una opción adecuada tras revisar su historia clínica y sus resultados diagnósticos. |
+| `messages/es.json:739` | `patient.faq.a2` | Cada tratamiento se realiza en una consulta o clínica dirigida por médicos y sigue un programa médico común. Antes de comenzar, su médico le explicará personalmente el procedimiento, los posibles beneficios y los riesgos. |
+| `messages/es.json:742` | `patient.faq.a5` | Las Cell Clinics forman parte de una red que trabaja con un programa médico común: criterios diagnósticos consistentes, protocolos terapéuticos coordinados y formación médica continua a través de Cell Education. Así se mantiene el mismo enfoque estructurado en cada centro. |
+| `messages/es.json:745` | `patient.footerDescription` | Una red dirigida por médicos para Bionic Cell Therapy adaptada a cada persona. |
+| `messages/es.json:746` | `patient.footerDisclaimer` | Aviso: El contenido de esta página es meramente informativo y no sustituye el asesoramiento, el diagnóstico ni el tratamiento médico. Solo su médico puede determinar si una terapia es adecuada para usted. Los resultados individuales pueden variar. |
 
 ### Einzelne freigeschaltete Praxisprofile (DE/EN/ES)
 

@@ -7,7 +7,7 @@ import {useFormChallenge} from "./useFormChallenge";
 export function PartnerApplicationForm() {
   const t = useTranslations();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const {token, failed} = useFormChallenge("/api/partner-inquiry");
+  const {token, failed, retry} = useFormChallenge("/api/partner-inquiry");
   const [emailFallback, setEmailFallback] = useState("mailto:info@cell-education.com");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -71,7 +71,12 @@ export function PartnerApplicationForm() {
       <button className="button button-primary form-submit" type="submit" disabled={!token || status === "sending"}>
         {status === "sending" ? t("form.sending") : t("apply.submit")}
       </button>
-      {(status === "error" || failed) && (
+      {failed && status !== "error" && <div className="form-privacy" role="status">
+        <p>{t("formApi.unavailable")}</p>
+        <button className="button button-secondary" type="button" onClick={retry}>{t("formApi.retry")}</button>
+        <p><a href="mailto:info@cell-education.com">info@cell-education.com</a></p>
+      </div>}
+      {status === "error" && (
         <div className="form-error" role="alert">
           <p>{t("formApi.error")}</p>
           <a className="text-link" href={emailFallback}>{t("formApi.emailFallback")}</a>

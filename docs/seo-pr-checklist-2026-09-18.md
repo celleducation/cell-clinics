@@ -65,7 +65,9 @@ Der Agent veröffentlicht ausschließlich den Branch `codex/seo-form-hardening`.
    Regel beim bestehenden Hoster. Keine instanzübergreifende Wirkung behaupten.
    Keine zusätzliche Infrastruktur in dieser Runde provisioniert.
 2. `FORM_GUARD_SECRET` oder vorhandenen `RESEND_API_KEY` auf Produktion prüfen.
-   Fehlende Konfiguration sperrt die Formulare sicher; Resend für B2B erforderlich.
+   Fehlende Konfiguration sperrt die Formulare sicher. Production-Secret am
+   18.09.2026 in Vercel hinterlegt, wirksam ab neuem Deployment. Ohne Resend
+   nutzen beide Formulare den bestehenden FormSubmit-Versand hinter den Prüfungen.
 3. Vercel-Projektzuordnung von www nach Login prüfen; Weiterleitung nach Deploy
    wirklich über die öffentliche www-Domain testen.
 4. Zwei bestehende Lint-Fehler bleiben ausdrücklich einem separaten PR vorbehalten:
@@ -81,6 +83,7 @@ Lokal, ohne E-Mail-Versand:
 ```sh
 node scripts/test-form-guard.mjs
 node scripts/test-patient-inquiry.mjs
+node scripts/test-form-repair.mjs
 node scripts/test-faq-copy.mjs
 npm run build -- --webpack
 # Nur lokaler Testwert, niemals als Produktionssecret verwenden:

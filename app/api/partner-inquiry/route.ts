@@ -2,6 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {Resend} from "resend";
 import {partnerInquirySchema} from "@/lib/partner-inquiry";
 import {checkFormSubmission, formChallenge, readFormBody} from "@/lib/form-guard";
+import {sendViaFormSubmit} from "@/lib/formsubmit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -43,10 +44,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({error: "Email delivery failed"}, {status: 502});
     }
   } else {
-    return NextResponse.json(
-      {error: "Email service not configured"},
-      {status: 503}
-    );
+    const delivered = await sendViaFormSubmit({
+      "Clinic Name": clinicName, Website: website, Country: country,
+      "Primary Contact": primaryContact, Email: email, Phone: phone,
+      Profession: profession, "Clinic Type": clinicType,
+      "Submission Date": new Date().toISOString()
+    }, "New Cell Clinics Partner Application", email);
+    if (!delivered) return NextResponse.json({error: "Email delivery failed"}, {status: 502});
   }
 
   return NextResponse.json({ok: true});

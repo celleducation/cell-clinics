@@ -23,7 +23,7 @@ npm start
 
 Copy `.env.example` to `.env.local`.
 
-- `RESEND_API_KEY`: server-side Resend API key.
+- `RESEND_API_KEY`: optional server-side Resend API key.
 - `PARTNER_INQUIRY_FROM`: verified sender address.
 - `PARTNER_INQUIRY_TO`: application recipient; defaults to `info@cell-education.com`.
 - `FORM_GUARD_SECRET`: random signing secret (at least 32 characters), identical
@@ -34,9 +34,10 @@ Copy `.env.example` to `.env.local`.
 - `NEXT_PUBLIC_SITE_URL`: canonical production origin.
 
 Production form endpoints fail closed if the signing secret or trusted client
-IP is missing. No submission contents or raw IPs are logged. Partner delivery
-requires Resend; the patient route retains its existing server-side FormSubmit
-fallback, but only AFTER validation and spam checks. There is no browser-side
+IP is missing. No submission contents or raw IPs are logged. Both routes retain
+the existing FormSubmit delivery to `info@cell-education.com` when Resend is not
+configured, but only AFTER server-side validation and spam checks. The partner
+fallback was restored with explicit owner approval. There is no browser-side
 delivery fallback that bypasses these checks. Errors preserve the form values
 and offer the existing manual email contact.
 
@@ -53,7 +54,8 @@ cannot be semantically guaranteed to be non-medical; there is no notes/message
 field and unknown medical fields are rejected by the strict schemas.
 
 Offline form tests (no email): `node scripts/test-form-guard.mjs` and
-`node scripts/test-patient-inquiry.mjs`. Local production API tests:
+`node scripts/test-patient-inquiry.mjs`, plus `node scripts/test-form-repair.mjs`
+(rendering and mocked provider responses). Local production API tests:
 `node scripts/test-form-api.mjs http://localhost:3012` (rejections only).
 After deployment: `node scripts/audit-seo.mjs https://cell-clinics.com` uses
 real public URLs including HTTPS www, with curl and no browser execution.
