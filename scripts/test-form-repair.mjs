@@ -52,6 +52,7 @@ process.env.FORM_GUARD_SECRET = 'local-regression-test-secret-do-not-deploy';
 delete process.env.RESEND_API_KEY;
 const guard = load('lib/form-guard.ts');
 const route = load('app/api/partner-inquiry/route.ts');
+const patientRoute = load('app/api/patient-inquiry/route.ts');
 const originalFetch = globalThis.fetch;
 const deliveries = [];
 let providerReply = {success: 'true', message: 'Form submitted successfully'};
@@ -59,7 +60,11 @@ let providerStatus = 200;
 globalThis.fetch = async (url, options) => {
   assert.equal(url, 'https://formsubmit.co/ajax/info@cell-education.com');
   assert.equal(options.method, 'POST');
-  deliveries.push(JSON.parse(options.body));
+  assert.equal(options.headers.Origin, 'https://cell-clinics.com');
+  assert.equal(options.headers.Referer, 'https://cell-clinics.com/');
+  const payload = JSON.parse(options.body);
+  assert.equal(payload._url, 'https://cell-clinics.com/', 'Server-side delivery must identify the form website');
+  deliveries.push(payload);
   return Response.json(providerReply, {status: providerStatus});
 };
 try {
@@ -88,5 +93,26 @@ try {
   }
   providerReply = {success: true}; providerStatus = 503;
   assert.equal((await post()).status, 502);
+  providerStatus = 200;
+  const patient = {name: 'Test Person', email: 'test@example.invalid', location: 'Test City', consent: 'on', companyFax: ''};
+  async function postPatient(overrides = {}) {
+    const ip = `192.0.2.${index++}`;
+    const formToken = guard.issueFormToken('patient', ip, process.env.FORM_GUARD_SECRET, Date.now() - 4000);
+    return patientRoute.POST(new Request('https://example.invalid/api/patient-inquiry', {
+      method: 'POST', headers: {'content-type': 'application/json', 'x-forwarded-for': ip, referer: 'https://attacker.invalid/?private=value'},
+      body: JSON.stringify({...patient, formToken, ...overrides})
+    }));
+  }
+  const beforeInvalid = deliveries.length;
+  for (const invalid of [{companyFax: 'bot'}, {formToken: 'forged'}, {consent: ''}, {notes: 'not allowed'}, {_url: 'https://attacker.invalid'}]) {
+    assert.equal((await postPatient(invalid)).status, 400);
+  }
+  assert.equal(deliveries.length, beforeInvalid);
+  assert.equal((await postPatient()).status, 200);
+  for (const field of ['formToken', 'companyFax', 'notes', 'consent']) assert.ok(!Object.hasOwn(deliveries.at(-1), field));
+  for (const reply of [{success: false}, {}, {success: true, message: 'Please activate your form'}]) {
+    providerReply = reply;
+    assert.equal((await postPatient()).status, 502);
+  }
 } finally { globalThis.fetch = originalFetch; }
-console.log('PASS: both forms distinguish preparation/submission; validated partner fallback works without Resend; invalid requests cannot send. Provider mocked, zero emails.');
+console.log('PASS: both forms distinguish preparation/submission; both guarded routes identify the website to FormSubmit and require explicit acknowledgement; invalid requests cannot send. Provider mocked, zero emails.');

@@ -133,6 +133,15 @@ Tools, Google Business Profiles und Änderungen an Partner-Websites bleiben auß
 
 ## Formularreparatur vom 18.09.2026
 
+- Nachkontrolle der Nutzer-Tests um 14:44 MESZ: Beide POST-Anfragen liefen durch
+  die Schutzprüfungen, scheiterten aber beim Provider mit HTTP 502. Die vorherige
+  Live-Kontrolle prüfte nur die Challenge-GETs, nicht den tatsächlichen Versand.
+  Für die serverseitige Übergabe wird nun die feste öffentliche Website als
+  `_url`, Origin und Referer mitgegeben (FormSubmit-Hilfe). Beide APIs verwenden
+  denselben Versandhelfer und verlangen eine explizite positive Bestätigung.
+  Diagnoseprotokolle enthalten nur feste Fehlercodes, keine Formulardaten.
+  Zwei synthetische Live-Testanfragen wurden vom Nutzer ausdrücklich freigegeben;
+  eine Providerannahme ist noch kein Nachweis des tatsächlichen Posteingangs.
 - Ursache: Auf Vercel waren keine Umgebungsvariablen eingerichtet. Die neue
   Challenge-Prüfung blieb deshalb sicher gesperrt; die UI zeigte irreführend
   bereits vor einer Anfrage einen Versandfehler. Zusätzlich fehlte beim

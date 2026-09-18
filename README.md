@@ -41,6 +41,13 @@ fallback was restored with explicit owner approval. There is no browser-side
 delivery fallback that bypasses these checks. Errors preserve the form values
 and offer the existing manual email contact.
 
+Server-side FormSubmit delivery explicitly supplies the fixed public website
+URL (`_url`, Origin and Referer). Never forward incoming request headers or
+query strings to the provider. Both routes require an explicit positive
+acknowledgement; activation requests are not reported as successful delivery.
+Failure logs contain only fixed diagnostic codes and HTTP status, never contact
+data or raw provider responses. Acceptance by the provider is not proof of inbox delivery.
+
 Both forms use a hidden honeypot, an IP- and form-bound signed timestamp
 (minimum 3 seconds, expiry 24 hours), and 5 POST attempts per IP per hour.
 Challenge issuance is limited to 30 per IP per hour. The bounded rate store

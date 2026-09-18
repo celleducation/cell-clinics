@@ -2,6 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {Resend} from "resend";
 import {patientInquirySchema} from "@/lib/patient-inquiry";
 import {checkFormSubmission, formChallenge, readFormBody} from "@/lib/form-guard";
+import {sendViaFormSubmit} from "@/lib/formsubmit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -44,25 +45,12 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  const fallback = await fetch("https://formsubmit.co/ajax/info@cell-education.com", {
-    method: "POST",
-    headers: {"Content-Type": "application/json", Accept: "application/json"},
-    body: JSON.stringify({
+  const delivered = await sendViaFormSubmit({
       Name: data.name,
       Email: data.email,
       "Postcode / City": data.location,
-      "Submission Date": submissionDate,
-      _subject: "New Cell Clinics Patient Inquiry",
-      _replyto: data.email,
-      _template: "table",
-      _captcha: "false"
-    })
-  }).catch(() => null);
-
-  if (!fallback?.ok) return NextResponse.json({error: "Email delivery failed"}, {status: 502});
-  const fallbackResult = await fallback.json().catch(() => ({})) as {success?: boolean | string};
-  if (fallbackResult.success === false || fallbackResult.success === "false") {
-    return NextResponse.json({error: "Email delivery failed"}, {status: 502});
-  }
+      "Submission Date": submissionDate
+  }, "New Cell Clinics Patient Inquiry", data.email);
+  if (!delivered) return NextResponse.json({error: "Email delivery failed"}, {status: 502});
   return NextResponse.json({ok: true});
 }
