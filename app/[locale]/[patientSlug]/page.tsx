@@ -12,7 +12,7 @@ import {PhotographicHero} from "@/components/PhotographicHero";
 import {clinics} from "@/content/clinics";
 import {patientSlugs as slugs} from "@/i18n/paths";
 import type {Locale} from "@/i18n/routing";
-import {pageMetadata} from "@/lib/seo";
+import {pageMetadata, jsonLd} from "@/lib/seo";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
 
 function validRoute(locale: string, patientSlug: string) {
@@ -39,6 +39,9 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
   const t = await getTranslations("patient");
   const networkT = await getTranslations("networkPage");
   const seoT = await getTranslations("seo");
+  const faqItems = [1, 2, 3, 4, 5].map((item) => ({
+    question: t(`faq.q${item}`), answer: t(`faq.a${item}`)
+  }));
   const therapyCards = [BatteryCharging, HeartPulse, ShieldCheck, Stethoscope].map((icon, index) => ({
     icon,
     title: t(`therapy.card${index + 1}Title`),
@@ -135,6 +138,27 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="section patient-faq" id="faq">
+        <div className="container patient-faq-grid">
+          <SectionHeading eyebrow={t("faq.label")} title={t("faq.title")} intro={t("faq.intro")} />
+          <div className="faq-list">
+            {faqItems.map(({question, answer}) => (
+              <details className="faq-item" key={question}>
+                <summary>{question}<span aria-hidden="true">+</span></summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd({
+          "@context": "https://schema.org", "@type": "FAQPage",
+          mainEntity: faqItems.map(({question, answer}) => ({
+            "@type": "Question", name: question,
+            acceptedAnswer: {"@type": "Answer", text: answer}
+          }))
+        })}} />
       </section>
 
       <section className="section patient-final-cta">

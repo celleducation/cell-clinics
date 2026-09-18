@@ -1435,6 +1435,65 @@ textarea.input {
   }
 }
 
+.patient-faq-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, .7fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 120px);
+}
+
+.patient-faq .section-heading {
+  position: sticky;
+  top: 120px;
+  margin-bottom: 0;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  color: var(--navy);
+  font-size: 1.05rem;
+  font-weight: 750;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary span {
+  font-size: 1.45rem;
+  font-weight: 400;
+  transition: transform .2s ease;
+}
+
+.faq-item[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  max-width: 760px;
+  padding: 0 48px 24px 0;
+  color: var(--slate);
+}
+
+@media (max-width: 900px) {
+  .patient-faq-grid { grid-template-columns: 1fr; }
+  .patient-faq .section-heading { position: static; margin-bottom: 26px; }
+}
+
 .breadcrumbs { padding-top: 16px; padding-bottom: 16px; font-size: .875rem; }
 .breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
 .breadcrumbs li { display: inline-flex; align-items: baseline; gap: .5rem; min-width: 0; }

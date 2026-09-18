@@ -135,8 +135,24 @@ for (const entry of entries) {
       const text = decode(nav.replace(/<[^>]+>/g, ''));
       for (const crumb of crumbs) assert.ok(text.includes(crumb.name), 'Visible/schema breadcrumb parity');
     }
-    // No existing accordion in this checkout. Never synthesize invisible FAQ.
-    assert.equal(ofType('FAQPage'), undefined, 'FAQ deferred pending approved visible content');
+    if (patient) {
+      const catalog = JSON.parse(readFileSync(new URL(`../messages/${locale}.json`, import.meta.url), 'utf8'));
+      const faq = ofType('FAQPage');
+      assert.equal(faq?.mainEntity?.length, 5, 'Exactly five approved FAQs');
+      const section = markup.match(/<section class="section patient-faq"[\s\S]*?<\/section>/)?.[0];
+      assert.ok(section, 'Visible FAQ section');
+      const items = [...section.matchAll(/<details class="faq-item"[^>]*>([\s\S]*?)<\/details>/g)];
+      assert.equal(items.length, 5);
+      const plain = value => decode(value.replace(/<[^>]*>/g, ''));
+      items.forEach(([, item], index) => {
+        const question = plain(item.match(/<summary>([\s\S]*?)<span/)?.[1] || '');
+        const answer = plain(item.match(/<p>([\s\S]*?)<\/p>/)?.[1] || '');
+        assert.equal(question, catalog.patient.faq[`q${index + 1}`]);
+        assert.equal(answer, catalog.patient.faq[`a${index + 1}`]);
+        assert.equal(faq.mainEntity[index].name, question);
+        assert.equal(faq.mainEntity[index].acceptedAnswer.text, answer);
+      });
+    } else assert.equal(ofType('FAQPage'), undefined);
     if (path.includes('/network/')) {
       const clinic = ofType('MedicalClinic') || ofType('MedicalBusiness');
       assert.ok(clinic?.address?.streetAddress);
