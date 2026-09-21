@@ -13,7 +13,6 @@ import {clinics} from "@/content/clinics";
 import {patientSlugs as slugs} from "@/i18n/paths";
 import type {Locale} from "@/i18n/routing";
 import {pageMetadata, jsonLd} from "@/lib/seo";
-import {Breadcrumbs} from "@/components/Breadcrumbs";
 
 function validRoute(locale: string, patientSlug: string) {
   return slugs[locale as Locale] === patientSlug;
@@ -38,7 +37,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
   setRequestLocale(locale);
   const t = await getTranslations("patient");
   const networkT = await getTranslations("networkPage");
-  const seoT = await getTranslations("seo");
   const faqItems = [1, 2, 3, 4, 5].map((item) => ({
     question: t(`faq.q${item}`), answer: t(`faq.a${item}`)
   }));
@@ -50,9 +48,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
   return (
     <>
-      <Breadcrumbs locale={locale} items={[
-        {name: seoT("home"), path: ""}, {name: t("hero.label"), path: `/${patientSlug}`}
-      ]} />
       <PhotographicHero
         audience="patient"
         eyebrow={t("hero.label")}
