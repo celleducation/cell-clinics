@@ -7,6 +7,7 @@ import type {Clinic} from "@/content/clinics";
 import {jsonLd} from "@/lib/seo";
 
 const booking = "https://calendly.com/drdunjamartin/erstgesprach";
+const topicImages = ["/images/cellclinic-genetics.png", "/images/cellclinic-mitochondria.png", "/images/cellclinic-therapy.png"];
 export function DunjaMartinProfile({locale, clinic}: {locale: string; clinic: Clinic}) {
   const c = dunjaMartinCopy[locale as keyof typeof dunjaMartinCopy] ?? dunjaMartinCopy.de;
   return <>
@@ -23,7 +24,7 @@ export function DunjaMartinProfile({locale, clinic}: {locale: string; clinic: Cl
     </section>
     <section className="section"><div className="container health-point-bio"><Image className="health-point-portrait" src="/clinics/dunja-martin/outdoor.webp" alt={c.secondAlt} width={1000} height={1233} sizes="(max-width:767px) 100vw, 35vw"/><div><SectionHeading eyebrow={c.aboutLabel} title={c.aboutTitle}/><p className="lead">{c.about}</p></div></div></section>
     <section className="section section-alt"><div className="container"><SectionHeading eyebrow={c.offerLabel} title={c.offerTitle}/><div className="martin-offers">{c.offers.map(([title,body],i)=><article className="clinic-area-card" key={title}><span className="eyebrow">0{i+1}</span><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
-    <section className="section"><div className="container"><SectionHeading eyebrow={c.focusLabel} title={c.focusTitle}/><div className="martin-topics">{c.topics.map(([title,body])=><article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div><p className="health-point-note">{c.note}</p></div></section>
+    <section className="section"><div className="container"><SectionHeading eyebrow={c.focusLabel} title={c.focusTitle}/><div className="martin-topics">{c.topics.map(([title,body],index)=><article key={title}><div className="martin-topic-art"><Image src={topicImages[index]} alt="" fill sizes="(max-width:767px) calc(100vw - 32px), (max-width:1248px) 33vw, 380px" /></div><div className="martin-topic-copy"><h3>{title}</h3><p>{body}</p></div></article>)}</div><p className="health-point-note">{c.note}</p></div></section>
     <section className="section clinic-profile-contact"><div className="container clinic-profile-contact-card"><div><span className="eyebrow">Dr. med. Dunja Martin</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p><div className="clinic-contact-hours"><h3>{c.location}</h3><p>{clinic.address}</p><p>{c.locationNote}</p></div></div><address><strong>{clinic.name}</strong><a href="tel:+4915233849922">{clinic.phone}</a><a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a><a className="button button-primary" href={booking} target="_blank" rel="noreferrer">{c.book}<ArrowUpRight size={16}/></a><a href={clinic.website} target="_blank" rel="noreferrer">{c.website}</a></address><small>{c.source}</small></div></section>
   </>;
 }

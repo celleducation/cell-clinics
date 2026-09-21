@@ -1519,7 +1519,11 @@ textarea.input {
 .martin-offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .martin-offers .clinic-area-card { min-height: 0; padding: 32px; }
 .martin-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-.martin-topics article { border-top: 1px solid var(--line); padding-top: 24px; }
+.martin-topics article { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+.martin-topic-art { position: relative; height: clamp(180px, 18vw, 240px); background: #f4f8fc; }
+.martin-topic-art img { object-fit: contain; padding: 18px; }
+.martin-topic-copy { padding: 24px; }
+.martin-topic-copy p { margin: 0; line-height: 1.7; }
 .martin-topics h3 { font-size: 22px; margin-bottom: 14px; }
 @media (max-width: 767px) {
   .martin-offers, .martin-topics { grid-template-columns: 1fr; }
