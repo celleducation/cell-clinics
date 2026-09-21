@@ -108,12 +108,19 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "heidelinde-klein-appenzeller-land",
-    name: "Dr. Heidelinde Klein",
+    name: "Health Point Dr. Klein AG",
     practitioner: "Dr. Heidelinde Klein",
-    city: "Appenzeller Land",
-    region: "Appenzell",
+    city: "Niederteufen",
+    region: "Appenzell Ausserrhoden",
     countryCode: "CH",
-    coordinates: {lat: 47.331, lng: 9.4099}
+    profileAvailable: true,
+    coordinates: {lat: 47.3956718, lng: 9.3655109},
+    summary: "Integrative Medizin, bionische Zelltherapie und individuelle Diagnostik im Appenzellerland.",
+    images: ["/clinics/health-point/portrait.webp", "/clinics/health-point/reception.webp", "/clinics/health-point/team.webp"],
+    website: "https://www.healthpointag.ch",
+    contactEmail: "info@healthpointag.ch",
+    phone: "+41 71 840 03 46",
+    address: "Rütihofstrasse 1, 9052 Niederteufen, Schweiz"
   },
   {
     slug: "medivium-stuttgart",

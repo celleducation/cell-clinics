@@ -4,12 +4,11 @@ import {Check} from "lucide-react";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
-import {ModuleGrid} from "@/components/ModuleGrid";
+import {PartnerPillars, PartnerProgram, PartnerDeliverables} from "@/components/PartnerStory";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {ClinicVideo} from "@/components/ClinicVideo";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
-import {partnerModules} from "@/content/site";
 import {pageMetadata, ORGANIZATION_ID, jsonLd} from "@/lib/seo";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
@@ -27,11 +26,6 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
   const t = await getTranslations();
 
   const trust = [t("hero.trust1"), t("hero.trust2"), t("hero.trust3"), t("hero.trust4")];
-  const modules = partnerModules.map((item, index) => ({
-    ...item,
-    title: t(`ecosystem.card${index + 1}Title`),
-    body: t(`ecosystem.card${index + 1}Body`)
-  }));
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -70,18 +64,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         </div>
       </div>
 
-      <section className="section platform-cell-section" id="platform">
-        <div className="platform-cell-art" aria-hidden="true">
-          <Image src="/images/editorial/platform-cell.webp" alt="" aria-hidden="true" fill sizes="(max-width: 767px) 500px, (max-width: 1100px) 720px, (max-width: 1333px) 60vw, 800px" />
-        </div>
-        <div className="container">
-          <SectionHeading eyebrow={t("home.whatLabel")} title={t("home.whatTitle")} intro={t("home.whatBody")} />
-          <ModuleGrid items={modules.slice(0, 4)} />
-          <div className="section-action">
-            <ButtonLink href="#application" variant="secondary">{t("cta.partnerWithUs")}</ButtonLink>
-          </div>
-        </div>
-      </section>
+      <PartnerPillars locale={locale} />
 
       <section className="section section-alt" id="systems">
         <div className="container">
@@ -92,6 +75,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           </div>
         </div>
       </section>
+
+      <PartnerProgram locale={locale} />
+
+      <PartnerDeliverables locale={locale} />
 
       <section className="section model-clinic-section" id="proof">
         <div className="container model-clinic-grid">

@@ -23,8 +23,8 @@ export function languageAlternates(path = "") {
   };
 }
 
-export function pageMetadata({locale, path = "", title, description, image = "/images/cellclinic-platform.png", noindex = false}: {
-  locale: string; path?: string; title: string; description: string; image?: string; noindex?: boolean;
+export function pageMetadata({locale, path = "", title, description, image = "/images/cellclinic-platform.png", imageWidth, imageHeight, imageAlt, noindex = false}: {
+  locale: string; path?: string; title: string; description: string; image?: string; imageWidth?: number; imageHeight?: number; imageAlt?: string; noindex?: boolean;
 }): Metadata {
   const language = routing.locales.includes(locale as Locale) ? locale as Locale : "en";
   const brandedTitle = brandTitle(title);
@@ -38,9 +38,9 @@ export function pageMetadata({locale, path = "", title, description, image = "/i
       title: brandedTitle, description, url, siteName: "Cell Clinics", type: "website",
       locale: ogLocales[language],
       alternateLocale: routing.locales.filter((item) => item !== language).map((item) => ogLocales[item]),
-      images: [{url: image}]
+      images: [{url: image, width: imageWidth, height: imageHeight, alt: imageAlt}]
     },
-    twitter: {card: "summary_large_image", title: brandedTitle, description, images: [image]},
+    twitter: {card: "summary_large_image", title: brandedTitle, description, images: [{url: image, alt: imageAlt}]},
     ...(noindex ? {robots: {index: false, follow: true, googleBot: {index: false, follow: true}}} : {})
   };
 }

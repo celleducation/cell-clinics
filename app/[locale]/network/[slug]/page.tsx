@@ -7,6 +7,8 @@ import {clinics, getClinic} from "@/content/clinics";
 import {Link} from "@/i18n/navigation";
 import {pageMetadata, ORGANIZATION_ID, jsonLd as serializeJsonLd} from "@/lib/seo";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
+import {HealthPointProfile} from "@/components/HealthPointProfile";
+import {healthPointCopy} from "@/content/health-point";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -16,6 +18,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "heidelinde-klein-appenzeller-land") {
+    const copy = healthPointCopy[locale as keyof typeof healthPointCopy] ?? healthPointCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.description, image: "/clinics/health-point/reception.webp", imageWidth: 1500, imageHeight: 1000, imageAlt: copy.receptionAlt});
+  }
   const profileKey = slug === "medivium-stuttgart"
     ? "medivium"
     : slug === "monika-brueck-mallorca"
@@ -39,6 +45,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   setRequestLocale(locale);
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
+  if (slug === "heidelinde-klein-appenzeller-land") return <HealthPointProfile locale={locale} clinic={clinic} />;
   const isMedivium = slug === "medivium-stuttgart";
   const isMonikaBrueck = slug === "monika-brueck-mallorca";
   const isNikiciuk = slug === "boguslaw-nikiciuk-neuruppin";
