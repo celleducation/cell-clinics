@@ -20,6 +20,22 @@ export type Clinic = {
 
 export const clinics: Clinic[] = [
   {
+    slug: "dunja-martin-sankt-julian",
+    name: "Dr. med. Dunja Martin",
+    practitioner: "Dr. med. Dunja Martin · Neurologie · Online-Beratung",
+    city: "Sankt Julian",
+    region: "Rheinland-Pfalz",
+    countryCode: "DE",
+    profileAvailable: true,
+    coordinates: {lat: 49.6097401, lng: 7.5143268},
+    summary: "Online-Beratung, Schulung und Coaching sowie Vorträge und Gesundheitstage für Unternehmen und Vereine.",
+    images: ["/clinics/dunja-martin/portrait.webp", "/clinics/dunja-martin/outdoor.webp"],
+    website: "https://drdunjamartin.de/",
+    contactEmail: "kontakt@drdunjamartin.de",
+    phone: "+49 152 33849922",
+    address: "Hauptstraße 80a, 66887 Sankt Julian, Deutschland"
+  },
+  {
     slug: "alpstein",
     name: "Alpstein Clinic",
     practitioner: "Annette Heusser",

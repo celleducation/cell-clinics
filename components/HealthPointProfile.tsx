@@ -63,13 +63,13 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
         <div className="health-point-gallery">{["treatment", "infusion", "waiting"].map((name,i)=><Image key={name} src={`${root}${name}.webp`} alt={c.galleryAlts[i]} width={1500} height={1000} sizes="(max-width: 767px) 100vw, 33vw" />)}</div>
       </div>
     </section>
-    <section className="clinic-network-context">
+    <section className="clinic-network-context health-point-network">
       <div className="container clinic-network-context-card"><SectionHeading eyebrow={c.networkLabel} title={c.networkTitle} intro={c.networkBody} /></div>
     </section>
     <section className="section clinic-profile-contact" id="practice-contact">
       <div className="container clinic-profile-contact-card">
-        <div><span className="eyebrow">Health Point Dr. Klein AG</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p><h3>{c.hours}</h3><p>{c.weekdays}<br />{c.friday}</p><p>{c.office}</p></div>
-        <address><strong>{clinic.name}</strong><span>{clinic.address}</span><a href="tel:+41718400346">{clinic.phone}</a><a href="mailto:info@healthpointag.ch">info@healthpointag.ch</a><a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{c.website}<ArrowUpRight size={16}/></a><strong>{c.referrals}</strong><a href="mailto:dr.klein@hin.ch">dr.klein@hin.ch</a></address>
+        <div><span className="eyebrow">Health Point Dr. Klein AG</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p><div className="clinic-contact-hours"><h3>{c.hours}</h3><p>{c.weekdays}<br />{c.friday}</p><p>{c.office}</p></div></div>
+        <address><strong>{clinic.name}</strong><span>{clinic.address}</span><a href="tel:+41718400346">{clinic.phone}</a><a href="mailto:info@healthpointag.ch">info@healthpointag.ch</a><a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{c.website}<ArrowUpRight size={16}/></a><div className="clinic-contact-referrals"><strong>{c.referrals}</strong><a href="mailto:dr.klein@hin.ch">dr.klein@hin.ch</a></div></address>
         <small>{c.source}</small>
       </div>
     </section>
