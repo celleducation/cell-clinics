@@ -22,7 +22,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   if (!clinic?.profileAvailable) return {};
   if (slug === "dunja-martin-sankt-julian") {
     const copy = dunjaMartinCopy[locale as keyof typeof dunjaMartinCopy] ?? dunjaMartinCopy.de;
-    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.description, image: "/clinics/dunja-martin/portrait.webp", imageAlt: copy.portraitAlt});
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.description, image: "/clinics/dunja-martin/hero-white.webp", imageAlt: copy.portraitAlt});
   }
   if (slug === "heidelinde-klein-appenzeller-land") {
     const copy = healthPointCopy[locale as keyof typeof healthPointCopy] ?? healthPointCopy.de;

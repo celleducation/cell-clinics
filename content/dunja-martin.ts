@@ -16,7 +16,7 @@ export const dunjaMartinCopy = {
     note: "Das Angebot umfasst Beratung, Schulung und Coaching. Es ersetzt keine notwendige Untersuchung oder Behandlung vor Ort. Welche Begleitung zu Ihrer Situation passt, wird im Erstgespräch geklärt.",
     contactTitle: "Lernen Sie Dr. Martin kennen.", contactBody: "Wählen Sie einen Termin für ein Erstgespräch oder nehmen Sie direkt Kontakt auf. Termine nach Vereinbarung.",
     location: "Kontaktadresse · keine offene Sprechstunde", locationNote: "Die individuelle Begleitung erfolgt online; Unternehmens- und Vereinsangebote vor Ort nach Absprache.",
-    portraitAlt: "Dr. med. Dunja Martin im dunkelblauen Outfit", secondAlt: "Porträt von Dr. med. Dunja Martin im Freien",
+    portraitAlt: "Dr. med. Dunja Martin in weißer Bluse und heller Hose", secondAlt: "Porträt von Dr. med. Dunja Martin im Freien",
     source: "Angaben aus der Partnerinformation vom 18. September 2026. Fotos: Website von Dr. Dunja Martin."
   },
   en: {
@@ -35,7 +35,7 @@ export const dunjaMartinCopy = {
     note: "Services include consultation, education and coaching. They do not replace necessary in-person medical examination or treatment. The introductory call helps establish which support is appropriate.",
     contactTitle: "Meet Dr. Martin.", contactBody: "Book an introductory call or get in touch directly. Appointments by arrangement.",
     location: "Contact address · no walk-in consultations", locationNote: "Individual guidance is online; on-site services for businesses and clubs are arranged separately.",
-    portraitAlt: "Dr. med. Dunja Martin wearing a dark blue outfit", secondAlt: "Outdoor portrait of Dr. med. Dunja Martin",
+    portraitAlt: "Dr. med. Dunja Martin wearing a white blouse and light trousers", secondAlt: "Outdoor portrait of Dr. med. Dunja Martin",
     source: "Information supplied on 18 September 2026. Photos: Dr. Dunja Martin's website."
   },
   es: {
@@ -54,7 +54,7 @@ export const dunjaMartinCopy = {
     note: "La oferta incluye asesoramiento, formación y coaching. No sustituye las exploraciones o tratamientos médicos presenciales necesarios. La primera conversación permite valorar el acompañamiento adecuado.",
     contactTitle: "Conozca a la Dra. Martin.", contactBody: "Reserve una primera conversación o contacte directamente. Citas concertadas.",
     location: "Dirección de contacto · sin consulta abierta", locationNote: "El acompañamiento individual es online; las actividades presenciales para empresas y asociaciones se acuerdan por separado.",
-    portraitAlt: "Dra. Dunja Martin con un conjunto azul oscuro", secondAlt: "Retrato de la Dra. Dunja Martin al aire libre",
+    portraitAlt: "Dra. Dunja Martin con blusa blanca y pantalón claro", secondAlt: "Retrato de la Dra. Dunja Martin al aire libre",
     source: "Información facilitada el 18 de septiembre de 2026. Fotos: web de la Dra. Dunja Martin."
   }
 };

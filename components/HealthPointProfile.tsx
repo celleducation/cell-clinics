@@ -45,7 +45,7 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
     <section className="section health-point-profile">
       <div className="container health-point-bio">
         <Image className="health-point-portrait" src={`${root}portrait.webp`} alt={c.portraitAlt} width={1000} height={1500} sizes="(max-width: 767px) 100vw, 35vw" />
-        <div><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><p className="lead">{c.bio}</p><p>{c.approach}</p></div>
+        <div><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><div className="health-point-bio-text"><p className="lead">{c.bio}</p><p className="lead">{c.approach}</p></div></div>
       </div>
     </section>
     <section className="section section-alt">

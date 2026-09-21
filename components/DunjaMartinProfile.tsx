@@ -17,7 +17,7 @@ export function DunjaMartinProfile({locale, clinic}: {locale: string; clinic: Cl
         <Link className="clinic-back-link" href="/network"><ArrowLeft size={16}/>{c.back}</Link>
         <div className="alpstein-hero-grid">
           <div className="alpstein-hero-copy"><span className="eyebrow">{c.label}</span><h1 className="display">Dr. med.<br/>Dunja Martin</h1><p className="clinic-profile-location">{c.headline}</p><p className="lead">{c.intro}</p><div className="button-row"><a className="button button-primary" href={booking} target="_blank" rel="noreferrer">{c.book}<ArrowUpRight size={16}/></a><a className="button button-secondary" href={clinic.website} target="_blank" rel="noreferrer">{c.website}</a></div></div>
-          <Image className="martin-hero-portrait" src="/clinics/dunja-martin/portrait.webp" alt={c.portraitAlt} width={1000} height={1250} sizes="(max-width:767px) 100vw, 45vw" priority/>
+          <Image className="martin-hero-portrait" src="/clinics/dunja-martin/hero-white.webp" alt={c.portraitAlt} width={1920} height={1080} sizes="(max-width:767px) 100vw, 45vw" priority/>
         </div>
         <div className="clinic-fact-strip">{c.facts.map((f,i)=><div key={f}><span>0{i+1}</span><strong>{f}</strong></div>)}</div>
       </div>
