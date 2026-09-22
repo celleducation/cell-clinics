@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {Check} from "lucide-react";
 import {partnerStories} from "@/content/partner-story";
+import {partnerMaterials} from "@/content/partner-materials";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 
@@ -55,18 +56,35 @@ export function PartnerProgram({locale}: {locale: string}) {
 }
 
 export function PartnerDeliverables({locale}: {locale: string}) {
-  const {deliverables} = partnerStories[locale] ?? partnerStories.de;
+  const material = partnerMaterials[locale] ?? partnerMaterials.de;
   return (
-    <section className="section partner-story" id="platform">
+    <section className="section partner-materials" id="platform">
       <div className="container">
-        <SectionHeading eyebrow={deliverables.label} title={deliverables.title} intro={deliverables.intro} />
-        <div className="partner-deliverables">
-          {deliverables.items.map((item) => <article key={item.title}>
-            <Check size={20} aria-hidden="true" />
-            <div><h3>{item.title}</h3><p>{item.body}</p></div>
+        <SectionHeading eyebrow={material.label} title={material.title} intro={material.intro} />
+        <div className="materials-compendium">
+          <div>
+            <h3>{material.bookTitle}</h3>
+            <p>{material.bookBody}</p>
+            <ul>{material.points.map(point => <li key={point}><Check size={18} aria-hidden="true" />{point}</li>)}</ul>
+          </div>
+          <figure>
+            <div className="materials-book-image"><Image src="/images/partner-materials/compendium.webp" alt="" fill sizes="(max-width: 767px) 90vw, 45vw" /></div>
+            <figcaption>{material.caption}</figcaption>
+          </figure>
+        </div>
+        <h3 className="materials-subtitle">{material.resourcesTitle}</h3>
+        <div className="materials-grid">
+          {material.resources.map(item => <article className="materials-card" key={item.image}>
+            <div className="materials-preview"><Image src={`/images/partner-materials/${item.image}.webp`} alt={item.title} fill sizes="(max-width: 767px) 90vw, 45vw" /></div>
+            <div className="materials-card-copy"><h4>{item.title}</h4><p>{item.body}</p></div>
           </article>)}
         </div>
-        <div className="section-action"><ButtonLink href="#application" variant="secondary">{deliverables.cta}</ButtonLink></div>
+        <div className="materials-support">
+          <h3 className="materials-subtitle">{material.supportTitle}</h3>
+          <div className="materials-support-grid">{material.support.map(item => <article key={item.title}><h4>{item.title}</h4><p>{item.body}</p></article>)}</div>
+        </div>
+        <p className="materials-note">{material.note}</p>
+        <div className="section-action"><ButtonLink href="#application" variant="secondary">{material.cta}</ButtonLink></div>
       </div>
     </section>
   );
