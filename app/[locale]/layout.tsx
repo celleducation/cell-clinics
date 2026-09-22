@@ -4,6 +4,7 @@ import {notFound} from "next/navigation";
 import {routing} from "@/i18n/routing";
 import {SiteFooter} from "@/components/SiteFooter";
 import {SiteHeader} from "@/components/SiteHeader";
+import {WebinarBanner} from "@/components/WebinarBanner";
 import type {Metadata} from "next";
 import {DM_Sans} from "next/font/google";
 import {SITE_URL} from "@/lib/seo";
@@ -41,6 +42,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={dmSans.variable}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <WebinarBanner />
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />

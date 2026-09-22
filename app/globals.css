@@ -394,6 +394,55 @@ textarea {
   margin-bottom: 48px;
 }
 
+.webinar-banner {
+  background: var(--navy);
+  color: #fff;
+}
+
+.webinar-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-block: 12px;
+}
+
+.webinar-banner p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.webinar-banner-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.webinar-banner-link:hover { background: #dff6ff; }
+.webinar-banner-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+@media (max-width: 767px) {
+  .webinar-banner-inner { flex-direction: column; gap: 8px; text-align: center; }
+  .webinar-banner p { display: block; font-size: 12px; }
+  .webinar-banner p span { display: block; }
+  .webinar-banner-link { font-size: 13px; padding: 6px 16px; }
+}
+
 .site-header {
   position: sticky;
   z-index: 50;
