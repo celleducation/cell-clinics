@@ -34,7 +34,7 @@ export function WebinarBanner() {
     <aside className="webinar-banner" aria-label={text.label}>
       <div className="container webinar-banner-inner">
         <p><strong>{text.date}</strong><span>{text.title}</span></p>
-        <a href={registrationUrl} className="webinar-banner-link">
+        <a href={registrationUrl} className="webinar-banner-link" target="_blank" rel="noopener noreferrer">
           {text.cta}<ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </div>

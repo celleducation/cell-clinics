@@ -395,8 +395,8 @@ textarea {
 }
 
 .webinar-banner {
-  background: var(--navy);
-  color: #fff;
+  background: var(--sky);
+  color: var(--navy);
 }
 
 .webinar-banner-inner {
@@ -412,7 +412,7 @@ textarea {
   flex-wrap: wrap;
   gap: 4px 16px;
   margin: 0;
-  color: #fff;
+  color: var(--navy);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -434,7 +434,7 @@ textarea {
 }
 
 .webinar-banner-link:hover { background: #dff6ff; }
-.webinar-banner-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.webinar-banner-link:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
 
 @media (max-width: 767px) {
   .webinar-banner-inner { flex-direction: column; gap: 8px; text-align: center; }
