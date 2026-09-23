@@ -2,7 +2,7 @@ type Materials = {
   label: string; title: string; intro: string; bookTitle: string; bookBody: string;
   points: string[]; caption: string; resourcesTitle: string;
   resources: {image: string; title: string; body: string}[];
-  supportTitle: string; support: {title: string; body: string}[];
+  supportTitle: string; support: {title: string; body: string}[]; equipment: {title: string; body: string};
   note: string; cta: string;
 };
 
@@ -23,12 +23,13 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Honorar & Abrechnung", body: "Eine ausfüllbare Honorarvereinbarung nach § 2 GOÄ und eine Musterrechnung mit beispielhaften Ziffern und Faktoren für deutsche Partnerpraxen."},
       {image: "website", title: "Ihre Praxis im Netzwerk", body: "Eine eigene Partnerseite mit Porträt, Schwerpunkten und Kontaktmöglichkeit sowie ein Eintrag auf der Netzwerkkarte. Dazu Materialien für Ihre Patientenkommunikation."}
     ],
-    supportTitle: "Und Menschen, die Sie begleiten.",
+    equipment: {title: "Produkte & Geräte", body: "Bezugswege der Burg-Apotheke, Beratung zur Geräteauswahl und Partnerkonditionen — Produkte und Geräte werden separat bezogen."},
+    supportTitle: "Begleitung für Ihre Praxis",
     support: [
-      {title: "Weiterbildung & Fallbesprechungen", body: "Schulung und Zertifikat durch Dr. Bredehorst sowie wöchentliche Fallbesprechungen für den Transfer in Ihren Praxisalltag."},
-      {title: "Persönlicher Einstieg", body: "Ein fester Ansprechpartner und das Partner Playbook führen durch den 30-Tage-Onboardingplan — vom Kick-off bis zum Praxisauftritt."},
-      {title: "Austausch & Weiterentwicklung", body: "Regelmäßige Calls, Protokoll-Updates, Community und Events begleiten Sie auch nach dem Start."},
-      {title: "Produkte & Geräte", body: "Zugang zu den Bezugswegen der Burg-Apotheke sowie Beratung zur Geräteauswahl und Partnerkonditionen. Produkte und Geräte werden separat bezogen."}
+      {title: "Weiterbildung", body: "Schulung und Zertifikat durch Dr. Bredehorst vermitteln die Grundlagen für Ihre Praxis."},
+      {title: "Persönlicher Einstieg", body: "Ihr Ansprechpartner und das Partner Playbook begleiten Sie durch den 30-Tage-Onboardingplan."},
+      {title: "Kollegialer Austausch", body: "Wöchentliche Fallbesprechungen und regelmäßige Calls bieten Raum für Ihre Praxisfragen."},
+      {title: "Fortlaufende Begleitung", body: "Protokoll-Updates, Community und Events begleiten die Weiterentwicklung Ihrer Praxis."}
     ],
     note: "Gezeigt sind Beispiele aus den Partnermaterialien. Vorlagen sind an die jeweilige Praxis und die geltenden Vorgaben anzupassen. Die Verantwortung für Indikation, Behandlung, Aufklärung und Abrechnung bleibt bei der behandelnden Praxis. Den konkreten Leistungsumfang stimmen wir im Partnergespräch ab.",
     cta: "Partnerleistungen im Gespräch kennenlernen"
@@ -48,12 +49,13 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Fees & billing", body: "A fillable fee agreement under § 2 GOÄ and a sample invoice with illustrative codes and factors for practices in Germany."},
       {image: "website", title: "Your practice in the network", body: "Your own partner page with a portrait, areas of focus and contact options, plus a network map listing and patient communication materials."}
     ],
-    supportTitle: "People to support you along the way.",
+    equipment: {title: "Products & devices", body: "Burg-Apotheke ordering channels, device selection guidance and partner terms — products and devices are sourced separately."},
+    supportTitle: "Support for your practice",
     support: [
-      {title: "Training & case discussions", body: "Training and a certificate from Dr. Bredehorst, with weekly case discussions to support everyday practice."},
-      {title: "A personal introduction", body: "A dedicated contact and the Partner Playbook guide you through the 30-day onboarding plan, from kick-off to your practice profile."},
-      {title: "Exchange & development", body: "Regular calls, protocol updates, community and events continue beyond the initial launch."},
-      {title: "Products & devices", body: "Access to Burg-Apotheke ordering channels, device selection guidance and partner terms. Products and devices are sourced separately."}
+      {title: "Training", body: "Training and a certificate from Dr. Bredehorst provide the foundations for your practice."},
+      {title: "A personal introduction", body: "Your dedicated contact and the Partner Playbook guide you through the 30-day onboarding plan."},
+      {title: "Peer exchange", body: "Weekly case discussions and regular calls provide space for questions from your practice."},
+      {title: "Ongoing support", body: "Protocol updates, community and events support the continued development of your practice."}
     ],
     note: "Examples from the partner resources, shown in German. Templates must be adapted to your practice and applicable requirements. Clinical decisions, treatment, consent and billing remain the practice’s responsibility. The specific scope is agreed during the partnership discussion.",
     cta: "Discuss the partner resources"
@@ -73,12 +75,13 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Honorarios y facturación", body: "Un acuerdo de honorarios rellenable conforme al § 2 GOÄ y una factura modelo con códigos y factores ilustrativos para consultas en Alemania."},
       {image: "website", title: "Su consulta en la red", body: "Una página propia con retrato, especialidades y contacto, presencia en el mapa de la red y materiales de comunicación con pacientes."}
     ],
-    supportTitle: "Personas que le acompañan.",
+    equipment: {title: "Productos y dispositivos", body: "Canales de Burg-Apotheke, asesoramiento para elegir dispositivos y condiciones para socios; los productos y dispositivos se adquieren por separado."},
+    supportTitle: "Acompañamiento para su consulta",
     support: [
-      {title: "Formación y casos clínicos", body: "Formación y certificado del Dr. Bredehorst, además de reuniones semanales de casos para la práctica diaria."},
-      {title: "Incorporación personal", body: "Un contacto fijo y el Partner Playbook le guían por el plan de incorporación de 30 días, desde el inicio hasta el perfil de su consulta."},
-      {title: "Intercambio y desarrollo", body: "Reuniones periódicas, actualizaciones de protocolos, comunidad y eventos también después del inicio."},
-      {title: "Productos y dispositivos", body: "Acceso a los canales de Burg-Apotheke, asesoramiento para elegir dispositivos y condiciones para socios. Los productos y dispositivos se adquieren por separado."}
+      {title: "Formación", body: "La formación y el certificado del Dr. Bredehorst aportan las bases para su consulta."},
+      {title: "Incorporación personal", body: "Su contacto fijo y el Partner Playbook le guían por el plan de incorporación de 30 días."},
+      {title: "Intercambio profesional", body: "Las reuniones semanales de casos y las llamadas periódicas permiten resolver dudas de la práctica."},
+      {title: "Apoyo continuo", body: "Las actualizaciones de protocolos, la comunidad y los eventos acompañan el desarrollo de su consulta."}
     ],
     note: "Ejemplos de materiales para socios, mostrados en alemán. Las plantillas deben adaptarse a cada consulta y a la normativa aplicable. La responsabilidad clínica, el consentimiento y la facturación corresponden a la consulta. El alcance concreto se acuerda en la conversación de colaboración.",
     cta: "Conocer los recursos para socios"

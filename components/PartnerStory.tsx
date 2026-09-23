@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Check} from "lucide-react";
+import {Check, GraduationCap, Handshake, MessagesSquare, RefreshCw, Package} from "lucide-react";
 import {partnerStories} from "@/content/partner-story";
 import {partnerMaterials} from "@/content/partner-materials";
 import {SectionHeading} from "@/components/ui/SectionHeading";
@@ -57,6 +57,7 @@ export function PartnerProgram({locale}: {locale: string}) {
 
 export function PartnerDeliverables({locale}: {locale: string}) {
   const material = partnerMaterials[locale] ?? partnerMaterials.de;
+  const supportIcons = [GraduationCap, Handshake, MessagesSquare, RefreshCw];
   return (
     <section className="section partner-materials" id="platform">
       <div className="container">
@@ -79,9 +80,16 @@ export function PartnerDeliverables({locale}: {locale: string}) {
             <div className="materials-card-copy"><h4>{item.title}</h4><p>{item.body}</p></div>
           </article>)}
         </div>
+        <aside className="materials-equipment">
+          <Package size={24} aria-hidden="true" />
+          <div><h4>{material.equipment.title}</h4><p>{material.equipment.body}</p></div>
+        </aside>
         <div className="materials-support">
           <h3 className="materials-subtitle">{material.supportTitle}</h3>
-          <div className="materials-support-grid">{material.support.map(item => <article key={item.title}><h4>{item.title}</h4><p>{item.body}</p></article>)}</div>
+          <div className="materials-support-grid">{material.support.map((item, index) => {
+            const Icon = supportIcons[index];
+            return <article key={item.title}><span className="materials-support-icon"><Icon size={24} strokeWidth={1.5} aria-hidden="true" /></span><h4>{item.title}</h4><p>{item.body}</p></article>;
+          })}</div>
         </div>
         <p className="materials-note">{material.note}</p>
         <div className="section-action"><ButtonLink href="#application" variant="secondary">{material.cta}</ButtonLink></div>

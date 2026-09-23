@@ -421,17 +421,27 @@ textarea {
 .materials-card-copy { padding: 28px; }
 .materials-card h4, .materials-support h4 { font-size: 21px; line-height: 1.3; margin: 0 0 12px; }
 .materials-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
-.materials-support { margin-top: 48px; padding: 36px; background: var(--navy); border-radius: 24px; }
-.materials-support .materials-subtitle { margin: 0 0 28px; color: #fff; }
-.materials-support-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
-.materials-support h4, .materials-support p { color: #fff; }
+.materials-equipment { display: flex; align-items: flex-start; gap: 16px; margin-top: 20px; padding: 24px; background: var(--card-alt); border-radius: 16px; }
+.materials-equipment > svg { flex-shrink: 0; color: var(--sky-ink); }
+.materials-equipment h4 { margin: 0 0 8px; font-size: 18px; }
+.materials-equipment p { margin: 0; font-size: 15px; line-height: 1.65; }
+.materials-support { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+.materials-support .materials-subtitle { margin: 0 0 32px; color: var(--navy); }
+.materials-support-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.materials-support h4 { color: var(--navy); font-size: 18px; }
+.materials-support p { color: var(--slate); font-size: 15px; line-height: 1.65; }
+.materials-support-icon { display: inline-flex; padding: 12px; margin-bottom: 20px; border-radius: 14px; color: var(--navy); background: var(--sky-soft); }
+@media (min-width: 768px) and (max-width: 1100px) { .materials-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .materials-note { max-width: 100ch; font-size: 13px; line-height: 1.7; margin: 24px 0 0; }
 @media (max-width: 767px) {
   .materials-compendium, .materials-grid, .materials-card:last-child, .materials-support-grid { grid-template-columns: 1fr; }
   .materials-compendium { gap: 24px; }
   .materials-compendium h3 { max-width: none; }
   .materials-preview { height: 240px; }
-  .materials-support, .materials-card-copy { padding: 24px; }
+  .materials-card-copy { padding: 24px; }
+  .materials-support-grid article { display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; }
+  .materials-support-icon { grid-row: span 2; align-self: start; margin: 0; }
+  .materials-support-grid article p { grid-column: 2; }
 }
 
 .webinar-banner {
