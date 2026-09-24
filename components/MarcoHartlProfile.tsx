@@ -5,6 +5,7 @@ import {SectionHeading} from "@/components/ui/SectionHeading";
 import {marcoHartlCopy} from "@/content/marco-hartl";
 import type {Clinic} from "@/content/clinics";
 import {jsonLd, SITE_URL} from "@/lib/seo";
+import {HartlPracticeStory} from "@/components/PartnerProfileDetails";
 
 const topicImages = ["/images/cellclinic-therapy.png", "/images/cellclinic-mitochondria.png", "/images/cellclinic-genetics.png"];
 
@@ -22,6 +23,7 @@ export function MarcoHartlProfile({locale, clinic}: {locale: string; clinic: Cli
     </div></section>
     <section className="section"><div className="container hartl-about"><Image className="hartl-logo" src="/clinics/marco-hartl/logo.webp" alt="ONE by Dr. Marco Hartl" width={354} height={230} sizes="180px" /><div><SectionHeading eyebrow={c.aboutLabel} title={c.aboutTitle} /><p className="lead">{c.about}</p></div></div></section>
     <section className="section section-soft"><div className="container"><SectionHeading eyebrow={c.focusLabel} title={c.focusTitle} /><div className="martin-topics">{c.topics.map(([title, body], i) => <article key={title}><div className="martin-topic-art"><Image src={topicImages[i]} alt="" fill sizes="(max-width:767px) 90vw, 30vw" /></div><div className="martin-topic-copy"><h3>{title}</h3><p>{body}</p></div></article>)}</div><p className="health-point-note">{c.note}</p></div></section>
+    <HartlPracticeStory locale={locale} />
     <section className="section"><div className="container">
       <div className="hartl-visit"><SectionHeading eyebrow={c.visitLabel} title={c.visitTitle} /><p className="lead">{c.visitBody}</p><a className="button button-secondary" href="https://one-dr-hartl.de/faq/" target="_blank" rel="noopener noreferrer">{c.faq}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
       <div className="hartl-gallery" role="group" aria-label={c.galleryTitle}><figure><Image src="/clinics/marco-hartl/practice.webp" alt={c.practiceAlt} width={1400} height={932} sizes="(max-width:767px) 90vw, 50vw" /><figcaption>{c.practiceCaption}</figcaption></figure><figure><Image src="/clinics/marco-hartl/entrance.webp" alt={c.entranceAlt} width={1200} height={800} sizes="(max-width:767px) 90vw, 40vw" /><figcaption>{c.entranceCaption}</figcaption></figure></div>

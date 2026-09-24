@@ -5,6 +5,7 @@ import {getTranslations, setRequestLocale} from "next-intl/server";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {PartnerPillars, PartnerProgram, PartnerDeliverables} from "@/components/PartnerStory";
+import {PharmacyPartnership} from "@/components/PharmacyPartnership";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {ClinicVideo} from "@/components/ClinicVideo";
@@ -79,6 +80,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       <PartnerProgram locale={locale} />
 
       <PartnerDeliverables locale={locale} />
+      <PharmacyPartnership locale={locale} />
 
       <section className="section model-clinic-section" id="proof">
         <div className="container model-clinic-grid">
