@@ -322,9 +322,13 @@ export const clinics: Clinic[] = [
     city: "Karlsruhe",
     region: "Baden-Württemberg",
     countryCode: "DE",
-    listingOnly: true,
+    profileAvailable: true,
     coordinates: {lat: 48.9722, lng: 8.4044},
-    website: "https://www.praxisklinik-bucur.de/"
+    website: "https://www.praxisklinik-bucur.de/",
+    phone: "+49 721 95 79 280",
+    contactEmail: "info@praxisklinik-bucur.de",
+    address: "Nikolaus-Lenau-Str. 11, 76199 Karlsruhe, Deutschland",
+    images: ["/clinics/bucur/portrait.webp", "/clinics/bucur/reception.webp"]
   },
   {
     slug: "youn-ju-lee-kassel",

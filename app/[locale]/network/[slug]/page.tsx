@@ -17,6 +17,8 @@ import {MarcStrackeProfile} from "@/components/MarcStrackeProfile";
 import {marcStrackeCopy} from "@/content/marc-stracke";
 import {MarcoHartlProfile} from "@/components/MarcoHartlProfile";
 import {marcoHartlCopy} from "@/content/marco-hartl";
+import {BucurProfile} from "@/components/BucurProfile";
+import {bucurCopy} from "@/content/bucur";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -26,6 +28,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "elena-bucur-karlsruhe") {
+    const copy = bucurCopy[locale as keyof typeof bucurCopy] ?? bucurCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/bucur/portrait.webp", imageWidth: 850, imageHeight: 1166, imageAlt: "Doctor medic Elena Bucur"});
+  }
   if (slug === "marco-hartl-regensburg") {
     const copy = marcoHartlCopy[locale as keyof typeof marcoHartlCopy] ?? marcoHartlCopy.de;
     return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/marco-hartl/portrait.webp", imageWidth: 719, imageHeight: 1079, imageAlt: "Dr. med. Marco Hartl"});
@@ -70,6 +76,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   if (slug === "julia-napolitano-gil-esslingen") permanentRedirect(`/${locale}/network/julia-napolitano-gil-goeppingen`);
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
+  if (slug === "elena-bucur-karlsruhe") return <BucurProfile locale={locale} clinic={clinic} />;
   if (slug === "marco-hartl-regensburg") return <MarcoHartlProfile locale={locale} clinic={clinic} />;
   if (slug === "marc-stracke-luebeck") return <MarcStrackeProfile locale={locale} clinic={clinic} />;
   if (slug === "julia-napolitano-gil-goeppingen") return <HolysamaProfile locale={locale} clinic={clinic} />;
