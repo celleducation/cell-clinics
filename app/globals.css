@@ -4,11 +4,15 @@
 .patient-science-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .patient-science-grid figure { margin: 0; min-width: 0; }
 .patient-science-grid img { display: block; width: 100%; height: 150px; object-fit: contain; }
+.patient-science-digestion { height: 150px; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.patient-science-digestion img { width: 150px; height: 225px; max-width: none; flex-shrink: 0; transform: rotate(-90deg); }
 .patient-science-grid figcaption { padding-top: 12px; color: var(--navy); font-size: .9rem; line-height: 1.4; }
 .patient-science-note { margin-top: 14px; color: var(--slate); font-size: .75rem; }
 @media (max-width: 600px) {
   .patient-science-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
   .patient-science-grid img { height: 100px; }
+  .patient-science-digestion { height: 100px; }
+  .patient-science-digestion img { width: 100px; height: 150px; }
 }
 
 .cell-science-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(24px, 4vw, 64px); margin-bottom: 36px; }
