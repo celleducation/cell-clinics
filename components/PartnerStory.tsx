@@ -2,6 +2,7 @@ import Image from "next/image";
 import {Check, GraduationCap, Handshake, MessagesSquare, RefreshCw, Package} from "lucide-react";
 import {partnerStories} from "@/content/partner-story";
 import {partnerMaterials} from "@/content/partner-materials";
+import {CellScienceLearning} from "@/components/CellScienceArt";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 
@@ -73,6 +74,7 @@ export function PartnerDeliverables({locale}: {locale: string}) {
             <figcaption>{material.caption}</figcaption>
           </figure>
         </div>
+        <CellScienceLearning locale={locale} />
         <h3 className="materials-subtitle">{material.resourcesTitle}</h3>
         <div className="materials-grid">
           {material.resources.map(item => <article className="materials-card" key={item.image}>

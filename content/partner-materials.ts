@@ -26,7 +26,7 @@ export const partnerMaterials: Record<string, Materials> = {
     equipment: {title: "Produkte & Geräte", body: "Bezugswege der Burg-Apotheke, Beratung zur Geräteauswahl und Partnerkonditionen — Produkte und Geräte werden separat bezogen."},
     supportTitle: "Begleitung für Ihre Praxis",
     support: [
-      {title: "Weiterbildung", body: "Schulung und Zertifikat durch Dr. Bredehorst vermitteln die Grundlagen für Ihre Praxis."},
+      {title: "Seminare", body: "Seminare mit Dr. Bredehorst vermitteln die Grundlagen für Ihre Praxis."},
       {title: "Persönlicher Einstieg", body: "Ihr Ansprechpartner und das Partner Playbook begleiten Sie durch den 30-Tage-Onboardingplan."},
       {title: "Kollegialer Austausch", body: "Wöchentliche Fallbesprechungen und regelmäßige Calls bieten Raum für Ihre Praxisfragen."},
       {title: "Fortlaufende Begleitung", body: "Protokoll-Updates, Community und Events begleiten die Weiterentwicklung Ihrer Praxis."}

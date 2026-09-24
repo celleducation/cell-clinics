@@ -6,6 +6,7 @@ import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {PartnerPillars, PartnerProgram, PartnerDeliverables} from "@/components/PartnerStory";
 import {PharmacyPartnership} from "@/components/PharmacyPartnership";
+import {CellScienceArt} from "@/components/CellScienceArt";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {ClinicVideo} from "@/components/ClinicVideo";
@@ -69,7 +70,10 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
 
       <section className="section section-alt" id="systems">
         <div className="container">
-          <SectionHeading eyebrow={t("systems.label")} title={t("systems.title")} />
+          <div className="cell-science-heading">
+            <SectionHeading eyebrow={t("systems.label")} title={t("systems.title")} />
+            <CellScienceArt kind="senescence" locale={locale} />
+          </div>
           <ClinicalSystems compact />
           <div className="section-action">
             <ButtonLink href="#application" variant="secondary">{t("cta.discussImplementation")}</ButtonLink>

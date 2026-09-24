@@ -64,7 +64,7 @@ export function PartnerApplicationForm() {
         <label>{t("form.primaryContact")}<input name="primaryContact" autoComplete="name" required /></label>
         <label>{t("form.email")}<input name="email" type="email" autoComplete="email" required /></label>
         <label>{t("form.phone")}<input name="phone" type="tel" autoComplete="tel" /></label>
-        <label>{t("form.profession")}<select name="profession" required defaultValue=""><option value="" disabled>{t("form.profession")}</option><option>{t("form.professionPhysician")}</option><option>{t("form.professionOwner")}</option><option>{t("form.professionLongevity")}</option><option>{t("form.professionHealth")}</option><option>{t("form.professionFunctional")}</option><option>{t("form.professionOther")}</option></select></label>
+        <label>{t("form.profession")}<select name="profession" required defaultValue=""><option value="" disabled>{t("form.profession")}</option><option>{t("form.professionPhysician")}</option><option>{t("form.professionHeilpraktiker")}</option><option>{t("form.professionOwner")}</option><option>{t("form.professionLongevity")}</option><option>{t("form.professionHealth")}</option><option>{t("form.professionFunctional")}</option><option>{t("form.professionOther")}</option></select></label>
         <label>{t("form.clinicType")}<input name="clinicType" required placeholder={t("form.clinicTypePlaceholder")} /></label>
       </div>
       <label className="consent"><input type="checkbox" name="consent" required /> <span>{t("apply.consent")} <a href="https://cell-education.com/datenschutz">{t("footer.privacy")}</a></span></label>

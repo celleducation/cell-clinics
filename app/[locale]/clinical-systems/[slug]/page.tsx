@@ -22,7 +22,7 @@ export default async function SystemDetailPage({
 
   return (
     <>
-      <PageHero eyebrow={t("systems.label")} title={t(`systems.card${index}Title`)} lead={t(`systems.card${index}Body`)} image={system.image} />
+      <PageHero eyebrow={t("systems.label")} title={t(`systems.card${index}Title`)} lead={t(`systems.card${index}Body`)} image={slug === "genetic-cellular-context" ? "/images/cell-science/cell-regulation.webp" : system.image} />
       <section className="section">
         <div className="container detail-layout">
           <div>

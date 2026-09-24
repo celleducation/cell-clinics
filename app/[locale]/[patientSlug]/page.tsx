@@ -7,6 +7,7 @@ import {ButtonLink} from "@/components/ui/ButtonLink";
 import {FeatureCard} from "@/components/ui/FeatureCard";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {PatientInquiryForm} from "@/components/PatientInquiryForm";
+import {CellScienceArt} from "@/components/CellScienceArt";
 import {ClinicFinder} from "@/components/ClinicFinder";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {clinics} from "@/content/clinics";
@@ -96,7 +97,10 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
 
       <section className="section patient-therapy-story" id="therapy">
         <div className="container">
-          <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
+          <div className="cell-science-heading">
+            <SectionHeading eyebrow={t("therapy.label")} title={t("therapy.title")} intro={t("therapy.intro")} />
+            <CellScienceArt kind="membrane-transport" locale={locale} />
+          </div>
           <div className="patient-feature-grid">
             {therapyCards.map(({icon, title, body}) => <FeatureCard icon={icon} title={title} key={title}>{body}</FeatureCard>)}
           </div>

@@ -1,6 +1,36 @@
 @import "tailwindcss";
 
+.cell-science-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(24px, 4vw, 64px); margin-bottom: 36px; }
+.cell-science-heading .section-heading { margin-bottom: 0; }
+.cell-science-art { margin: 0; min-width: 0; }
+.cell-science-art img { display: block; width: 100%; height: auto; max-height: 310px; object-fit: contain; }
+.cell-science-art figcaption { text-align: right; color: var(--slate); font-size: .75rem; margin-top: 12px; }
+.cell-science-learning { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 36px 0 54px; }
+.cell-science-learning figure { margin: 0; min-width: 0; }
+.cell-science-learning img { width: 100%; height: auto; max-height: 240px; object-fit: contain; display: block; }
+.cell-science-learning figcaption { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; color: var(--navy); }
+.cell-science-learning small { color: var(--slate); font-size: .75rem; }
+@media (max-width: 767px) {
+  .cell-science-heading, .cell-science-learning { grid-template-columns: 1fr; gap: 24px; }
+  .cell-science-art img { max-height: 240px; }
+  .cell-science-learning { margin: 28px 0 40px; }
+  .cell-science-learning img { max-height: 220px; }
+}
+
 .pharmacy-partnership { background: #f5fafc; }
+.pharmacy-cooperation { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+.pharmacy-copy .section-title { margin: 16px 0 24px; }
+.pharmacy-copy p { color: var(--slate); font-size: 1.05rem; line-height: 1.75; margin: 16px 0; max-width: 640px; }
+.pharmacy-logo { width: 245px; height: auto; margin-top: 24px; mix-blend-mode: multiply; }
+.pharmacy-portrait { margin: 0; text-align: center; }
+.pharmacy-portrait > img { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; }
+.pharmacy-portrait figcaption { border-top: 1px solid #cbdde6; padding-top: 20px; }
+.pharmacy-portrait strong { display: block; font-size: 1.25rem; color: var(--navy); }
+.pharmacy-portrait figcaption span { display: block; font-size: .9rem; color: var(--slate); margin-top: 6px; }
+@media (max-width: 767px) {
+  .pharmacy-cooperation { grid-template-columns: 1fr; }
+  .pharmacy-portrait > img { max-width: 280px; }
+}
 .pharmacy-intro { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 6vw, 100px); align-items: center; }
 .pharmacy-intro p, .pharmacy-example p, .pharmacy-pillars p { color: var(--slate); font-size: 1.05rem; line-height: 1.75; margin-top: 18px; }
 .pharmacy-intro .section-title { margin: 18px 0; max-width: 620px; }

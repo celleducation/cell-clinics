@@ -1,5 +1,7 @@
 # Burg-Pharmacy partnership
 
+Portrait `uwe-rose.webp`: user-supplied `uwe-rose-portrait.png`, 24 September 2026. Copy is written from the perspective of Cell Clinics and Cell Education; seminar terminology follows the user's wording.
+
 User-supplied assets (24 September 2026):
 - Product image retained outside public assets at `assets/pending-review/burg-pharmacy/amino-boost.webp`: Downloads/Mito Boost/Amino-Boost-Power Kopie.png. Not approved for website publication.
 - `logo.webp`: Downloads/Logos/Burg-Apotheke Logo CMYK – 2020 – GB-Version.jpg

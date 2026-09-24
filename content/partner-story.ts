@@ -29,9 +29,9 @@ export const partnerStories: Record<string, PartnerStory> = {
     },
     deliverables: {
       label: "Für Ihren Praxisalltag", title: "Nicht bei null anfangen.",
-      intro: "Von der Fortbildung bis zum Patientenmaterial: konkrete Unterstützung für den Aufbau Ihres Angebots.",
+      intro: "Vom Seminar bis zum Patientenmaterial: konkrete Unterstützung für den Aufbau Ihres Angebots.",
       items: [
-        {title: "Schulungen & Austausch", body: "Fortbildungen und Fallbesprechungen für die Anwendung im Praxisalltag."},
+        {title: "Seminare & Austausch", body: "Seminare und Fallbesprechungen für die Anwendung im Praxisalltag."},
         {title: "Protokolle & Patienteninformationen", body: "Strukturierte Unterlagen als Grundlage für ärztliche Planung und verständliche Gespräche."},
         {title: "Abläufe & Vorlagen", body: "Materialien für die Vorbereitung und Organisation Ihres Praxisangebots."},
         {title: "Ihr Außenauftritt", body: "Kommunikationsmaterialien, mit denen Sie Ihr Angebot erklären können."},
