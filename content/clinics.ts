@@ -60,13 +60,19 @@ export const clinics: Clinic[] = [
     address: "Dorfplatz 5, 9056 Gais, Switzerland"
   },
   {
-    slug: "julia-napolitano-gil-esslingen",
-    name: "Dr. Julia Napolitano Gil",
-    practitioner: "Dr. Julia Napolitano Gil",
-    city: "Esslingen",
+    slug: "julia-napolitano-gil-goeppingen",
+    name: "Holysama · Dr. Julia Napolitano Gil",
+    practitioner: "Dr. med. Julia Napolitano Gil",
+    city: "Göppingen",
     region: "Baden-Württemberg",
     countryCode: "DE",
-    coordinates: {lat: 48.7406, lng: 9.3108}
+    coordinates: {lat: 48.7037396, lng: 9.6497879},
+    profileAvailable: true,
+    images: ["/clinics/holysama/portrait.webp"],
+    website: "https://holysama.de/",
+    contactEmail: "hallo@holysama.de",
+    phone: "+49 151 56196738",
+    address: "Schillerplatz 3, 73033 Göppingen, Deutschland"
   },
   {
     slug: "ivan-goecze-mintraching",
@@ -84,7 +90,13 @@ export const clinics: Clinic[] = [
     city: "Lübeck",
     region: "Schleswig-Holstein",
     countryCode: "DE",
-    coordinates: {lat: 53.8655, lng: 10.6866}
+    coordinates: {lat: 53.8662844, lng: 10.7162523},
+    profileAvailable: true,
+    images: ["/clinics/marc-stracke/portrait.webp", "/clinics/marc-stracke/practice.webp"],
+    website: "https://praxis-dr-stracke.de/",
+    contactEmail: "post@praxis-dr-stracke.de",
+    phone: "+49 451 4094099",
+    address: "Meesenring 1, 23566 Lübeck, Deutschland"
   },
   {
     slug: "imke-frei-koenigstein",
@@ -115,12 +127,17 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "marco-hartl-regensburg",
-    name: "Dr. Marco Hartl",
+    name: "ONE · Dr. Marco Hartl",
     practitioner: "Dr. Marco Hartl",
     city: "Regensburg",
     region: "Bayern",
     countryCode: "DE",
-    coordinates: {lat: 49.0134, lng: 12.1016}
+    coordinates: {lat: 49.0122461, lng: 12.0902989},
+    profileAvailable: true,
+    images: ["/clinics/marco-hartl/portrait.webp", "/clinics/marco-hartl/practice.webp"],
+    website: "https://one-dr-hartl.de/",
+    contactEmail: "info@one-dr-hartl.de",
+    address: "Fritz-Fend-Straße 4, 93047 Regensburg, Deutschland"
   },
   {
     slug: "heidelinde-klein-appenzeller-land",

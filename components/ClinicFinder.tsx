@@ -39,7 +39,7 @@ const preferredClinicOrder = [
   "heidelinde-klein-appenzeller-land",
   "medivium-stuttgart",
   "marc-stracke-luebeck",
-  "julia-napolitano-gil-esslingen",
+  "julia-napolitano-gil-goeppingen",
   "elena-bucur-karlsruhe",
   "matthias-salewski-koeln"
 ] as const;

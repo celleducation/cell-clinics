@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type {Metadata} from "next";
-import {notFound} from "next/navigation";
+import {notFound, permanentRedirect} from "next/navigation";
 import {Activity, ArrowLeft, ArrowUpRight, Microscope, RefreshCw, Stethoscope} from "lucide-react";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {clinics, getClinic} from "@/content/clinics";
@@ -11,6 +11,12 @@ import {HealthPointProfile} from "@/components/HealthPointProfile";
 import {healthPointCopy} from "@/content/health-point";
 import {DunjaMartinProfile} from "@/components/DunjaMartinProfile";
 import {dunjaMartinCopy} from "@/content/dunja-martin";
+import {HolysamaProfile} from "@/components/HolysamaProfile";
+import {holysamaCopy} from "@/content/holysama";
+import {MarcStrackeProfile} from "@/components/MarcStrackeProfile";
+import {marcStrackeCopy} from "@/content/marc-stracke";
+import {MarcoHartlProfile} from "@/components/MarcoHartlProfile";
+import {marcoHartlCopy} from "@/content/marco-hartl";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -20,6 +26,18 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "marco-hartl-regensburg") {
+    const copy = marcoHartlCopy[locale as keyof typeof marcoHartlCopy] ?? marcoHartlCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/marco-hartl/portrait.webp", imageWidth: 719, imageHeight: 1079, imageAlt: "Dr. med. Marco Hartl"});
+  }
+  if (slug === "marc-stracke-luebeck") {
+    const copy = marcStrackeCopy[locale as keyof typeof marcStrackeCopy] ?? marcStrackeCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/marc-stracke/portrait.webp", imageWidth: 1000, imageHeight: 1061, imageAlt: "Dr. med. Marc Stracke"});
+  }
+  if (slug === "julia-napolitano-gil-goeppingen") {
+    const copy = holysamaCopy[locale as keyof typeof holysamaCopy] ?? holysamaCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/holysama/portrait.webp", imageWidth: 1100, imageHeight: 1100, imageAlt: "Dr. med. Julia Napolitano Gil"});
+  }
   if (slug === "dunja-martin-sankt-julian") {
     const copy = dunjaMartinCopy[locale as keyof typeof dunjaMartinCopy] ?? dunjaMartinCopy.de;
     return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.description, image: "/clinics/dunja-martin/hero-white.webp", imageAlt: copy.portraitAlt});
@@ -49,8 +67,12 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
 export default async function ClinicPage({params}: {params: Promise<{locale: string; slug: string}>}) {
   const {locale, slug} = await params;
   setRequestLocale(locale);
+  if (slug === "julia-napolitano-gil-esslingen") permanentRedirect(`/${locale}/network/julia-napolitano-gil-goeppingen`);
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
+  if (slug === "marco-hartl-regensburg") return <MarcoHartlProfile locale={locale} clinic={clinic} />;
+  if (slug === "marc-stracke-luebeck") return <MarcStrackeProfile locale={locale} clinic={clinic} />;
+  if (slug === "julia-napolitano-gil-goeppingen") return <HolysamaProfile locale={locale} clinic={clinic} />;
   if (slug === "dunja-martin-sankt-julian") return <DunjaMartinProfile locale={locale} clinic={clinic} />;
   if (slug === "heidelinde-klein-appenzeller-land") return <HealthPointProfile locale={locale} clinic={clinic} />;
   const isMedivium = slug === "medivium-stuttgart";
