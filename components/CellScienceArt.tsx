@@ -9,7 +9,7 @@ const labels: Record<string, {note: string; regulation: string; digestion: strin
 export function CellScienceArt({kind, locale}: {kind: "senescence" | "membrane-transport"; locale: string}) {
   const text = labels[locale] ?? labels.de;
   return <figure className="cell-science-art">
-    <Image src={kind === "membrane-transport" ? "/images/cell-science/membrane-transport-cutout.png" : `/images/cell-science/${kind}.webp`} alt="" width={1400} height={kind === "senescence" ? 731 : 808} sizes="(max-width: 767px) 92vw, 46vw" />
+    <Image src={kind === "membrane-transport" ? "/images/cell-science/membrane-transport-transparent.png" : `/images/cell-science/${kind}.webp`} alt="" width={1400} height={kind === "senescence" ? 731 : 808} sizes="(max-width: 767px) 92vw, 46vw" />
     <figcaption>{text.note}</figcaption>
   </figure>;
 }
@@ -19,7 +19,7 @@ export function CellScienceLearning({locale}: {locale: string}) {
   return <div className="patient-science-gallery">
     <div className="patient-science-grid">
     {[{image: "senescence", caption: text.ageing}, {image: "cell-regulation", caption: text.regulation}, {image: "digestion", caption: text.digestion}, {image: "membrane-transport", caption: text.membrane}].map(item => <figure key={item.image}>
-      {item.image === "digestion" ? <div className="patient-science-digestion"><Image src="/images/cell-science/digestion-cutout.png" alt="" width={1024} height={1536} sizes="150px" /></div> : <Image src={item.image === "membrane-transport" ? "/images/cell-science/membrane-transport-cutout.png" : `/images/cell-science/${item.image}.webp`} alt="" width={1400} height={item.image === "membrane-transport" ? 808 : 788} sizes="(max-width: 600px) 44vw, 23vw" />}
+      {item.image === "digestion" ? <div className="patient-science-digestion"><Image src="/images/cell-science/digestion-cutout.png" alt="" width={1024} height={1536} sizes="150px" /></div> : <Image src={item.image === "membrane-transport" ? "/images/cell-science/membrane-transport-transparent.png" : `/images/cell-science/${item.image}.webp`} alt="" width={1400} height={item.image === "membrane-transport" ? 808 : 788} sizes="(max-width: 600px) 44vw, 23vw" />}
       <figcaption>{item.caption}</figcaption>
     </figure>)}
     </div>

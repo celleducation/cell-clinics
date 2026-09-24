@@ -1969,7 +1969,7 @@ textarea.input {
   isolation: isolate;
   overflow: hidden;
   padding-block: 72px;
-  background: var(--navy);
+  background: #fff;
 }
 
 .patient-final-image {
@@ -1997,12 +1997,12 @@ textarea.input {
 }
 
 .patient-final-copy .eyebrow {
-  color: #afe0ed;
+  color: #279fc7;
 }
 
 .patient-final-copy .section-title,
 .patient-final-copy .lead {
-  color: #fff;
+  color: var(--navy);
 }
 
 .patient-final-copy .lead {
@@ -2012,9 +2012,9 @@ textarea.input {
 }
 
 .patient-final-copy .button-primary {
-  color: var(--navy);
-  background: #fff;
-  border-color: #fff;
+  color: #fff;
+  background: var(--navy);
+  border-color: var(--navy);
 }
 
 @media (max-width: 900px) {
@@ -2102,7 +2102,7 @@ textarea.input {
   }
 
   .patient-final-cta::before {
-    background: rgba(11,31,67,.78);
+    background: rgba(255,255,255,.78);
   }
 
   .patient-final-copy > * {
