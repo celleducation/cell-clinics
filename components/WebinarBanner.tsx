@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {useLocale} from "next-intl";
 import {ArrowUpRight} from "lucide-react";
 import {usePathname} from "@/i18n/navigation";
+import {patientSlugs} from "@/i18n/paths";
 
 const endsAt = Date.parse("2026-10-06T19:30:00+02:00");
 const registrationUrl = "https://cell-education.com/event/cell-clinics-konzeptvorstellung-06-10-26-44/register";
@@ -18,7 +19,7 @@ export function WebinarBanner() {
   const pathname = usePathname();
   const [active, setActive] = useState(false);
   const text = copy[locale as keyof typeof copy] ?? copy.en;
-  const isProfessionalPage = pathname === "/" || /^\/(partnerships|clinical-systems|platform)(\/|$)/.test(pathname);
+  const isBannerPage = pathname === "/" || Object.values(patientSlugs).some((slug) => pathname === `/${slug}`) || /^\/(partnerships|clinical-systems|platform)(\/|$)/.test(pathname);
 
   useEffect(() => {
     // Check in the browser so static pages expire without another deployment.
@@ -28,7 +29,7 @@ export function WebinarBanner() {
     return () => window.clearInterval(timer);
   }, []);
 
-  if (!active || !isProfessionalPage) return null;
+  if (!active || !isBannerPage) return null;
 
   return (
     <aside className="webinar-banner" aria-label={text.label}>
