@@ -1772,6 +1772,11 @@ textarea.input {
 .partner-pillar-copy > p { margin: 0; }
 .partner-pillar-copy .eyebrow { display: block; margin-bottom: 16px; }
 .partner-pillar-copy .partner-pillar-detail { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(22, 38, 74, .12); font-size: 14px; color: var(--navy); }
+@media (min-width: 768px) {
+  .partner-pillars { row-gap: 0; }
+  .partner-pillar { display: grid; grid-template-rows: subgrid; grid-row: span 5; }
+  .partner-pillar-copy { display: grid; grid-template-rows: subgrid; grid-row: span 4; }
+}
 .partner-story .partner-story-note { max-width: 850px; margin: 28px 0 0; font-size: 14px; color: #526274; }
 .partner-program-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: start; gap: clamp(32px, 5vw, 80px); }
 .partner-program-photo { position: relative; min-height: 620px; height: 100%; border-radius: 24px; overflow: hidden; }
@@ -1801,6 +1806,13 @@ textarea.input {
 .bucur-hero-grid .lead { max-width: 650px; margin: 1.5rem 0 2rem; }
 .bucur-portrait { width: 100%; max-width: 360px; height: auto; max-height: 490px; object-fit: cover; border-radius: 24px; justify-self: center; }
 .bucur-introduction { max-width: 1080px; }
+.bucur-introduction-visual { max-width: 1280px; display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+.bucur-cell-art { min-width: 0; }
+.bucur-cell-art img { display: block; width: 100%; height: auto; max-height: 240px; object-fit: contain; }
+.bucur-network-section { background: #fff; border-top: 1px solid #edf2f6; }
+.bucur-network.bucur-network-visual { align-items: center; gap: clamp(24px, 5vw, 64px); }
+.bucur-network-art { min-width: 0; }
+.bucur-network-art img { display: block; width: 100%; height: auto; max-height: 300px; object-fit: contain; }
 .bucur-focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
 .bucur-focus-grid article { background: white; padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid #dce7ef; border-radius: 20px; }
 .bucur-index { color: #279fc7; font-size: .9rem; letter-spacing: .1em; }
@@ -1815,6 +1827,10 @@ textarea.input {
 .bucur-gallery figcaption { padding-top: .75rem; font-size: .9rem; }
 .bucur-network { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 2rem; }
 @media (max-width: 767px) {
+  .bucur-introduction-visual { grid-template-columns: 1fr; }
+  .bucur-cell-art img { max-height: 150px; }
+  .bucur-network-art { order: 2; }
+  .bucur-network-art img { max-height: 200px; }
   .bucur-hero-grid, .bucur-focus-grid, .bucur-practice-intro, .bucur-gallery, .bucur-network { grid-template-columns: 1fr; }
   .bucur-portrait { max-width: 290px; max-height: 398px; }
   .bucur-hero-grid .button { white-space: normal; text-align: center; }
