@@ -52,7 +52,6 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
       <div className="container">
         <SectionHeading eyebrow={c.areasLabel} title={c.areasTitle} />
         <div className="clinic-area-grid">{c.areas.map(([title,body],i)=><article className="clinic-area-card" key={title}><span className="eyebrow">0{i+1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
-        <p className="health-point-note">{c.indication}</p>
       </div>
     </section>
     <section className="section health-point-profile">

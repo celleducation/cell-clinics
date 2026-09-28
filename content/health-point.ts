@@ -18,7 +18,6 @@ export const healthPointCopy = {
       ["Prävention & Umweltmedizin", "Individuelle Beratung zu Prävention und Longevity sowie umweltmedizinische Abklärung bei Verdacht auf Belastungen."],
       ["Integrative Onkologie", "Begleitende Betreuung während und nach einer onkologischen Behandlung. Das Angebot ergänzt die konventionelle Therapie und ersetzt sie nicht."]
     ],
-    indication: "Welche Untersuchungen und Maßnahmen sinnvoll sind, wird im persönlichen ärztlichen Gespräch geklärt. Nicht jede Leistung ist für jede Person geeignet.",
     networkLabel: "Im Cell Clinics Netzwerk", networkTitle: "Bionische Zelltherapie im Praxisalltag.",
     networkBody: "Dr. Klein ist in bionischer Zelltherapie ausgebildet. Im Health Point wird das Konzept in die Anamnese, spezialisierte Labordiagnostik und individuell geplante Betreuung eingebunden. Die medizinische Verantwortung liegt bei der behandelnden Praxis.",
     teamLabel: "Die Praxis", teamTitle: "Persönlich begleitet — vom ersten Kontakt an.",
@@ -44,7 +43,7 @@ export const healthPointCopy = {
       ["Functional diagnostics", "Extended laboratory testing for metabolism, inflammation, hormones and micronutrients, with genetic and epigenetic analysis and HRV measurement where appropriate."],
       ["Prevention & environmental medicine", "Individual consultation on prevention and longevity, and environmental medical assessment where exposure is suspected."],
       ["Integrative oncology", "Support during and after cancer treatment. These services complement conventional therapy and do not replace it."]
-    ], indication: "Suitable tests and measures are discussed individually with the physician. Not every service is appropriate for every person.",
+    ],
     networkLabel: "Part of the Cell Clinics network", networkTitle: "Bionic Cell Therapy in everyday practice.",
     networkBody: "Dr. Klein is trained in Bionic Cell Therapy. At Health Point, the concept is integrated into medical history taking, specialised laboratory diagnostics and individually planned care. The treating practice retains medical responsibility.",
     teamLabel: "The practice", teamTitle: "Personal support from the first contact.",
@@ -70,7 +69,7 @@ export const healthPointCopy = {
       ["Diagnóstico funcional", "Pruebas de laboratorio ampliadas sobre metabolismo, inflamación, hormonas y micronutrientes, además de análisis genéticos y epigenéticos y medición de la variabilidad cardíaca."],
       ["Prevención y medicina ambiental", "Asesoramiento individual sobre prevención y longevidad, y valoración médica ambiental ante sospechas de exposición."],
       ["Oncología integrativa", "Acompañamiento durante y después del tratamiento oncológico. Complementa la terapia convencional y no la sustituye."]
-    ], indication: "Las pruebas y medidas adecuadas se valoran en una consulta médica individual. No todos los servicios son apropiados para todas las personas.",
+    ],
     networkLabel: "En la red Cell Clinics", networkTitle: "Terapia celular biónica en la consulta.",
     networkBody: "La Dra. Klein cuenta con formación en terapia celular biónica. En Health Point, este concepto se integra en la historia clínica, las pruebas especializadas y la atención individualizada. La responsabilidad médica corresponde a la consulta tratante.",
     teamLabel: "La consulta", teamTitle: "Atención personal desde el primer contacto.",
