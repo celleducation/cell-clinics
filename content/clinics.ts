@@ -26,7 +26,7 @@ export const clinics: Clinic[] = [
     city: "Ebersberg",
     region: "Bayern",
     countryCode: "DE",
-    listingOnly: true,
+    profileAvailable: true,
     // Approximate locality position from the practice's public directions map.
     coordinates: {lat: 48.0806029, lng: 11.8982754},
     website: "https://www.praxisschmehl.de/",
