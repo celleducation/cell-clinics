@@ -20,6 +20,21 @@ export type Clinic = {
 
 export const clinics: Clinic[] = [
   {
+    slug: "reinhard-schmehl-ebersberg",
+    name: "Privatpraxis Reinhard Schmehl",
+    practitioner: "Reinhard Schmehl",
+    city: "Ebersberg",
+    region: "Bayern",
+    countryCode: "DE",
+    listingOnly: true,
+    // Approximate locality position from the practice's public directions map.
+    coordinates: {lat: 48.0806029, lng: 11.8982754},
+    website: "https://www.praxisschmehl.de/",
+    contactEmail: "kontakt@praxisschmehl.de",
+    phone: "+49 8092 3043993",
+    address: "Hinteregglburg 2, 85560 Ebersberg, Deutschland"
+  },
+  {
     slug: "dunja-martin-sankt-julian",
     name: "Dr. med. Dunja Martin",
     practitioner: "Dr. med. Dunja Martin · Neurologie · Online-Beratung",

@@ -245,6 +245,10 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <Link className="clinic-profile-link" href={`/network/${clinic.slug}`} aria-label={`${labels.details}: ${clinic.name}`}>
                   {labels.details}<ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
+              ) : clinic.listingOnly && clinic.website ? (
+                <a className="clinic-profile-link" href={clinic.website} target="_blank" rel="noopener noreferrer" aria-label={`${labels.details}: ${clinic.name}`}>
+                  {labels.details}<ArrowUpRight size={15} aria-hidden="true" />
+                </a>
               ) : null}
             </article>
           ))}
