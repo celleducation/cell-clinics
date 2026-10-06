@@ -9,6 +9,7 @@ import {PharmacyPartnership} from "@/components/PharmacyPartnership";
 import {ClinicalSystems} from "@/components/ClinicalSystems";
 import {PhotographicHero} from "@/components/PhotographicHero";
 import {ClinicVideo} from "@/components/ClinicVideo";
+import {HomeVimeo} from "@/components/HomeVimeo";
 import {PartnerApplicationForm} from "@/components/PartnerApplicationForm";
 import {pageMetadata, ORGANIZATION_ID, jsonLd} from "@/lib/seo";
 
@@ -59,6 +60,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
         <ButtonLink href="#application" size="large">{t("cta.heroPrimary")}</ButtonLink>
         <ButtonLink href="#systems" variant="secondary" size="large">{t("cta.viewSystems")}</ButtonLink>
       </PhotographicHero>
+      <HomeVimeo locale={locale} />
       <div className="home-trust-strip">
         <div className="container trust-row">
           {trust.map((item) => <div className="trust-item" key={item}><Check size={17} /> <span>{item}</span></div>)}
