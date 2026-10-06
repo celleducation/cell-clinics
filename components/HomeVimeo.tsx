@@ -23,12 +23,12 @@ export function HomeVimeo({locale}: {locale: string}) {
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
         /> : <div className="home-vimeo-consent">
-          <button type="button" className="button button-secondary" onClick={() => setLoaded(true)}>
+          <button type="button" className="button button-primary" aria-describedby="home-video-privacy" onClick={() => setLoaded(true)}>
             <Play size={20} aria-hidden="true" />{c.play}
           </button>
-          <p>{c.note}</p>
         </div>}
       </div>
+      <p className="home-vimeo-note" id="home-video-privacy">{c.note}</p>
       <a className="clinic-back-link" href="https://vimeo.com/1233281961/7a2868744a" target="_blank" rel="noopener noreferrer">{c.external}</a>
     </div>
   </section>;
