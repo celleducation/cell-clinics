@@ -2,6 +2,7 @@
 export const privacyCopy = {
   de: {
     title: "Datenschutzerklärung", home: "Start", date: "Stand: Oktober 2026",
+    gtmNotice: "Google Tag Manager: Wir binden den Container GTM-TFZJGN3F von Google über www.googletagmanager.com ein. Beim Laden werden IP-Adresse und HTTP-Anfragedaten an Google übertragen. Die Steuerung der enthaltenen Tags erfolgt über die Konfiguration in CookieYes und Google Tag Manager, nicht über eine zusätzliche Sperre im Anwendungscode. [[OFFEN: Container-Tags, tatsächliche Consent-Steuerung, Anbieter, Rechtsgrundlagen, Empfänger, Speicherfristen und Drittlandgarantien bestätigen]].",
     sections: [
       ["1. Verantwortlicher", "Cell Clinics ist ein Angebot der Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Deutschland. Verantwortlich für die Verarbeitung: Cell Education - The Institute GmbH & Co. KG. Kontakt: info@cell-education.com."],
       ["2. Hosting und Server-Logfiles", "Wir nutzen Vercel Inc., USA, zur Bereitstellung der Website. Dabei können IP-Adresse, Datum und Uhrzeit, abgerufene Seite sowie Browserinformationen verarbeitet werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse ist der sichere und zuverlässige Betrieb. [[OFFEN: Vercel-Anschrift, Auftragsverarbeitungsvertrag, Hostingregion, Log-Speicherdauer und aktivierte Zusatzdienste/Log Drains bestätigen]]. Für Übermittlungen in die USA kommen das EU-US Data Privacy Framework bei gültiger Zertifizierung oder Standardvertragsklauseln in Betracht. [[OFFEN: im DPF-Register prüfen und tatsächlich vereinbarte Übermittlungsgrundlage dokumentieren]]."],
@@ -17,6 +18,7 @@ export const privacyCopy = {
   },
   en: {
     title: "Privacy policy", home: "Home", date: "Last updated: October 2026",
+    gtmNotice: "Google Tag Manager: We embed Google's container GTM-TFZJGN3F through www.googletagmanager.com. Loading it transmits IP addresses and HTTP request data to Google. Its tags are controlled through CookieYes and Google Tag Manager configuration, not an additional application-level gate. [[OFFEN: Confirm container tags, actual consent controls, provider, legal bases, recipients, retention and international transfer safeguards]].",
     sections: [
       ["1. Controller", "Cell Clinics is a service of Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Germany. The controller is Cell Education - The Institute GmbH & Co. KG. Contact: info@cell-education.com."],
       ["2. Hosting and server logs", "We use Vercel Inc., USA, to host this website. IP addresses, dates, times, requested pages and browser information may be processed. The basis is Article 6(1)(f) GDPR; our legitimate interest is secure and reliable operation. [[OFFEN: Confirm Vercel address, processing agreement, hosting region, log retention and additional services/log drains]]. US transfers may rely on the EU-US Data Privacy Framework where certification is valid, or standard contractual clauses. [[OFFEN: Check the DPF register and document the actual transfer safeguards]]."],
@@ -32,6 +34,7 @@ export const privacyCopy = {
   },
   es: {
     title: "Política de privacidad", home: "Inicio", date: "Actualización: octubre de 2026",
+    gtmNotice: "Google Tag Manager: Integramos el contenedor de Google GTM-TFZJGN3F mediante www.googletagmanager.com. Al cargarlo se transmiten a Google la dirección IP y datos de la solicitud HTTP. Las etiquetas se controlan mediante la configuración de CookieYes y Google Tag Manager, sin un bloqueo adicional en la aplicación. [[OFFEN: Confirmar etiquetas, control efectivo del consentimiento, proveedor, bases jurídicas, destinatarios, conservación y garantías internacionales]].",
     sections: [
       ["1. Responsable", "Cell Clinics es un servicio de Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Alemania. El responsable del tratamiento es Cell Education - The Institute GmbH & Co. KG. Contacto: info@cell-education.com."],
       ["2. Alojamiento y registros", "Vercel Inc., EE. UU., aloja la web. Pueden tratarse direcciones IP, fechas, horas, páginas solicitadas e información del navegador. Base: art. 6.1.f RGPD; interés legítimo en un funcionamiento seguro y fiable. [[OFFEN: Confirmar dirección de Vercel, contrato, región, conservación de registros y servicios adicionales/Log Drains]]. Las transferencias a EE. UU. pueden basarse en el Marco de Privacidad de Datos UE-EE. UU. si existe certificación vigente o en cláusulas contractuales tipo. [[OFFEN: Consultar el registro DPF y documentar la garantía realmente acordada]]."],

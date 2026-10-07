@@ -1,5 +1,9 @@
 # Datenflüsse – Bestandsaufnahme vor Änderungen
 
+## Nachtrag GTM
+
+Auf ausdrücklichen Nutzerwunsch ist nun Google Tag Manager `GTM-TFZJGN3F` regulär eingebunden: Head-Skript und Body-noscript-Iframe verbinden sich mit `www.googletagmanager.com` (IP-Adresse und HTTP-Anfragedaten). Keine zusätzliche Consent-Sperre im Anwendungscode; CookieYes/GTM-Konfiguration liegt bei Agentur/Betreiber. [[OFFEN: Container-Tags, weitere Empfänger, Consent-Konfiguration, Rechtsgrundlagen und Speicherfristen prüfen]]. Die ursprüngliche Tabelle unten beschreibt den Zustand vor dieser Ergänzung.
+
 Stand: 07.10.2026. Codeprüfung und öffentlicher Headerabruf; keine Einsicht in private Hosting-/Dienstkonten. Keine Formulare abgesendet.
 
 | Stelle | Daten / Verarbeitung | Empfänger / Speicher | Dauer / Rechtsgrundlage / offene Prüfung |

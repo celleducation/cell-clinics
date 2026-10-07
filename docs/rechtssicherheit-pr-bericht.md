@@ -1,5 +1,11 @@
 # Rechtssicherheit – PR-Bericht
 
+## Nachtrag: ausdrücklich freigegebene Standard-GTM-Einbindung
+
+Container `GTM-TFZJGN3F` mit gelieferten Head- und Body-noscript-Snippets im Root-Layout ergänzt. CookieYes steht davor, sofern seine Site-ID konfiguriert ist. Der Nutzer hat nach ausdrücklichem Hinweis auf die Übertragung von IP-/Browserdaten an Google und unbekannte Container-Tags die reguläre Einbindung bestätigt; Agentur/Betreiber übernehmen die Consent-Konfiguration in CookieYes/GTM. Keine anwendungsseitige Consent-Sperre für GTM. Bei deaktiviertem JavaScript lädt das noscript-Iframe unabhängig von JavaScript-basierten Consent-Helfern.
+
+Die unten dokumentierten Tests „nur lokale Skripte“ und „keine Anbieter vor Zustimmung“ beziehen sich auf den vorherigen Stand und bestätigen **nicht** das neue GTM-Verhalten. Die Unit-Tests decken ausschließlich die separate direkte GA-/Meta-Integration ab. [[OFFEN: GTM-Containerinhalt, reale CookieYes-Konfiguration, Rechtsgrundlagen, Empfänger, Laufzeiten und Transfergarantien prüfen]]. Der Datenschutzerklärungsentwurf wurde in DE/EN/ES entsprechend ergänzt. Kein Main-Push oder Produktionsdeploy durch diesen Nachtrag.
+
 Stand: 07.10.2026. Branch `legal/rechtssicherheit-2026-10`. **Review-Entwurf, nicht vor Klärung der offenen Stellen mergen. Keine juristische Freigabe.**
 
 ## Umfang

@@ -1,5 +1,7 @@
 # Rechtssicherheit – vollständiger Prüfanhang
 
+Nachtrag: Diese Such- und Zeilenliste ist der Snapshot vor der später ausdrücklich freigegebenen GTM-Einbindung. Zusätzliche offene Punkte stehen im GTM-Nachtrag von `rechtssicherheit-pr-bericht.md` und `datenfluesse.md` sowie in `content/privacy.ts` unter `gtmNotice` (DE/EN/ES). Durch diese Ergänzungen können sich Zeilen in diesen Dateien verschoben haben.
+
 Stand: 07.10.2026. Technischer Review, keine Rechtsfreigabe. Referenz für Vorher/Nachher: d0dabeb.
 
 ## Alle verbleibenden Suchtreffer

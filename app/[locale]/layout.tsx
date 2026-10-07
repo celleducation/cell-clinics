@@ -44,8 +44,14 @@ export default async function LocaleLayout({
     <html lang={locale} className={dmSans.variable}>
       <head>
         {process.env.NEXT_PUBLIC_COOKIEYES_ID && <Script id="cookieyes" strategy="beforeInteractive" src={`https://cdn-cookieyes.com/client_data/${encodeURIComponent(process.env.NEXT_PUBLIC_COOKIEYES_ID)}/script.js`} />}
+        <Script id="google-tag-manager" strategy="beforeInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TFZJGN3F');`}</Script>
       </head>
       <body>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFZJGN3F" height="0" width="0" style={{display: "none", visibility: "hidden"}} title="Google Tag Manager" /></noscript>
         <ConsentScripts />
         <NextIntlClientProvider messages={messages}>
           <WebinarBanner />
