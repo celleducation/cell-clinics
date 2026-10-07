@@ -26,7 +26,7 @@
     "external": "Ver en YouTube"
   },
   "meta": {
-    "title": "Cell Clinics | Plataforma médica para medicina celular",
+    "title": "Cell Clinics | Plataforma de medicina celular con dirección médica",
     "description": "Descubra programas de medicina celular para su consulta: formación, diagnóstico y marcos clínicos de Cell Clinics. Solicite información sobre la colaboración."
   },
   "nav": {
@@ -49,11 +49,11 @@
     "discussImplementation": "Hablar sobre la implementación"
   },
   "hero": {
-    "label": "Plataforma de implementación guiada por médicos",
+    "label": "Plataforma de implementación con dirección médica",
     "title": "La infraestructura para la medicina celular moderna",
     "body": "Cell Clinics ofrece marcos clínicos, formación médica, sistemas diagnósticos y apoyo a la implementación para clínicas, médicos y proveedores sanitarios que desean desarrollar programas avanzados de medicina celular.",
     "trust1": "Guiado por médicos",
-    "trust2": "Marcos clínicos",
+    "trust2": "Protocolos estructurados",
     "trust3": "Red internacional",
     "trust4": "Base de Cell Education",
     "panelLabel": "Ecosistema de medicina celular",
@@ -157,15 +157,15 @@
   "leadership": {
     "label": "Liderazgo médico",
     "title": "Liderazgo médico",
-    "body": "El marco de Cell Clinics se basa en décadas de formación médica, desarrollo de marcos clínicos y experiencia en medicina celular.",
+    "body": "El marco de Cell Clinics se basa en más de 20 años de formación médica, desarrollo de marcos clínicos y experiencia en medicina celular.",
     "stat1": "Formación médica",
     "stat1Body": "La formación estructurada aborda el diagnóstico, los principios terapéuticos y su aplicación segura en la práctica clínica.",
     "stat2": "Desarrollo de marcos clínicos",
-    "stat2Body": "Los procesos basados en evidencia conectan la evaluación, la interpretación médica y la implementación terapéutica.",
+    "stat2Body": "Los procesos estructurados conectan la evaluación, la interpretación médica y la implementación terapéutica.",
     "stat3": "Docencia internacional",
     "stat3Body": "La formación y el intercambio profesional establecen un estándar médico común entre distintos países.",
     "stat4": "Experiencia en medicina celular",
-    "stat4Body": "Décadas de experiencia en medicina mitocondrial, terapia de infusión y regulación biológica.",
+    "stat4Body": "Más de 20 años de experiencia en medicina mitocondrial, terapia de infusión y regulación biológica.",
     "cardLabel": "Autoridad científica y educativa",
     "cardBody": "Formación médica y desarrollo de marcos clínicos para la implementación de medicina celular."
   },
@@ -572,7 +572,7 @@
       "areasLabel": "Áreas de atención",
       "areasTitle": "Cuatro perspectivas sobre la belleza desde el interior",
       "area1Title": "Belleza desde el interior",
-      "area1Body": "Regeneración y renovación celular como base para la vitalidad, una piel sana, un cabello fuerte y una luminosidad natural y juvenil desde el interior.",
+      "area1Body": "Acompañamiento naturopático en torno al bienestar, la vitalidad y la luminosidad.",
       "area2Title": "Acompañamiento individual",
       "area2Body": "Los objetivos y circunstancias personales constituyen la base de un acompañamiento naturista adaptado.",
       "area3Title": "Intestino y metabolismo",
@@ -716,9 +716,9 @@
   "patient": {
     "meta": {"title": "Terapia Celular Biónica cerca de usted", "description": "Conozca la Terapia Celular Biónica, sus etapas y el asesoramiento individual. Encuentre una Cell Clinic cercana y contacte con una consulta para informarse."},
     "nav": {"therapy": "La terapia", "process": "Cómo funciona", "faq": "Preguntas frecuentes"},
-    "hero": {"label": "Para pacientes", "title": "Bionic Cell Therapy. Con acompañamiento médico, cerca de usted.", "body": "Las Cell Clinics son consultas y clínicas que ofrecen Bionic Cell Therapy conforme a criterios médicos comunes, adaptada a su salud, sus resultados diagnósticos y sus objetivos.", "note": "Personal, basada en el diagnóstico y dirigida por médicos"},
+    "hero": {"label": "Para pacientes", "title": "Bionic Cell Therapy. Acompañamiento profesional, cerca de usted.", "body": "Las Cell Clinics son consultas médicas, clínicas y consultas de Heilpraktiker (profesionales no médicos autorizados en Alemania) que ofrecen Bionic Cell Therapy. Todas han completado el programa de formación de Cell Education. El tratamiento se adapta a su salud, sus resultados diagnósticos y sus objetivos.", "note": "Personal, basada en el diagnóstico y dirigida por médicos"},
     "therapy": {
-      "label": "Bionic Cell Therapy", "title": "El apoyo comienza donde nace la salud.", "intro": "Cada función del organismo comienza en la célula: la energía, la regeneración y las defensas. Bionic Cell Therapy parte de ahí. A partir de diagnósticos modernos se diseña un concepto terapéutico individual que puede contribuir al funcionamiento celular, desde infusiones de micronutrientes hasta procedimientos complementarios. Siempre bajo dirección médica y adaptado a cada persona.",
+      "label": "Bionic Cell Therapy", "title": "El apoyo comienza donde nace la salud.", "intro": "Cada función del organismo comienza en la célula: la energía, la regeneración y las defensas. Bionic Cell Therapy parte de ahí. A partir de diagnósticos modernos se diseña un concepto terapéutico individual que puede contribuir al funcionamiento celular, desde infusiones de micronutrientes hasta procedimientos complementarios. Siempre adaptado individualmente a cada persona.",
       "card1Title": "Energía y cansancio", "card1Body": "Ante cansancio persistente o agotamiento, el apoyo específico al metabolismo celular puede formar parte del tratamiento.",
       "card2Title": "Recuperación y regeneración", "card2Body": "Después de un esfuerzo, una enfermedad o una intervención, los conceptos individualizados pueden acompañar los procesos naturales de recuperación.",
       "card3Title": "Prevención y longevidad", "card3Body": "Cuidar la salud antes de que aparezcan molestias mediante diagnóstico y prevención a nivel celular.",
@@ -726,21 +726,21 @@
     },
     "process": {
       "label": "Su camino hacia el tratamiento", "title": "¿Cómo puedo acceder a Bionic Cell Therapy?", "intro": "Cuatro pasos claros desde la primera consulta hasta el seguimiento continuo, todo en una Cell Clinic cercana.",
-      "step1Title": "Encontrar una Cell Clinic", "step1Body": "Elija una consulta asociada de nuestra red. Todas las Cell Clinics reciben formación y acompañamiento conforme al mismo programa médico, para que sepa qué puede esperar.",
-      "step2Title": "Primera consulta e historia clínica", "step2Body": "Su médico dedica tiempo a conocer sus antecedentes, sus molestias y sus objetivos. Así se obtiene una imagen clara de su situación individual.",
+      "step1Title": "Encontrar una Cell Clinic", "step1Body": "Elija una consulta asociada de nuestra red. Todas las Cell Clinics han completado el programa de formación de Cell Education y reciben acompañamiento profesional.",
+      "step2Title": "Primera consulta e historia clínica", "step2Body": "El profesional que le atiende dedica tiempo a conocer sus antecedentes, sus molestias y sus objetivos. Así se obtiene una imagen clara de su situación individual.",
       "step3Title": "Diagnóstico y concepto terapéutico individual", "step3Body": "Los análisis de laboratorio y el diagnóstico celular ayudan a identificar dónde puede ser adecuado ofrecer apoyo. A partir de ellos, su Cell Clinic diseña un concepto adaptado a usted, no un programa estándar.",
-      "step4Title": "Tratamiento y seguimiento", "step4Body": "El tratamiento se realiza directamente en su Cell Clinic bajo supervisión médica. Los controles permiten observar la evolución y adaptar el concepto cuando sea necesario."
+      "step4Title": "Tratamiento y seguimiento", "step4Body": "El tratamiento se realiza directamente en su Cell Clinic con acompañamiento profesional. Los controles permiten observar la evolución y adaptar el concepto cuando sea necesario."
     },
-    "finder": {"label": "Encontrar una Cell Clinic", "title": "Consultas asociadas cerca de usted", "intro": "Nuestra red sigue creciendo. Cada Cell Clinic está dirigida por profesionales cualificados y participa en un programa profesional estructurado.", "tag": "Consulta asociada de la red", "clinicBody": "Clínica integral de medicina biológica y Bionic Cell Therapy, una de las primeras Cell Clinics de la red y referencia de nuestro modelo asistencial.", "profile": "Ver perfil de la clínica", "formTitle": "¿No hay una Cell Clinic cerca de usted?", "formBody": "Indíquenos su zona. Le avisaremos cuando abra una consulta asociada cercana y, si lo desea, podremos facilitarle una primera orientación."},
+    "finder": {"label": "Encontrar una Cell Clinic", "title": "Consultas asociadas cerca de usted", "intro": "Nuestra red sigue creciendo. Todas las Cell Clinics están dirigidas por médicos o Heilpraktiker (profesionales no médicos autorizados en Alemania) y han completado el programa de formación de Cell Education.", "tag": "Consulta asociada de la red", "clinicBody": "Clínica integral de medicina biológica y Bionic Cell Therapy, una de las primeras Cell Clinics de la red y referencia de nuestro modelo asistencial.", "profile": "Ver perfil de la clínica", "formTitle": "¿No hay una Cell Clinic cerca de usted?", "formBody": "Indíquenos su zona. Le avisaremos cuando abra una consulta asociada cercana y, si lo desea, podremos facilitarle una primera orientación."},
     "form": {"name": "Nombre", "email": "Correo electrónico", "location": "Código postal / ciudad", "interest": "Área de interés", "choose": "Seleccione una opción", "energy": "Energía y cansancio", "recovery": "Recuperación y regeneración", "prevention": "Prevención y longevidad", "supportive": "Terapia complementaria", "consent": "Acepto que Cell Clinics utilice mis datos para responder a esta solicitud.", "submit": "Enviar solicitud", "sending": "Enviando …", "privacy": "Sus datos se utilizarán exclusivamente para responder a su solicitud.", "success": "Gracias. Hemos recibido su solicitud y nos pondremos en contacto personalmente.", "error": "No se pudo enviar su solicitud automáticamente. Escríbanos a"},
     "trust": {"label": "Confianza", "title": "Atención con método.", "item1Title": "Dirección profesional", "item1Body": "Cada Cell Clinic está dirigida por profesionales cualificados. Los servicios reservados a médicos permanecen en manos médicas.", "item2Title": "Dirección científica", "item2Body": "El programa médico se desarrolla y actualiza de forma continua bajo la dirección del Dr. Kay Bredehorst.", "item3Title": "Una red formada", "item3Body": "Todas las consultas asociadas completan un programa estructurado de formación e implementación a través de Cell Education.", "item4Title": "Colaboración internacional", "item4Body": "Intercambio científico y diálogo profesional continuo dentro de la red internacional de Cell Clinics."},
     "faq": {
       "label": "Preguntas frecuentes", "title": "Lo que conviene saber antes de la primera consulta.", "intro": "Respuestas claras sobre el tratamiento con acompañamiento médico en una Cell Clinic.",
-      "q1": "¿Para quién puede ser adecuada Bionic Cell Therapy?", "a1": "Puede considerarse en adultos que desean apoyar su salud a nivel celular, ya sea ante cansancio persistente, durante la recuperación o de forma preventiva. Su médico decidirá siempre si existe una opción adecuada tras revisar su historia clínica y sus resultados diagnósticos.",
-      "q2": "¿Es seguro el tratamiento?", "a2": "Cada tratamiento se realiza en una consulta o clínica dirigida por médicos y sigue un programa médico común. Antes de comenzar, su médico le explicará personalmente el procedimiento, los posibles beneficios y los riesgos.",
+      "q1": "¿Para quién puede ser adecuada Bionic Cell Therapy?", "a1": "Puede considerarse en adultos que desean apoyar su salud a nivel celular, ya sea ante cansancio persistente, durante la recuperación o de forma preventiva. El profesional que le atiende decidirá siempre si existe una opción adecuada tras revisar su historia clínica y sus resultados diagnósticos. Los servicios médicos quedan reservados a los médicos.",
+      "q2": "¿Qué riesgos existen?", "a2": "Como cualquier procedimiento médico, una infusión puede tener efectos secundarios. El profesional que le atiende le explicará personalmente el procedimiento, los beneficios y los posibles riesgos antes de comenzar y decidirá si resulta adecuado para usted.",
       "q3": "¿Cuánto cuesta el tratamiento y lo cubre el seguro?", "a3": "El coste depende de su concepto terapéutico individual y se detalla con transparencia antes de iniciar el tratamiento. Por lo general son servicios privados; algunas aseguradoras pueden reembolsar una parte según la póliza. Su Cell Clinic le orientará en la primera consulta.",
       "q4": "¿Cuánto dura el tratamiento?", "a4": "Depende del concepto individual. Una infusión suele durar menos de una hora, mientras que un programa completo puede extenderse varias semanas con citas periódicas y controles de evolución.",
-      "q5": "¿En qué se diferencia una Cell Clinic de una consulta convencional?", "a5": "Las Cell Clinics forman parte de una red que trabaja con un programa médico común: criterios diagnósticos consistentes, protocolos terapéuticos coordinados y formación médica continua a través de Cell Education. Así se mantiene el mismo enfoque estructurado en cada centro."
+      "q5": "¿En qué se diferencia una Cell Clinic de una consulta convencional?", "a5": "Las Cell Clinics forman parte de una red que trabaja con un programa médico común: bases diagnósticas compartidas, protocolos terapéuticos coordinados y formación continua a través de Cell Education. Cada consulta asume de forma independiente la responsabilidad del tratamiento."
     },
     "cta": {"label": "Su próximo paso", "title": "¿Preparado para dar el primer paso?", "body": "Encuentre una Cell Clinic cercana y solicite una primera consulta personal y sin compromiso.", "findClinic": "Encontrar una Cell Clinic", "findNearby": "Encontrar una Cell Clinic cercana", "howItWorks": "¿Cómo funciona el tratamiento?"},
     "footerDescription": "Una red dirigida por médicos para Bionic Cell Therapy adaptada a cada persona.",

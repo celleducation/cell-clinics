@@ -2,6 +2,7 @@
 
 import {FormEvent, useState} from "react";
 import {useTranslations} from "next-intl";
+import {Link} from "@/i18n/navigation";
 import {useFormChallenge} from "./useFormChallenge";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -57,7 +58,7 @@ export function PatientInquiryForm() {
         <label>{t("email")}<input name="email" type="email" autoComplete="email" required /></label>
         <label>{t("location")}<input name="location" autoComplete="postal-code" required /></label>
       </div>
-      <label className="consent"><input type="checkbox" name="consent" required /> <span>{t("consent")} <a href="https://cell-education.com/datenschutz">{privacyT("privacy")}</a></span></label>
+      <label className="consent"><input type="checkbox" name="consent" required /> <span>{t("consent")} <Link href="/datenschutz">{privacyT("privacy")}</Link></span></label>
       <button className="button button-primary form-submit" type="submit" disabled={!token || status === "sending"}>
         {status === "sending" ? t("sending") : t("submit")}
       </button>

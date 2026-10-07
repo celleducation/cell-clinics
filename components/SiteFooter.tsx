@@ -3,7 +3,8 @@
 import Image from "next/image";
 import {useTranslations} from "next-intl";
 import type {MouseEvent} from "react";
-import {usePathname} from "@/i18n/navigation";
+import {Link, usePathname} from "@/i18n/navigation";
+import {CookieSettings} from "@/components/CookieSettings";
 
 export function SiteFooter() {
   const t = useTranslations();
@@ -58,9 +59,10 @@ export function SiteFooter() {
         <div className="footer-bottom">
           <a href="mailto:info@cell-education.com">info@cell-education.com</a>
           <span>
-            <a href="https://cell-education.com/datenschutz">{t("footer.privacy")}</a>
+            <Link href="/datenschutz">{t("footer.privacy")}</Link>
             {" · "}
             <a href="https://cell-education.com/impressum">{t("footer.terms")}</a>
+            {" · "}<CookieSettings />
           </span>
         </div>
         {isPatientPage ? <p className="patient-disclaimer">{t("patient.footerDisclaimer")}</p> : null}

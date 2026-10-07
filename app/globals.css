@@ -569,6 +569,7 @@ textarea {
   .materials-support-grid article p { grid-column: 2; }
 }
 
+.cookie-settings-link { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; }
 .home-vimeo.section { padding-block: 36px; }
 .home-vimeo > .container { max-width: 800px; }
 .home-vimeo .section-title { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 18px; }

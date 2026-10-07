@@ -9,6 +9,8 @@ import type {Metadata} from "next";
 import {DM_Sans} from "next/font/google";
 import {SITE_URL} from "@/lib/seo";
 import "../globals.css";
+import Script from "next/script";
+import {ConsentScripts} from "@/components/ConsentScripts";
 
 const dmSans = DM_Sans({subsets: ["latin"], variable: "--font-dm-sans", display: "swap"});
 
@@ -40,7 +42,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={dmSans.variable}>
+      <head>
+        {process.env.NEXT_PUBLIC_COOKIEYES_ID && <Script id="cookieyes" strategy="beforeInteractive" src={`https://cdn-cookieyes.com/client_data/${encodeURIComponent(process.env.NEXT_PUBLIC_COOKIEYES_ID)}/script.js`} />}
+      </head>
       <body>
+        <ConsentScripts />
         <NextIntlClientProvider messages={messages}>
           <WebinarBanner />
           <SiteHeader />

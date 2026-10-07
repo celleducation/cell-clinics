@@ -11,7 +11,7 @@ export const partnerStories: Record<string, PartnerStory> = {
       intro: "Behandlung vor Ort und ein ergänzendes Institut: zwei Bereiche, die Sie passend zu Ihrer Praxis entwickeln können.",
       items: [
         {title: "Ihre Praxis vor Ort", body: "Hier stehen das persönliche Gespräch, die Diagnostik und die individuell geplante Behandlung im Mittelpunkt.", detail: "Ärztlich begleitete Programme · Persönliche Betreuung · Verlaufskontrollen"},
-        {title: "Ihr ergänzendes Institut", body: "Schaffen Sie Raum für Beratung und Wissensvermittlung — mit digitalen Formaten und Angeboten für Privatpersonen, Unternehmen oder Organisationen.", detail: "Videoberatung · Bildungsangebote · Begleitung bei Struktur und Umsetzung"}
+        {title: "Ihr ergänzendes Institut", body: "Schaffen Sie Raum für Gesundheitsbildung und Wissensvermittlung, mit digitalen Formaten für Privatpersonen, Unternehmen oder Organisationen. Ärztliche Diagnose und Behandlung finden in der Praxis statt.", detail: "Videoberatung · Bildungsangebote · Begleitung bei Struktur und Umsetzung"}
       ],
       note: "Welche Leistungen und digitalen Formate zu Ihrer Praxis passen, klären wir gemeinsam. Medizinische Verantwortung und die jeweiligen beruflichen Vorgaben bleiben maßgeblich."
     },
@@ -46,7 +46,7 @@ export const partnerStories: Record<string, PartnerStory> = {
       intro: "In-person care and a complementary institute: two areas you can develop around your practice.",
       items: [
         {title: "Your local practice", body: "Personal consultations, diagnostics and individually planned treatment remain at the centre of care.", detail: "Physician-led programmes · Personal care · Follow-up reviews"},
-        {title: "Your complementary institute", body: "Create space for consultation and education, with digital formats and services for individuals, businesses or organisations.", detail: "Video consultations · Educational formats · Support with structure and implementation"}
+        {title: "Your complementary institute", body: "Create space for health education and knowledge sharing, with digital formats for individuals, businesses or organisations. Medical diagnosis and treatment take place at the practice.", detail: "Video consultations · Educational formats · Support with structure and implementation"}
       ], note: "Together, we assess which services and digital formats fit your practice. Medical responsibility and applicable professional requirements remain essential."
     },
     program: {
@@ -79,7 +79,7 @@ export const partnerStories: Record<string, PartnerStory> = {
       intro: "Atención presencial y un instituto complementario: dos áreas que puede desarrollar en torno a su consulta.",
       items: [
         {title: "Su consulta presencial", body: "La conversación personal, el diagnóstico y el tratamiento individualizado constituyen el centro de la atención.", detail: "Programas dirigidos por médicos · Atención personal · Seguimiento"},
-        {title: "Su instituto complementario", body: "Cree un espacio para el asesoramiento y la formación, con formatos digitales y propuestas para particulares, empresas u organizaciones.", detail: "Videoconsultas · Formación · Apoyo en la estructura y la puesta en marcha"}
+        {title: "Su instituto complementario", body: "Cree un espacio para la educación para la salud y la transmisión de conocimientos, con formatos digitales para particulares, empresas u organizaciones. El diagnóstico y el tratamiento médico se realizan en la consulta.", detail: "Videoconsultas · Formación · Apoyo en la estructura y la puesta en marcha"}
       ], note: "Valoramos juntos qué servicios y formatos digitales encajan en su consulta. La responsabilidad médica y los requisitos profesionales aplicables siguen siendo esenciales."
     },
     program: {

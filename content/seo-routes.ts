@@ -8,6 +8,7 @@ export const indexableRoutes = [
   {path: "", lastModified: seoRevision},
   {path: "/patients", lastModified: seoRevision},
   {path: "/network", lastModified: seoRevision},
+  {path: "/datenschutz", lastModified: "2026-10-07"},
   ...clinics.filter((clinic) => clinic.profileAvailable).map((clinic) => ({
     path: `/network/${clinic.slug}`, lastModified: seoRevision
   }))

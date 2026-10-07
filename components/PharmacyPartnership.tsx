@@ -10,7 +10,7 @@ export function PharmacyPartnership({locale}: {locale: string}) {
         <div className="pharmacy-copy">
           <span className="eyebrow">{copy.label}</span><h2 className="section-title" id="pharmacy-title">{copy.title}</h2>
           <p>{copy.intro}</p><p>{copy.body}</p>
-          <Image className="pharmacy-logo" src="/images/burg-pharmacy/logo.webp" width={900} height={306} alt="Burg-Pharmacy LAB" />
+          <Image className="pharmacy-logo" src="/images/burg-pharmacy/logo.webp" width={900} height={306} alt="Burg-Apotheke LAB" />
           <div className="pharmacy-actions"><a className="pharmacy-source" href="https://rezeptur.de/pages/intensivierte-kooperation" target="_blank" rel="noopener noreferrer">{copy.learn}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
         </div>
         <figure className="pharmacy-portrait">

@@ -26,7 +26,7 @@
     "external": "Auf YouTube ansehen"
   },
   "meta": {
-    "title": "Cell Clinics | Ärztlich geführte Plattform für Zellmedizin",
+    "title": "Cell Clinics | Medizinisch geleitete Plattform für Zellmedizin",
     "description": "Zellmedizin für Ihre Praxis: Entdecken Sie Schulungen, Diagnostik und klinische Programme von Cell Clinics. Informieren Sie sich jetzt zur Partnerschaft."
   },
   "nav": {
@@ -49,11 +49,11 @@
     "discussImplementation": "Implementierung besprechen"
   },
   "hero": {
-    "label": "Ärztlich geführte Implementierungsplattform",
+    "label": "Medizinisch geleitete Implementierungsplattform",
     "title": "Die Infrastruktur für moderne Zellmedizin",
     "body": "Cell Clinics bietet klinische Frameworks, ärztliche Schulungen, diagnostische Systeme und Implementierungsunterstützung für Kliniken, Ärzte und Gesundheitsanbieter, die moderne Programme für Zellmedizin aufbauen möchten.",
     "trust1": "Ärztlich geführt",
-    "trust2": "Klinische Standards",
+    "trust2": "Strukturierte Protokolle",
     "trust3": "Internationales Netzwerk",
     "trust4": "Auf Cell Education aufgebaut",
     "panelLabel": "Ökosystem für zelluläre Medizin",
@@ -157,15 +157,15 @@
   "leadership": {
     "label": "Medizinische Leitung",
     "title": "Medizinische Leitung",
-    "body": "Das Cell Clinics Framework basiert auf jahrzehntelanger Erfahrung mit ärztlichen Schulungen, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
+    "body": "Das Cell Clinics Framework basiert auf über 20 Jahren Erfahrung mit ärztlichen Schulungen, der Entwicklung klinischer Frameworks und fundierter Expertise in der Zellmedizin.",
     "stat1": "Ärztliche Schulungen",
     "stat1Body": "Strukturierte Schulungen vermitteln Diagnostik, Therapieprinzipien und die sichere Anwendung im Praxisalltag.",
     "stat2": "Klinische Framework-Entwicklung",
-    "stat2Body": "Evidenzbasierte Abläufe verbinden Befunderhebung, ärztliche Interpretation und therapeutische Umsetzung.",
+    "stat2Body": "Strukturierte Abläufe verbinden Befunderhebung, ärztliche Interpretation und therapeutische Umsetzung.",
     "stat3": "Internationale Lehre",
     "stat3Body": "Schulungen und fachlicher Austausch schaffen einen gemeinsamen medizinischen Standard über Ländergrenzen hinweg.",
     "stat4": "Zellmedizinische Expertise",
-    "stat4Body": "Jahrzehntelange Erfahrung in mitochondrialer Medizin, Infusionstherapie und biologischer Regulation.",
+    "stat4Body": "Über 20 Jahre Erfahrung in mitochondrialer Medizin, Infusionstherapie und biologischer Regulation.",
     "cardLabel": "Wissenschaftliche & medizinische Leitung",
     "cardBody": "Ärztliche Schulungen und klinische Framework-Entwicklung für die Implementierung zellmedizinischer Programme."
   },
@@ -572,7 +572,7 @@
       "areasLabel": "Schwerpunkte",
       "areasTitle": "Vier Perspektiven auf Schönheit von innen",
       "area1Title": "Schönheit von innen",
-      "area1Body": "Zellregeneration und Zellerneuerung als Basis für Vitalität, gesunde Haut, kräftiges Haar und eine natürliche, jugendliche Ausstrahlung von innen heraus.",
+      "area1Body": "Naturheilkundliche Begleitung rund um Wohlbefinden, Vitalität und Ausstrahlung.",
       "area2Title": "Individuelle Begleitung",
       "area2Body": "Persönliche Ziele und Voraussetzungen bilden die Grundlage für eine abgestimmte naturheilkundliche Begleitung.",
       "area3Title": "Darm & Stoffwechsel",
@@ -725,14 +725,14 @@
     "nav": {"therapy": "Die Therapie", "process": "So funktioniert's", "faq": "FAQ"},
     "hero": {
       "label": "Für Patienten",
-      "title": "Bionic Cell Therapy. Ärztlich begleitet, in Ihrer Nähe.",
-      "body": "Cell Clinics sind Arztpraxen und Kliniken, die Bionic Cell Therapy nach einheitlichen medizinischen Standards anbieten – individuell abgestimmt auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele.",
+      "title": "Bionic Cell Therapy. Fachlich begleitet, in Ihrer Nähe.",
+      "body": "Cell Clinics sind Arztpraxen, Kliniken und Heilpraktikerpraxen, die Bionic Cell Therapy anbieten. Alle haben das Schulungsprogramm der Cell Education durchlaufen. Die Behandlung wird individuell auf Ihre Gesundheit, Ihre Diagnostik und Ihre Ziele abgestimmt.",
       "note": "Persönlich, diagnostikbasiert und ärztlich geführt"
     },
     "therapy": {
       "label": "Bionic Cell Therapy",
       "title": "Unterstützung beginnt dort, wo Gesundheit entsteht.",
-      "intro": "Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionic Cell Therapy setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer ärztlich geführt, immer auf Sie abgestimmt.",
+      "intro": "Jede Funktion Ihres Körpers beginnt in der Zelle – Energie, Regeneration, Abwehr. Die Bionic Cell Therapy setzt genau dort an: Auf Basis moderner Diagnostik wird ein individuelles Therapiekonzept erstellt, das Ihre Zellfunktion gezielt unterstützen kann – von Mikronährstoff-Infusionen bis zu begleitenden Therapieverfahren. Immer individuell auf Sie abgestimmt.",
       "card1Title": "Energie & Erschöpfung", "card1Body": "Bei anhaltender Müdigkeit und Erschöpfungszuständen kann die gezielte Unterstützung des Zellstoffwechsels ein Baustein Ihrer Behandlung sein.",
       "card2Title": "Regeneration & Erholung", "card2Body": "Nach Belastung, Erkrankung oder Operation – Therapiekonzepte, die die körpereigene Regeneration begleiten können.",
       "card3Title": "Prävention & Langlebigkeit", "card3Body": "Gesund bleiben, bevor Beschwerden entstehen: Diagnostik und Vorsorge auf zellulärer Ebene.",
@@ -740,13 +740,13 @@
     },
     "process": {
       "label": "Ihr Weg zur Behandlung", "title": "Wie bekomme ich Bionic Cell Therapy?", "intro": "In vier Schritten – von der ersten Anfrage bis zur laufenden Begleitung. Alles in einer Cell Clinic in Ihrer Nähe.",
-      "step1Title": "Cell Clinic finden", "step1Body": "Wählen Sie eine Partnerpraxis aus unserem Netzwerk. Jede Cell Clinic wird nach dem gleichen medizinischen Programm geschult und begleitet – Sie wissen also immer, was Sie erwartet.",
-      "step2Title": "Erstgespräch & Anamnese", "step2Body": "Ihre Ärztin oder Ihr Arzt nimmt sich Zeit: für Ihre Vorgeschichte, Ihre Beschwerden und Ihre Ziele. Daraus entsteht das Bild Ihrer individuellen Ausgangslage.",
-      "step3Title": "Diagnostik & individuelles Therapiekonzept", "step3Body": "Moderne Labor- und Zelldiagnostik zeigt, wo Ihr Körper Unterstützung braucht. Auf dieser Basis erstellt Ihre Cell Clinic ein Therapiekonzept, das zu Ihnen passt – kein Standardprogramm.",
-      "step4Title": "Behandlung & Begleitung", "step4Body": "Die Behandlung findet direkt in Ihrer Cell Clinic statt und wird ärztlich begleitet. Verlaufskontrollen zeigen die Entwicklung und ermöglichen eine laufende Anpassung des Konzepts."
+      "step1Title": "Cell Clinic finden", "step1Body": "Wählen Sie eine Partnerpraxis aus unserem Netzwerk. Alle Cell Clinics haben das Schulungsprogramm der Cell Education durchlaufen und werden fachlich begleitet.",
+      "step2Title": "Erstgespräch & Anamnese", "step2Body": "Ihre Behandlerin oder Ihr Behandler nimmt sich Zeit: für Ihre Vorgeschichte, Ihre Beschwerden und Ihre Ziele. Daraus entsteht das Bild Ihrer individuellen Ausgangslage.",
+      "step3Title": "Diagnostik & individuelles Therapiekonzept", "step3Body": "Moderne Labor- und Zelldiagnostik hilft einzuschätzen, wo Ihr Körper Unterstützung brauchen kann. Auf dieser Basis erstellt Ihre Cell Clinic ein Therapiekonzept, das zu Ihnen passt – kein Standardprogramm.",
+      "step4Title": "Behandlung & Begleitung", "step4Body": "Die Behandlung findet direkt in Ihrer Cell Clinic statt und wird fachlich begleitet. Verlaufskontrollen zeigen die Entwicklung und ermöglichen eine laufende Anpassung des Konzepts."
     },
     "finder": {
-      "label": "Cell Clinic finden", "title": "Partnerpraxen in Ihrer Nähe", "intro": "Unser Netzwerk wächst laufend. Alle Cell Clinics werden von qualifizierten Behandlerinnen und Behandlern geführt und sind Teil eines strukturierten Fachprogramms.",
+      "label": "Cell Clinic finden", "title": "Partnerpraxen in Ihrer Nähe", "intro": "Unser Netzwerk wächst laufend. Alle Cell Clinics werden von Ärztinnen, Ärzten oder Heilpraktikerinnen und Heilpraktikern geführt und haben das Schulungsprogramm der Cell Education durchlaufen.",
       "tag": "Partnerpraxis im Netzwerk", "clinicBody": "Ganzheitliche Klinik für biologische Medizin und Bionic Cell Therapy – eine der ersten Cell Clinics im Netzwerk und Referenz für unser Behandlungsmodell.", "profile": "Praxisprofil ansehen",
       "formTitle": "Keine Cell Clinic in Ihrer Nähe?", "formBody": "Hinterlassen Sie uns Ihre Region – wir melden uns, sobald eine Partnerpraxis bei Ihnen eröffnet, und vermitteln auf Wunsch eine Erstberatung."
     },
@@ -765,11 +765,11 @@
     },
     "faq": {
       "label": "Häufige Fragen", "title": "Was Sie vor dem ersten Gespräch wissen möchten.", "intro": "Die wichtigsten Antworten zur ärztlich begleiteten Behandlung in einer Cell Clinic.",
-      "q1": "Für wen ist die Bionic Cell Therapy geeignet?", "a1": "Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Ärztin oder Ihr Arzt nach Anamnese und Diagnostik.",
-      "q2": "Ist die Behandlung sicher?", "a2": "Jede Behandlung findet in einer ärztlich geführten Praxis oder Klinik statt und folgt einem einheitlichen medizinischen Programm. Ihre Ärztin oder Ihr Arzt klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf.",
+      "q1": "Für wen ist die Bionic Cell Therapy geeignet?", "a1": "Grundsätzlich für Erwachsene, die ihre Gesundheit auf zellulärer Ebene unterstützen möchten – ob bei anhaltender Erschöpfung, zur Regeneration oder präventiv. Ob und welche Behandlung für Sie infrage kommt, entscheidet immer Ihre Behandlerin oder Ihr Behandler nach Anamnese und Diagnostik. Ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
+      "q2": "Welche Risiken gibt es?", "a2": "Wie jede medizinische Anwendung kann auch eine Infusion Nebenwirkungen haben. Ihre Behandlerin oder Ihr Behandler klärt Sie vorab persönlich über Ablauf, Nutzen und mögliche Risiken auf und entscheidet, ob eine Anwendung für Sie geeignet ist.",
       "q3": "Was kostet die Behandlung – zahlt meine Krankenkasse?", "a3": "Die Kosten richten sich nach Ihrem individuellen Therapiekonzept und werden Ihnen vor Behandlungsbeginn transparent dargelegt. In der Regel handelt es sich um Selbstzahlerleistungen; private Versicherungen erstatten je nach Tarif anteilig. Ihre Cell Clinic berät Sie dazu im Erstgespräch.",
       "q4": "Wie lange dauert eine Behandlung?", "a4": "Das hängt von Ihrem Konzept ab: Eine einzelne Infusionsanwendung dauert meist unter einer Stunde, ein vollständiges Therapiekonzept erstreckt sich häufig über mehrere Wochen mit regelmäßigen Terminen und Verlaufskontrollen.",
-      "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: einheitliche Diagnostik-Standards, abgestimmte Therapieprotokolle und laufende ärztliche Schulungen über die Cell Education. So begegnet Ihnen an jedem Standort derselbe strukturierte Ansatz."
+      "q5": "Was unterscheidet eine Cell Clinic von einer normalen Praxis?", "a5": "Cell Clinics sind Teil eines Netzwerks, das nach einem gemeinsamen medizinischen Programm arbeitet: gemeinsame Diagnostik-Grundlagen, abgestimmte Therapieprotokolle und laufende Schulungen über die Cell Education. Die Behandlung selbst verantwortet jede Praxis eigenständig."
     },
     "cta": {"label": "Ihr nächster Schritt", "title": "Bereit für den ersten Schritt?", "body": "Finden Sie eine Cell Clinic in Ihrer Nähe und vereinbaren Sie ein Erstgespräch – unverbindlich und persönlich.", "findClinic": "Cell Clinic finden", "findNearby": "Cell Clinic in Ihrer Nähe finden", "howItWorks": "Wie läuft die Behandlung ab?"},
     "footerDescription": "Ein ärztlich geführtes Netzwerk für individuell abgestimmte Bionic Cell Therapy.",

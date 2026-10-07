@@ -1,4 +1,6 @@
+import type {Berufsgruppe} from "./professions";
 export type Clinic = {
+  berufsgruppe: Berufsgruppe;
   slug: string;
   name: string;
   practitioner: string;
@@ -21,6 +23,7 @@ export type Clinic = {
 export const clinics: Clinic[] = [
   {
     slug: "reinhard-schmehl-ebersberg",
+    berufsgruppe: "Arztpraxis",
     name: "Privatpraxis Reinhard Schmehl",
     practitioner: "Reinhard Schmehl",
     city: "Ebersberg",
@@ -36,6 +39,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "dunja-martin-sankt-julian",
+    berufsgruppe: "Arztpraxis",
     name: "Dr. med. Dunja Martin",
     practitioner: "Dr. med. Dunja Martin · Neurologie · Online-Beratung",
     city: "Sankt Julian",
@@ -52,6 +56,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "alpstein",
+    berufsgruppe: "Klinik",
     name: "Alpstein Clinic",
     practitioner: "Annette Heusser",
     city: "Gais",
@@ -76,6 +81,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "julia-napolitano-gil-goeppingen",
+    berufsgruppe: "Arztpraxis",
     name: "Holysama · Dr. Julia Napolitano Gil",
     practitioner: "Dr. med. Julia Napolitano Gil",
     city: "Göppingen",
@@ -91,6 +97,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "ivan-goecze-mintraching",
+    berufsgruppe: "[[OFFEN]]",
     name: "Dr. Ivan Göcze",
     practitioner: "Dr. Ivan Göcze",
     city: "Mintraching",
@@ -100,6 +107,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "marc-stracke-luebeck",
+    berufsgruppe: "Arztpraxis",
     name: "Dr. Marc Stracke",
     practitioner: "Dr. Marc Stracke",
     city: "Lübeck",
@@ -115,6 +123,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "imke-frei-koenigstein",
+    berufsgruppe: "[[OFFEN]]",
     name: "Imke Frei",
     practitioner: "Imke Frei",
     city: "Königstein im Taunus",
@@ -124,6 +133,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "mihriban-ciftci-stuttgart",
+    berufsgruppe: "Heilpraktikerpraxis",
     name: "SchönGesund",
     practitioner: "Mihriban Ciftci",
     city: "Stuttgart",
@@ -142,6 +152,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "marco-hartl-regensburg",
+    berufsgruppe: "Arztpraxis",
     name: "ONE · Dr. Marco Hartl",
     practitioner: "Dr. Marco Hartl",
     city: "Regensburg",
@@ -156,6 +167,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "heidelinde-klein-appenzeller-land",
+    berufsgruppe: "Arztpraxis",
     name: "Health Point Dr. Klein AG",
     practitioner: "Dr. Heidelinde Klein",
     city: "Niederteufen",
@@ -172,6 +184,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "medivium-stuttgart",
+    berufsgruppe: "Heilpraktikerpraxis",
     name: "MEDIVIUM",
     practitioner: "Enrico Thiele",
     city: "Stuttgart",
@@ -193,6 +206,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "monika-brueck-mallorca",
+    berufsgruppe: "Arztpraxis",
     name: "Hautarztpraxis Dr. Monika Brück",
     practitioner: "Dr. Monika Brück · Fachärztin für Dermatologie",
     city: "Palma de Mallorca",
@@ -214,6 +228,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "maja-koebel-aink-luebeck",
+    berufsgruppe: "Arztpraxis",
     name: "Dr. Maja Köbel-Aink",
     practitioner: "Dr. Maja Köbel-Aink · Fachärztin für MKG-Chirurgie und Anästhesie",
     city: "Lübeck",
@@ -233,6 +248,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "lars-gienger-bretten",
+    berufsgruppe: "Heilpraktikerpraxis",
     name: "CURAPRAX",
     practitioner: "Lars Gienger · Heilpraktiker, Osteopath und Physiotherapeut",
     city: "Bretten",
@@ -255,6 +271,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "boguslaw-nikiciuk-neuruppin",
+    berufsgruppe: "Arztpraxis",
     name: "Praxis für Rheumatologie Boguslaw Krystian Nikiciuk",
     practitioner: "Boguslaw Krystian Nikiciuk · Facharzt für Innere Medizin und Rheumatologie",
     city: "Neuruppin",
@@ -277,6 +294,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "hopmann-maak-lemfoerde",
+    berufsgruppe: "Zahnarztpraxis",
     name: "Zahnarztpraxis Dr. Michael Maak und Kollegen",
     practitioner: "Dr. Michael Maak · Dr. Sabine Hopmann",
     city: "Lemförde",
@@ -288,6 +306,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "res-vitalis-tegernsee",
+    berufsgruppe: "Heilpraktikerpraxis",
     name: "ResVitalis",
     practitioner: "Dr. rer. nat. Anke Stockhausen · Apothekerin und Heilpraktikerin",
     city: "Tegernsee",
@@ -299,6 +318,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "dres-neumeyer-eschlkam",
+    berufsgruppe: "Zahnarztpraxis",
     name: "Zahnarztpraxis Dr. Neumeyer & Partner",
     practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr",
     city: "Eschlkam",
@@ -310,6 +330,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "claudia-curth-hamburg",
+    berufsgruppe: "Arztpraxis",
     name: "Praxis für Ganzheitliche Medizin",
     practitioner: "Claudia Curth · Fachärztin für Allgemeinmedizin und Naturheilverfahren",
     city: "Hamburg",
@@ -321,6 +342,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "matthias-salewski-koeln",
+    berufsgruppe: "Arztpraxis",
     name: "Internistische Hausarztpraxis am Dom",
     practitioner: "Matthias Salewski · Facharzt für Innere Medizin und Nephrologie",
     city: "Köln",
@@ -332,6 +354,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "elena-bucur-karlsruhe",
+    berufsgruppe: "Zahnarztpraxis",
     name: "Praxisklinik Bucur",
     practitioner: "Doctor medic Elena Bucur · Zahnärztin, Implantologie und zahnärztliche Chirurgie",
     city: "Karlsruhe",
@@ -347,6 +370,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "youn-ju-lee-kassel",
+    berufsgruppe: "[[OFFEN]]",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
     city: "Kassel",

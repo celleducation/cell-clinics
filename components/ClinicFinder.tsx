@@ -5,6 +5,7 @@ import {useEffect, useMemo, useState} from "react";
 import {useLocale} from "next-intl";
 import {Link} from "@/i18n/navigation";
 import type {Clinic} from "@/content/clinics";
+import {professionLabel} from "@/content/professions";
 
 type FinderLabels = {
   search: string;
@@ -237,6 +238,7 @@ export function ClinicFinder({clinics, labels}: {clinics: Clinic[]; labels: Find
                 <span className="clinic-result-copy">
                   <span className="clinic-result-label">{clinic.modelClinic ? labels.centralPartner : labels.partnerPractice}</span>
                   <strong>{clinic.name}</strong>
+                  <span className="clinic-practitioners">{professionLabel(clinic.berufsgruppe, locale)}</span>
                   {(clinic.listingOnly || clinic.slug === "medivium-stuttgart" || clinic.slug === "mihriban-ciftci-stuttgart") && <span className="clinic-practitioners">{clinic.practitioner}</span>}
                   <span><MapPin size={14} aria-hidden="true" />{clinic.city}, {countryNames.of(clinic.countryCode)}{clinic.distance !== null ? ` · ${Math.round(clinic.distance)} ${labels.distanceAway}` : ""}</span>
                 </span>

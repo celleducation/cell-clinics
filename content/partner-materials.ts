@@ -23,7 +23,7 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Honorar & Abrechnung", body: "Eine ausfüllbare Honorarvereinbarung nach § 2 GOÄ und eine Musterrechnung mit beispielhaften Ziffern und Faktoren für deutsche Partnerpraxen."},
       {image: "website", title: "Ihre Praxis im Netzwerk", body: "Eine eigene Partnerseite mit Porträt, Schwerpunkten und Kontaktmöglichkeit sowie ein Eintrag auf der Netzwerkkarte. Dazu Materialien für Ihre Patientenkommunikation."}
     ],
-    equipment: {title: "Produkte & Geräte", body: "Bezugswege der Burg-Apotheke, Beratung zur Geräteauswahl und Partnerkonditionen — Produkte und Geräte werden separat bezogen."},
+    equipment: {title: "Produkte & Geräte", body: "Pharmazeutische Beratung durch die Burg-Apotheke und Beratung zur Geräteauswahl. Produkte und Geräte werden separat und unabhängig bezogen."},
     supportTitle: "Begleitung für Ihre Praxis",
     support: [
       {title: "Seminare", body: "Seminare mit Dr. Bredehorst vermitteln die Grundlagen für Ihre Praxis."},
@@ -49,7 +49,7 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Fees & billing", body: "A fillable fee agreement under § 2 GOÄ and a sample invoice with illustrative codes and factors for practices in Germany."},
       {image: "website", title: "Your practice in the network", body: "Your own partner page with a portrait, areas of focus and contact options, plus a network map listing and patient communication materials."}
     ],
-    equipment: {title: "Products & devices", body: "Burg-Apotheke ordering channels, device selection guidance and partner terms — products and devices are sourced separately."},
+    equipment: {title: "Products & devices", body: "Pharmaceutical advice from Burg-Apotheke and guidance on device selection. Products and devices are sourced separately and independently."},
     supportTitle: "Support for your practice",
     support: [
       {title: "Training", body: "Training and a certificate from Dr. Bredehorst provide the foundations for your practice."},
@@ -75,7 +75,7 @@ export const partnerMaterials: Record<string, Materials> = {
       {image: "billing", title: "Honorarios y facturación", body: "Un acuerdo de honorarios rellenable conforme al § 2 GOÄ y una factura modelo con códigos y factores ilustrativos para consultas en Alemania."},
       {image: "website", title: "Su consulta en la red", body: "Una página propia con retrato, especialidades y contacto, presencia en el mapa de la red y materiales de comunicación con pacientes."}
     ],
-    equipment: {title: "Productos y dispositivos", body: "Canales de Burg-Apotheke, asesoramiento para elegir dispositivos y condiciones para socios; los productos y dispositivos se adquieren por separado."},
+    equipment: {title: "Productos y dispositivos", body: "Asesoramiento farmacéutico de Burg-Apotheke y orientación para elegir dispositivos. Los productos y dispositivos se adquieren por separado y de forma independiente."},
     supportTitle: "Acompañamiento para su consulta",
     support: [
       {title: "Formación", body: "La formación y el certificado del Dr. Bredehorst aportan las bases para su consulta."},
