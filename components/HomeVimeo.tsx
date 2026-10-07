@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import Image from "next/image";
 import {Play} from "lucide-react";
 
 const copy = {
@@ -23,6 +24,7 @@ export function HomeVimeo({locale}: {locale: string}) {
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
         /> : <div className="home-vimeo-consent">
+          <Image src="/images/cell-clinics-video-poster.jpg" alt="" fill sizes="(max-width: 800px) 100vw, 800px" className="home-vimeo-poster" />
           <button type="button" className="button button-primary" aria-describedby="home-video-privacy" onClick={() => setLoaded(true)}>
             <Play size={20} aria-hidden="true" />{c.play}
           </button>

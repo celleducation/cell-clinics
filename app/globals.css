@@ -575,7 +575,8 @@ textarea {
 .home-vimeo-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; border: 1px solid var(--line); background: radial-gradient(ellipse at 70% 20%, #d6f2fc, transparent 65%), linear-gradient(135deg, #f6f9fc, #eaf1f8); }
 .home-vimeo-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .home-vimeo-consent { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; }
-.home-vimeo-consent .button { width: auto; min-height: 44px; padding: 10px 18px; font-size: 14px; }
+.home-vimeo-poster { object-fit: cover; }
+.home-vimeo-consent .button { position: relative; z-index: 1; width: auto; min-height: 44px; padding: 10px 18px; font-size: 14px; }
 .home-vimeo-note { margin: 12px 0 0; color: var(--slate); font-size: 12px; line-height: 1.6; }
 .home-vimeo .clinic-back-link { margin-top: 8px; margin-bottom: 0; font-size: 13px; }
 @media (max-width: 600px) { .home-vimeo.section { padding-block: 24px; } }
