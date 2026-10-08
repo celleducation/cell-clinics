@@ -10,6 +10,7 @@ import {PatientInquiryForm} from "@/components/PatientInquiryForm";
 import {CellScienceLearning} from "@/components/CellScienceArt";
 import {ClinicFinder} from "@/components/ClinicFinder";
 import {PhotographicHero} from "@/components/PhotographicHero";
+import {HomeVimeo} from "@/components/HomeVimeo";
 import {clinics} from "@/content/clinics";
 import {patientSlugs as slugs} from "@/i18n/paths";
 import type {Locale} from "@/i18n/routing";
@@ -94,6 +95,8 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
           </div>
         </div>
       </section>
+
+      <HomeVimeo locale={locale} patient />
 
       <section className="section patient-therapy-story" id="therapy">
         <div className="container">
