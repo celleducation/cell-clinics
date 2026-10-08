@@ -18,6 +18,7 @@ export function HomeVimeo({locale, patient = false}: {locale: string; patient?: 
   const title = patient ? (locale === "de" ? "Cell Clinics für Patienten im Video" : locale === "es" ? "Cell Clinics para pacientes en vídeo" : "Cell Clinics for patients on video") : c.title;
   const sectionId = patient ? "patient-video" : "home-video";
   const cover = locale === "de" ? {label: "Für Patienten · 78 Sekunden", subtitle: "Einfach erklärt", play: "Video ansehen"} : locale === "es" ? {label: "Para pacientes · 78 segundos", subtitle: "Una explicación sencilla", play: "Ver vídeo"} : {label: "For patients · 78 seconds", subtitle: "Simply explained", play: "Watch video"};
+  const homeCover = locale === "de" ? {label: "Für Ärzte & Kliniken", subtitle: "Die Plattform im Überblick"} : locale === "es" ? {label: "Para médicos y clínicas", subtitle: "La plataforma de un vistazo"} : {label: "For doctors & clinics", subtitle: "The platform at a glance"};
   return <section className="section home-vimeo" aria-labelledby={`${sectionId}-title`}>
     <div className="container">
       <h2 className="section-title" id={`${sectionId}-title`}>{title}</h2>
@@ -28,17 +29,14 @@ export function HomeVimeo({locale, patient = false}: {locale: string; patient?: 
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
           referrerPolicy="strict-origin-when-cross-origin"
-        /> : <div className={`home-vimeo-consent${patient ? " patient-video-cover" : ""}`}>
-          <Image src={patient ? "/images/cell-clinics-patient-video-poster.jpg" : "/images/cell-clinics-video-poster.jpg"} alt="" fill sizes="(max-width: 800px) 100vw, 800px" className="home-vimeo-poster" />
-          {patient ? <div className="patient-video-cover-copy">
-            <span className="patient-video-cover-label">{cover.label}</span>
-            <p className="patient-video-cover-title">Bionic<br />Cell Therapy</p>
-            <p className="patient-video-cover-subtitle">{cover.subtitle}</p>
+        /> : <div className={`home-vimeo-consent patient-video-cover${patient ? "" : " platform-video-cover"}`}>
+          {patient ? <Image src="/images/cell-clinics-patient-video-poster.jpg" alt="" fill sizes="(max-width: 800px) 100vw, 800px" className="home-vimeo-poster" /> : <div className="platform-video-cover-art"><Image src="/images/editorial/platform-cell.webp" alt="" fill sizes="(max-width: 800px) 65vw, 520px" /></div>}
+          <div className="patient-video-cover-copy">
+            <span className="patient-video-cover-label">{patient ? cover.label : homeCover.label}</span>
+            <p className="patient-video-cover-title">{patient ? <>Bionic<br />Cell Therapy</> : <>Cell<br />Clinics</>}</p>
+            <p className="patient-video-cover-subtitle">{patient ? cover.subtitle : homeCover.subtitle}</p>
             <button type="button" className="button button-primary" aria-describedby={`${sectionId}-privacy`} onClick={() => setLoaded(true)}><Play size={18} aria-hidden="true" />{cover.play}</button>
-          </div> :
-          <button type="button" className="button button-primary" aria-describedby={`${sectionId}-privacy`} onClick={() => setLoaded(true)}>
-            <Play size={20} aria-hidden="true" />{c.play}
-          </button>}
+          </div>
         </div>}
       </div>
       <p className="home-vimeo-note" id={`${sectionId}-privacy`}>{c.note}</p>

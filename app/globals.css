@@ -583,6 +583,12 @@ textarea {
 .patient-video-cover { justify-content: flex-start; padding: clamp(18px, 4vw, 42px); }
 .patient-video-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #eef8fc 0%, #eef8fc 44%, rgba(238,248,252,.97) 51%, rgba(238,248,252,0) 68%); }
 .patient-video-cover-copy { position: relative; z-index: 1; width: 58%; color: var(--navy); }
+.platform-video-cover { background: #eef8fc; }
+.schmehl-portrait { align-self: center; justify-self: center; width: min(100%, 440px); overflow: hidden; border-radius: 24px; background: radial-gradient(circle at 50% 35%, #fff, #e5f4fb); }
+.schmehl-portrait img { display: block; width: 100%; height: auto; }
+.platform-video-cover-art { position: absolute; width: 65%; height: 90%; right: -8%; top: 5%; }
+.platform-video-cover-art img { object-fit: contain; }
+.platform-video-cover::after { background: linear-gradient(90deg, #eef8fc 0%, #eef8fc 30%, rgba(238,248,252,0) 62%); }
 .patient-video-cover-label { display: block; font-size: clamp(9px, 1.4vw, 12px); letter-spacing: .1em; text-transform: uppercase; color: #337e9c; margin-bottom: 14px; }
 .patient-video-cover-title { margin: 0; font-size: clamp(24px, 4.5vw, 44px); font-weight: 650; line-height: 1.08; letter-spacing: -.04em; }
 .patient-video-cover-subtitle { margin: 10px 0 22px; font-size: clamp(13px, 2vw, 19px); color: var(--slate); }

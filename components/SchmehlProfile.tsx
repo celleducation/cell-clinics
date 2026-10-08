@@ -3,13 +3,13 @@ import Image from "next/image";
 import {Link} from "@/i18n/navigation";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
 import {SectionHeading} from "@/components/ui/SectionHeading";
+import {CellScienceArt} from "@/components/CellScienceArt";
 import type {Clinic} from "@/content/clinics";
 import {schmehlCopy} from "@/content/reinhard-schmehl";
 import {jsonLd, SITE_URL} from "@/lib/seo";
 
 export function SchmehlProfile({locale, clinic}: {locale: string; clinic: Clinic}) {
   const c = schmehlCopy[locale as keyof typeof schmehlCopy] ?? schmehlCopy.de;
-  const photoAlt = locale === "de" ? "Innenansicht der Privatpraxis Reinhard Schmehl" : locale === "es" ? "Interior de la consulta privada Reinhard Schmehl" : "Interior of Reinhard Schmehl’s private practice";
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd({
       "@context": "https://schema.org", "@type": "MedicalClinic", name: clinic.name,
@@ -31,14 +31,14 @@ export function SchmehlProfile({locale, clinic}: {locale: string; clinic: Clinic
             <a className="button button-secondary" href="#contact">{c.contact}</a>
           </div>
         </div>
-        <Image className="health-point-hero-photo" src="/clinics/reinhard-schmehl/interior-7.jpg" alt={photoAlt} width={600} height={400} sizes="(max-width: 767px) 100vw, 50vw" priority /></div>
+        <div className="schmehl-portrait"><Image src="/clinics/reinhard-schmehl/portrait.png" alt="Reinhard Schmehl" width={500} height={439} sizes="(max-width: 767px) 90vw, 440px" priority /></div></div>
         <div className="clinic-fact-strip">{c.facts.map((fact, i) => <div key={fact}><span>0{i + 1}</span><strong>{fact}</strong></div>)}</div>
       </div>
     </section>
     <section className="section"><div className="container">
       <SectionHeading eyebrow={c.network} title={c.aboutTitle} />
       <p className="lead">{c.about}</p>
-      <div className="alpstein-hero-grid">{[1, 3].map(number => <Image key={number} className="health-point-hero-photo" src={`/clinics/reinhard-schmehl/interior-${number}.jpg`} alt={`${photoAlt} – ${number === 1 ? 2 : 3}`} width={600} height={400} sizes="(max-width: 767px) 100vw, 50vw" />)}</div>
+      <div className="alpstein-hero-grid"><CellScienceArt kind="senescence" locale={locale} /><CellScienceArt kind="membrane-transport" locale={locale} /></div>
     </div></section>
     <section className="section section-alt clinic-profile-contact" id="contact">
       <div className="container clinic-profile-contact-card">
