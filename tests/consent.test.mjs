@@ -36,7 +36,7 @@ function harness(env = {}) {
 test('no IDs: no optional vendors even with a consent event', () => {
   const h = harness(); h.update(['analytics', 'advertisement']);
   assert.equal(h.scripts.length, 0);
-  assert.equal(h.consent.hasConsent('statistics'), false);
+  assert.equal(h.consent.hasConsent('statistics'), true);
   assert.equal(h.consent.hasConsent('necessary'), true);
 });
 test('configured IDs: initial refusal and reject all load no vendors', () => {

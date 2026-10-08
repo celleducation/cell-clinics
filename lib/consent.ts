@@ -13,7 +13,8 @@ declare global {
 let accepted: Set<string> | undefined;
 export function hasConsent(category: ConsentCategory): boolean {
   if (category === "necessary") return true;
-  if (typeof window === "undefined" || !process.env.NEXT_PUBLIC_COOKIEYES_ID) return false;
+  // CookieYes may also be installed through GTM, without the direct site-ID env.
+  if (typeof window === "undefined") return false;
   if (accepted) return accepted.has(categoryIds[category]);
   const consent = window.getCkyConsent?.();
   return consent?.isUserActionCompleted === true && consent.categories?.[categoryIds[category]] === true;
