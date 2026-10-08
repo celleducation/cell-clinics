@@ -97,7 +97,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "ivan-goecze-mintraching",
-    berufsgruppe: "[[OFFEN]]",
+    berufsgruppe: "unknown",
     name: "Dr. Ivan Göcze",
     practitioner: "Dr. Ivan Göcze",
     city: "Mintraching",
@@ -123,7 +123,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "imke-frei-koenigstein",
-    berufsgruppe: "[[OFFEN]]",
+    berufsgruppe: "unknown",
     name: "Imke Frei",
     practitioner: "Imke Frei",
     city: "Königstein im Taunus",
@@ -370,7 +370,7 @@ export const clinics: Clinic[] = [
   },
   {
     slug: "youn-ju-lee-kassel",
-    berufsgruppe: "[[OFFEN]]",
+    berufsgruppe: "unknown",
     name: "Dr. Youn-Ju Lee",
     practitioner: "Dr. Youn-Ju Lee",
     city: "Kassel",
