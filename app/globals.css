@@ -580,6 +580,17 @@ textarea {
 .home-vimeo-consent .button { position: relative; z-index: 1; width: auto; min-height: 44px; padding: 10px 18px; font-size: 14px; }
 .home-vimeo-note { margin: 12px 0 0; color: var(--slate); font-size: 12px; line-height: 1.6; }
 .home-vimeo .clinic-back-link { margin-top: 8px; margin-bottom: 0; font-size: 13px; }
+.patient-video-cover { justify-content: flex-start; padding: clamp(18px, 4vw, 42px); }
+.patient-video-cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #eef8fc 0%, #eef8fc 44%, rgba(238,248,252,.97) 51%, rgba(238,248,252,0) 68%); }
+.patient-video-cover-copy { position: relative; z-index: 1; width: 58%; color: var(--navy); }
+.patient-video-cover-label { display: block; font-size: clamp(9px, 1.4vw, 12px); letter-spacing: .1em; text-transform: uppercase; color: #337e9c; margin-bottom: 14px; }
+.patient-video-cover-title { margin: 0; font-size: clamp(24px, 4.5vw, 44px); font-weight: 650; line-height: 1.08; letter-spacing: -.04em; }
+.patient-video-cover-subtitle { margin: 10px 0 22px; font-size: clamp(13px, 2vw, 19px); color: var(--slate); }
+@media (max-width: 480px) {
+  .patient-video-cover-label { margin-bottom: 8px; letter-spacing: .04em; }
+  .patient-video-cover-subtitle { margin: 6px 0 12px; }
+  .patient-video-cover .button { min-height: 36px; padding: 7px 11px; font-size: 11px; }
+}
 @media (max-width: 600px) { .home-vimeo.section { padding-block: 24px; } }
 
 .webinar-banner {
