@@ -22,7 +22,7 @@ export function HomeVimeo({locale, patient = false}: {locale: string; patient?: 
       <h2 className="section-title" id={`${sectionId}-title`}>{title}</h2>
       <div className="home-vimeo-frame">
         {loaded ? <iframe
-          src={`https://player.vimeo.com/video/${videoId}?h=${hash}&dnt=1&autoplay=1`}
+          src={`https://player.vimeo.com/video/${videoId}?h=${hash}&dnt=1&autoplay=1${patient ? "&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0" : ""}`}
           title={title}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen

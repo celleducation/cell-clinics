@@ -61,6 +61,8 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
         <ButtonLink href="#process" variant="secondary" size="large">{t("cta.howItWorks")}</ButtonLink>
       </PhotographicHero>
 
+      <HomeVimeo locale={locale} patient />
+
       <section className="section" id="find-clinic">
         <div className="container">
           <SectionHeading eyebrow={t("finder.label")} title={t("finder.title")} intro={t("finder.intro")} />
@@ -95,8 +97,6 @@ export default async function PatientPage({params}: {params: Promise<{locale: st
           </div>
         </div>
       </section>
-
-      <HomeVimeo locale={locale} patient />
 
       <section className="section patient-therapy-story" id="therapy">
         <div className="container">
