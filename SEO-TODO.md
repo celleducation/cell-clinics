@@ -650,3 +650,10 @@ Stand nach Wiederherstellung des freigegebenen FAQ am 18.09.2026. Zeilen beziehe
 | `content/site.ts:58` | {title: "Clinical Systems", body: "Implementation-ready medical frameworks.", icon: Boxes}, |
 
 <!-- professional-language-inventory:end -->
+
+## Partnerprofil Dr. Michael Maak und Kollegen – 20.10.2026
+
+- Grundlage: vom Nutzer bereitgestellte Partnerinformation, datiert 06.10.2026. Öffnungszeiten und Kontaktdaten wurden daraus übernommen; keine Preise oder Behandlungserfolge ergänzt.
+- Logo und Behandlerporträt sind im Formular angekreuzt, wurden aber nicht mitgeliefert. Bei Eingang ergänzen; keine öffentlichen Platzhalter.
+- Die zusätzlichen Angaben „Oxyvenierung“, „Vitamin D-Test“, „VNS-Analyse“, „ganzimmun“ und „Darm-Anamnese“ sind vor einer eigenständigen patientengerichteten Leistungsdarstellung fachlich und rechtlich zu prüfen. Aktuell nur die angegebenen zahnmedizinischen Fachgebiete dargestellt; keine Marken-/Produktnennung und keine Indikationsliste aus dem Zielgruppenfeld übernommen.
+- Die deutsche Praxisvorstellung und Vita wurden aus der Partnerinformation gekürzt; EN/ES sind Übersetzungen. Zahn-Grafiken sind als schematische Illustrationen gekennzeichnet und keine Praxisfotos.

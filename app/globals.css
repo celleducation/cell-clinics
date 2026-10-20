@@ -586,6 +586,25 @@ textarea {
 .platform-video-cover { background: #eef8fc; }
 .schmehl-portrait { align-self: center; justify-self: center; width: min(100%, 440px); overflow: hidden; border-radius: 24px; background: radial-gradient(circle at 50% 35%, #fff, #e5f4fb); }
 .schmehl-portrait img { display: block; width: 100%; height: auto; }
+.maak-art { margin: 0; min-width: 0; }
+.maak-art img { display: block; width: 100%; height: auto; object-fit: contain; }
+.maak-art figcaption { color: var(--muted); font-size: 12px; text-align: center; margin-top: 12px; }
+.maak-hero-art { width: min(100%, 440px); justify-self: center; align-self: center; }
+.maak-about, .maak-network { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+.maak-focus { padding: 32px; border: 1px solid #dce9f2; border-radius: 24px; background: #f5faff; }
+.maak-focus .section-title { font-size: clamp(22px, 2vw, 28px); }
+.maak-focus ul { padding-left: 20px; margin-bottom: 0; display: grid; gap: 12px; }
+.maak-bio { max-width: 960px; }
+.maak-hours { max-width: 400px; }
+.maak-hours div { display: flex; justify-content: space-between; gap: 20px; margin: 12px 0; }
+.maak-hours dd { margin: 0; white-space: nowrap; }
+.maak-social { display: flex; flex-wrap: wrap; gap: 24px; }
+@media (max-width: 767px) {
+  .maak-about, .maak-network { grid-template-columns: 1fr; gap: 32px; }
+  .maak-hero-art { max-width: 320px; }
+  .maak-network .maak-art { order: 2; }
+  .maak-focus { padding: 24px; }
+}
 .platform-video-cover-art { position: absolute; width: 65%; height: 90%; right: -8%; top: 5%; }
 .platform-video-cover-art img { object-fit: contain; }
 .platform-video-cover::after { background: linear-gradient(90deg, #eef8fc 0%, #eef8fc 30%, rgba(238,248,252,0) 62%); }

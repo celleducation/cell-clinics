@@ -300,7 +300,10 @@ export const clinics: Clinic[] = [
     city: "Lemförde",
     region: "Niedersachsen",
     countryCode: "DE",
-    listingOnly: true,
+    profileAvailable: true,
+    address: "Untere Bergstraße 12, 49448 Lemförde, Deutschland",
+    phone: "+49 5443 374",
+    contactEmail: "info@hopmann-maak.de",
     coordinates: {lat: 52.4657, lng: 8.3768},
     website: "https://www.hopmann-maak.de/"
   },
