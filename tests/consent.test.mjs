@@ -6,6 +6,7 @@ import test from 'node:test';
 
 // Test-only vendor identifiers; this VM cannot perform network requests.
 function harness(env = {}) {
+  env = {NEXT_PUBLIC_GTM_ID: '', ...env};
   const events = new Map();
   const scripts = [];
   let reloads = 0;
@@ -63,4 +64,27 @@ test('marketing loads only Meta; withdrawal revokes', () => {
   h.update(['necessary']);
   assert.equal(h.window.fbq.queue.at(-1)[1], 'revoke');
   assert.equal(h.reloads(), 1);
+});
+
+test('GTM waits for both categories, loads once, and stops after withdrawal', () => {
+  const h = harness({NEXT_PUBLIC_GTM_ID: 'GTM-TEST'});
+  assert.equal(h.scripts.length, 0);
+  h.update(['necessary']);
+  h.update(['necessary', 'analytics']);
+  h.update(['necessary', 'advertisement']);
+  assert.equal(h.scripts.length, 0);
+  h.update(['necessary', 'analytics', 'advertisement']);
+  h.update(['necessary', 'analytics', 'advertisement']);
+  assert.deepEqual(h.scripts.map(s => s.id), ['consented-gtm']);
+  const commands = h.window.dataLayer.filter(x => x[0] === 'consent');
+  assert.equal(commands[0][1], 'default');
+  assert.ok(Object.values(commands[0][2]).every(x => x === 'denied'));
+  h.update(['necessary', 'analytics']);
+  assert.equal(h.reloads(), 1);
+});
+
+test('root layout contains neither immediate GTM nor noscript tracking', () => {
+  const layout = fs.readFileSync('app/[locale]/layout.tsx', 'utf8');
+  assert.doesNotMatch(layout, /googletagmanager|<noscript/);
+  assert.match(layout, /NEXT_PUBLIC_COOKIEYES_ID/);
 });

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Check, GraduationCap, Handshake, MessagesSquare, RefreshCw, Package} from "lucide-react";
+import {Check, GraduationCap, Handshake, MessagesSquare, RefreshCw, Package, BookOpen, FileText, ClipboardList, ShieldCheck, Receipt, Users} from "lucide-react";
 import {partnerStories} from "@/content/partner-story";
 import {partnerMaterials} from "@/content/partner-materials";
 import {SectionHeading} from "@/components/ui/SectionHeading";
@@ -57,6 +57,7 @@ export function PartnerProgram({locale}: {locale: string}) {
 
 export function PartnerDeliverables({locale}: {locale: string}) {
   const material = partnerMaterials[locale] ?? partnerMaterials.de;
+  const resourceIcons = [ClipboardList, FileText, ShieldCheck, Receipt, Users];
   const supportIcons = [GraduationCap, Handshake, MessagesSquare, RefreshCw];
   return (
     <section className="section partner-materials" id="platform">
@@ -69,16 +70,16 @@ export function PartnerDeliverables({locale}: {locale: string}) {
             <ul>{material.points.map(point => <li key={point}><Check size={18} aria-hidden="true" />{point}</li>)}</ul>
           </div>
           <figure>
-            <div className="materials-book-image"><Image src="/images/partner-materials/compendium.webp" alt="" fill sizes="(max-width: 767px) 90vw, 45vw" /></div>
+            <div className="materials-book-image materials-neutral-preview" aria-hidden="true"><BookOpen size={96} strokeWidth={1} /><strong>Cell Education</strong><span>Bionic Cell Therapy</span></div>
             <figcaption>{material.caption}</figcaption>
           </figure>
         </div>
         <h3 className="materials-subtitle">{material.resourcesTitle}</h3>
         <div className="materials-grid">
-          {material.resources.map(item => <article className="materials-card" key={item.image}>
-            <div className="materials-preview"><Image src={`/images/partner-materials/${item.image}.webp`} alt={item.title} fill sizes="(max-width: 767px) 90vw, 45vw" /></div>
+          {material.resources.map((item, index) => { const Icon = resourceIcons[index]; return <article className="materials-card" key={item.image}>
+            <div className="materials-preview materials-neutral-preview" aria-hidden="true"><Icon size={64} strokeWidth={1} /><span>Cell Education</span></div>
             <div className="materials-card-copy"><h4>{item.title}</h4><p>{item.body}</p></div>
-          </article>)}
+          </article>; })}
         </div>
         <aside className="materials-equipment">
           <Package size={24} aria-hidden="true" />

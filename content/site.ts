@@ -48,7 +48,7 @@ export const clinicalSystems = [
     slug: "therapeutic-access",
     title: "Therapeutic Access",
     body: "Structured pathways connecting clinical interpretation with therapeutic implementation.",
-    image: "/images/cellclinic-protocols.png",
+    image: "/images/editorial/platform-cell.webp",
     icon: ClipboardCheck
   }
 ] as const;

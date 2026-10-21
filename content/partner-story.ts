@@ -8,15 +8,15 @@ export const partnerStories: Record<string, PartnerStory> = {
   de: {
     pillars: {
       label: "Das Praxismodell", title: "Eine Praxis. Zwei Standbeine.",
-      intro: "Behandlung vor Ort und ein ergänzendes Institut: zwei Bereiche, die Sie passend zu Ihrer Praxis entwickeln können.",
+      intro: "Behandlung vor Ort und ergänzende Gesundheitsbildung: zwei klar getrennte Bereiche.",
       items: [
-        {title: "Ihre Praxis vor Ort", body: "Hier stehen das persönliche Gespräch, die Diagnostik und die individuell geplante Behandlung im Mittelpunkt.", detail: "Ärztlich begleitete Programme · Persönliche Betreuung · Verlaufskontrollen"},
-        {title: "Ihr ergänzendes Institut", body: "Schaffen Sie Raum für Gesundheitsbildung und Wissensvermittlung, mit digitalen Formaten für Privatpersonen, Unternehmen oder Organisationen. Ärztliche Diagnose und Behandlung finden in der Praxis statt.", detail: "Videoberatung · Bildungsangebote · Begleitung bei Struktur und Umsetzung"}
+        {title: "Ihre Praxis vor Ort", body: "Hier stehen das persönliche Gespräch, die Diagnostik und die individuell geplante Behandlung im Mittelpunkt.", detail: "Fachlich begleitete Gespräche · Persönliche Betreuung · Verlaufskontrollen"},
+        {title: "Ergänzende Gesundheitsbildung", body: "Schaffen Sie Raum für Gesundheitsbildung und Wissensvermittlung, mit digitalen Formaten für Privatpersonen, Unternehmen oder Organisationen. Ärztliche Diagnose und Behandlung finden in der Praxis statt.", detail: "Videoberatung · Bildungsangebote · Begleitung bei Struktur und Umsetzung"}
       ],
       note: "Welche Leistungen und digitalen Formate zu Ihrer Praxis passen, klären wir gemeinsam. Medizinische Verantwortung und die jeweiligen beruflichen Vorgaben bleiben maßgeblich."
     },
     program: {
-      label: "Ein Programmbeispiel · 12 Wochen", title: "Vom Befund zu einem persönlichen Plan.",
+      label: "Ein beispielhafter Ablauf", title: "Vom Befund zu einem persönlichen Plan.",
       intro: "Ein Programm verbindet einzelne Leistungen zu einem nachvollziehbaren Ablauf. Ausgangspunkt sind die individuelle Situation und die ärztliche Einschätzung.",
       steps: [
         {title: "Zuhören", body: "Anamnese, Anliegen und persönliche Ziele gemeinsam besprechen."},
@@ -35,7 +35,7 @@ export const partnerStories: Record<string, PartnerStory> = {
         {title: "Protokolle & Patienteninformationen", body: "Strukturierte Unterlagen als Grundlage für ärztliche Planung und verständliche Gespräche."},
         {title: "Abläufe & Vorlagen", body: "Materialien für die Vorbereitung und Organisation Ihres Praxisangebots."},
         {title: "Ihr Außenauftritt", body: "Kommunikationsmaterialien, mit denen Sie Ihr Angebot erklären können."},
-        {title: "Produkte & Bestellwege", body: "Orientierung zu verfügbaren Produkten und den zugehörigen Bezugswegen."},
+        {title: "Materialien & Orientierung", body: "Fachliche Orientierung zu Materialien; keine Bezugsbindung oder Bestellberechtigung."},
         {title: "Einführung & Begleitung", body: "Ein strukturierter Einstieg und Unterstützung bei der Weiterentwicklung."}
       ], cta: "Über meine Praxis sprechen"
     }
@@ -43,14 +43,14 @@ export const partnerStories: Record<string, PartnerStory> = {
   en: {
     pillars: {
       label: "The practice model", title: "One practice. Two complementary pillars.",
-      intro: "In-person care and a complementary institute: two areas you can develop around your practice.",
+      intro: "In-person care and health education: two clearly separate areas.",
       items: [
-        {title: "Your local practice", body: "Personal consultations, diagnostics and individually planned treatment remain at the centre of care.", detail: "Physician-led programmes · Personal care · Follow-up reviews"},
-        {title: "Your complementary institute", body: "Create space for health education and knowledge sharing, with digital formats for individuals, businesses or organisations. Medical diagnosis and treatment take place at the practice.", detail: "Video consultations · Educational formats · Support with structure and implementation"}
+        {title: "Your local practice", body: "Personal consultations, diagnostics and individually planned treatment remain at the centre of care.", detail: "Professionally supported consultations · Personal care · Follow-up reviews"},
+        {title: "Complementary health education", body: "Create space for health education and knowledge sharing, with digital formats for individuals, businesses or organisations. Medical diagnosis and treatment take place at the practice.", detail: "Video consultations · Educational formats · Support with structure and implementation"}
       ], note: "Together, we assess which services and digital formats fit your practice. Medical responsibility and applicable professional requirements remain essential."
     },
     program: {
-      label: "An example programme · 12 weeks", title: "From findings to a personal plan.",
+      label: "An example process", title: "From findings to a personal plan.",
       intro: "A programme connects individual services into a clear process, starting with each person's circumstances and a physician's assessment.",
       steps: [
         {title: "Listen", body: "Discuss medical history, concerns and personal goals."},
@@ -64,7 +64,7 @@ export const partnerStories: Record<string, PartnerStory> = {
       label: "For everyday practice", title: "You do not have to start from scratch.",
       intro: "From training to patient materials: practical support for developing your services.",
       items: [
-        {title: "Training & exchange", body: "Continuing education and case discussions for everyday clinical practice."},
+        {title: "Training & exchange", body: "Training and case discussions for everyday clinical practice."},
         {title: "Protocols & patient information", body: "Structured resources to support medical planning and clear conversations."},
         {title: "Workflows & templates", body: "Materials to help prepare and organise your practice offering."},
         {title: "Practice communication", body: "Communication materials to help explain your services."},
@@ -76,14 +76,14 @@ export const partnerStories: Record<string, PartnerStory> = {
   es: {
     pillars: {
       label: "El modelo de consulta", title: "Una consulta. Dos pilares complementarios.",
-      intro: "Atención presencial y un instituto complementario: dos áreas que puede desarrollar en torno a su consulta.",
+      intro: "Atención presencial y educación en salud: dos áreas que puede desarrollar en torno a su consulta.",
       items: [
         {title: "Su consulta presencial", body: "La conversación personal, el diagnóstico y el tratamiento individualizado constituyen el centro de la atención.", detail: "Programas dirigidos por médicos · Atención personal · Seguimiento"},
-        {title: "Su instituto complementario", body: "Cree un espacio para la educación para la salud y la transmisión de conocimientos, con formatos digitales para particulares, empresas u organizaciones. El diagnóstico y el tratamiento médico se realizan en la consulta.", detail: "Videoconsultas · Formación · Apoyo en la estructura y la puesta en marcha"}
+        {title: "Educación en salud complementaria", body: "Cree un espacio para la educación para la salud y la transmisión de conocimientos, con formatos digitales para particulares, empresas u organizaciones. El diagnóstico y el tratamiento médico se realizan en la consulta.", detail: "Videoconsultas · Formación · Apoyo en la estructura y la puesta en marcha"}
       ], note: "Valoramos juntos qué servicios y formatos digitales encajan en su consulta. La responsabilidad médica y los requisitos profesionales aplicables siguen siendo esenciales."
     },
     program: {
-      label: "Ejemplo de programa · 12 semanas", title: "De los resultados a un plan personal.",
+      label: "Ejemplo de proceso", title: "De los resultados a un plan personal.",
       intro: "Un programa conecta los servicios en un proceso comprensible, partiendo de la situación individual y de la valoración médica.",
       steps: [
         {title: "Escuchar", body: "Conversar sobre los antecedentes, las inquietudes y los objetivos personales."},
@@ -97,7 +97,7 @@ export const partnerStories: Record<string, PartnerStory> = {
       label: "Para el día a día", title: "No tiene que empezar de cero.",
       intro: "Desde la formación hasta los materiales para pacientes: apoyo concreto para desarrollar sus servicios.",
       items: [
-        {title: "Formación e intercambio", body: "Formación continua y discusión de casos para la práctica clínica."},
+        {title: "Formación e intercambio", body: "Cursos y discusión de casos para la práctica clínica."},
         {title: "Protocolos e información", body: "Recursos estructurados para la planificación médica y las conversaciones con pacientes."},
         {title: "Procesos y plantillas", body: "Materiales para preparar y organizar la propuesta de su consulta."},
         {title: "Comunicación", body: "Materiales de comunicación para explicar sus servicios."},

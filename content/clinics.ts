@@ -20,7 +20,7 @@ export type Clinic = {
   address?: string;
 };
 
-export const clinics: Clinic[] = [
+const clinicDirectory: Clinic[] = [
   {
     slug: "reinhard-schmehl-ebersberg",
     berufsgruppe: "Arztpraxis",
@@ -160,7 +160,7 @@ export const clinics: Clinic[] = [
     countryCode: "DE",
     coordinates: {lat: 49.0122461, lng: 12.0902989},
     profileAvailable: true,
-    images: ["/clinics/marco-hartl/portrait.webp", "/clinics/marco-hartl/practice.webp"],
+    images: ["/clinics/marco-hartl/portrait.webp", "/images/editorial/platform-cell.webp"],
     website: "https://one-dr-hartl.de/",
     contactEmail: "info@one-dr-hartl.de",
     address: "Fritz-Fend-Straße 4, 93047 Regensburg, Deutschland"
@@ -175,7 +175,7 @@ export const clinics: Clinic[] = [
     countryCode: "CH",
     profileAvailable: true,
     coordinates: {lat: 47.3956718, lng: 9.3655109},
-    summary: "Integrative Medizin, bionische Zelltherapie und individuelle Diagnostik im Appenzellerland.",
+    summary: "Integrative Medizin, Bionic Cell Therapy und individuelle Diagnostik im Appenzellerland.",
     images: ["/clinics/health-point/portrait.webp", "/clinics/health-point/reception.webp", "/clinics/health-point/team.webp"],
     website: "https://www.healthpointag.ch",
     contactEmail: "info@healthpointag.ch",
@@ -192,10 +192,10 @@ export const clinics: Clinic[] = [
     countryCode: "DE",
     profileAvailable: true,
     coordinates: {lat: 48.7448, lng: 9.2317},
-    summary: "Präzise Diagnostik, strukturierte Infusionskonzepte und moderne Prävention für Performance, Regeneration und Longevity.",
-    intro: "MEDIVIUM entwickelt aus über 25 Jahren Praxiserfahrung individuelle Gesundheitsstrategien mit messbarer Entwicklung.",
+    summary: "Heilpraktikerpraxis für persönliche Beratung und individuell ausgewählte Diagnostik.",
+    intro: "Persönliche Termine bei Heilpraktiker Enrico Thiele in Stuttgart.",
     images: [
-      "/clinics/medivium/ha4a6318.jpg",
+      "/images/editorial/platform-cell.webp",
       "/clinics/medivium/enrico-thiele.webp",
       "/clinics/medivium/logo.png"
     ],
@@ -261,7 +261,7 @@ export const clinics: Clinic[] = [
     images: [
       "/clinics/lars-gienger/lars-gienger.jpeg",
       "/clinics/lars-gienger/reception.jpeg",
-      "/clinics/lars-gienger/infusion-room.jpeg",
+      "/images/editorial/platform-cell.webp",
       "/clinics/lars-gienger/treatment-room.jpeg"
     ],
     website: "https://www.curaprax.de",
@@ -385,6 +385,9 @@ export const clinics: Clinic[] = [
     coordinates: {lat: 51.3127, lng: 9.4797}
   }
 ];
+
+// Entries without confirmed professional category are not published.
+export const clinics = clinicDirectory.filter(clinic => clinic.berufsgruppe !== "unknown");
 
 export function getClinic(slug: string) {
   return clinics.find((clinic) => clinic.slug === slug);

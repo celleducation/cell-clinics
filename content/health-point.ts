@@ -2,9 +2,9 @@
 export const healthPointCopy = {
   de: {
     title: "Health Point Dr. Klein | Niederteufen | Cell Clinics",
-    description: "Dr. Heidelinde Klein: Allgemeinmedizin, funktionelle Medizin und bionische Zelltherapie im Health Point in Niederteufen. Praxis, Team und Kontakt.",
+    description: "Dr. Heidelinde Klein: Allgemeinmedizin, funktionelle Medizin und Bionic Cell Therapy im Health Point in Niederteufen. Praxis, Team und Kontakt.",
     label: "Partnerpraxis · Appenzellerland", location: "Niederteufen · Appenzell Ausserrhoden · Schweiz",
-    intro: "Persönliche Betreuung beginnt mit Zuhören. Dr. Heidelinde Klein verbindet Allgemeinmedizin mit funktioneller Medizin und bionischer Zelltherapie — auf Grundlage einer ausführlichen Anamnese und individuell ausgewählter Diagnostik.",
+    intro: "Persönliche Betreuung beginnt mit Zuhören. Dr. Heidelinde Klein verbindet Allgemeinmedizin mit funktioneller Medizin und Bionic Cell Therapy — auf Grundlage einer ausführlichen Anamnese und individuell ausgewählter Diagnostik.",
     website: "Praxiswebsite besuchen", contact: "Kontakt aufnehmen", back: "Alle Partnerpraxen",
     facts: ["Dr. Heidelinde Klein", "Fachärztin für Allgemeinmedizin", "Über 30 Jahre klinische Erfahrung", "Deutsch & Englisch"],
     portraitAlt: "Dr. Heidelinde Klein", receptionAlt: "Empfang des Health Point Appenzellerland", teamAlt: "Dr. Heidelinde Klein mit ihrem Praxisteam",
@@ -13,16 +13,15 @@ export const healthPointCopy = {
     approach: "Am Anfang stehen Ihre Beschwerden, Ihre Vorgeschichte und Ihre persönliche Situation. Daraus entwickelt die Praxis ein individuelles Konzept und bespricht mit Ihnen die geeigneten nächsten Schritte.",
     areasLabel: "Medizinische Schwerpunkte", areasTitle: "Diagnostik und Behandlung zusammen denken.",
     areas: [
-      ["Zell- & Mitochondrienmedizin", "Bionische Zelltherapie, mitochondriale Medizin, IHHT und individuell abgestimmte Infusionskonzepte gehören zum Praxisangebot."],
+      ["Zell- & Mitochondrienmedizin", "Bionic Cell Therapy, mitochondriale Medizin, IHHT und individuell abgestimmte Infusionskonzepte gehören zum Praxisangebot."],
       ["Funktionelle Diagnostik", "Erweiterte Labordiagnostik zu Stoffwechsel, Entzündung, Hormonen und Mikronährstoffen; ergänzend genetische und epigenetische Analytik sowie HRV-Messung."],
-      ["Prävention & Umweltmedizin", "Individuelle Beratung zu Prävention und Longevity sowie umweltmedizinische Abklärung bei Verdacht auf Belastungen."],
-      ["Integrative Onkologie", "Begleitende Betreuung während und nach einer onkologischen Behandlung. Das Angebot ergänzt die konventionelle Therapie und ersetzt sie nicht."]
+      ["Prävention & Umweltmedizin", "Individuelle Beratung zu Prävention sowie umweltmedizinische Abklärung bei Verdacht auf Belastungen."],
     ],
-    networkLabel: "Im Cell Clinics Netzwerk", networkTitle: "Bionische Zelltherapie im Praxisalltag.",
-    networkBody: "Dr. Klein ist in bionischer Zelltherapie ausgebildet. Im Health Point wird das Konzept in die Anamnese, spezialisierte Labordiagnostik und individuell geplante Betreuung eingebunden. Die medizinische Verantwortung liegt bei der behandelnden Praxis.",
+    networkLabel: "Im Cell Clinics Netzwerk", networkTitle: "Bionic Cell Therapy im Praxisalltag.",
+    networkBody: "Dr. Klein hat an Schulungen zu Bionic Cell Therapy von Cell Education teilgenommen. Diese vermitteln Wissen und verleihen keine zusätzliche Behandlungsbefugnis. Im Health Point wird das Konzept in die Anamnese, spezialisierte Labordiagnostik und individuell geplante Betreuung eingebunden. Die medizinische Verantwortung liegt bei der behandelnden Praxis.",
     teamLabel: "Die Praxis", teamTitle: "Persönlich begleitet — vom ersten Kontakt an.",
     teamBody: "Medizinische Praxisassistentinnen, Sekretariat und Administration unterstützen Dr. Klein bei einer sorgfältigen, persönlichen Betreuung. Die Praxis empfängt Patientinnen und Patienten aus der Schweiz und dem Ausland. Bei längerer Anreise unterstützt das Team mit Hotelempfehlungen in der Region.",
-    galleryTitle: "Einblicke in den Health Point", galleryAlts: ["Infusions- und Behandlungsplätze im Health Point", "Heller Behandlungsraum mit Ruhesesseln", "Wartebereich der Praxis"],
+    galleryTitle: "Einblicke in den Health Point", galleryAlts: ["Empfang im Health Point", "Praxisteam im Health Point", "Wartebereich der Praxis"],
     contactTitle: "Ihr Kontakt zum Health Point", contactBody: "Für einen Termin oder Fragen zum Praxisangebot wenden Sie sich direkt an das Team.",
     hours: "Sprechzeiten", weekdays: "Montag–Donnerstag: 08:30–17:00 Uhr", friday: "Freitag: 08:30–12:00 Uhr", office: "Freitag ab 12:00 Uhr Bürozeit ohne Sprechstunde.", referrals: "Für zuweisende Ärztinnen und Ärzte", source: "Praxisangaben nach der bereitgestellten Partnerinformation · Stand September 2026."
   },
@@ -41,22 +40,21 @@ export const healthPointCopy = {
     areas: [
       ["Cell & mitochondrial medicine", "The practice offers Bionic Cell Therapy, mitochondrial medicine, IHHT and individually planned infusion concepts."],
       ["Functional diagnostics", "Extended laboratory testing for metabolism, inflammation, hormones and micronutrients, with genetic and epigenetic analysis and HRV measurement where appropriate."],
-      ["Prevention & environmental medicine", "Individual consultation on prevention and longevity, and environmental medical assessment where exposure is suspected."],
-      ["Integrative oncology", "Support during and after cancer treatment. These services complement conventional therapy and do not replace it."]
+      ["Prevention & environmental medicine", "Individual consultation on prevention, and environmental medical assessment where exposure is suspected."],
     ],
     networkLabel: "Part of the Cell Clinics network", networkTitle: "Bionic Cell Therapy in everyday practice.",
-    networkBody: "Dr. Klein is trained in Bionic Cell Therapy. At Health Point, the concept is integrated into medical history taking, specialised laboratory diagnostics and individually planned care. The treating practice retains medical responsibility.",
+    networkBody: "Dr. Klein has attended Cell Education training on Bionic Cell Therapy. Training conveys knowledge, not additional authority to treat. At Health Point, the concept is integrated into medical history taking, specialised laboratory diagnostics and individually planned care. The treating practice retains medical responsibility.",
     teamLabel: "The practice", teamTitle: "Personal support from the first contact.",
     teamBody: "Medical practice assistants, reception and administration support Dr. Klein in providing attentive, personal care. The practice welcomes patients from Switzerland and abroad. For those travelling further, the team can suggest hotels in the region.",
-    galleryTitle: "Inside Health Point", galleryAlts: ["Infusion and treatment spaces at Health Point", "Bright treatment room with reclining chairs", "Practice waiting area"],
+    galleryTitle: "Inside Health Point", galleryAlts: ["Health Point reception", "Health Point practice team", "Practice waiting area"],
     contactTitle: "Contact Health Point", contactBody: "Contact the practice team directly for appointments or questions about its services.",
     hours: "Consultation hours", weekdays: "Monday–Thursday: 08:30–17:00", friday: "Friday: 08:30–12:00", office: "Friday after 12:00: office hours only, no consultations.", referrals: "For referring physicians", source: "Practice information supplied by the partner · September 2026."
   },
   es: {
     title: "Health Point Dr. Klein | Niederteufen | Cell Clinics",
-    description: "Dra. Heidelinde Klein en Health Point, Niederteufen: medicina general, medicina funcional y terapia celular biónica. Equipo, consulta y contacto.",
+    description: "Dra. Heidelinde Klein en Health Point, Niederteufen: medicina general, medicina funcional y Bionic Cell Therapy. Equipo, consulta y contacto.",
     label: "Consulta asociada · Región de Appenzell", location: "Niederteufen · Appenzell Ausserrhoden · Suiza",
-    intro: "La atención personal empieza por escuchar. La Dra. Heidelinde Klein combina medicina general, medicina funcional y terapia celular biónica, partiendo de una historia clínica detallada y pruebas seleccionadas individualmente.",
+    intro: "La atención personal empieza por escuchar. La Dra. Heidelinde Klein combina medicina general, medicina funcional y Bionic Cell Therapy, partiendo de una historia clínica detallada y pruebas seleccionadas individualmente.",
     website: "Visitar la web de la consulta", contact: "Contactar", back: "Todas las consultas asociadas",
     facts: ["Dra. Heidelinde Klein", "Especialista en medicina general", "Más de 30 años de experiencia clínica", "Alemán e inglés"],
     portraitAlt: "Dra. Heidelinde Klein", receptionAlt: "Recepción de Health Point Appenzellerland", teamAlt: "Dra. Heidelinde Klein y su equipo",
@@ -65,16 +63,15 @@ export const healthPointCopy = {
     approach: "Sus inquietudes, antecedentes y circunstancias personales son el punto de partida. A partir de ellos, la consulta desarrolla un plan individual y acuerda con usted los siguientes pasos.",
     areasLabel: "Áreas de atención", areasTitle: "Conectar diagnóstico y tratamiento.",
     areas: [
-      ["Medicina celular y mitocondrial", "La consulta ofrece terapia celular biónica, medicina mitocondrial, IHHT y conceptos de infusión individualizados."],
+      ["Medicina celular y mitocondrial", "La consulta ofrece Bionic Cell Therapy, medicina mitocondrial, IHHT y conceptos de infusión individualizados."],
       ["Diagnóstico funcional", "Pruebas de laboratorio ampliadas sobre metabolismo, inflamación, hormonas y micronutrientes, además de análisis genéticos y epigenéticos y medición de la variabilidad cardíaca."],
-      ["Prevención y medicina ambiental", "Asesoramiento individual sobre prevención y longevidad, y valoración médica ambiental ante sospechas de exposición."],
-      ["Oncología integrativa", "Acompañamiento durante y después del tratamiento oncológico. Complementa la terapia convencional y no la sustituye."]
+      ["Prevención y medicina ambiental", "Asesoramiento individual sobre prevención, y valoración médica ambiental ante sospechas de exposición."],
     ],
-    networkLabel: "En la red Cell Clinics", networkTitle: "Terapia celular biónica en la consulta.",
-    networkBody: "La Dra. Klein cuenta con formación en terapia celular biónica. En Health Point, este concepto se integra en la historia clínica, las pruebas especializadas y la atención individualizada. La responsabilidad médica corresponde a la consulta tratante.",
+    networkLabel: "En la red Cell Clinics", networkTitle: "Bionic Cell Therapy en la consulta.",
+    networkBody: "La Dra. Klein ha asistido a cursos de Cell Education sobre Bionic Cell Therapy. Los cursos transmiten conocimientos, no nuevas competencias para tratar. En Health Point, este concepto se integra en la historia clínica, las pruebas especializadas y la atención individualizada. La responsabilidad médica corresponde a la consulta tratante.",
     teamLabel: "La consulta", teamTitle: "Atención personal desde el primer contacto.",
     teamBody: "El equipo de asistencia médica, secretaría y administración apoya a la Dra. Klein en una atención cuidadosa y personal. La consulta recibe pacientes de Suiza y del extranjero y puede recomendar hoteles de la región para quienes viajan desde lejos.",
-    galleryTitle: "Conozca Health Point", galleryAlts: ["Espacios de infusión y tratamiento en Health Point", "Sala de tratamiento luminosa con sillones", "Sala de espera de la consulta"],
+    galleryTitle: "Conozca Health Point", galleryAlts: ["Recepción de Health Point", "Equipo de Health Point", "Sala de espera de la consulta"],
     contactTitle: "Contacte con Health Point", contactBody: "Para citas o preguntas sobre los servicios, contacte directamente con el equipo.",
     hours: "Horario de consulta", weekdays: "Lunes–jueves: 08:30–17:00", friday: "Viernes: 08:30–12:00", office: "Viernes a partir de las 12:00: atención administrativa, sin consulta médica.", referrals: "Para médicos remitentes", source: "Información facilitada por la consulta asociada · Septiembre de 2026."
   }

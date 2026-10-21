@@ -1,0 +1,76 @@
+Cell Clinics – Umsetzung Kommunikationsregeln, 21.10.2026
+
+STATUS
+Lokale Änderungen, nicht gepusht und nicht veröffentlicht. Keine rechtliche Freigabe.
+Grundlage: Kommunikationsregeln_Cell_Education.pdf, aktuelle 7-seitige Fassung.
+Geprüft/bearbeitet: Startseite, Patientenseite, Partnerprofile, Schulungs- und
+Materialdarstellung, deutsche/englische/spanische Texte, Datenschutz und Tracking.
+
+UMGESETZT
+- Wirkungs-/Erfolgsversprechen und krankheitsbezogene Methodenzuordnungen in
+  den bearbeiteten Texten neutralisiert. Sachliche Praxisfachgebiete bleiben stehen.
+- Bionic Cell Therapy und Burg-Pharmacy einheitlich benannt; Konzeptdefinition,
+  Abgrenzung zu Zellübertragung und Rollen von Cell Education/Cell Clinics ergänzt.
+- Gemischte Berufsgruppen klar benannt; Schulung ist keine Zertifizierung oder
+  Behandlungsbefugnis. Ärztliche Leistungen bleiben Ärzten vorbehalten.
+- Drei Einträge mit unbekannter Berufsgruppe vorläufig ausgeblendet: Ivan Goecze,
+  Imke Frei und Youn-Ju Lee. Stammdaten bleiben im Quelltext erhalten.
+- Materialkarten durch neutrale Symbole ersetzt, öffentliche Rezeptur-/Produkt-
+  und Dokumentvorschauen sowie problematische Infusionsmotive entfernt.
+- Zwei Zellvergleichsgrafiken ersetzt/aus der Patientengalerie entfernt, um keinen
+  visuellen Vorher-Nachher-Eindruck im Behandlungskontext zu erzeugen.
+- Insgesamt 20 Originaldateien nach review-assets/communication-2026-10-21
+  verschoben. Wiederherstellbar, nicht mehr im öffentlich ausgelieferten public.
+- Nicht belegte Organisationsfristen entfernt; zuverlässige Fristen wären nach
+  aktuellem Regelblatt grundsätzlich zulässig. 800 Seiten gemäß Regelblatt behalten.
+- Onlinegespräche als Erst-/Folgegespräche eingeordnet, Behandlung in der Praxis.
+- Keine Änderungen an Formularversand oder Pflicht-Checkboxen; aktuelle PDF
+  fordert deren Entfernung nicht. Keine Testnachrichten versendet.
+- GTM aus dem unbedingten Head/noscript entfernt: externer Container startet erst
+  bei Statistik UND Marketing. Diese konservative Sperre berücksichtigt, dass
+  externe Container-Tags hier nicht vollständig kontrolliert werden können.
+- GA/Meta weiterhin nur mit ID und passender Zustimmung. Consent Mode initial
+  denied; Widerruf stoppt mittels Neuladen. CookieYes muss direkt geladen werden.
+- Bestehende Vimeo-Zwei-Klick-Lösung erhalten; zusätzliche News-Komponente
+  ebenfalls gegen unaufgefordertes Laden abgesichert (Route derzeit umgeleitet).
+- Datenschutzhinweise zur tatsächlichen GTM-Sperre angepasst. Externes Impressum
+  bleibt unverändert verlinkt, keine zusätzliche Impressumsseite.
+
+VERIFIKATION
+- Next.js Produktionsbuild erfolgreich, 111 generierte Seiten.
+- Neun Tests erfolgreich: Consent-Matrix inklusive Ablehnen/Widerruf, kein
+  unbedingtes GTM/noscript, kein initiales Vimeo-iframe, keine internen Prüfmarker,
+  archivierte Dateien weder öffentlich vorhanden noch im Build referenziert.
+- Tests für Zustimmung sind isolierte automatisierte Tests, KEIN Nachweis über
+  alle Cookies/Requests des produktiven CookieYes-/GTM-Accounts.
+- Lokale Browserkontrolle von Texten und Darstellung; lokale Formularfunktion
+  wegen fehlender lokaler Serverkonfiguration nicht geprüft.
+- Allgemeines Lint: zwei bestehende Fehler in ClinicFinder.tsx (Zeile 93) und
+  SiteHeader.tsx (Zeile 24), react-hooks/set-state-in-effect; zusätzlich bestehende
+  Warnung postcss.config.mjs. Diese Dateien wurden nicht verändert.
+
+VOR VERÖFFENTLICHUNG ZU KLÄREN
+1. Anwaltliche Schlussprüfung der konkreten Werbung, Berufsgruppen und Länder.
+   Auch die wörtliche Konzeptdefinition aus dem Regelblatt enthält mit
+   'unterstützt die Zellfunktion' eine belegungsbedürftige Wirkungsbehauptung.
+   Ein internes Regelblatt ist dafür kein wissenschaftlicher Wirksamkeitsbeleg.
+2. Schriftliche Personen-, Bild-, Logo- und Profilfreigaben bestätigen. Ohne
+   Freigaben keine abschließende Veröffentlichungsfreigabe durch diese Prüfung.
+3. Videoinhalte vollständig anhand Ton, Text, Bildern und Endkarten freigeben.
+   Bestehende Videos wurden NICHT vollständig transkribiert/inhaltsgeprüft.
+4. CookieYes-ID/Domainkonfiguration und sämtliche GTM-Tags im Produktivaccount
+   kontrollieren; nach Deployment in sauberem Browser vor Klick, nach Ablehnen,
+   nach Teilzustimmung und nach Widerruf Cookies und Netzwerkanfragen prüfen.
+   GA/Meta nicht zusätzlich direkt UND über GTM doppelt konfigurieren.
+5. Die drei ausgeblendeten Berufsgruppen bestätigen, bevor Einträge zurückkehren.
+6. Externes Impressum auf cell-education.com separat prüfen (u.a. OS-Hinweis und
+   redaktionelle Verantwortlichkeit). Diese externe Website wurde nicht verändert.
+7. Tatsächliche organisatorische Angaben, Materialumfang, Qualifikationen und
+   aktuelle Fachgebiete durch Verantwortliche bestätigen; keine Vollverifikation
+   personenbezogener Qualifikationen in diesem technischen Durchgang.
+8. Archivierte Bilder können bis zum Deployment noch live/cached erreichbar sein.
+   Die lokale Verschiebung entfernt keine bereits verbreiteten Fremdkopien.
+
+Abgrenzung: Keine Garantie einer vollständig rechtssicheren Website. Die Umsetzung
+reduziert erkennbare Kommunikations- und Trackingrisiken; die offenen Freigaben
+bleiben erforderlich. Keine externen Kontoeinstellungen oder Live-Daten geändert.

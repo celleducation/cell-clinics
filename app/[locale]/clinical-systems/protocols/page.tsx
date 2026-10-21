@@ -8,7 +8,7 @@ export default async function ProtocolsPage({params}: {params: Promise<{locale: 
   const t = await getTranslations();
   return (
     <>
-      <PageHero eyebrow={t("platform.module2Title")} title={t("systems.card1Title")} lead={t("systems.card1Body")} image="/images/cellclinic-protocols.png" />
+      <PageHero eyebrow={t("platform.module2Title")} title={t("systems.card1Title")} lead={t("systems.card1Body")} image="/images/editorial/platform-cell.webp" />
       <section className="section"><div className="container prose-block"><h2>{t("platform.closingTitle")}</h2><p>{t("platform.closingBody")}</p><ButtonLink href="/partnerships/apply">{t("cta.requestInfo")}</ButtonLink></div></section>
     </>
   );

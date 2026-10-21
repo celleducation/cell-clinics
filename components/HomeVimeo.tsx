@@ -34,7 +34,7 @@ export function HomeVimeo({locale, patient = false}: {locale: string; patient?: 
           <div className="patient-video-cover-copy">
             <span className="patient-video-cover-label">{patient ? cover.label : homeCover.label}</span>
             <p className="patient-video-cover-title">{patient ? <>Bionic<br />Cell Therapy</> : <>Cell<br />Clinics</>}</p>
-            <p className="patient-video-cover-subtitle">{patient ? cover.subtitle : homeCover.subtitle}</p>
+            <p className="patient-video-cover-subtitle">{patient ? `Cell Education · ${cover.subtitle}` : homeCover.subtitle}</p>
             <button type="button" className="button button-primary" aria-describedby={`${sectionId}-privacy`} onClick={() => setLoaded(true)}><Play size={18} aria-hidden="true" />{cover.play}</button>
           </div>
         </div>}
