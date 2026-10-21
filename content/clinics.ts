@@ -322,13 +322,16 @@ export const clinics: Clinic[] = [
   {
     slug: "dres-neumeyer-eschlkam",
     berufsgruppe: "Zahnarztpraxis",
-    name: "Zahnarztpraxis Dr. Neumeyer & Partner",
+    name: "Gemeinschaftspraxis Dr. Neumeyer & Partner",
     practitioner: "Dr. Stefan Neumeyer · Dr. Stefanie Neumeyer-Wühr",
     city: "Eschlkam",
     region: "Bayern",
     countryCode: "DE",
-    listingOnly: true,
     coordinates: {lat: 49.2983, lng: 12.9157},
+    profileAvailable: true,
+    address: "Leminger Straße 10, 93458 Eschlkam",
+    phone: "+49 9948 9409-0",
+    contactEmail: "empfang@dres-neumeyer.de",
     website: "https://www.dres-neumeyer.de/"
   },
   {

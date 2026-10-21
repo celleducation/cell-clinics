@@ -1,7 +1,7 @@
 // Source: partner information supplied by the practice, dated 6 October 2026.
 export const maakCopy = {
   de: {
-    title: "Dr. Michael Maak und Kollegen in Lemförde",
+    title: "Dr. Michael Maak & Dr. Sabine Hopmann in Lemförde",
     home: "Start", back: "Partnerpraxen", label: "Zahnarztpraxis · Lemförde",
     intro: "In unserer Zahnarztpraxis in Lemförde verbinden wir langjährige Erfahrung mit moderner Zahnmedizin und einem ganzheitlichen Blick auf unsere Patientinnen und Patienten.",
     contact: "Kontakt zur Praxis", call: "Praxis anrufen", website: "Praxiswebsite besuchen",
@@ -10,7 +10,9 @@ export const maakCopy = {
     about: "Unser engagiertes Team steht für persönliche Betreuung, fachliche Kompetenz und eine vertrauensvolle Atmosphäre. Dabei nehmen wir uns Zeit, individuelle Bedürfnisse und Wünsche zu verstehen und gemeinsam passende Behandlungskonzepte zu entwickeln. Neben der klassischen Zahnmedizin legen wir besonderen Wert auf Zahnerhalt, Funktion und Ästhetik.",
     focusTitle: "Zahnmedizinische Schwerpunkte",
     focus: ["Parodontologie", "Prothetik", "Funktionelle Zahnheilkunde", "Endodontie", "Gesundheits-Zahnmedizin", "Dentosophie"],
-    bioLabel: "Ihr Behandler", bioTitle: "Dr. Michael Maak", profession: "Zahnarzt",
+    bioLabel: "Ihr Behandlungsteam", bioTitle: "Dr. Michael Maak & Dr. Sabine Hopmann", profession: "Zahnarzt und Zahnärztin",
+    teamIntro: "Dr. Michael Maak und Dr. Sabine Hopmann sind Ihre Ansprechpartner in der Praxis in Lemförde.",
+    bioHeading: "Zum Werdegang von Dr. Michael Maak",
     bio: "Nach seinem Studium der Zahnmedizin in Hamburg und seiner wissenschaftlichen Tätigkeit am Universitätsklinikum Eppendorf ließ sich Dr. Michael Maak 1996 in der Praxis nieder. Seine besonderen Schwerpunkte liegen in der Parodontologie, prothetischen Rekonstruktion, funktionellen Zahnheilkunde und Endodontie. Sein Anspruch ist es, fachliche Kompetenz mit individueller Betreuung und einem vertrauensvollen Verhältnis zu seinen Patienten zu verbinden.",
     networkLabel: "Partner im Cell Clinics Netzwerk", networkTitle: "Mundgesundheit im Zusammenhang betrachten.",
     network: "Als Zahnarztpraxis betrachten wir Gesundheit ganzheitlich und wissen um die enge Verbindung zwischen Mundraum und dem gesamten Körper. Mit der Bionic Cell Therapy erweitern wir unsere zahnmedizinische Kompetenz um einen individuellen Blick auf Zellfunktion, Regeneration und Prävention. Dabei steht der Mensch mit seinen persönlichen Bedürfnissen im Mittelpunkt.",
@@ -20,7 +22,7 @@ export const maakCopy = {
     source: "Praxisangaben gemäß Partnerinformation vom 06.10.2026."
   },
   en: {
-    title: "Dr. Michael Maak and colleagues in Lemförde",
+    title: "Dr. Michael Maak & Dr. Sabine Hopmann in Lemförde",
     home: "Home", back: "Partner practices", label: "Dental practice · Lemförde",
     intro: "At our dental practice in Lemförde, we combine years of experience with modern dentistry and a holistic view of our patients.",
     contact: "Contact the practice", call: "Call the practice", website: "Visit practice website",
@@ -29,7 +31,9 @@ export const maakCopy = {
     about: "Our dedicated team values personal care, professional expertise and a trusting atmosphere. We take time to understand individual needs and wishes and to develop suitable treatment plans together. Alongside conventional dentistry, we place particular emphasis on preserving teeth, function and aesthetics.",
     focusTitle: "Areas of dental focus",
     focus: ["Periodontology", "Prosthodontics", "Functional dentistry", "Endodontics", "Health-oriented dentistry", "Dentosophy"],
-    bioLabel: "Your practitioner", bioTitle: "Dr. Michael Maak", profession: "Dentist",
+    bioLabel: "Your dental team", bioTitle: "Dr. Michael Maak & Dr. Sabine Hopmann", profession: "Dentists",
+    teamIntro: "Dr. Michael Maak and Dr. Sabine Hopmann are your contacts at the practice in Lemförde.",
+    bioHeading: "Dr. Michael Maak’s background",
     bio: "After studying dentistry in Hamburg and conducting scientific work at University Medical Center Hamburg-Eppendorf, Dr. Michael Maak joined the practice in 1996. His particular areas of focus include periodontology, prosthetic reconstruction, functional dentistry and endodontics. He aims to combine professional expertise with individual care and a trusting relationship with his patients.",
     networkLabel: "Partner in the Cell Clinics network", networkTitle: "Oral health in context.",
     network: "As a dental practice, we take a holistic view of health and recognise the close relationship between the mouth and the rest of the body. With Bionic Cell Therapy, we broaden our dental expertise with an individual perspective on cellular function, regeneration and prevention. The individual and their personal needs remain central.",
@@ -39,7 +43,7 @@ export const maakCopy = {
     source: "Practice information supplied in the partner form dated 6 October 2026."
   },
   es: {
-    title: "Dr. Michael Maak y colegas en Lemförde",
+    title: "Dr. Michael Maak & Dr. Sabine Hopmann en Lemförde",
     home: "Inicio", back: "Consultas asociadas", label: "Consulta dental · Lemförde",
     intro: "En nuestra consulta dental en Lemförde combinamos años de experiencia con odontología moderna y una visión integral de nuestros pacientes.",
     contact: "Contactar con la consulta", call: "Llamar a la consulta", website: "Visitar la web",
@@ -48,7 +52,9 @@ export const maakCopy = {
     about: "Nuestro equipo se caracteriza por la atención personal, la competencia profesional y un ambiente de confianza. Nos tomamos el tiempo necesario para comprender las necesidades y los deseos individuales y desarrollar juntos planes de tratamiento adecuados. Además de la odontología convencional, damos especial importancia a la conservación de los dientes, la función y la estética.",
     focusTitle: "Áreas de atención odontológica",
     focus: ["Periodoncia", "Prostodoncia", "Odontología funcional", "Endodoncia", "Odontología orientada a la salud", "Dentosofía"],
-    bioLabel: "Su profesional", bioTitle: "Dr. Michael Maak", profession: "Dentista",
+    bioLabel: "Su equipo odontológico", bioTitle: "Dr. Michael Maak & Dr. Sabine Hopmann", profession: "Dentistas",
+    teamIntro: "El Dr. Michael Maak y la Dra. Sabine Hopmann son sus personas de contacto en la consulta de Lemförde.",
+    bioHeading: "Trayectoria del Dr. Michael Maak",
     bio: "Tras estudiar odontología en Hamburgo y desarrollar una actividad científica en el Centro Médico Universitario de Hamburgo-Eppendorf, el Dr. Michael Maak se incorporó a la consulta en 1996. Sus principales áreas de trabajo son la periodoncia, la reconstrucción protésica, la odontología funcional y la endodoncia. Su objetivo es combinar la competencia profesional con una atención individual y una relación de confianza con sus pacientes.",
     networkLabel: "Consulta asociada a la red Cell Clinics", networkTitle: "La salud bucal en su contexto.",
     network: "Como consulta dental, contemplamos la salud de forma integral y reconocemos la estrecha relación entre la boca y el resto del cuerpo. Con Bionic Cell Therapy ampliamos nuestra experiencia odontológica con una perspectiva individual sobre la función celular, la regeneración y la prevención. La persona y sus necesidades individuales ocupan el centro de nuestra atención.",

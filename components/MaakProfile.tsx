@@ -28,8 +28,8 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
         <div className="alpstein-hero-grid">
           <div className="alpstein-hero-copy">
             <span className="eyebrow">{c.label}</span>
-            <h1 className="display">Dr. Michael Maak<br />{locale === "de" ? "und Kollegen" : locale === "es" ? "y colegas" : "and colleagues"}</h1>
-            <p className="clinic-profile-location">Dr. Michael Maak · Dr. Sabine Hopmann</p>
+            <h1 className="display">Dr. Michael Maak<br />&amp; Dr. Sabine Hopmann</h1>
+            <p className="clinic-profile-location">{clinic.name}</p>
             <p className="lead">{c.intro}</p>
             <div className="button-row"><a className="button button-primary" href="#contact">{c.contact}</a><a className="button button-secondary" href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
           </div>
@@ -46,7 +46,7 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
       <figure className="maak-art"><Image src="/clinics/maak/tooth-cellular.webp" alt={c.cellularAlt} width={1200} height={577} sizes="(max-width: 767px) 90vw, 560px" /><figcaption>{c.illustration}</figcaption></figure>
       <div><SectionHeading eyebrow={c.networkLabel} title={c.networkTitle} /><p className="lead">{c.network}</p></div>
     </div></section>
-    <section className="section"><div className="container maak-bio"><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><p className="eyebrow">{c.profession}</p><p className="lead">{c.bio}</p></div></section>
+    <section className="section"><div className="container maak-bio"><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><p className="eyebrow">{c.profession}</p><p className="lead">{c.teamIntro}</p><h3>{c.bioHeading}</h3><p className="lead">{c.bio}</p></div></section>
     <section className="section section-alt clinic-profile-contact" id="contact"><div className="container clinic-profile-contact-card">
       <div><SectionHeading eyebrow={c.contact} title={c.contactTitle} /><p>{c.contactBody}</p><h3>{c.hours}</h3><dl className="maak-hours"><div><dt>{c.weekdays}</dt><dd>08:00–20:00</dd></div><div><dt>{c.friday}</dt><dd>08:00–14:00</dd></div></dl></div>
       <address><strong>{clinic.name}</strong><p>{clinic.address}</p><a href={`tel:${phone}`}>{clinic.phone}</a><a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a><div className="button-row"><a className="button button-primary" href={`tel:${phone}`}>{c.call}</a><a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{c.email}</a></div><a href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></address>

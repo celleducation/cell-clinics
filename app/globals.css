@@ -5404,3 +5404,22 @@ textarea.input {
     transition-duration: .001ms !important;
   }
 }
+/* Practice-supplied photography: keep the complete team portrait visible. */
+.neumeyer-hero-media { align-self: center; }
+.neumeyer-hero-media > img { width: 100%; height: auto; border-radius: 24px; }
+.neumeyer-logo { background: white; border-radius: 16px; padding: 20px; width: fit-content; margin: 20px auto 0; }
+.neumeyer-logo img { width: 280px; max-width: 100%; height: auto; }
+.neumeyer-bio { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
+.neumeyer-bio aside { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: white; }
+.neumeyer-qualification { font-weight: 600; margin-bottom: 20px; }
+.neumeyer-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.neumeyer-gallery figure { margin: 0; }
+.neumeyer-gallery figure:first-child { grid-column: 1 / -1; }
+.neumeyer-gallery img { width: 100%; height: auto; border-radius: 20px; }
+.neumeyer-gallery figure:first-child img { aspect-ratio: 2.2; object-fit: cover; }
+.neumeyer-gallery figcaption { padding: 12px 0; color: var(--slate); font-size: .9rem; }
+@media (max-width: 767px) {
+  .neumeyer-bio, .neumeyer-gallery { grid-template-columns: 1fr; gap: 28px; }
+  .neumeyer-bio aside { padding: 24px; }
+  .neumeyer-gallery figure:first-child img { aspect-ratio: 1.5; }
+}

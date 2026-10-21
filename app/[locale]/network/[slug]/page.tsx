@@ -23,6 +23,8 @@ import {SchmehlProfile} from "@/components/SchmehlProfile";
 import {schmehlCopy} from "@/content/reinhard-schmehl";
 import {MaakProfile} from "@/components/MaakProfile";
 import {maakCopy} from "@/content/maak";
+import {NeumeyerProfile} from "@/components/NeumeyerProfile";
+import {neumeyerCopy} from "@/content/neumeyer";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -32,6 +34,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "dres-neumeyer-eschlkam") {
+    const copy = neumeyerCopy[locale as keyof typeof neumeyerCopy] ?? neumeyerCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/neumeyer/team.webp", imageWidth: 1600, imageHeight: 1067, imageAlt: copy.teamAlt});
+  }
   if (slug === "hopmann-maak-lemfoerde") {
     const copy = maakCopy[locale as keyof typeof maakCopy] ?? maakCopy.de;
     return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro});
@@ -89,6 +95,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
   if (slug === "hopmann-maak-lemfoerde") return <MaakProfile locale={locale} clinic={clinic} />;
+  if (slug === "dres-neumeyer-eschlkam") return <NeumeyerProfile locale={locale} clinic={clinic} />;
   if (slug === "reinhard-schmehl-ebersberg") return <SchmehlProfile locale={locale} clinic={clinic} />;
   if (slug === "elena-bucur-karlsruhe") return <BucurProfile locale={locale} clinic={clinic} />;
   if (slug === "marco-hartl-regensburg") return <MarcoHartlProfile locale={locale} clinic={clinic} />;

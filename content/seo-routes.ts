@@ -10,6 +10,6 @@ export const indexableRoutes = [
   {path: "/network", lastModified: seoRevision},
   {path: "/datenschutz", lastModified: "2026-10-07"},
   ...clinics.filter((clinic) => clinic.profileAvailable).map((clinic) => ({
-    path: `/network/${clinic.slug}`, lastModified: clinic.slug === "hopmann-maak-lemfoerde" ? "2026-10-20" : seoRevision
+    path: `/network/${clinic.slug}`, lastModified: ["dres-neumeyer-eschlkam", "hopmann-maak-lemfoerde"].includes(clinic.slug) ? "2026-10-21" : seoRevision
   }))
 ];
