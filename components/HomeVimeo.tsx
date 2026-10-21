@@ -13,8 +13,8 @@ const copy = {
 export function HomeVimeo({locale, patient = false}: {locale: string; patient?: boolean}) {
   const [loaded, setLoaded] = useState(false);
   const c = copy[locale as keyof typeof copy] ?? copy.en;
-  const videoId = patient ? "1234007045" : "1233281961";
-  const hash = patient ? "3ec9409926" : "7a2868744a";
+  const videoId = patient ? "1237970640" : "1237970665";
+  const hash = patient ? "94ae86d445" : "da51e68de7";
   const title = patient ? (locale === "de" ? "Cell Clinics für Patienten im Video" : locale === "es" ? "Cell Clinics para pacientes en vídeo" : "Cell Clinics for patients on video") : c.title;
   const sectionId = patient ? "patient-video" : "home-video";
   const cover = locale === "de" ? {label: "Für Patienten · 78 Sekunden", subtitle: "Einfach erklärt", play: "Video ansehen"} : locale === "es" ? {label: "Para pacientes · 78 segundos", subtitle: "Una explicación sencilla", play: "Ver vídeo"} : {label: "For patients · 78 seconds", subtitle: "Simply explained", play: "Watch video"};

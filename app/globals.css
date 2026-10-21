@@ -5412,12 +5412,13 @@ textarea.input {
 .neumeyer-bio { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
 .neumeyer-bio aside { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: white; }
 .neumeyer-qualification { font-weight: 600; margin-bottom: 20px; }
+.neumeyer-dental-art { display: block; width: min(100%, 320px); height: auto; max-height: 300px; object-fit: contain; margin: 28px auto 0; }
+.neumeyer-dental-art-wide { width: 100%; max-height: 210px; margin: 0 auto 28px; }
 .neumeyer-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .neumeyer-gallery figure { margin: 0; }
 .neumeyer-gallery figure:first-child { grid-column: 1 / -1; }
 .neumeyer-gallery img { width: 100%; height: auto; border-radius: 20px; }
 .neumeyer-gallery figure:first-child img { aspect-ratio: 2.2; object-fit: cover; }
-.neumeyer-gallery figcaption { padding: 12px 0; color: var(--slate); font-size: .9rem; }
 @media (max-width: 767px) {
   .neumeyer-bio, .neumeyer-gallery { grid-template-columns: 1fr; gap: 28px; }
   .neumeyer-bio aside { padding: 24px; }
