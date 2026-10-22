@@ -386,8 +386,8 @@ const clinicDirectory: Clinic[] = [
   }
 ];
 
-// Entries without confirmed professional category are not published.
-export const clinics = clinicDirectory.filter(clinic => clinic.berufsgruppe !== "unknown");
+// Keep all partners visible; omit unconfirmed professional labels in the UI.
+export const clinics = clinicDirectory;
 
 export function getClinic(slug: string) {
   return clinics.find((clinic) => clinic.slug === slug);

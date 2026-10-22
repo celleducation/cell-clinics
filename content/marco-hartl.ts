@@ -8,7 +8,7 @@ export const marcoHartlCopy = {
     focusLabel: "Schwerpunkte", focusTitle: "Drei Perspektiven auf Ihre Gesundheit.",
     topics: [["Sport & Bewegung", "Sportmedizinische Betreuung, Haltungs- und Bewegungsanalyse für Alltag, Freizeit- und Leistungssport."], ["Ernährung & Mikronährstoffe", "Individuelle Ernährungsberatung und orthomolekulare Medizin auf Grundlage der jeweiligen Befunde."], ["Lebensstil & Regeneration", "Schlaf, Stress und Darmgesundheit als Themen einer persönlichen ärztlichen Beratung."]],
     visitLabel: "ONE in Regensburg", visitTitle: "Raum für persönliche Betreuung.", visitBody: "Termine finden nach Vereinbarung statt. Beschreiben Sie Ihr Anliegen über das Kontaktformular oder per E-Mail. Erstgespräche und Verlaufsberatung sind auch per Video möglich; die Behandlung erfolgt in der Praxis. Welche Untersuchungen sinnvoll sind und welche Kosten entstehen, klären Sie direkt mit der Praxis.",
-    faq: "Fragen zum Praxisbesuch", galleryTitle: "Einblicke in ONE", practiceAlt: "Cell Education · Bionic Cell Therapy", entranceAlt: "Eingang Fritz-Fend-Straße 4 in Regensburg", practiceCaption: "Cell Education · Bionic Cell Therapy", entranceCaption: "Ihr Weg zu ONE",
+    faq: "Fragen zum Praxisbesuch", galleryTitle: "Einblicke in ONE", practiceAlt: "Behandlungsraum von ONE by Dr. Marco Hartl", entranceAlt: "Eingang Fritz-Fend-Straße 4 in Regensburg", practiceCaption: "Die Praxisräume", entranceCaption: "Ihr Weg zu ONE",
     contactTitle: "Kontakt zu ONE", contactBody: "Für einen Termin oder Fragen zum Angebot wenden Sie sich direkt an Dr. Hartl und sein Team.",
     note: "Diagnostik und Therapie werden individuell ärztlich festgelegt. Die medizinische Verantwortung liegt bei der behandelnden Praxis."
   },
@@ -21,7 +21,7 @@ export const marcoHartlCopy = {
     focusLabel: "Areas of focus", focusTitle: "Three perspectives on your health.",
     topics: [["Sport & movement", "Sports medical care and posture and movement analysis for everyday life, recreational and competitive sport."], ["Nutrition & micronutrients", "Individual nutritional advice and orthomolecular medicine based on the relevant findings."], ["Lifestyle & recovery", "Sleep, stress and gut health as topics in individual medical consultations."]],
     visitLabel: "ONE in Regensburg", visitTitle: "Space for personal care.", visitBody: "Visits are by appointment. Describe your concerns using the contact form or by email. Initial discussions and follow-up consultations are also available by video; treatment takes place in the practice. Please discuss suitable examinations and costs directly with the practice.",
-    faq: "Questions about your visit", galleryTitle: "Inside ONE", practiceAlt: "Cell Education · Bionic Cell Therapy", entranceAlt: "Entrance at Fritz-Fend-Straße 4 in Regensburg", practiceCaption: "Cell Education · Bionic Cell Therapy", entranceCaption: "Your way to ONE",
+    faq: "Questions about your visit", galleryTitle: "Inside ONE", practiceAlt: "Treatment room at ONE by Dr. Marco Hartl", entranceAlt: "Entrance at Fritz-Fend-Straße 4 in Regensburg", practiceCaption: "The practice", entranceCaption: "Your way to ONE",
     contactTitle: "Contact ONE", contactBody: "Contact Dr. Hartl and his team directly for appointments and questions about the practice.",
     note: "Diagnostics and treatment are determined individually by the physician. Medical responsibility rests with the treating practice."
   },
@@ -34,7 +34,7 @@ export const marcoHartlCopy = {
     focusLabel: "Áreas de atención", focusTitle: "Tres perspectivas sobre su salud.",
     topics: [["Deporte y movimiento", "Atención médica deportiva y análisis de postura y movimiento para la vida diaria y el deporte recreativo y de competición."], ["Nutrición y micronutrientes", "Asesoramiento nutricional individual y medicina ortomolecular según los hallazgos clínicos."], ["Estilo de vida y recuperación", "Sueño, estrés y salud intestinal como temas de la consulta médica individual."]],
     visitLabel: "ONE en Regensburg", visitTitle: "Espacio para una atención personal.", visitBody: "Las visitas requieren cita previa. Describa su consulta a través del formulario de contacto o por correo electrónico. Primeras conversaciones y seguimiento también por vídeo; el tratamiento se realiza en la consulta. Consulte directamente con la consulta las exploraciones adecuadas y sus costes.",
-    faq: "Preguntas sobre su visita", galleryTitle: "Conocer ONE", practiceAlt: "Cell Education · Bionic Cell Therapy", entranceAlt: "Entrada en Fritz-Fend-Straße 4 en Regensburg", practiceCaption: "Cell Education · Bionic Cell Therapy", entranceCaption: "Cómo llegar a ONE",
+    faq: "Preguntas sobre su visita", galleryTitle: "Conocer ONE", practiceAlt: "Sala de tratamiento de ONE by Dr. Marco Hartl", entranceAlt: "Entrada en Fritz-Fend-Straße 4 en Regensburg", practiceCaption: "La consulta", entranceCaption: "Cómo llegar a ONE",
     contactTitle: "Contactar con ONE", contactBody: "Contacte directamente con el Dr. Hartl y su equipo para citas e información.",
     note: "El diagnóstico y el tratamiento se determinan individualmente por criterio médico. La responsabilidad médica corresponde a la consulta tratante."
   }

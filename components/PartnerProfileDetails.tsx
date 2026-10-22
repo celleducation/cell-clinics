@@ -24,6 +24,6 @@ export function StrackeDiagnostics({locale}: {locale: string}) {
 
 export function HartlPracticeStory({locale}: {locale: string}) {
   const c = copy(locale).marco;
-  const images = ["/images/editorial/platform-cell.webp", "/clinics/marco-hartl/portrait.webp", "/clinics/marco-hartl/red-light.webp"];
-  return <section className="section hartl-story"><div className="container"><div className="hartl-story-heading"><SectionHeading eyebrow={c.eyebrow} title={c.title} /><p className="lead">{c.intro}</p></div><div className="hartl-photo-story">{images.map((name,i)=><figure key={name}><Image src={name} alt={c.captions[i]} width={i===1?719:1400} height={i===1?1079:933} sizes="(max-width:767px) 90vw, 55vw" /><figcaption>{c.captions[i]}</figcaption></figure>)}</div><p className="health-point-note">{c.note}</p></div></section>;
+  const images = ["red-light", "preparation", "infusion"];
+  return <section className="section hartl-story"><div className="container"><div className="hartl-story-heading"><SectionHeading eyebrow={c.eyebrow} title={c.title} /><p className="lead">{c.intro}</p></div><div className="hartl-photo-story">{images.map((name,i)=><figure key={name}><Image src={`/clinics/marco-hartl/${name}.webp`} alt={c.captions[i]} width={i===1?719:1400} height={i===1?1079:933} sizes="(max-width:767px) 90vw, 55vw" /><figcaption>{c.captions[i]}</figcaption></figure>)}</div><p className="health-point-note">{c.note}</p></div></section>;
 }

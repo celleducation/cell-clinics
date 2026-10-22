@@ -38,7 +38,7 @@ export function SchmehlProfile({locale, clinic}: {locale: string; clinic: Clinic
     <section className="section"><div className="container">
       <SectionHeading eyebrow={c.network} title={c.aboutTitle} />
       <p className="lead">{c.about}</p>
-      <div className="alpstein-hero-grid"><CellScienceArt kind="cell" locale={locale} /><CellScienceArt kind="membrane-transport" locale={locale} /></div>
+      <div className="alpstein-hero-grid"><CellScienceArt kind="senescence" locale={locale} /><CellScienceArt kind="membrane-transport" locale={locale} /></div>
     </div></section>
     <section className="section section-alt clinic-profile-contact" id="contact">
       <div className="container clinic-profile-contact-card">

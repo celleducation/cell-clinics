@@ -21,7 +21,7 @@ export const healthPointCopy = {
     networkBody: "Dr. Klein hat an Schulungen zu Bionic Cell Therapy von Cell Education teilgenommen. Diese vermitteln Wissen und verleihen keine zusätzliche Behandlungsbefugnis. Im Health Point wird das Konzept in die Anamnese, spezialisierte Labordiagnostik und individuell geplante Betreuung eingebunden. Die medizinische Verantwortung liegt bei der behandelnden Praxis.",
     teamLabel: "Die Praxis", teamTitle: "Persönlich begleitet — vom ersten Kontakt an.",
     teamBody: "Medizinische Praxisassistentinnen, Sekretariat und Administration unterstützen Dr. Klein bei einer sorgfältigen, persönlichen Betreuung. Die Praxis empfängt Patientinnen und Patienten aus der Schweiz und dem Ausland. Bei längerer Anreise unterstützt das Team mit Hotelempfehlungen in der Region.",
-    galleryTitle: "Einblicke in den Health Point", galleryAlts: ["Empfang im Health Point", "Praxisteam im Health Point", "Wartebereich der Praxis"],
+    galleryTitle: "Einblicke in den Health Point", galleryAlts: ["Infusions- und Behandlungsplätze im Health Point", "Heller Behandlungsraum mit Ruhesesseln", "Wartebereich der Praxis"],
     contactTitle: "Ihr Kontakt zum Health Point", contactBody: "Für einen Termin oder Fragen zum Praxisangebot wenden Sie sich direkt an das Team.",
     hours: "Sprechzeiten", weekdays: "Montag–Donnerstag: 08:30–17:00 Uhr", friday: "Freitag: 08:30–12:00 Uhr", office: "Freitag ab 12:00 Uhr Bürozeit ohne Sprechstunde.", referrals: "Für zuweisende Ärztinnen und Ärzte", source: "Praxisangaben nach der bereitgestellten Partnerinformation · Stand September 2026."
   },
@@ -46,7 +46,7 @@ export const healthPointCopy = {
     networkBody: "Dr. Klein has attended Cell Education training on Bionic Cell Therapy. Training conveys knowledge, not additional authority to treat. At Health Point, the concept is integrated into medical history taking, specialised laboratory diagnostics and individually planned care. The treating practice retains medical responsibility.",
     teamLabel: "The practice", teamTitle: "Personal support from the first contact.",
     teamBody: "Medical practice assistants, reception and administration support Dr. Klein in providing attentive, personal care. The practice welcomes patients from Switzerland and abroad. For those travelling further, the team can suggest hotels in the region.",
-    galleryTitle: "Inside Health Point", galleryAlts: ["Health Point reception", "Health Point practice team", "Practice waiting area"],
+    galleryTitle: "Inside Health Point", galleryAlts: ["Infusion and treatment spaces at Health Point", "Bright treatment room with reclining chairs", "Practice waiting area"],
     contactTitle: "Contact Health Point", contactBody: "Contact the practice team directly for appointments or questions about its services.",
     hours: "Consultation hours", weekdays: "Monday–Thursday: 08:30–17:00", friday: "Friday: 08:30–12:00", office: "Friday after 12:00: office hours only, no consultations.", referrals: "For referring physicians", source: "Practice information supplied by the partner · September 2026."
   },
@@ -71,7 +71,7 @@ export const healthPointCopy = {
     networkBody: "La Dra. Klein ha asistido a cursos de Cell Education sobre Bionic Cell Therapy. Los cursos transmiten conocimientos, no nuevas competencias para tratar. En Health Point, este concepto se integra en la historia clínica, las pruebas especializadas y la atención individualizada. La responsabilidad médica corresponde a la consulta tratante.",
     teamLabel: "La consulta", teamTitle: "Atención personal desde el primer contacto.",
     teamBody: "El equipo de asistencia médica, secretaría y administración apoya a la Dra. Klein en una atención cuidadosa y personal. La consulta recibe pacientes de Suiza y del extranjero y puede recomendar hoteles de la región para quienes viajan desde lejos.",
-    galleryTitle: "Conozca Health Point", galleryAlts: ["Recepción de Health Point", "Equipo de Health Point", "Sala de espera de la consulta"],
+    galleryTitle: "Conozca Health Point", galleryAlts: ["Espacios de infusión y tratamiento en Health Point", "Sala de tratamiento luminosa con sillones", "Sala de espera de la consulta"],
     contactTitle: "Contacte con Health Point", contactBody: "Para citas o preguntas sobre los servicios, contacte directamente con el equipo.",
     hours: "Horario de consulta", weekdays: "Lunes–jueves: 08:30–17:00", friday: "Viernes: 08:30–12:00", office: "Viernes a partir de las 12:00: atención administrativa, sin consulta médica.", referrals: "Para médicos remitentes", source: "Información facilitada por la consulta asociada · Septiembre de 2026."
   }

@@ -115,11 +115,11 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const seoT = await getTranslations("seo");
   const assets = isMedivium ? {
     logo: "/clinics/medivium/logo.png",
-    main: "/images/editorial/platform-cell.webp",
+    main: "/clinics/medivium/ha4a6318.jpg",
     portrait: "/clinics/medivium/enrico-thiele.webp",
     profile: "/clinics/medivium/enrico-thiele.webp",
     galleryThird: "/clinics/medivium/logo.png",
-    context: "/images/editorial/platform-cell.webp"
+    context: "/clinics/medivium/ha4a6318.jpg"
   } : isMonikaBrueck ? {
     logo: "/clinics/monika-brueck/logo.svg",
     main: "/clinics/monika-brueck/hero.webp",
@@ -152,7 +152,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
     logo: "/clinics/lars-gienger/reception.jpeg",
     main: "/clinics/lars-gienger/lars-gienger.jpeg",
     portrait: "/clinics/lars-gienger/reception.jpeg",
-    profile: "/images/editorial/platform-cell.webp",
+    profile: "/clinics/lars-gienger/infusion-room.jpeg",
     galleryThird: "/clinics/lars-gienger/treatment-room.jpeg",
     context: "/clinics/lars-gienger/reception.jpeg"
   } : {

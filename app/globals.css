@@ -595,6 +595,13 @@ textarea {
 .maak-focus .section-title { font-size: clamp(22px, 2vw, 28px); }
 .maak-focus ul { padding-left: 20px; margin-bottom: 0; display: grid; gap: 12px; }
 .maak-bio { max-width: 960px; }
+.maak-team-photo { margin: 0; min-width: 0; align-self: center; }
+.maak-team-photo img { display: block; width: 100%; height: auto; border-radius: 24px; }
+.maak-portraits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 32px 0 40px; }
+.maak-portraits figure { margin: 0; min-width: 0; }
+.maak-portraits img { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: 60% center; border-radius: 20px; }
+.maak-portraits figcaption { margin-top: 14px; font-weight: 600; }
+@media (max-width: 600px) { .maak-portraits { grid-template-columns: 1fr; gap: 28px; } }
 .maak-hours { max-width: 400px; }
 .maak-hours div { display: flex; justify-content: space-between; gap: 20px; margin: 12px 0; }
 .maak-hours dd { margin: 0; white-space: nowrap; }

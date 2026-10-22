@@ -59,7 +59,7 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
         <SectionHeading eyebrow={c.teamLabel} title={c.teamTitle} intro={c.teamBody} />
         <Image src={`${root}team.webp`} alt={c.teamAlt} width={1500} height={1000} sizes="(max-width: 1248px) 100vw, 1200px" />
         <h2 className="section-title health-point-gallery-title">{c.galleryTitle}</h2>
-        <div className="health-point-gallery">{["reception", "team", "waiting"].map((name,i)=><Image key={name} src={`${root}${name}.webp`} alt={c.galleryAlts[i]} width={1500} height={1000} sizes="(max-width: 767px) 100vw, 33vw" />)}</div>
+        <div className="health-point-gallery">{["treatment", "infusion", "waiting"].map((name,i)=><Image key={name} src={`${root}${name}.webp`} alt={c.galleryAlts[i]} width={1500} height={1000} sizes="(max-width: 767px) 100vw, 33vw" />)}</div>
       </div>
     </section>
     <section className="clinic-network-context health-point-network">

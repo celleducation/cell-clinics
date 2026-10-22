@@ -1,5 +1,18 @@
 Cell Clinics – Umsetzung Kommunikationsregeln, 21.10.2026
 
+NACHTRAG 22.10.2026
+Die drei Partner Göcze, Imke Frei und Youn-Ju Lee sind auf Nutzerwunsch wieder
+im Verzeichnis sichtbar (22 Standorte). Unbestätigte Berufsgruppen bleiben
+intern als unknown hinterlegt und werden öffentlich nicht als Label angezeigt.
+Die unten dokumentierte Ausblendung und die daran geknüpfte Freigabe sind überholt.
+Auf ausdrücklichen Nutzerwunsch wurden die 20 archivierten Bilddateien wieder
+nach public kopiert und die ersetzten Bilddarstellungen wiederhergestellt:
+Materialkarten, Playbook, Zellgrafiken, Praxisfotos und Apothekenlogo.
+Die Textkorrekturen und Consent-Sperren bleiben bestehen. Der frühere
+Bildentfernungs-Test prüft nun die unveränderte Wiederherstellung der Originale.
+Die unten dokumentierte Bildentfernung ist damit überholt. Die Wiederherstellung
+ist keine rechtliche Freigabe der Bildinhalte oder eingebetteten Bildtexte.
+
 STATUS
 Lokale Änderungen, nicht gepusht und nicht veröffentlicht. Keine rechtliche Freigabe.
 Grundlage: Kommunikationsregeln_Cell_Education.pdf, aktuelle 7-seitige Fassung.

@@ -8,17 +8,13 @@ const walk = dir => fs.readdirSync(dir, {withFileTypes: true}).flatMap(entry => 
   return entry.isDirectory() ? walk(file) : [file];
 });
 
-test('archived illustrations are neither public nor referenced in production HTML', () => {
+test('original illustrations are restored unchanged from the archive', () => {
   const archive = 'review-assets/communication-2026-10-21';
   const html = walk('.next/server/app').filter(f => f.endsWith('.html'));
   assert.ok(html.length > 0, 'Run build first');
   for (const file of walk(archive)) {
     const relative = path.relative(archive, file);
-    assert.equal(fs.existsSync(path.join('public', relative)), false, relative);
-    for (const page of html) {
-      const source = fs.readFileSync(page, 'utf8');
-      assert.ok(!source.includes('/' + relative) && !source.includes(encodeURIComponent('/' + relative)), `${page}: ${relative}`);
-    }
+    assert.deepEqual(fs.readFileSync(path.join('public', relative)), fs.readFileSync(file), relative);
   }
 });
 

@@ -33,7 +33,7 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
             <p className="lead">{c.intro}</p>
             <div className="button-row"><a className="button button-primary" href="#contact">{c.contact}</a><a className="button button-secondary" href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
           </div>
-          <figure className="maak-art maak-hero-art"><Image src="/clinics/maak/tooth-anatomy.webp" alt={c.anatomyAlt} width={1001} height={1018} sizes="(max-width: 767px) 90vw, 480px" priority /><figcaption>{c.illustration}</figcaption></figure>
+          <figure className="maak-team-photo"><Image src="/clinics/maak/maak-hopmann-team.jpg" alt="Dr. Sabine Hopmann & Dr. Michael Maak" width={1500} height={1000} sizes="(max-width: 767px) 90vw, 600px" priority /></figure>
         </div>
         <div className="clinic-fact-strip">{c.facts.map((fact, i) => <div key={fact}><span>0{i + 1}</span><strong>{fact}</strong></div>)}</div>
       </div>
@@ -46,7 +46,12 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
       <figure className="maak-art"><Image src="/clinics/maak/tooth-cellular.webp" alt={c.cellularAlt} width={1200} height={577} sizes="(max-width: 767px) 90vw, 560px" /><figcaption>{c.illustration}</figcaption></figure>
       <div><SectionHeading eyebrow={c.networkLabel} title={c.networkTitle} /><p className="lead">{c.network}</p></div>
     </div></section>
-    <section className="section"><div className="container maak-bio"><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><p className="eyebrow">{c.profession}</p><p className="lead">{c.teamIntro}</p><h3>{c.bioHeading}</h3><p className="lead">{c.bio}</p></div></section>
+    <section className="section"><div className="container maak-bio"><SectionHeading eyebrow={c.bioLabel} title={c.bioTitle} /><p className="eyebrow">{c.profession}</p><p className="lead">{c.teamIntro}</p>
+      <div className="maak-portraits">
+        <figure><Image src="/clinics/maak/michael-maak-portrait.jpg" alt="Dr. Michael Maak" width={1500} height={1000} sizes="(max-width: 600px) 90vw, 460px" /><figcaption>Dr. Michael Maak</figcaption></figure>
+        <figure><Image src="/clinics/maak/sabine-hopmann-portrait.jpg" alt="Dr. Sabine Hopmann" width={1500} height={1000} sizes="(max-width: 600px) 90vw, 460px" /><figcaption>Dr. Sabine Hopmann</figcaption></figure>
+      </div>
+      <h3>{c.bioHeading}</h3><p className="lead">{c.bio}</p></div></section>
     <section className="section section-alt clinic-profile-contact" id="contact"><div className="container clinic-profile-contact-card">
       <div><SectionHeading eyebrow={c.contact} title={c.contactTitle} /><p>{c.contactBody}</p><h3>{c.hours}</h3><dl className="maak-hours"><div><dt>{c.weekdays}</dt><dd>08:00–20:00</dd></div><div><dt>{c.friday}</dt><dd>08:00–14:00</dd></div></dl></div>
       <address><strong>{clinic.name}</strong><p>{clinic.address}</p><a href={`tel:${phone}`}>{clinic.phone}</a><a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a><div className="button-row"><a className="button button-primary" href={`tel:${phone}`}>{c.call}</a><a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{c.email}</a></div><a href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></address>

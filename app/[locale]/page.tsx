@@ -171,7 +171,32 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
             <ButtonLink href="#application" variant="secondary">{t("cta.requestInfo")}</ButtonLink>
           </div>
 
-          <div className="playbook-mockup materials-neutral-preview" aria-label={t("onboarding.mockupLabel")}><span className="eyebrow">Cell Education</span><h3>{t("onboarding.mockupLabel")}</h3><p>{t("onboarding.days")}</p></div>
+          <div className="playbook-mockup" aria-label={t("onboarding.mockupLabel")}>
+            <div className="playbook-glow" />
+            <Image
+              className="playbook-sheet playbook-sheet-back"
+              src="/images/partner-playbook/partner-playbook-checklist.png"
+              alt=""
+              aria-hidden="true"
+              width={1242}
+              height={1755}
+            />
+            <Image
+              className="playbook-sheet playbook-sheet-middle"
+              src="/images/partner-playbook/partner-playbook-week-one.png"
+              alt=""
+              aria-hidden="true"
+              width={1242}
+              height={1755}
+            />
+            <Image
+              className="playbook-sheet playbook-sheet-front"
+              src="/images/partner-playbook/partner-playbook-cover.png"
+              alt={t("onboarding.mockupLabel")}
+              width={1242}
+              height={1755}
+            />
+          </div>
         </div>
       </section>
 
