@@ -20,10 +20,10 @@
   },
   "video": {
     "loading": "Video wird geladen …",
-    "fallback": "Video lädt nicht? Nutzen Sie den YouTube-Link unter dem Player.",
+    "fallback": "Video lädt nicht? Nutzen Sie den Vimeo-Link unter dem Player.",
     "load": "Video laden",
-    "privacy": "Das Video öffnet sich auf YouTube in einem neuen Tab. Auf dieser Seite wird kein YouTube-Player geladen.",
-    "external": "Auf YouTube ansehen"
+    "privacy": "Das Video öffnet sich auf Vimeo in einem neuen Tab. Auf dieser Seite wird kein Vimeo-Player geladen.",
+    "external": "Auf Vimeo ansehen"
   },
   "meta": {
     "title": "Cell Clinics | Medizinisch geleitete Plattform für Zellmedizin",

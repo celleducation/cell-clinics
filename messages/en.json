@@ -20,10 +20,10 @@
   },
   "video": {
     "loading": "Loading video …",
-    "fallback": "Video not loading? Use the YouTube link below the player.",
+    "fallback": "Video not loading? Use the Vimeo link below the player.",
     "load": "Load video",
-    "privacy": "The video opens on YouTube in a new tab. No YouTube player is loaded on this page.",
-    "external": "Watch on YouTube"
+    "privacy": "The video opens on Vimeo in a new tab. No Vimeo player is loaded on this page.",
+    "external": "Watch on Vimeo"
   },
   "meta": {
     "title": "Cell Clinics | Medically Led Cellular Medicine Platform",

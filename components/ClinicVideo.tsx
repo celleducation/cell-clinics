@@ -11,7 +11,7 @@ export function ClinicVideo({title, privacyNote, externalLabel}: ClinicVideoProp
   return (
     <div className="clinic-video">
       <div className="clinic-video-player">
-          <a className="clinic-video-load" href="https://www.youtube.com/watch?v=g4iJK9b6_y0&t=2s" target="_blank" rel="noopener noreferrer" aria-label={`${externalLabel}: ${title}`}>
+          <a className="clinic-video-load" href="https://vimeo.com/1239421248/2c2a5935e4" target="_blank" rel="noopener noreferrer" aria-label={`${externalLabel}: ${title}`}>
             <Image src="/images/editorial/longevity-lab-video-poster.webp" alt="" aria-hidden="true" fill sizes="(max-width: 767px) 100vw, 720px" className="clinic-video-poster" />
             <span className="clinic-video-play">
               <Play size={18} fill="currentColor" aria-hidden="true" />
@@ -21,7 +21,7 @@ export function ClinicVideo({title, privacyNote, externalLabel}: ClinicVideoProp
       </div>
       <div className="clinic-video-caption">
         <p>{privacyNote}</p>
-        <a href="https://www.youtube.com/watch?v=g4iJK9b6_y0&t=2s" target="_blank" rel="noopener noreferrer">
+        <a href="https://vimeo.com/1239421248/2c2a5935e4" target="_blank" rel="noopener noreferrer">
           {externalLabel} <ArrowUpRight size={15} aria-hidden="true" />
         </a>
       </div>

@@ -20,10 +20,10 @@
   },
   "video": {
     "loading": "Cargando vídeo …",
-    "fallback": "¿El vídeo no carga? Utilice el enlace de YouTube debajo del reproductor.",
+    "fallback": "¿El vídeo no carga? Utilice el enlace de Vimeo debajo del reproductor.",
     "load": "Cargar vídeo",
-    "privacy": "El vídeo se abre en YouTube en una pestaña nueva. Esta página no carga un reproductor de YouTube.",
-    "external": "Ver en YouTube"
+    "privacy": "El vídeo se abre en Vimeo en una pestaña nueva. Esta página no carga un reproductor de Vimeo.",
+    "external": "Ver en Vimeo"
   },
   "meta": {
     "title": "Cell Clinics | Plataforma de medicina celular con dirección médica",
