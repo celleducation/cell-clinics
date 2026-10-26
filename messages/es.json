@@ -22,7 +22,7 @@
     "loading": "Cargando vídeo …",
     "fallback": "¿El vídeo no carga? Utilice el enlace de Vimeo debajo del reproductor.",
     "load": "Cargar vídeo",
-    "privacy": "El vídeo se abre en Vimeo en una pestaña nueva. Esta página no carga un reproductor de Vimeo.",
+    "privacy": "El reproductor de Vimeo solo se carga al hacer clic. Se transmitirán a Vimeo datos como su dirección IP.",
     "external": "Ver en Vimeo"
   },
   "meta": {

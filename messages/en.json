@@ -22,7 +22,7 @@
     "loading": "Loading video …",
     "fallback": "Video not loading? Use the Vimeo link below the player.",
     "load": "Load video",
-    "privacy": "The video opens on Vimeo in a new tab. No Vimeo player is loaded on this page.",
+    "privacy": "The Vimeo player loads only when you click. Data such as your IP address will then be transferred to Vimeo.",
     "external": "Watch on Vimeo"
   },
   "meta": {

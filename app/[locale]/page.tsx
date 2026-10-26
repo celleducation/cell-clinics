@@ -142,7 +142,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
           <ClinicVideo
             title={t("lab.title")}
             privacyNote={t("video.privacy")}
-            externalLabel={t("video.external")}
+            playLabel={t("video.load")}
           />
         </div>
       </section>
