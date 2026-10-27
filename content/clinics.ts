@@ -22,6 +22,58 @@ export type Clinic = {
 
 const clinicDirectory: Clinic[] = [
   {
+    slug: "ulrike-hollneck-nuernberg",
+    berufsgruppe: "Arztpraxis",
+    name: "Dr. Ulrike Hollneck",
+    practitioner: "Dr. Ulrike Hollneck",
+    city: "Nürnberg",
+    region: "Bayern",
+    countryCode: "DE",
+    coordinates: {lat: 49.4601311, lng: 11.0315043},
+    contactEmail: "hallo@dr-ulrike-hollneck.de",
+    phone: "+49 911 13322897",
+    address: "Fürther Straße 244a (Auf AEG), 90429 Nürnberg, Deutschland"
+  },
+  {
+    slug: "janine-poranzke-magdeburg",
+    berufsgruppe: "Arztpraxis",
+    name: "Dr. med. Janine Poranzke",
+    practitioner: "Dr. med. Janine Poranzke",
+    city: "Magdeburg",
+    region: "Sachsen-Anhalt",
+    countryCode: "DE",
+    coordinates: {lat: 52.1347715, lng: 11.6179397},
+    contactEmail: "info@hno-poranzke.de",
+    phone: "+49 391 7335671",
+    address: "Olvenstedter Straße 14, 39108 Magdeburg, Deutschland"
+  },
+  {
+    slug: "peter-degano-bendinat",
+    berufsgruppe: "Zahnarztpraxis",
+    name: "DentaCare Mallorca · Dr. Peter Degano",
+    practitioner: "Dr. Peter Degano",
+    city: "Bendinat",
+    region: "Mallorca",
+    countryCode: "ES",
+    // Approximate street position from OpenStreetMap, not a verified building pin.
+    coordinates: {lat: 39.5401743, lng: 2.5841330},
+    phone: "+34 971 101 101",
+    address: "Plaza Bendinat, Local B23 + B24, Calle Arquitecto Francisco Casas 17, 07181 Bendinat, Spanien"
+  },
+  {
+    slug: "chris-stephan-seffer-frankfurt",
+    berufsgruppe: "Arztpraxis",
+    name: "Dr. med. Chris Stephan-Seffer",
+    practitioner: "Dr. med. Chris Stephan-Seffer",
+    city: "Frankfurt am Main",
+    region: "Hessen",
+    countryCode: "DE",
+    coordinates: {lat: 50.1127137, lng: 8.6786966},
+    contactEmail: "info@doc-seffer.de",
+    phone: "+49 69 6773518-0",
+    address: "Rossmarkt 5, 60311 Frankfurt am Main, Deutschland"
+  },
+  {
     slug: "reinhard-schmehl-ebersberg",
     berufsgruppe: "Arztpraxis",
     name: "Privatpraxis Reinhard Schmehl",
