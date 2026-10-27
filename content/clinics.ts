@@ -49,6 +49,9 @@ const clinicDirectory: Clinic[] = [
   },
   {
     slug: "peter-degano-bendinat",
+    profileAvailable: true,
+    website: "https://www.dentacare-mallorca.com/",
+    contactEmail: "clinic@df-mallorca.com",
     berufsgruppe: "Zahnarztpraxis",
     name: "DentaCare Mallorca · Dr. Peter Degano",
     practitioner: "Dr. Peter Degano",

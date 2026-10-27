@@ -25,6 +25,8 @@ import {MaakProfile} from "@/components/MaakProfile";
 import {maakCopy} from "@/content/maak";
 import {NeumeyerProfile} from "@/components/NeumeyerProfile";
 import {neumeyerCopy} from "@/content/neumeyer";
+import {DeganoProfile} from "@/components/DeganoProfile";
+import {deganoCopy} from "@/content/degano";
 
 export function generateStaticParams() {
   return clinics.filter((clinic) => clinic.profileAvailable).map(({slug}) => ({slug}));
@@ -34,6 +36,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "peter-degano-bendinat") {
+    const copy = deganoCopy[locale as keyof typeof deganoCopy] ?? deganoCopy.de;
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/degano/team.webp", imageWidth: 1600, imageHeight: 900, imageAlt: copy.teamAlt});
+  }
   if (slug === "dres-neumeyer-eschlkam") {
     const copy = neumeyerCopy[locale as keyof typeof neumeyerCopy] ?? neumeyerCopy.de;
     return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/neumeyer/team.webp", imageWidth: 1600, imageHeight: 1067, imageAlt: copy.teamAlt});
@@ -94,6 +100,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   if (slug === "julia-napolitano-gil-esslingen") permanentRedirect(`/${locale}/network/julia-napolitano-gil-goeppingen`);
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
+  if (slug === "peter-degano-bendinat") return <DeganoProfile locale={locale} clinic={clinic} />;
   if (slug === "hopmann-maak-lemfoerde") return <MaakProfile locale={locale} clinic={clinic} />;
   if (slug === "dres-neumeyer-eschlkam") return <NeumeyerProfile locale={locale} clinic={clinic} />;
   if (slug === "reinhard-schmehl-ebersberg") return <SchmehlProfile locale={locale} clinic={clinic} />;
