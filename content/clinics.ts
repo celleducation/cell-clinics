@@ -22,6 +22,19 @@ export type Clinic = {
 
 const clinicDirectory: Clinic[] = [
   {
+    slug: "claudia-schmook-bad-soden",
+    berufsgruppe: "Heilpraktikerpraxis",
+    name: "Naturheilpraxis Claudia Schmook",
+    practitioner: "Claudia Schmook",
+    city: "Bad Soden am Taunus",
+    region: "Hessen",
+    countryCode: "DE",
+    coordinates: {lat: 50.1569684, lng: 8.4872856},
+    contactEmail: "info@naturheilpraxis-schmook.de",
+    phone: "+49 6196 9535634",
+    address: "Altenhainer Straße 21, 65812 Bad Soden am Taunus, Deutschland"
+  },
+  {
     slug: "ulrike-hollneck-nuernberg",
     berufsgruppe: "Arztpraxis",
     name: "Dr. Ulrike Hollneck",
