@@ -22,6 +22,19 @@ export type Clinic = {
 
 const clinicDirectory: Clinic[] = [
   {
+    slug: "michael-wittke-celle",
+    berufsgruppe: "Arztpraxis",
+    name: "Privatpraxis Dr. Michael Wittke",
+    practitioner: "Dr. Michael Wittke",
+    city: "Celle",
+    region: "Niedersachsen",
+    countryCode: "DE",
+    coordinates: {lat: 52.6183626, lng: 10.0764547},
+    contactEmail: "info@privatpraxis-drwittke.de",
+    phone: "+49 5141 9344071",
+    address: "Sägemühlenstraße 3, 29221 Celle, Deutschland"
+  },
+  {
     slug: "claudia-schmook-bad-soden",
     berufsgruppe: "Heilpraktikerpraxis",
     name: "Naturheilpraxis Claudia Schmook",
