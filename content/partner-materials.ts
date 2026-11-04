@@ -49,7 +49,7 @@ export const partnerMaterials: Record<string, Materials> = {
     ],
     "equipment": {
       "title": "Produkte & Geräte",
-      "body": "Burg-Pharmacy ist pharmazeutischer Partner und Referent bei Schulungen. Schulungsteilnahme und Arzneimittelversorgung sind voneinander unabhängig; es besteht keine Bindung an eine Apotheke."
+      "body": "Schulungsteilnahme und Arzneimittelversorgung sind voneinander unabhängig; es besteht keine Bindung an eine Apotheke."
     },
     "supportTitle": "Begleitung für Ihre Praxis",
     "support": [
@@ -115,7 +115,7 @@ export const partnerMaterials: Record<string, Materials> = {
     ],
     "equipment": {
       "title": "Products & devices",
-      "body": "Burg-Pharmacy is a pharmaceutical partner and training speaker. Training attendance and medicine supply are independent; no commitment to a pharmacy is required."
+      "body": "Training attendance and medicine supply are independent; no commitment to a pharmacy is required."
     },
     "supportTitle": "Support for your practice",
     "support": [
@@ -181,7 +181,7 @@ export const partnerMaterials: Record<string, Materials> = {
     ],
     "equipment": {
       "title": "Productos y dispositivos",
-      "body": "Burg-Pharmacy participa como colaborador farmacéutico y ponente. La asistencia a cursos y el suministro de medicamentos son independientes; no existe vinculación obligatoria a una farmacia."
+      "body": "La asistencia a cursos y el suministro de medicamentos son independientes; no existe vinculación obligatoria a una farmacia."
     },
     "supportTitle": "Acompañamiento para su consulta",
     "support": [
