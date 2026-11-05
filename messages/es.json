@@ -224,7 +224,7 @@
     "terms": "Aviso legal",
     "description": "Una red de consultas médicas, dentales, clínicas y consultas de Heilpraktiker. Los servicios reservados a médicos solo pueden prestarlos médicos.",
     "productOf": "Un producto de Cell Education.",
-    "groupLine": "Parte de Cell Group — Cell Education · cell supply · cell clinics."
+    "groupLine": "Parte de Cell Group — Cell Education · cell clinics."
   },
   "common": {
     "learnMore": "Más información",
@@ -674,9 +674,8 @@
   "companyPage": {
     "eyebrow": "Empresa",
     "title": "El ecosistema de Cell Group",
-    "lead": "Cell Group incluye áreas independientes para cursos, productos y la red de consultas. Un curso no otorga acceso a productos de farmacia.",
+    "lead": "Cell Group incluye áreas independientes para cursos y la red de consultas. Un curso no otorga acceso a productos de farmacia.",
     "education": "Cursos, transmisión de conocimientos y materiales estructurados.",
-    "supply": "Plataforma de productos, abastecimiento y distribución.",
     "clinics": "Centros asociados, atención al paciente e implementación."
   },
   "newsPage": {

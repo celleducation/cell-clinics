@@ -5,7 +5,7 @@ import {PageHero} from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Cell Group unites Cell Education, cell supply and cell clinics in one cellular medicine ecosystem."
+  description: "Cell Group unites Cell Education and cell clinics in one cellular medicine ecosystem."
 };
 
 export default async function CompanyPage({params}: {params: Promise<{locale: string}>}) {
@@ -14,7 +14,6 @@ export default async function CompanyPage({params}: {params: Promise<{locale: st
   const t = await getTranslations();
   const items = [
     {title: "Cell Education", body: t("companyPage.education")},
-    {title: "cell supply", body: t("companyPage.supply")},
     {title: "cell clinics", body: t("companyPage.clinics")}
   ];
   return (

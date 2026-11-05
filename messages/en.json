@@ -224,7 +224,7 @@
     "terms": "Imprint",
     "description": "A network of medical and dental practices, clinics and Heilpraktiker practices. Medical services reserved for physicians may only be provided by physicians.",
     "productOf": "A product of Cell Education.",
-    "groupLine": "Part of the Cell Group — Cell Education · cell supply · cell clinics."
+    "groupLine": "Part of the Cell Group — Cell Education · cell clinics."
   },
   "common": {
     "learnMore": "Learn more",
@@ -674,9 +674,8 @@
   "companyPage": {
     "eyebrow": "Company",
     "title": "The Cell Group Ecosystem",
-    "lead": "The Cell Group includes separate areas for training, products and the practice network. Training does not grant access to pharmacy products.",
+    "lead": "The Cell Group includes separate areas for training and the practice network. Training does not grant access to pharmacy products.",
     "education": "Training, knowledge sharing and structured resources.",
-    "supply": "Product platform, sourcing and distribution.",
     "clinics": "Partner practices, patient care and implementation."
   },
   "newsPage": {

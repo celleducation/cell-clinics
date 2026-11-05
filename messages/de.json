@@ -224,7 +224,7 @@
     "terms": "Impressum",
     "description": "Ein Netzwerk von Arzt-, Zahnarzt- und Heilpraktikerpraxen sowie Kliniken. Ärztliche Leistungen bleiben Ärztinnen und Ärzten vorbehalten.",
     "productOf": "Ein Produkt von Cell Education.",
-    "groupLine": "Teil der Cell Group — Cell Education · cell supply · cell clinics."
+    "groupLine": "Teil der Cell Group — Cell Education · cell clinics."
   },
   "common": {
     "learnMore": "Mehr erfahren",
@@ -674,9 +674,8 @@
   "companyPage": {
     "eyebrow": "Unternehmen",
     "title": "Das Ökosystem der Cell Group",
-    "lead": "Die Cell Group umfasst eigenständige Bereiche für Schulung, Produkte und das Praxisnetzwerk. Eine Schulung begründet keinen Zugang zu Apothekenprodukten.",
+    "lead": "Die Cell Group umfasst eigenständige Bereiche für Schulung und das Praxisnetzwerk. Eine Schulung begründet keinen Zugang zu Apothekenprodukten.",
     "education": "Schulungen, Wissensvermittlung und strukturierte Unterlagen.",
-    "supply": "Produktplattform, Beschaffung und Distribution.",
     "clinics": "Partnerpraxen, Patientenversorgung und Implementierung."
   },
   "newsPage": {
