@@ -4,9 +4,7 @@ import {clearOptionalCookies, hasConsent, subscribeConsent} from "@/lib/consent"
 
 export function ConsentScripts() {
   useEffect(() => {
-    const gtm = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-TFZJGN3F";
     const ga = process.env.NEXT_PUBLIC_GA_ID;
-    let gtmLoaded = false;
     const meta = process.env.NEXT_PUBLIC_META_PIXEL_ID;
     let gaLoaded = false;
     let metaLoaded = false;
@@ -16,29 +14,14 @@ export function ConsentScripts() {
       script.id = id; script.async = true; script.src = src;
       document.head.appendChild(script);
     };
-    if (ga || gtm) {
-      window.dataLayer ??= [];
-      // Google's command queue expects an Arguments object, not a plain array.
-      // eslint-disable-next-line prefer-rest-params
-      window.gtag ??= function () { window.dataLayer!.push(arguments); };
-      window.gtag("consent", "default", {ad_storage: "denied", analytics_storage: "denied", ad_user_data: "denied", ad_personalization: "denied", functionality_storage: "denied", personalization_storage: "denied", security_storage: "denied"});
-    }
     return subscribeConsent(() => {
       const statistics = hasConsent("statistics");
       const marketing = hasConsent("marketing");
       if (!statistics) clearOptionalCookies(/^(_tccl_visitor|_ga(?:_|$)|_gid$|_gat)/);
       if (!marketing) clearOptionalCookies(/^(_fbp|_fbc)$/);
-      // The container's tags are managed externally. Until every tag is audited,
-      // require BOTH optional categories so a marketing tag cannot bypass refusal.
-      if (gtm && statistics && marketing && !gtmLoaded) {
-        gtmLoaded = true;
-        window.gtag?.("consent", "update", {analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted"});
-        window.dataLayer!.push({"gtm.start": Date.now(), event: "gtm.js"});
-        load("consented-gtm", `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtm)}`);
-      }
       if (ga) {
         (window as unknown as Record<string, unknown>)[`ga-disable-${ga}`] = !statistics;
-        window.gtag?.("consent", "update", {analytics_storage: statistics ? "granted" : "denied", ad_storage: gtm && statistics && marketing ? "granted" : "denied", ad_user_data: gtm && statistics && marketing ? "granted" : "denied", ad_personalization: gtm && statistics && marketing ? "granted" : "denied"});
+        window.gtag?.("consent", "update", {analytics_storage: statistics ? "granted" : "denied", ad_storage: marketing ? "granted" : "denied", ad_user_data: marketing ? "granted" : "denied", ad_personalization: marketing ? "granted" : "denied"});
         if (statistics && !gaLoaded) {
           gaLoaded = true;
           window.gtag?.("js", new Date());
@@ -59,7 +42,7 @@ export function ConsentScripts() {
       if (!marketing) window.fbq?.("consent", "revoke");
       // Stop already-loaded vendor code after withdrawal. A fresh document
       // reads CookieYes' persisted refusal and does not load either vendor.
-      if ((!statistics && gaLoaded) || (!marketing && metaLoaded) || (gtmLoaded && (!statistics || !marketing))) window.location.reload();
+      if ((!statistics && gaLoaded) || (!marketing && metaLoaded)) window.location.reload();
     });
   }, []);
   return null;

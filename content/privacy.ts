@@ -2,7 +2,7 @@
 export const privacyCopy = {
   de: {
     title: "Datenschutzerklärung", home: "Start", date: "Stand: Oktober 2026",
-    gtmNotice: "Google Tag Manager: Wir binden den Container GTM-TFZJGN3F von Google über www.googletagmanager.com ein. Beim Laden werden IP-Adresse und HTTP-Anfragedaten an Google übertragen. Der Container wird erst geladen, wenn Sie sowohl Statistik als auch Marketing erlaubt haben. Ohne diese Zustimmung wird keine Verbindung zum Container hergestellt. Ein Widerruf lädt die Seite neu, um bereits geladenen Tracking-Code zu beenden. Die enthaltenen Tags müssen zusätzlich in Google Tag Manager entsprechend ihrer Zwecke konfiguriert sein.",
+    gtmNotice: "Google Tag Manager: Wir binden den Container GTM-5F9V4W2K von Google über www.googletagmanager.com ein. Beim Laden werden IP-Adresse und HTTP-Anfragedaten an Google übertragen. Der Container lädt beim Seitenaufruf. CookieYes verwaltet Ihre Auswahl für Statistik und Marketing.",
     sections: [
       ["1. Verantwortlicher", "Cell Clinics ist ein Angebot der Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Deutschland. Verantwortlich für die Verarbeitung: Cell Education - The Institute GmbH & Co. KG. Kontakt: info@cell-education.com."],
       ["2. Hosting und Server-Logfiles", "Wir nutzen Vercel Inc., USA, zur Bereitstellung der Website. Dabei können IP-Adresse, Datum und Uhrzeit, abgerufene Seite sowie Browserinformationen verarbeitet werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse ist der sichere und zuverlässige Betrieb. Für Übermittlungen in die USA kommen das EU-US Data Privacy Framework bei gültiger Zertifizierung oder Standardvertragsklauseln in Betracht."],
@@ -18,7 +18,7 @@ export const privacyCopy = {
   },
   en: {
     title: "Privacy policy", home: "Home", date: "Last updated: October 2026",
-    gtmNotice: "Google Tag Manager: We embed Google's container GTM-TFZJGN3F through www.googletagmanager.com. Loading it transmits IP addresses and HTTP request data to Google. The container loads only after you consent to both statistics and marketing. Without this consent, no connection to the container is made. Withdrawal reloads the page to stop previously loaded tracking code. Its tags must also be configured in Google Tag Manager according to their purposes.",
+    gtmNotice: "Google Tag Manager: We embed Google's container GTM-5F9V4W2K through www.googletagmanager.com. Loading it transmits IP addresses and HTTP request data to Google. The container loads when you open a page. CookieYes manages your choices for statistics and marketing.",
     sections: [
       ["1. Controller", "Cell Clinics is a service of Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Germany. The controller is Cell Education - The Institute GmbH & Co. KG. Contact: info@cell-education.com."],
       ["2. Hosting and server logs", "We use Vercel Inc., USA, to host this website. IP addresses, dates, times, requested pages and browser information may be processed. The basis is Article 6(1)(f) GDPR; our legitimate interest is secure and reliable operation. US transfers may rely on the EU-US Data Privacy Framework where certification is valid, or standard contractual clauses."],
@@ -34,7 +34,7 @@ export const privacyCopy = {
   },
   es: {
     title: "Política de privacidad", home: "Inicio", date: "Actualización: octubre de 2026",
-    gtmNotice: "Google Tag Manager: Integramos el contenedor de Google GTM-TFZJGN3F mediante www.googletagmanager.com. Al cargarlo se transmiten a Google la dirección IP y datos de la solicitud HTTP. El contenedor solo se carga con consentimiento para estadística y marketing. Sin este consentimiento no se establece conexión con el contenedor. La retirada recarga la página para detener el código de seguimiento ya cargado. Las etiquetas deben configurarse además en Google Tag Manager conforme a sus finalidades.",
+    gtmNotice: "Google Tag Manager: Integramos el contenedor de Google GTM-5F9V4W2K mediante www.googletagmanager.com. Al cargarlo se transmiten a Google la dirección IP y datos de la solicitud HTTP. El contenedor se carga al abrir la página. CookieYes gestiona sus preferencias de estadística y marketing.",
     sections: [
       ["1. Responsable", "Cell Clinics es un servicio de Cell Education - The Institute GmbH & Co. KG, Frankfurter Straße 7, 61462 Königstein im Taunus, Alemania. El responsable del tratamiento es Cell Education - The Institute GmbH & Co. KG. Contacto: info@cell-education.com."],
       ["2. Alojamiento y registros", "Vercel Inc., EE. UU., aloja la web. Pueden tratarse direcciones IP, fechas, horas, páginas solicitadas e información del navegador. Base: art. 6.1.f RGPD; interés legítimo en un funcionamiento seguro y fiable. Las transferencias a EE. UU. pueden basarse en el Marco de Privacidad de Datos UE-EE. UU. si existe certificación vigente o en cláusulas contractuales tipo."],
