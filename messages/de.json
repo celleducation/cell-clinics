@@ -1,4 +1,14 @@
 {
+  "partnerTestimonials": {
+    "sectionTitle": "Stimmen aus dem Netzwerk",
+    "note": "Persönliche Rückmeldung einer Cell Clinics Partnerpraxis, veröffentlicht mit Zustimmung.",
+    "profileLink": "Zum Profil von {name}",
+    "lars": {
+      "heading": "Struktur, die in der Praxis trägt.",
+      "quote": "„Im Praxisalltag braucht man Struktur. Die bekomme ich bei Cell Clinics tipptopp geliefert. Die Protokolle helfen, die Abläufe mit dem Patienten sortiert abzuarbeiten. Das gibt Sicherheit und spart bei geübter Anwendung Zeit. Am wichtigsten ist mir das Fachwissen, das man mit den Kursen und dem Kompendium nach und nach erwirbt. So kann ich selbstsicher auftreten und dem Patienten am Ende einen maßgeschneiderten Therapieplan vorlegen.“",
+      "practice": "Privatpraxis für Physiotherapie, Osteopathie und Naturheilkunde · Bretten · Cell Clinics Partnerpraxis"
+    }
+  },
   "seo": {
     "breadcrumbs": "Brotkrumennavigation",
     "home": "Start",

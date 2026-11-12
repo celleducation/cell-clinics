@@ -1,3 +1,4 @@
+import {PartnerTestimonials} from "@/components/PartnerTestimonials";
 import Image from "next/image";
 import type {Metadata} from "next";
 import {Check} from "lucide-react";
@@ -81,6 +82,8 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       <PartnerProgram locale={locale} />
 
       <PartnerDeliverables locale={locale} />
+
+      <PartnerTestimonials />
 
       <section className="section model-clinic-section" id="proof">
         <div className="container model-clinic-grid">

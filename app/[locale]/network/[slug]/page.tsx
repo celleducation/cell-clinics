@@ -1,3 +1,4 @@
+import {PartnerTestimonials} from "@/components/PartnerTestimonials";
 import Image from "next/image";
 import type {Metadata} from "next";
 import {notFound, permanentRedirect} from "next/navigation";
@@ -249,6 +250,8 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           </div>
         </div>
       </section>
+
+      {isLars && <PartnerTestimonials profileSlug={slug} />}
 
       <section className="clinic-network-context">
         <div className="container clinic-network-context-card">

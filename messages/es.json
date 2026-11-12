@@ -1,4 +1,14 @@
 {
+  "partnerTestimonials": {
+    "sectionTitle": "Voces de la red",
+    "note": "Opinión personal de una consulta asociada de Cell Clinics, publicada con su consentimiento.",
+    "profileLink": "Ver el perfil de {name}",
+    "lars": {
+      "heading": "Una estructura que funciona en la consulta.",
+      "quote": "«En el día a día de la consulta se necesita estructura, y Cell Clinics me la ofrece de forma impecable. Los protocolos me ayudan a trabajar los procesos con el paciente de forma ordenada. Eso da seguridad y, con práctica, ahorra tiempo. Lo más importante para mí es el conocimiento que se adquiere poco a poco con los cursos y el compendio. Así puedo actuar con seguridad y presentar al paciente un plan de tratamiento a medida.»",
+      "practice": "Consulta privada de fisioterapia, osteopatía y naturopatía · Bretten · Consulta asociada de Cell Clinics"
+    }
+  },
   "seo": {
     "breadcrumbs": "Ruta de navegación",
     "home": "Inicio",

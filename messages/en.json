@@ -1,4 +1,14 @@
 {
+  "partnerTestimonials": {
+    "sectionTitle": "Voices from the network",
+    "note": "Personal feedback from a Cell Clinics partner practice, published with consent.",
+    "profileLink": "View {name}’s profile",
+    "lars": {
+      "heading": "Structure that works in practice.",
+      "quote": "“In everyday practice you need structure. Cell Clinics delivers exactly that. The protocols help me work through the processes with the patient in an orderly way. That gives confidence and, with practice, saves time. Most important to me is the expertise you gradually gain through the courses and the compendium. It lets me speak with confidence and present the patient with a tailor-made therapy plan at the end.”",
+      "practice": "Private practice for physiotherapy, osteopathy and naturopathy · Bretten · Cell Clinics partner practice"
+    }
+  },
   "seo": {
     "breadcrumbs": "Breadcrumb navigation",
     "home": "Home",
