@@ -1,4 +1,25 @@
 {
+  "eisenbrandt": {
+    "network": "Partnernetzwerk",
+    "intro": "Als Fachärztin für Plastische und Ästhetische Chirurgie verbindet Dr. Franziska Eisenbrandt natürliche Ästhetik mit Präventionsmedizin. Sie begleitet unter anderem Frauen in den Wechseljahren und Menschen mit Fragen zu Stoffwechsel, Gewicht oder Erschöpfung.",
+    "appointment": "Termin anfragen",
+    "bioTitle": "Ärztlicher Werdegang",
+    "bio": "Dr. Eisenbrandt ist seit 2020 als Fachärztin tätig. Nach ihrer Weiterbildung arbeitete sie unter anderem als Oberärztin und in leitender ärztlicher Funktion. Ihre Erfahrung in der operativen und nichtoperativen ästhetischen Medizin ergänzt sie heute um hormonelle und regenerative Fragestellungen.",
+    "focusTitle": "Schwerpunkte",
+    "focus": [
+      "Natürliche und regenerative Ästhetik",
+      "Frauengesundheit, Hormone und Wechseljahre",
+      "Ärztlich begleitetes Gewichtsmanagement und Stoffwechsel",
+      "Darmgesundheit und Mikrobiom",
+      "Stress, Erschöpfung und Regeneration",
+      "Prävention, Leistungsfähigkeit und gesundes Altern",
+      "Infusions- und Mikronährstofftherapie"
+    ],
+    "approachTitle": "Zellgesundheit und Stoffwechsel",
+    "approach": "In der Bionischen Zelltherapie beschäftigt sich Dr. Eisenbrandt mit Zellgesundheit und Regeneration. Im Gespräch berücksichtigt sie Lebensstil, Stoffwechsel und hormonelle Veränderungen ebenso wie die persönlichen Ziele ihrer Patientinnen und Patienten.",
+    "contact": "Kontakt und Termine",
+    "visits": "Termine nach Vereinbarung. Beratung auf Deutsch und Englisch."
+  },
   "partnerTestimonials": {
     "sectionTitle": "Stimmen aus dem Netzwerk",
     "note": "Persönliche Rückmeldung einer Cell Clinics Partnerpraxis, veröffentlicht mit Zustimmung.",

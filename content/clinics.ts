@@ -22,6 +22,20 @@ export type Clinic = {
 
 const clinicDirectory: Clinic[] = [
   {
+    slug: "franziska-eisenbrandt-eggenstein-leopoldshafen",
+    name: "Praxis Dr. Eisenbrandt",
+    practitioner: "Dr. med. Franziska Eisenbrandt",
+    berufsgruppe: "Arztpraxis",
+    profileAvailable: true,
+    city: "Eggenstein-Leopoldshafen",
+    region: "Baden-Württemberg",
+    countryCode: "DE",
+    coordinates: {lat: 49.0910757, lng: 8.4061116},
+    address: "Kopenhagener Straße 11, 76344 Eggenstein-Leopoldshafen",
+    contactEmail: "dr.franziska.eisenbrandt@gmx.net",
+    images: ["/clinics/franziska-eisenbrandt/portrait.webp"]
+  },
+  {
     slug: "michael-wittke-celle",
     berufsgruppe: "Arztpraxis",
     name: "Privatpraxis Dr. Michael Wittke",

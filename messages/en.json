@@ -1,4 +1,25 @@
 {
+  "eisenbrandt": {
+    "network": "Partner network",
+    "intro": "Dr. Franziska Eisenbrandt is a specialist in plastic and aesthetic surgery. Her practice combines natural-looking aesthetic medicine with preventive care. She sees women going through menopause and people seeking advice on metabolism, weight or fatigue.",
+    "appointment": "Request an appointment",
+    "bioTitle": "Professional background",
+    "bio": "Dr. Eisenbrandt has practised as a specialist since 2020. After completing her specialty training, she worked as a senior physician and held medical leadership roles. Her experience spans surgical and non-surgical aesthetic medicine, and her work now also covers hormonal health and regeneration.",
+    "focusTitle": "Areas of practice",
+    "focus": [
+      "Natural-looking and regenerative aesthetics",
+      "Women’s health, hormones and menopause",
+      "Medically supervised weight management and metabolism",
+      "Gut health and the microbiome",
+      "Stress, fatigue and recovery",
+      "Prevention, physical performance and healthy ageing",
+      "Infusion and micronutrient therapy"
+    ],
+    "approachTitle": "Cell health and metabolism",
+    "approach": "In her work with Bionic Cell Therapy, Dr. Eisenbrandt focuses on cell health and regeneration. In consultations she considers lifestyle, metabolism and hormonal changes alongside each patient’s own goals.",
+    "contact": "Contact and appointments",
+    "visits": "Visits by appointment. Consultations are available in German and English."
+  },
   "partnerTestimonials": {
     "sectionTitle": "Voices from the network",
     "note": "Personal feedback from a Cell Clinics partner practice, published with consent.",
