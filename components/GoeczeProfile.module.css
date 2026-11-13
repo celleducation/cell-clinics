@@ -19,8 +19,6 @@
 .topicImage, .roomImage { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; }
 .topicImage { margin-bottom: 16px; }
 .rooms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.rooms figure { margin: 0; }
-.rooms figcaption { margin-top: 8px; color: var(--navy); }
 @media (max-width: 740px) {
   .rooms { grid-template-columns: 1fr; }
 }

@@ -54,10 +54,7 @@ export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: s
         <h2 className="section-title">{t("gallery")}</h2>
         <div className={styles.rooms}>
           {(["waiting", "consultation"] as const).map(room =>
-            <figure key={room}>
-              <Image className={styles.roomImage} src={`/clinics/ivan-goecze/${room}.webp`} width={960} height={540} sizes="(max-width: 740px) 90vw, 48vw" alt="" />
-              <figcaption>{t(room)}</figcaption>
-            </figure>
+            <Image key={room} className={styles.roomImage} src={`/clinics/ivan-goecze/${room}.webp`} width={960} height={540} sizes="(max-width: 740px) 90vw, 48vw" alt={t(room)} />
           )}
         </div>
       </div>
