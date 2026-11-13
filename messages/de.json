@@ -1,11 +1,21 @@
 {
   "goecze": {
     "network": "Partnernetzwerk",
-    "intro": "Ivan Göcze ist Hausarzt in Mintraching. Gemeinsam mit Katerina Hahn befasst er sich mit Prävention und der Frage, wie sich Bewegung, Ernährung und Erholung im Alltag gestalten lassen.",
-    "background": "Ärztlicher Hintergrund",
-    "bio": "Neben seiner hausärztlichen Tätigkeit bringt er Erfahrung in der Chirurgie und Intensivmedizin mit. Er lehrt an der medizinischen Fakultät der Universität Regensburg und hat eine ergänzende Ausbildung in zellulärer Medizin absolviert.",
+    "intro": "Ivan Göcze kam über die Chirurgie und die Intensivmedizin zur Allgemeinmedizin. In seiner Hausarztpraxis begleitet er Patienten von der Vorsorge bis zur Betreuung zu Hause.",
+    "background": "Von der Klinik in die Hausarztpraxis",
+    "bio": "Nach Stationen in München, Kempten und Dortmund arbeitete Göcze von 2008 bis 2010 am Royal Melbourne Hospital in Australien. In Regensburg war er von 2015 bis 2019 leitender Oberarzt der operativen Intensivstation.",
     "contact": "Kontakt zur Praxis",
-    "website": "Zur Praxiswebsite"
+    "website": "Zur Praxiswebsite",
+    "role": "Hausarzt in Mintraching",
+    "research": "An der Universität Regensburg promovierte und habilitierte er sich. Seine Forschung befasst sich mit der Früherkennung akuter Nierenschäden nach Operationen. 2022 übernahm er mit Katerina Hahn die Praxisgemeinschaft in Mintraching und Neutraubling.",
+    "practice": "In der Sprechstunde",
+    "care": "Hausärztliche Versorgung",
+    "careText": "Die Praxis bietet Vorsorgeuntersuchungen für Jugendliche, Hautkrebsscreening und Hausbesuche an. Vor Reisen berät das Team zu gesundheitlichen Fragen.",
+    "tests": "Diagnostik vor Ort",
+    "testsText": "In Mintraching sind unter anderem Langzeit-EKG, 24-Stunden-Blutdruckmessung, Lungenfunktionstests und Ultraschalluntersuchungen der Schilddrüse möglich.",
+    "prevention": "Prävention und Lebensstil",
+    "preventionText": "Im gemeinsamen Angebot mit Katerina Hahn geht es um Bewegung, Ernährung, Schlaf und Erholung. Je nach Fragestellung fließen Laborwerte oder eine Messung der Körperzusammensetzung in die Beratung ein.",
+    "reception": "Empfang der Hausarztpraxis in Mintraching"
   },
   "eisenbrandt": {
     "network": "Partnernetzwerk",

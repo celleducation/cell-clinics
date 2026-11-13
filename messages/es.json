@@ -1,11 +1,21 @@
 {
   "goecze": {
     "network": "Red de consultas asociadas",
-    "intro": "Ivan Göcze es médico de familia en Mintraching. Junto con Katerina Hahn, se dedica a la prevención y a cómo integrar el ejercicio, la alimentación y el descanso en la vida cotidiana.",
-    "background": "Trayectoria médica",
-    "bio": "Además de su labor en medicina de familia, cuenta con experiencia en cirugía y medicina intensiva. Es docente en la Facultad de Medicina de la Universidad de Ratisbona y ha cursado formación complementaria en medicina celular.",
+    "intro": "Ivan Göcze trabajó en cirugía y medicina intensiva antes de dedicarse a la medicina de familia. En su consulta atiende a pacientes tanto en revisiones preventivas como en visitas a domicilio.",
+    "background": "Del hospital a la medicina de familia",
+    "bio": "Tras trabajar en Múnich, Kempten y Dortmund, Göcze ejerció en el Royal Melbourne Hospital de Australia entre 2008 y 2010. De 2015 a 2019 fue médico responsable de la unidad de cuidados intensivos quirúrgicos en Ratisbona.",
     "contact": "Contacto con la consulta",
-    "website": "Web de la consulta"
+    "website": "Web de la consulta",
+    "role": "Médico de familia en Mintraching",
+    "research": "Obtuvo el doctorado y la habilitación docente en la Universidad de Ratisbona. Su investigación se centra en la detección temprana de lesiones renales agudas después de una operación. En 2022 asumió junto con Katerina Hahn la dirección de la consulta con sedes en Mintraching y Neutraubling.",
+    "practice": "En la consulta",
+    "care": "Medicina de familia",
+    "careText": "El equipo realiza revisiones de salud para adolescentes, cribado de cáncer de piel y visitas a domicilio. También ofrece asesoramiento médico antes de viajar.",
+    "tests": "Pruebas diagnósticas",
+    "testsText": "En Mintraching se realizan electrocardiogramas ambulatorios, monitorización de la presión arterial durante 24 horas, pruebas de función pulmonar y ecografías de tiroides.",
+    "prevention": "Prevención y hábitos de vida",
+    "preventionText": "Junto con Katerina Hahn, Göcze asesora sobre actividad física, alimentación, sueño y descanso. Según el motivo de consulta, se pueden valorar resultados de laboratorio o la composición corporal.",
+    "reception": "Recepción de la consulta de medicina de familia en Mintraching"
   },
   "eisenbrandt": {
     "network": "Red de centros asociados",

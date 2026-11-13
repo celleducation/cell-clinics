@@ -1,0 +1,17 @@
+.hero { background: var(--section-soft, #f4f9fc); padding-block: clamp(28px, 5vw, 72px); }
+.spread { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 90px); align-items: center; }
+.name { margin: 12px 0 20px; color: var(--navy); font-size: clamp(44px, 5vw, 74px); line-height: 1.06; }
+.name small { display: block; font-size: .42em; margin-bottom: 6px; }
+.hero p { max-width: 50ch; margin: 0 0 24px; }
+.portrait { width: min(100%, 410px); height: auto; border-radius: 20px; justify-self: center; }
+.story, .services { padding-block: clamp(40px, 6vw, 80px); }
+.story h2, .services h2 { margin: 0 0 20px; }
+.reception { width: 100%; height: auto; border-radius: 16px; }
+.story p + p { margin-top: 12px; }
+.columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.columns article { border-top: 2px solid var(--sky); padding-top: 16px; }
+.columns h3 { margin: 0 0 8px; font-size: 1.3rem; color: var(--navy); }
+@media (max-width: 740px) {
+  .spread, .columns { grid-template-columns: 1fr; gap: 24px; }
+  .portrait { max-height: 350px; width: auto; max-width: 100%; }
+}

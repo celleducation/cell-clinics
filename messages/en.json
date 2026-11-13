@@ -1,11 +1,21 @@
 {
   "goecze": {
     "network": "Partner network",
-    "intro": "Ivan Göcze is a general practitioner in Mintraching. Together with Katerina Hahn, he focuses on preventive care and on how patients can fit exercise, nutrition and recovery into everyday life.",
-    "background": "Medical background",
-    "bio": "In addition to general practice, his background includes surgery and intensive care medicine. He teaches at the University of Regensburg’s Faculty of Medicine and has completed further training in cellular medicine.",
+    "intro": "Ivan Göcze worked in surgery and intensive care before becoming a family doctor. His practice provides preventive care and looks after patients at home when needed.",
+    "background": "From hospital medicine to family practice",
+    "bio": "After posts in Munich, Kempten and Dortmund, Göcze worked at the Royal Melbourne Hospital in Australia from 2008 to 2010. From 2015 to 2019 he was the senior physician leading the surgical intensive care unit in Regensburg.",
     "contact": "Contact the practice",
-    "website": "Practice website"
+    "website": "Practice website",
+    "role": "General practitioner in Mintraching",
+    "research": "He earned his doctorate and completed his habilitation at the University of Regensburg. His research focuses on detecting acute kidney injury after surgery. In 2022 he and Katerina Hahn took over the group practice serving Mintraching and Neutraubling.",
+    "practice": "At the practice",
+    "care": "Family medicine",
+    "careText": "The team offers adolescent health checks, skin cancer screening and home visits. Patients can also seek advice on health matters before travelling.",
+    "tests": "On-site diagnostics",
+    "testsText": "The practice offers ambulatory ECG and blood pressure monitoring, lung function tests and thyroid ultrasound in Mintraching.",
+    "prevention": "Prevention and lifestyle",
+    "preventionText": "Together with Katerina Hahn, Göcze advises patients on exercise, nutrition, sleep and recovery. Depending on the question, consultations may include laboratory results or a body composition assessment.",
+    "reception": "Reception at the family practice in Mintraching"
   },
   "eisenbrandt": {
     "network": "Partner network",

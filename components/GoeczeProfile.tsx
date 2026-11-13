@@ -1,3 +1,4 @@
+import styles from "./GoeczeProfile.module.css";
 import Image from "next/image";
 import {getTranslations} from "next-intl/server";
 import {Breadcrumbs} from "@/components/Breadcrumbs";
@@ -14,21 +15,29 @@ export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: s
       {name: t("network"), path: "/network"},
       {name: clinic.practitioner, path: `/network/${clinic.slug}`}
     ]} />
-    <section className="alpstein-hero section-soft">
-      <div className="container alpstein-hero-grid">
-        <div className="alpstein-hero-copy">
-          <span className="eyebrow">{clinic.name} · {clinic.city}</span>
-          <h1 className="display">{clinic.practitioner}</h1>
+    <section className={styles.hero}>
+      <div className={`container ${styles.spread}`}>
+        <div>
+          <span className="eyebrow">{t("role")}</span>
+          <h1 className={styles.name}><small>Priv.-Doz. Dr. med.</small>Ivan Göcze</h1>
           <p className="lead">{t("intro")}</p>
-          <div className="button-row"><a className="button button-primary" href="#contact">{t("contact")}</a></div>
+          <a className="button button-primary" href="#contact">{t("contact")}</a>
         </div>
-        <Image src="/images/cellclinic-mitochondria.png" alt="" width={640} height={640} className="w-full h-auto" sizes="(max-width: 767px) 90vw, 540px" priority />
+        <Image className={styles.portrait} src="/clinics/ivan-goecze/portrait.webp" width={850} height={955} alt={clinic.practitioner} sizes="(max-width: 740px) 90vw, 420px" priority />
       </div>
     </section>
-    <section className="section">
-      <div className="container clinic-profile-copy">
-        <SectionHeading title={t("background")} />
-        <p className="lead">{t("bio")}</p>
+    <section className={styles.story}>
+      <div className={`container ${styles.spread}`}>
+        <Image className={styles.reception} src="/clinics/ivan-goecze/praxis.webp" width={1024} height={576} alt={t("reception")} sizes="(max-width: 740px) 90vw, 540px" />
+        <div><h2 className="section-title">{t("background")}</h2><p>{t("bio")}</p><p>{t("research")}</p></div>
+      </div>
+    </section>
+    <section className={`section-soft ${styles.services}`}>
+      <div className="container">
+        <h2 className="section-title">{t("practice")}</h2>
+        <div className={styles.columns}>{(["care","tests","prevention"] as const).map(key =>
+          <article key={key}><h3>{t(key)}</h3><p>{t(`${key}Text`)}</p></article>
+        )}</div>
       </div>
     </section>
     <section id="contact" className="section section-soft clinic-profile-contact">
