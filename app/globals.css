@@ -1970,6 +1970,22 @@ textarea.input {
   padding-block: 64px;
 }
 
+.hero-product-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid rgba(170, 198, 216, .68);
+  border-radius: 999px;
+  background: linear-gradient(125deg, rgba(255,255,255,.92), rgba(239,249,253,.72));
+  box-shadow: inset 0 1px 1px white, 0 3px 12px rgba(17,50,75,.06);
+  color: var(--navy);
+  font-size: .82rem;
+}
+.hero-product-badge:hover { border-color: var(--navy); }
+.hero-product-badge:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
 .photo-hero-intro > div {
   width: min(52%, 620px);
 }

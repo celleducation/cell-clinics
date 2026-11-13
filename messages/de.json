@@ -112,6 +112,7 @@
     "discussImplementation": "Implementierung besprechen"
   },
   "hero": {
+    "productBy": "Ein Produkt von",
     "label": "Medizinisch geleitete Implementierungsplattform",
     "title": "Die Infrastruktur für moderne Zellmedizin",
     "body": "Cell Clinics verbindet Partnerpraxen und Kliniken mit Schulungsangeboten von Cell Education und Materialien für den Praxisalltag. Die Behandlung bleibt in der Verantwortung der jeweiligen Praxis.",

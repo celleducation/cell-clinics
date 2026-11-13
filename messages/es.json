@@ -112,6 +112,7 @@
     "discussImplementation": "Hablar sobre la implementación"
   },
   "hero": {
+    "productBy": "Un producto de",
     "label": "Plataforma de implementación con dirección médica",
     "title": "La infraestructura para la medicina celular moderna",
     "body": "Cell Clinics conecta consultas y clínicas asociadas con cursos de Cell Education y materiales para la consulta. Cada centro conserva la responsabilidad de sus decisiones de tratamiento.",

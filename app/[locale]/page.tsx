@@ -1,7 +1,7 @@
 import {PartnerTestimonials} from "@/components/PartnerTestimonials";
 import Image from "next/image";
 import type {Metadata} from "next";
-import {Check} from "lucide-react";
+import {ArrowUpRight, Check} from "lucide-react";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {ButtonLink} from "@/components/ui/ButtonLink";
 import {SectionHeading} from "@/components/ui/SectionHeading";
@@ -52,6 +52,13 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       }])}} />
       <PhotographicHero
         audience="home"
+        brandBadge={
+          <a className="hero-product-badge" href="https://cell-education.com">
+            <span>{t("hero.productBy")}</span>
+            <Image src="/images/cell-education-logo.svg" width={116} height={14} alt="Cell Education" />
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+        }
         eyebrow={t("hero.label")}
         title={t("hero.title")}
         body={t("hero.body")}

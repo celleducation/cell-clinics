@@ -3,6 +3,7 @@ import type {ReactNode} from "react";
 
 type PhotographicHeroProps = {
   audience: "home" | "patient";
+  brandBadge?: ReactNode;
   eyebrow: string;
   title: string;
   body: string;
@@ -10,7 +11,7 @@ type PhotographicHeroProps = {
   children: ReactNode;
 };
 
-export function PhotographicHero({audience, eyebrow, title, body, image, children}: PhotographicHeroProps) {
+export function PhotographicHero({audience, brandBadge, eyebrow, title, body, image, children}: PhotographicHeroProps) {
   return (
     <section className={`${audience}-hero photo-hero photo-hero-${audience}`}>
       {image && (
@@ -19,6 +20,7 @@ export function PhotographicHero({audience, eyebrow, title, body, image, childre
         </div>
       )}
       <div className="container photo-hero-intro">
+        {brandBadge}
         <div>
           <span className="eyebrow">{eyebrow}</span>
           <h1 className="display">{title}</h1>
