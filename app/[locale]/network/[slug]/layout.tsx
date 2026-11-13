@@ -1,8 +1,19 @@
+import {getTranslations} from "next-intl/server";
+import {Breadcrumbs} from "@/components/Breadcrumbs";
 import {getClinic} from "@/content/clinics";
-import {professionLabel} from "@/content/professions";
 
 export default async function ProfileLayout({children, params}: {children: React.ReactNode; params: Promise<{locale: string; slug: string}>}) {
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
-  return <>{clinic?.profileAvailable && clinic.berufsgruppe !== "unknown" && <div className="container profile-profession"><p className="eyebrow">{professionLabel(clinic.berufsgruppe, locale)}</p></div>}{children}</>;
+  if (!clinic?.profileAvailable) return children;
+  const t = await getTranslations({locale, namespace: "seo"});
+  const network = await getTranslations({locale, namespace: "networkPage"});
+  return <>
+    <Breadcrumbs locale={locale} items={[
+      {name: t("home"), path: ""},
+      {name: network("directoryLabel"), path: "/network"},
+      {name: clinic.practitioner, path: `/network/${slug}`}
+    ]} />
+    {children}
+  </>;
 }

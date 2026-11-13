@@ -1,6 +1,6 @@
+import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import Image from "next/image";
-import {ArrowLeft, ArrowUpRight} from "lucide-react";
-import {Link} from "@/i18n/navigation";
+import {ArrowUpRight} from "lucide-react";
 import {healthPointCopy} from "@/content/health-point";
 import type {Clinic} from "@/content/clinics";
 import {SectionHeading} from "@/components/ui/SectionHeading";
@@ -25,10 +25,9 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
     })}} />
     <section className="alpstein-hero section-soft health-point-profile">
       <div className="container">
-        <Link className="clinic-back-link" href="/network"><ArrowLeft size={16} />{c.back}</Link>
         <div className="alpstein-hero-grid">
           <div className="alpstein-hero-copy">
-            <span className="eyebrow">{c.label}</span>
+            <ClinicProfileLabel clinic={clinic} locale={locale} />
             <h1 className="display">Health Point<br />Dr. Klein</h1>
             <p className="clinic-profile-location">{c.location}</p>
             <p className="lead">{c.intro}</p>
@@ -68,7 +67,7 @@ export function HealthPointProfile({locale, clinic}: {locale: string; clinic: Cl
     <section className="section clinic-profile-contact" id="practice-contact">
       <div className="container clinic-profile-contact-card">
         <div><span className="eyebrow">Health Point Dr. Klein AG</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p><div className="clinic-contact-hours"><h3>{c.hours}</h3><p>{c.weekdays}<br />{c.friday}</p><p>{c.office}</p></div></div>
-        <address><strong>{clinic.name}</strong><span>{clinic.address}</span><a href="tel:+41718400346">{clinic.phone}</a><a href="mailto:info@healthpointag.ch">info@healthpointag.ch</a><a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{c.website}<ArrowUpRight size={16}/></a><div className="clinic-contact-referrals"><strong>{c.referrals}</strong><a href="mailto:dr.klein@hin.ch">dr.klein@hin.ch</a></div></address>
+        <address><strong>{clinic.name}</strong><span>{clinic.address}</span><a className="button button-secondary" href="tel:+41718400346">{clinic.phone}</a><a className="button button-secondary" href="mailto:info@healthpointag.ch">info@healthpointag.ch</a><a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{c.website}<ArrowUpRight size={16}/></a><div className="clinic-contact-referrals"><strong>{c.referrals}</strong><a className="button button-secondary" href="mailto:dr.klein@hin.ch">dr.klein@hin.ch</a></div></address>
         <small>{c.source}</small>
       </div>
     </section>

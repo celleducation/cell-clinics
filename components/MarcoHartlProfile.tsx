@@ -1,6 +1,6 @@
+import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import Image from "next/image";
-import {ArrowLeft, ArrowUpRight} from "lucide-react";
-import {Link} from "@/i18n/navigation";
+import {ArrowUpRight} from "lucide-react";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {marcoHartlCopy} from "@/content/marco-hartl";
 import type {Clinic} from "@/content/clinics";
@@ -15,9 +15,8 @@ export function MarcoHartlProfile({locale, clinic}: {locale: string; clinic: Cli
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd({"@context": "https://schema.org", "@type": "MedicalClinic", name: "ONE by Dr. Marco Hartl", url: `${SITE_URL}/${locale}/network/${clinic.slug}`, image: `${SITE_URL}/clinics/marco-hartl/portrait.webp`, email: clinic.contactEmail, sameAs: clinic.website, address: {"@type": "PostalAddress", streetAddress: "Fritz-Fend-Straße 4", postalCode: "93047", addressLocality: "Regensburg", addressCountry: "DE"}})}} />
     <section className="alpstein-hero section-soft"><div className="container">
-      <Link className="clinic-back-link" href="/network"><ArrowLeft size={16} aria-hidden="true" />{c.back}</Link>
       <div className="alpstein-hero-grid">
-        <div className="alpstein-hero-copy"><span className="eyebrow">ONE · Regensburg</span><h1 className="display">Dr. med.<br />Marco Hartl</h1><p className="lead">{c.intro}</p><div className="button-row">{actions}</div></div>
+        <div className="alpstein-hero-copy"><ClinicProfileLabel clinic={clinic} locale={locale} /><h1 className="display">Dr. med.<br />Marco Hartl</h1><p className="lead">{c.intro}</p><div className="button-row">{actions}</div></div>
         <Image className="hartl-portrait" src="/clinics/marco-hartl/portrait.webp" alt="Dr. med. Marco Hartl" width={719} height={1079} sizes="(max-width:767px) 90vw, 400px" priority />
       </div>
     </div></section>
@@ -28,6 +27,6 @@ export function MarcoHartlProfile({locale, clinic}: {locale: string; clinic: Cli
       <div className="hartl-visit"><SectionHeading eyebrow={c.visitLabel} title={c.visitTitle} /><p className="lead">{c.visitBody}</p><a className="button button-secondary" href="https://one-dr-hartl.de/faq/" target="_blank" rel="noopener noreferrer">{c.faq}<ArrowUpRight size={16} aria-hidden="true" /></a></div>
       <div className="hartl-gallery" role="group" aria-label={c.galleryTitle}><figure><Image src="/clinics/marco-hartl/practice.webp" alt={c.practiceAlt} width={1400} height={932} sizes="(max-width:767px) 90vw, 50vw" /><figcaption>{c.practiceCaption}</figcaption></figure><figure><Image src="/clinics/marco-hartl/entrance.webp" alt={c.entranceAlt} width={1200} height={800} sizes="(max-width:767px) 90vw, 40vw" /><figcaption>{c.entranceCaption}</figcaption></figure></div>
     </div></section>
-    <section className="section clinic-profile-contact"><div className="container clinic-profile-contact-card"><div><span className="eyebrow">ONE by Dr. Marco Hartl</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p></div><address><strong>{clinic.practitioner}</strong><p>{clinic.address}</p><a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>{actions}</address></div></section>
+    <section className="section clinic-profile-contact"><div className="container clinic-profile-contact-card"><div><span className="eyebrow">ONE by Dr. Marco Hartl</span><h2 className="section-title">{c.contactTitle}</h2><p>{c.contactBody}</p></div><address><strong>{clinic.practitioner}</strong><p>{clinic.address}</p><a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>{actions}</address></div></section>
   </>;
 }

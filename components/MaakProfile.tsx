@@ -1,7 +1,6 @@
+import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import Image from "next/image";
-import {ArrowLeft, ArrowUpRight} from "lucide-react";
-import {Link} from "@/i18n/navigation";
-import {Breadcrumbs} from "@/components/Breadcrumbs";
+import {ArrowUpRight} from "lucide-react";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import {maakCopy} from "@/content/maak";
 import type {Clinic} from "@/content/clinics";
@@ -21,13 +20,11 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
         {"@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "08:00", closes: "14:00"}
       ]
     })}} />
-    <Breadcrumbs locale={locale} items={[{name: c.home, path: ""}, {name: c.back, path: "/network"}, {name: clinic.name, path: `/network/${clinic.slug}`}]} />
     <section className="alpstein-hero section-soft maak-hero">
       <div className="container">
-        <Link className="clinic-back-link" href="/network"><ArrowLeft size={16} aria-hidden="true" />{c.back}</Link>
         <div className="alpstein-hero-grid">
           <div className="alpstein-hero-copy">
-            <span className="eyebrow">{c.label}</span>
+            <ClinicProfileLabel clinic={clinic} locale={locale} />
             <h1 className="display">Dr. Michael Maak<br />&amp; Dr. Sabine Hopmann</h1>
             <p className="clinic-profile-location">{clinic.name}</p>
             <p className="lead">{c.intro}</p>
@@ -55,8 +52,8 @@ export function MaakProfile({locale, clinic}: {locale: string; clinic: Clinic}) 
       <h3>{c.hopmannHeading}</h3><p className="lead">{c.hopmannBio}</p><p>{c.hopmannFocus}</p></div></section>
     <section className="section section-alt clinic-profile-contact" id="contact"><div className="container clinic-profile-contact-card">
       <div><SectionHeading eyebrow={c.contact} title={c.contactTitle} /><p>{c.contactBody}</p><h3>{c.hours}</h3><dl className="maak-hours"><div><dt>{c.weekdays}</dt><dd>08:00–20:00</dd></div><div><dt>{c.friday}</dt><dd>08:00–14:00</dd></div></dl></div>
-      <address><strong>{clinic.name}</strong><p>{clinic.address}</p><a href={`tel:${phone}`}>{clinic.phone}</a><a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a><div className="button-row"><a className="button button-primary" href={`tel:${phone}`}>{c.call}</a><a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{c.email}</a></div><a href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></address>
-      <nav aria-label={c.social} className="maak-social"><a href="https://www.instagram.com/zahnarztpraxismaak/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/ZahnarztpraxisDr.Maak" target="_blank" rel="noopener noreferrer">Facebook ↗</a></nav>
+      <address><strong>{clinic.name}</strong><p>{clinic.address}</p><span>{clinic.phone}</span><span>{clinic.contactEmail}</span><div className="partner-contact-actions"><a className="button button-primary" href={`tel:${phone}`}>{c.call}</a><a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{c.email}</a></div><a className="button button-secondary" href={clinic.website} target="_blank" rel="noopener noreferrer">{c.website}<ArrowUpRight size={16} aria-hidden="true" /></a></address>
+      <nav aria-label={c.social} className="maak-social"><a className="button button-secondary" href="https://www.instagram.com/zahnarztpraxismaak/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a className="button button-secondary" href="https://www.facebook.com/ZahnarztpraxisDr.Maak" target="_blank" rel="noopener noreferrer">Facebook ↗</a></nav>
       <small>{c.source}</small>
     </div></section>
   </>;

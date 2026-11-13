@@ -1,24 +1,18 @@
+import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import styles from "./GoeczeProfile.module.css";
 import Image from "next/image";
 import {getTranslations} from "next-intl/server";
-import {Breadcrumbs} from "@/components/Breadcrumbs";
 import {SectionHeading} from "@/components/ui/SectionHeading";
 import type {Clinic} from "@/content/clinics";
 
 export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: string}) {
   const t = await getTranslations("goecze");
-  const seo = await getTranslations("seo");
 
   return <>
-    <Breadcrumbs locale={locale} items={[
-      {name: seo("home"), path: ""},
-      {name: t("network"), path: "/network"},
-      {name: clinic.practitioner, path: `/network/${clinic.slug}`}
-    ]} />
     <section className={styles.hero}>
       <div className={`container ${styles.spread}`}>
         <div>
-          <span className="eyebrow">{t("role")}</span>
+          <ClinicProfileLabel clinic={clinic} locale={locale} />
           <h1 className={styles.name}><small>Priv.-Doz. Dr. med.</small>Ivan Göcze</h1>
           <p className="lead">{t("intro")}</p>
           <a className="button button-primary" href="#contact">{t("contact")}</a>
@@ -69,7 +63,7 @@ export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: s
       </div>
     </section>
     <section id="contact" className="section section-soft clinic-profile-contact">
-      <div className="container clinic-profile-contact-card partner-glass-contact">
+      <div className="container clinic-profile-contact-card">
         <div><SectionHeading title={t("contact")} /><h3>{t("hours")}</h3><p>{t("mornings")}<br />{t("evenings")}</p></div>
         <address>
           <strong>{clinic.practitioner}</strong>

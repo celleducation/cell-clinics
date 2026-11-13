@@ -1,15 +1,14 @@
+import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import {GoeczeProfile} from "@/components/GoeczeProfile";
 import {EisenbrandtProfile} from "@/components/EisenbrandtProfile";
 import {PartnerTestimonials} from "@/components/PartnerTestimonials";
 import Image from "next/image";
 import type {Metadata} from "next";
 import {notFound, permanentRedirect} from "next/navigation";
-import {Activity, ArrowLeft, ArrowUpRight, Microscope, RefreshCw, Stethoscope} from "lucide-react";
+import {Activity, ArrowUpRight, Microscope, RefreshCw, Stethoscope} from "lucide-react";
 import {getTranslations, setRequestLocale} from "next-intl/server";
 import {clinics, getClinic} from "@/content/clinics";
-import {Link} from "@/i18n/navigation";
 import {pageMetadata, ORGANIZATION_ID, jsonLd as serializeJsonLd} from "@/lib/seo";
-import {Breadcrumbs} from "@/components/Breadcrumbs";
 import {HealthPointProfile} from "@/components/HealthPointProfile";
 import {healthPointCopy} from "@/content/health-point";
 import {DunjaMartinProfile} from "@/components/DunjaMartinProfile";
@@ -131,8 +130,6 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   const isLars = slug === "lars-gienger-bretten";
   const profileKey = isMedivium ? "medivium" : isMonikaBrueck ? "monikaBrueck" : isNikiciuk ? "nikiciuk" : isMihriban ? "mihribanCiftci" : isMaja ? "majaKoebelAink" : isLars ? "larsGienger" : "alpstein";
   const t = await getTranslations(`clinicProfiles.${profileKey}`);
-  const networkT = await getTranslations("networkPage");
-  const seoT = await getTranslations("seo");
   const assets = isMedivium ? {
     logo: "/clinics/medivium/logo.png",
     main: "/clinics/medivium/ha4a6318.jpg",
@@ -217,17 +214,12 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: serializeJsonLd(jsonLd)}} />
-      <Breadcrumbs locale={locale} items={[
-        {name: seoT("home"), path: ""}, {name: networkT("directoryLabel"), path: "/network"},
-        {name: clinic.name, path: `/network/${slug}`}
-      ]} />
 
       <section className="alpstein-hero section-soft">
         <div className="container">
-          <Link className="clinic-back-link" href="/network"><ArrowLeft size={16} />{networkT("directoryLabel")}</Link>
           <div className="alpstein-hero-grid">
             <div className="alpstein-hero-copy">
-              <span className="eyebrow">{t("eyebrow")}</span>
+              <ClinicProfileLabel clinic={clinic} locale={locale} />
               {!isMaja && !isLars && <Image className={`alpstein-logo${isMedivium ? " medivium-logo" : ""}${isMonikaBrueck ? " monika-logo" : ""}${isNikiciuk ? " nikiciuk-logo" : ""}${isMihriban ? " mihriban-logo" : ""}`} src={assets.logo} alt={`${clinic.name} Logo`} width={500} height={220} sizes="(max-width: 767px) 150px, 230px" priority />}
               <h1 className="display">{clinic.name}</h1>
               <p className="clinic-profile-location">{t("location")}</p>
@@ -336,8 +328,8 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
           <address>
             <strong>{clinic.name}</strong>
             {clinic.address && <span>{clinic.address}</span>}
-            {clinic.phone && <a href={`tel:${clinic.phone.replaceAll(" ", "")}`}>{clinic.phone}</a>}
-            {clinic.contactEmail && <a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>}
+            {clinic.phone && <a className="button button-secondary" href={`tel:${clinic.phone.replaceAll(" ", "")}`}>{clinic.phone}</a>}
+            {clinic.contactEmail && <a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>}
             {clinic.website && <a className="button button-primary" href={clinic.website} target="_blank" rel="noreferrer">{t("visitWebsite")}<ArrowUpRight size={16} /></a>}
           </address>
           <small>{t("sourceNote")}</small>

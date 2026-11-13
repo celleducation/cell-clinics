@@ -564,7 +564,7 @@ textarea {
   box-shadow: inset 0 1px 2px white, 0 12px 40px #193b6010;
   backdrop-filter: blur(18px);
 }
-.profile-profession { padding-top: clamp(20px, 3vw, 36px); }
+
 .materials-badge {
   display: grid; grid-template-columns: 1fr minmax(0, .85fr); align-items: center;
   gap: clamp(20px, 4vw, 48px); margin-top: 24px; padding: clamp(22px, 4vw, 44px);
@@ -3726,13 +3726,6 @@ textarea.input {
 .clinic-contact-hours p { margin: 0 0 8px; line-height: 1.7; }
 .clinic-contact-referrals { display: grid; gap: 10px; margin-top: 16px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.25); }
 
-.clinic-profile-contact-card address .button {
-  width: fit-content;
-  margin-top: 12px;
-  background: white;
-  color: var(--navy);
-}
-
 .clinic-profile-contact-card > small {
   grid-column: 1 / -1;
   color: white;
@@ -5447,15 +5440,26 @@ textarea.input {
 .news-video-consent img { object-fit:cover; }
 .news-video-consent button { position:relative; z-index:1; }
 
-.clinic-profile-contact-card.partner-glass-contact {
+.clinic-profile-contact-card {
   background: radial-gradient(ellipse at 90% 0%, #325b77 0%, transparent 62%), linear-gradient(120deg, #0b1f43, #152e4b);
   box-shadow: inset 0 1px 2px #ffffff59, 0 14px 42px #142f561c;
 }
 .partner-contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-.partner-glass-contact .partner-contact-actions .button {
+.clinic-profile-contact-card .button {
   max-width: 100%; margin-top: 0; background: rgba(234, 249, 255, .14); color: white;
   border-color: #ffffff66; box-shadow: inset 0 1px 1px #ffffff4d, 0 4px 16px #00132924;
 }
-.partner-glass-contact .partner-contact-actions .button-primary { background: #f0f8fc; color: var(--navy); }
-.partner-glass-contact .partner-contact-actions .button:hover { background: #fff; color: var(--navy); }
-.partner-glass-contact .partner-contact-actions .button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.clinic-profile-contact-card .button-primary { background: #f0f8fc; color: var(--navy); }
+.clinic-profile-contact-card .button:hover { background: #fff; color: var(--navy); }
+.clinic-profile-contact-card .button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+.clinic-profile-contact-card address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+.clinic-profile-contact-card address > :is(strong, span, p, div) { flex-basis: 100%; }
+.clinic-profile-contact-card address .button { margin-top: 0; max-width: 100%; overflow-wrap: anywhere; }
