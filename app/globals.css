@@ -552,12 +552,12 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: clamp(32px, 6vw, 88px);
+  gap: clamp(26px, 4vw, 56px);
 }
 .partner-glass-wash, .materials-badge {
   background: radial-gradient(ellipse at 80% 25%, #d9f2f9, transparent 60%), linear-gradient(120deg, #f8fbfd, #ecf3f9);
 }
-.eisenbrandt-details > div {
+.container.eisenbrandt-details {
   padding: clamp(22px, 3vw, 40px);
   border-radius: 26px;
   background: linear-gradient(140deg, #ffffffec, #ffffff73);
@@ -575,17 +575,17 @@ textarea {
 .materials-badge-images img { width: min(100%, 360px); height: auto; }
 @media (max-width: 767px) { .materials-badge { grid-template-columns: 1fr; } }
 
-.eisenbrandt-details .section-title { margin: 0 0 24px; }
+.section.partner-glass-wash { padding-block: clamp(28px, 4vw, 56px); }
+.eisenbrandt-details .section-title { margin: 0 0 16px; }
 .eisenbrandt-details .lead { margin: 0; max-width: 54ch; }
-.eisenbrandt-specialties ul { list-style: none; margin: 0; padding: 0; }
+.eisenbrandt-specialties ul { display: grid; gap: 6px; list-style: none; margin: 0; padding: 0; }
 .eisenbrandt-specialties li {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  padding: 10px 0;
+  line-height: 1.5;
   color: var(--navy);
 }
-.eisenbrandt-specialties li:first-child { padding-top: 0; }
 .eisenbrandt-specialties li::before {
   content: "";
   flex: 0 0 8px;
