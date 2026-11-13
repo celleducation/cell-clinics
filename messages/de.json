@@ -1,4 +1,12 @@
 {
+  "goecze": {
+    "network": "Partnernetzwerk",
+    "intro": "Ivan Göcze ist Hausarzt in Mintraching. Gemeinsam mit Katerina Hahn befasst er sich mit Prävention und der Frage, wie sich Bewegung, Ernährung und Erholung im Alltag gestalten lassen.",
+    "background": "Ärztlicher Hintergrund",
+    "bio": "Neben seiner hausärztlichen Tätigkeit bringt er Erfahrung in der Chirurgie und Intensivmedizin mit. Er lehrt an der medizinischen Fakultät der Universität Regensburg und hat eine ergänzende Ausbildung in zellulärer Medizin absolviert.",
+    "contact": "Kontakt zur Praxis",
+    "website": "Zur Praxiswebsite"
+  },
   "eisenbrandt": {
     "network": "Partnernetzwerk",
     "intro": "Als Fachärztin für Plastische und Ästhetische Chirurgie verbindet Dr. Franziska Eisenbrandt natürliche Ästhetik mit Präventionsmedizin. Sie begleitet unter anderem Frauen in den Wechseljahren und Menschen mit Fragen zu Stoffwechsel, Gewicht oder Erschöpfung.",

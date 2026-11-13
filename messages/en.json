@@ -1,4 +1,12 @@
 {
+  "goecze": {
+    "network": "Partner network",
+    "intro": "Ivan Göcze is a general practitioner in Mintraching. Together with Katerina Hahn, he focuses on preventive care and on how patients can fit exercise, nutrition and recovery into everyday life.",
+    "background": "Medical background",
+    "bio": "In addition to general practice, his background includes surgery and intensive care medicine. He teaches at the University of Regensburg’s Faculty of Medicine and has completed further training in cellular medicine.",
+    "contact": "Contact the practice",
+    "website": "Practice website"
+  },
   "eisenbrandt": {
     "network": "Partner network",
     "intro": "Dr. Franziska Eisenbrandt is a specialist in plastic and aesthetic surgery. Her practice combines natural-looking aesthetic medicine with preventive care. She sees women going through menopause and people seeking advice on metabolism, weight or fatigue.",
