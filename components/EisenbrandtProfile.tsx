@@ -31,7 +31,7 @@ export async function EisenbrandtProfile({clinic, locale}: {clinic: Clinic; loca
         </div>
       </div>
     </section>
-    <section className="section"><div className="container eisenbrandt-details">
+    <section className="section partner-glass-wash"><div className="container eisenbrandt-details">
       <div><h2 className="section-title">{t("bioTitle")}</h2><p className="lead">{t("bio")}</p></div>
       <div className="eisenbrandt-specialties"><h2 className="section-title">{t("focusTitle")}</h2>
         <ul>{(t.raw("focus") as string[]).map(item => <li key={item}>{item}</li>)}</ul>
@@ -41,12 +41,13 @@ export async function EisenbrandtProfile({clinic, locale}: {clinic: Clinic; loca
       <Image src="/images/cellclinic-mitochondria.png" alt="" width={640} height={640} sizes="(max-width: 767px) 90vw, 540px" className="w-full h-auto" />
       <div><SectionHeading title={t("approachTitle")} /><p className="lead">{t("approach")}</p></div>
     </div></section>
-    <section className="section clinic-profile-contact" id="contact"><div className="container clinic-profile-contact-card">
+    <section className="section clinic-profile-contact" id="contact"><div className="container clinic-profile-contact-card partner-glass-contact">
       <div><SectionHeading title={t("contact")} /><p>{t("visits")}</p></div>
       <address>
         <strong>{clinic.practitioner}</strong><span>{clinic.address}</span>
-        <a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>
-        <a href="https://www.instagram.com/dr.franziska.eisenbrandt/">Instagram</a>
+        <span>{clinic.contactEmail}</span>
+        <div className="partner-contact-actions"><a className="button button-primary" href={`mailto:${clinic.contactEmail}`}>{t("appointment")}</a>
+        <a className="button button-secondary" href="https://www.instagram.com/dr.franziska.eisenbrandt/">Instagram ↗</a></div>
       </address>
     </div></section>
   </>;

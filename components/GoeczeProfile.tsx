@@ -69,14 +69,14 @@ export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: s
       </div>
     </section>
     <section id="contact" className="section section-soft clinic-profile-contact">
-      <div className="container clinic-profile-contact-card">
+      <div className="container clinic-profile-contact-card partner-glass-contact">
         <div><SectionHeading title={t("contact")} /><h3>{t("hours")}</h3><p>{t("mornings")}<br />{t("evenings")}</p></div>
         <address>
           <strong>{clinic.practitioner}</strong>
           <span>{clinic.address}</span>
-          <a href={`tel:${clinic.phone?.replaceAll(" ", "")}`}>{clinic.phone}</a>
-          <a href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>
-          <a href={clinic.website}>{t("website")}</a>
+          <div className="partner-contact-actions"><a className="button button-secondary" href={`tel:${clinic.phone?.replaceAll(" ", "")}`}>{clinic.phone}</a>
+          <a className="button button-secondary" href={`mailto:${clinic.contactEmail}`}>{clinic.contactEmail}</a>
+          <a className="button button-secondary" href={clinic.website}>{t("website")} ↗</a></div>
         </address>
       </div>
     </section>

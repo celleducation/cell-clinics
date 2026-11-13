@@ -80,6 +80,12 @@ export function PartnerDeliverables({locale}: {locale: string}) {
             <div className="materials-card-copy"><h4>{item.title}</h4><p>{item.body}</p></div>
           </article>)}
         </div>
+        <article className="materials-badge">
+          <div><h3>{material.badge.title}</h3><p>{material.badge.body}</p></div>
+          <div className="materials-badge-images">{["light", "dark"].map(variant =>
+            <Image key={variant} src={`/images/partner-materials/partner-${variant}.svg`} alt={variant === "light" ? "Bionic Cell Therapy by Cell Education · Cell Clinics Partnerpraxis" : ""} width={440} height={100} />
+          )}</div>
+        </article>
         <aside className="materials-equipment">
           <Package size={24} aria-hidden="true" />
           <div><h4>{material.equipment.title}</h4><p>{material.equipment.body}</p></div>

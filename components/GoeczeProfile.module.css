@@ -9,7 +9,7 @@
 .reception { width: 100%; height: auto; border-radius: 16px; }
 .story p + p { margin-top: 12px; }
 .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.columns article { border-top: 2px solid var(--sky); padding-top: 16px; }
+.columns article { padding: clamp(18px, 2vw, 28px); border-radius: 22px; background: linear-gradient(145deg, #fff, #eff8fcbd); box-shadow: inset 0 1px 1px #fff, 0 8px 32px #103c6110; }
 .columns h3 { margin: 0 0 8px; font-size: 1.3rem; color: var(--navy); }
 @media (max-width: 740px) {
   .spread, .columns { grid-template-columns: 1fr; gap: 24px; }

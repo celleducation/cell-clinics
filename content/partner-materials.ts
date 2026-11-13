@@ -3,11 +3,13 @@ type Materials = {
   points: string[]; caption: string; resourcesTitle: string;
   resources: {image: string; title: string; body: string}[];
   supportTitle: string; support: {title: string; body: string}[]; equipment: {title: string; body: string};
+  badge: {title: string; body: string};
   note: string; cta: string;
 };
 
 export const partnerMaterials: Record<string, Materials> = {
   "de": {
+    badge: {title: "Partnerbadge für Ihre Website", body: "Als Partnerpraxis erhalten Sie das Cell Clinics Partnerbadge in einer hellen und einer dunklen Variante zum Einbinden auf Ihrer Praxiswebsite."},
     "label": "Das bekommen Sie als Partnerpraxis",
     "title": "Das Wissen. Die Unterlagen. Die Begleitung.",
     "intro": "Sie müssen nicht jedes Dokument selbst entwickeln. Vom digitalen Nachschlagewerk bis zur Patientenkommunikation erhalten Sie konkrete Materialien für den Aufbau und den Alltag Ihrer Praxis.",
@@ -74,6 +76,7 @@ export const partnerMaterials: Record<string, Materials> = {
     "cta": "Partnerleistungen im Gespräch kennenlernen"
   },
   "en": {
+    badge: {title: "A partner badge for your website", body: "Partner practices receive the Cell Clinics badge in light and dark versions to display on their own practice website."},
     "label": "Your partner practice resources",
     "title": "The knowledge. The materials. The support.",
     "intro": "You do not have to create every document yourself. From a digital reference work to patient communication, practical resources support the development and everyday running of your practice.",
@@ -140,6 +143,7 @@ export const partnerMaterials: Record<string, Materials> = {
     "cta": "Discuss the partner resources"
   },
   "es": {
+    badge: {title: "Un distintivo para la web de su consulta", body: "Las consultas asociadas reciben el distintivo de Cell Clinics en versión clara y oscura para incorporarlo a su propia página web."},
     "label": "Recursos para su consulta asociada",
     "title": "Conocimiento. Materiales. Acompañamiento.",
     "intro": "No necesita elaborar cada documento desde cero. Desde una obra de consulta digital hasta la comunicación con pacientes, dispone de recursos concretos para desarrollar su consulta.",
