@@ -15,7 +15,21 @@
     "testsText": "The practice offers ambulatory ECG and blood pressure monitoring, lung function tests and thyroid ultrasound in Mintraching.",
     "prevention": "Prevention and lifestyle",
     "preventionText": "Together with Katerina Hahn, Göcze advises patients on exercise, nutrition, sleep and recovery. Depending on the question, consultations may include laboratory results or a body composition assessment.",
-    "reception": "Reception at the family practice in Mintraching"
+    "reception": "Reception at the family practice in Mintraching",
+    "themes": "Health, ageing and performance",
+    "introduction": "Ivan Göcze and Katerina Hahn offer three approaches. The starting point is what brings each person to the practice.",
+    "health": "Health · Primary care",
+    "healthText": "How have you been between appointments? Alongside current symptoms, the practice asks about sleep, eating habits and physical activity. This helps guide conversations about preventive care and further tests.",
+    "longevity": "Longevity · Healthy ageing",
+    "longevityText": "Consultations explore cardiovascular health and everyday mobility. Depending on the reason for the visit, the practice may assess blood pressure, muscle mass or endurance and discuss changes to diet and activity.",
+    "performance": "Performance · Exertion and recovery",
+    "performanceText": "People with demanding jobs or intensive training schedules can discuss sleep quality, training load and recovery time. Assessments may also include nutrient status and heart rate variability.",
+    "gallery": "Inside the Mintraching practice",
+    "waiting": "Waiting area",
+    "consultation": "Consultation room",
+    "hours": "Consultation hours",
+    "mornings": "Monday to Friday, 8 am–noon",
+    "evenings": "Also Monday and Thursday, 4–6:30 pm"
   },
   "eisenbrandt": {
     "network": "Partner network",

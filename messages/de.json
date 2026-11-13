@@ -15,7 +15,21 @@
     "testsText": "In Mintraching sind unter anderem Langzeit-EKG, 24-Stunden-Blutdruckmessung, Lungenfunktionstests und Ultraschalluntersuchungen der Schilddrüse möglich.",
     "prevention": "Prävention und Lebensstil",
     "preventionText": "Im gemeinsamen Angebot mit Katerina Hahn geht es um Bewegung, Ernährung, Schlaf und Erholung. Je nach Fragestellung fließen Laborwerte oder eine Messung der Körperzusammensetzung in die Beratung ein.",
-    "reception": "Empfang der Hausarztpraxis in Mintraching"
+    "reception": "Empfang der Hausarztpraxis in Mintraching",
+    "themes": "Gesundheit, Altern und Leistungsfähigkeit",
+    "introduction": "Mit Katerina Hahn hat Ivan Göcze drei Angebote entwickelt. Ausgangspunkt ist die Frage, mit der jemand in die Praxis kommt.",
+    "health": "Health · Hausärztliche Begleitung",
+    "healthText": "Wie geht es Ihnen zwischen zwei Arztbesuchen? Neben aktuellen Beschwerden bespricht die Praxis auch Schlaf, Essgewohnheiten und Bewegung. Daraus ergeben sich Fragen für die Vorsorge und weitere Untersuchungen.",
+    "longevity": "Longevity · Gesund älter werden",
+    "longevityText": "Im Mittelpunkt stehen Herz und Kreislauf sowie die Beweglichkeit im Alltag. Je nach Anliegen betrachtet die Praxis Blutdruck, Muskelmasse oder Ausdauer und bespricht, welche Veränderungen bei Ernährung und Bewegung sinnvoll sein können.",
+    "performance": "Performance · Belastung und Erholung",
+    "performanceText": "Wer intensiv trainiert oder beruflich stark gefordert ist, kann Schlafqualität, Trainingsumfang und Erholungszeiten besprechen. Zur Abklärung betrachtet die Praxis unter anderem den Nährstoffstatus und die Herzfrequenzvariabilität.",
+    "gallery": "Einblicke in die Praxis in Mintraching",
+    "waiting": "Wartebereich",
+    "consultation": "Sprechzimmer",
+    "hours": "Sprechzeiten",
+    "mornings": "Montag bis Freitag 8–12 Uhr",
+    "evenings": "Montag und Donnerstag zusätzlich 16–18:30 Uhr"
   },
   "eisenbrandt": {
     "network": "Partnernetzwerk",

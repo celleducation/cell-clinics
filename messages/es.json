@@ -15,7 +15,21 @@
     "testsText": "En Mintraching se realizan electrocardiogramas ambulatorios, monitorización de la presión arterial durante 24 horas, pruebas de función pulmonar y ecografías de tiroides.",
     "prevention": "Prevención y hábitos de vida",
     "preventionText": "Junto con Katerina Hahn, Göcze asesora sobre actividad física, alimentación, sueño y descanso. Según el motivo de consulta, se pueden valorar resultados de laboratorio o la composición corporal.",
-    "reception": "Recepción de la consulta de medicina de familia en Mintraching"
+    "reception": "Recepción de la consulta de medicina de familia en Mintraching",
+    "themes": "Salud, envejecimiento y rendimiento",
+    "introduction": "Ivan Göcze y Katerina Hahn ofrecen tres enfoques. El punto de partida es el motivo que lleva a cada persona a la consulta.",
+    "health": "Health · Atención primaria",
+    "healthText": "¿Cómo se ha sentido entre una visita y otra? Además de los síntomas actuales, se habla del sueño, la alimentación y la actividad física para orientar la prevención y decidir si hacen falta otras pruebas.",
+    "longevity": "Longevity · Envejecer con salud",
+    "longevityText": "La consulta aborda la salud cardiovascular y la movilidad cotidiana. Según el motivo de la visita, se pueden valorar la presión arterial, la masa muscular o la resistencia y comentar posibles cambios en la alimentación y la actividad física.",
+    "performance": "Performance · Esfuerzo y recuperación",
+    "performanceText": "Quienes entrenan intensamente o tienen un trabajo exigente pueden consultar sobre la calidad del sueño, la carga de entrenamiento y los tiempos de descanso. La valoración puede incluir el estado nutricional y la variabilidad de la frecuencia cardíaca.",
+    "gallery": "La consulta de Mintraching por dentro",
+    "waiting": "Sala de espera",
+    "consultation": "Consultorio",
+    "hours": "Horario de consulta",
+    "mornings": "De lunes a viernes, de 8:00 a 12:00",
+    "evenings": "Lunes y jueves, también de 16:00 a 18:30"
   },
   "eisenbrandt": {
     "network": "Red de centros asociados",

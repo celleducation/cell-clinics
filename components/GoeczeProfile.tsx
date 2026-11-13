@@ -40,9 +40,37 @@ export async function GoeczeProfile({clinic, locale}: {clinic: Clinic; locale: s
         )}</div>
       </div>
     </section>
+    <section className={styles.services}>
+      <div className="container">
+        <h2 className="section-title">{t("themes")}</h2>
+        <p className={styles.introduction}>{t("introduction")}</p>
+        <div className={styles.columns}>
+          {(["health", "longevity", "performance"] as const).map(topic =>
+            <article key={topic}>
+              <Image className={styles.topicImage} src={`/clinics/ivan-goecze/${topic}.webp`} width={640} height={360} sizes="(max-width: 740px) 90vw, 33vw" alt="" />
+              <h3>{t(topic)}</h3>
+              <p>{t(`${topic}Text`)}</p>
+            </article>
+          )}
+        </div>
+      </div>
+    </section>
+    <section className={`section-soft ${styles.services}`}>
+      <div className="container">
+        <h2 className="section-title">{t("gallery")}</h2>
+        <div className={styles.rooms}>
+          {(["waiting", "consultation"] as const).map(room =>
+            <figure key={room}>
+              <Image className={styles.roomImage} src={`/clinics/ivan-goecze/${room}.webp`} width={960} height={540} sizes="(max-width: 740px) 90vw, 48vw" alt="" />
+              <figcaption>{t(room)}</figcaption>
+            </figure>
+          )}
+        </div>
+      </div>
+    </section>
     <section id="contact" className="section section-soft clinic-profile-contact">
       <div className="container clinic-profile-contact-card">
-        <SectionHeading title={t("contact")} />
+        <div><SectionHeading title={t("contact")} /><h3>{t("hours")}</h3><p>{t("mornings")}<br />{t("evenings")}</p></div>
         <address>
           <strong>{clinic.practitioner}</strong>
           <span>{clinic.address}</span>
