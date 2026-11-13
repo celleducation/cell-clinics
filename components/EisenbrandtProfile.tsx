@@ -31,9 +31,9 @@ export async function EisenbrandtProfile({clinic, locale}: {clinic: Clinic; loca
         </div>
       </div>
     </section>
-    <section className="section"><div className="container maak-about">
-      <div><SectionHeading title={t("bioTitle")} /><p className="lead">{t("bio")}</p></div>
-      <div className="maak-focus"><h2 className="section-title">{t("focusTitle")}</h2>
+    <section className="section"><div className="container eisenbrandt-details">
+      <div><h2 className="section-title">{t("bioTitle")}</h2><p className="lead">{t("bio")}</p></div>
+      <div className="eisenbrandt-specialties"><h2 className="section-title">{t("focusTitle")}</h2>
         <ul>{(t.raw("focus") as string[]).map(item => <li key={item}>{item}</li>)}</ul>
       </div>
     </div></section>

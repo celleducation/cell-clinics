@@ -548,6 +548,36 @@ textarea {
 .maak-art img { display: block; width: 100%; height: auto; object-fit: contain; }
 .maak-art figcaption { color: var(--muted); font-size: 12px; text-align: center; margin-top: 12px; }
 .maak-hero-art { width: min(100%, 440px); justify-self: center; align-self: center; }
+.eisenbrandt-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(32px, 6vw, 88px);
+}
+.eisenbrandt-details > div { border-top: 2px solid var(--navy); padding-top: 20px; }
+.eisenbrandt-details .section-title { margin: 0 0 24px; }
+.eisenbrandt-details .lead { margin: 0; max-width: 54ch; }
+.eisenbrandt-specialties ul { list-style: none; margin: 0; padding: 0; }
+.eisenbrandt-specialties li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--navy);
+}
+.eisenbrandt-specialties li:first-child { padding-top: 0; }
+.eisenbrandt-specialties li::before {
+  content: "";
+  flex: 0 0 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+@media (max-width: 767px) {
+  .eisenbrandt-details { grid-template-columns: 1fr; }
+}
+
 .maak-about, .maak-network { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
 .maak-focus { padding: 32px; border: 1px solid #dce9f2; border-radius: 24px; background: #f5faff; }
 .maak-focus .section-title { font-size: clamp(22px, 2vw, 28px); }
