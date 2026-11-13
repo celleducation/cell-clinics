@@ -18,6 +18,7 @@ export function SiteHeader() {
   const isPatientPage = pathname === patientHref || pathname.startsWith(`${patientHref}/`);
   const isPartnerProfile = /^\/network\/[^/]+\/?$/.test(pathname);
   const isPatientAudience = isPatientPage || isPartnerProfile;
+  const partnerCtaHref = pathname === "/" ? "#application" : "/#application";
   const patientCtaHref = isPatientPage ? "#find-clinic" : `${patientHref}#find-clinic`;
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           <LocaleSwitcher />
-          <ButtonLink href={isPatientAudience ? patientCtaHref : "#application"}>
+          <ButtonLink href={isPatientAudience ? patientCtaHref : partnerCtaHref}>
             {isPatientAudience ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
           </ButtonLink>
           <button
@@ -66,7 +67,7 @@ export function SiteHeader() {
           <Link className={isPatientAudience ? "active" : ""} href={patientHref} onClick={() => setOpen(false)}>{t("audience.patients")}</Link>
         </div>
         <LocaleSwitcher />
-        <ButtonLink href={isPatientAudience ? patientCtaHref : "#application"} onClick={() => setOpen(false)}>
+        <ButtonLink href={isPatientAudience ? patientCtaHref : partnerCtaHref} onClick={() => setOpen(false)}>
           {isPatientAudience ? t("patient.cta.findClinic") : t("cta.partnerWithUs")}
         </ButtonLink>
       </nav>

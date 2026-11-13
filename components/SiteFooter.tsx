@@ -1,17 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import type {MouseEvent} from "react";
 import {Link, usePathname} from "@/i18n/navigation";
 import {CookieSettings} from "@/components/CookieSettings";
 
 export function SiteFooter() {
   const t = useTranslations();
+  const locale = useLocale();
   const pathname = usePathname();
   const isPatientPage = /\/(patients|patienten|pacientes)(\/|$)/.test(pathname);
 
+  const homeSection = (hash: string) => pathname === "/" ? hash : `/${locale}${hash}`;
+
   const handleSectionClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (event.currentTarget.pathname !== window.location.pathname) return;
     const hash = event.currentTarget.hash;
     const target = hash ? document.querySelector(hash) : null;
 
@@ -43,16 +47,16 @@ export function SiteFooter() {
               <a href="#process" onClick={handleSectionClick}>{t("patient.nav.process")}</a>
               <a href="#find-clinic" onClick={handleSectionClick}>{t("patient.cta.findClinic")}</a>
             </> : <>
-              <a href="#platform" onClick={handleSectionClick}>{t("nav.platform")}</a>
-              <a href="#systems" onClick={handleSectionClick}>{t("nav.clinicalSystems")}</a>
-              <a href="#proof" onClick={handleSectionClick}>{t("home.proofLabel")}</a>
-              <a href="#application" onClick={handleSectionClick}>{t("cta.partnerWithUs")}</a>
+              <a href={homeSection("#platform")} onClick={handleSectionClick}>{t("nav.platform")}</a>
+              <a href={homeSection("#systems")} onClick={handleSectionClick}>{t("nav.clinicalSystems")}</a>
+              <a href={homeSection("#proof")} onClick={handleSectionClick}>{t("home.proofLabel")}</a>
+              <a href={homeSection("#application")} onClick={handleSectionClick}>{t("cta.partnerWithUs")}</a>
             </>}
           </nav>
           <nav className="footer-nav" aria-label="Contact">
             <strong>{t("nav.contact")}</strong>
             <a href="mailto:info@cell-education.com">info@cell-education.com</a>
-            <a href={isPatientPage ? "#find-clinic" : "#application"} onClick={handleSectionClick}>{isPatientPage ? t("patient.cta.findClinic") : t("cta.requestInfo")}</a>
+            <a href={isPatientPage ? "#find-clinic" : homeSection("#application")} onClick={handleSectionClick}>{isPatientPage ? t("patient.cta.findClinic") : t("cta.requestInfo")}</a>
             <a href="https://cell-education.com" target="_blank" rel="noreferrer">Cell Education ↗</a>
           </nav>
         </div>

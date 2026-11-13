@@ -14,7 +14,7 @@ export default async function PrivacyPage({params}: {params: Promise<{locale: st
   const c = privacyCopy[locale as keyof typeof privacyCopy] ?? privacyCopy.en;
   return <>
     <Breadcrumbs locale={locale} items={[{name: c.home, path: ""}, {name: c.title, path: "/datenschutz"}]} />
-    <section className="section"><div className="container">
+    <section className="section"><div className="container privacy-copy">
       <h1 className="display">{c.title}</h1><p>{c.date}</p>
       <p>{c.gtmNotice}</p>
       {c.sections.map(([title, body]) => <section key={title}><h2 className="section-title">{title}</h2><p>{body}</p></section>)}

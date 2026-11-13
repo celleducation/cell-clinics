@@ -1816,7 +1816,7 @@ textarea.input {
 .martin-topic-art img { object-fit: contain; padding: 18px; }
 .martin-topic-copy { padding: 24px; }
 .martin-topic-copy p { margin: 0; line-height: 1.7; }
-.martin-topics h3 { font-size: 22px; margin-bottom: 14px; }
+.martin-topics h3 { hyphens: auto; overflow-wrap: anywhere; font-size: 22px; margin-bottom: 14px; }
 @media (max-width: 767px) {
   .martin-offers, .martin-topics { grid-template-columns: 1fr; }
   .martin-hero-portrait { max-height: 420px; }
@@ -5464,3 +5464,8 @@ textarea.input {
 }
 .clinic-profile-contact-card address > :is(strong, span, p, div) { flex-basis: 100%; }
 .clinic-profile-contact-card address .button { margin-top: 0; max-width: 100%; overflow-wrap: anywhere; }
+
+.container.privacy-copy { max-width: 76ch; }
+.privacy-copy .display { font-size: clamp(1.65rem, 5vw, 3rem); overflow-wrap: anywhere; }
+.privacy-copy > section { margin-top: 2rem; }
+.privacy-copy > section .section-title { margin-bottom: .65rem; }
