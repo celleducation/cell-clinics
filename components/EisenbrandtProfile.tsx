@@ -7,7 +7,7 @@ import type {Clinic} from "@/content/clinics";
 export async function EisenbrandtProfile({clinic, locale}: {clinic: Clinic; locale: string}) {
   const t = await getTranslations("eisenbrandt");
   return <>
-    <section className="alpstein-hero section-soft">
+    <section className="alpstein-hero eisenbrandt-hero section-soft">
       <div className="container">
         <div className="alpstein-hero-grid">
           <div className="alpstein-hero-copy">
