@@ -13,7 +13,7 @@ export const healthPointCopy = {
     approach: "Am Anfang stehen Ihre Beschwerden, Ihre Vorgeschichte und Ihre persönliche Situation. Daraus entwickelt die Praxis ein individuelles Konzept und bespricht mit Ihnen die geeigneten nächsten Schritte.",
     areasLabel: "Medizinische Schwerpunkte", areasTitle: "Diagnostik und Behandlung zusammen denken.",
     areas: [
-      ["Zell- & Mitochondrienmedizin", "Bionic Cell Therapy, mitochondriale Medizin, IHHT und individuell abgestimmte Infusionskonzepte gehören zum Praxisangebot."],
+      ["Zell- & Mitochondrienmedizin", "Bionic Cell Therapy, mitochondriale Medizin und IHHT gehören zum Praxisangebot."],
       ["Funktionelle Diagnostik", "Erweiterte Labordiagnostik zu Stoffwechsel, Entzündung, Hormonen und Mikronährstoffen; ergänzend genetische und epigenetische Analytik sowie HRV-Messung."],
       ["Prävention & Umweltmedizin", "Individuelle Beratung zu Prävention sowie umweltmedizinische Abklärung bei Verdacht auf Belastungen."],
     ],
@@ -21,7 +21,7 @@ export const healthPointCopy = {
     networkBody: "Dr. Klein hat an Schulungen zu Bionic Cell Therapy von Cell Education teilgenommen. Diese vermitteln Wissen und verleihen keine zusätzliche Behandlungsbefugnis. Im Health Point wird das Konzept in die Anamnese, spezialisierte Labordiagnostik und individuell geplante Betreuung eingebunden. Die medizinische Verantwortung liegt bei der behandelnden Praxis.",
     teamLabel: "Die Praxis", teamTitle: "Persönlich begleitet — vom ersten Kontakt an.",
     teamBody: "Medizinische Praxisassistentinnen, Sekretariat und Administration unterstützen Dr. Klein bei einer sorgfältigen, persönlichen Betreuung. Die Praxis empfängt Patientinnen und Patienten aus der Schweiz und dem Ausland. Bei längerer Anreise unterstützt das Team mit Hotelempfehlungen in der Region.",
-    galleryTitle: "Einblicke in den Health Point", galleryAlts: ["Infusions- und Behandlungsplätze im Health Point", "Heller Behandlungsraum mit Ruhesesseln", "Wartebereich der Praxis"],
+    galleryTitle: "Einblicke in den Health Point", waitingAlt: "Wartebereich der Praxis",
     contactTitle: "Ihr Kontakt zum Health Point", contactBody: "Für einen Termin oder Fragen zum Praxisangebot wenden Sie sich direkt an das Team.",
     hours: "Sprechzeiten", weekdays: "Montag–Donnerstag: 08:30–17:00 Uhr", friday: "Freitag: 08:30–12:00 Uhr", office: "Freitag ab 12:00 Uhr Bürozeit ohne Sprechstunde.", referrals: "Für zuweisende Ärztinnen und Ärzte", source: "Praxisangaben nach der bereitgestellten Partnerinformation · Stand September 2026."
   },
@@ -38,7 +38,7 @@ export const healthPointCopy = {
     approach: "Your concerns, medical history and personal circumstances come first. The practice uses these to develop an individual plan and discuss suitable next steps with you.",
     areasLabel: "Clinical focus", areasTitle: "Connecting diagnostics and care.",
     areas: [
-      ["Cell & mitochondrial medicine", "The practice offers Bionic Cell Therapy, mitochondrial medicine, IHHT and individually planned infusion concepts."],
+      ["Cell & mitochondrial medicine", "The practice offers Bionic Cell Therapy, mitochondrial medicine and IHHT."],
       ["Functional diagnostics", "Extended laboratory testing for metabolism, inflammation, hormones and micronutrients, with genetic and epigenetic analysis and HRV measurement where appropriate."],
       ["Prevention & environmental medicine", "Individual consultation on prevention, and environmental medical assessment where exposure is suspected."],
     ],
@@ -46,7 +46,7 @@ export const healthPointCopy = {
     networkBody: "Dr. Klein has attended Cell Education training on Bionic Cell Therapy. Training conveys knowledge, not additional authority to treat. At Health Point, the concept is integrated into medical history taking, specialised laboratory diagnostics and individually planned care. The treating practice retains medical responsibility.",
     teamLabel: "The practice", teamTitle: "Personal support from the first contact.",
     teamBody: "Medical practice assistants, reception and administration support Dr. Klein in providing attentive, personal care. The practice welcomes patients from Switzerland and abroad. For those travelling further, the team can suggest hotels in the region.",
-    galleryTitle: "Inside Health Point", galleryAlts: ["Infusion and treatment spaces at Health Point", "Bright treatment room with reclining chairs", "Practice waiting area"],
+    galleryTitle: "Inside Health Point", waitingAlt: "Practice waiting area",
     contactTitle: "Contact Health Point", contactBody: "Contact the practice team directly for appointments or questions about its services.",
     hours: "Consultation hours", weekdays: "Monday–Thursday: 08:30–17:00", friday: "Friday: 08:30–12:00", office: "Friday after 12:00: office hours only, no consultations.", referrals: "For referring physicians", source: "Practice information supplied by the partner · September 2026."
   },
@@ -63,7 +63,7 @@ export const healthPointCopy = {
     approach: "Sus inquietudes, antecedentes y circunstancias personales son el punto de partida. A partir de ellos, la consulta desarrolla un plan individual y acuerda con usted los siguientes pasos.",
     areasLabel: "Áreas de atención", areasTitle: "Conectar diagnóstico y tratamiento.",
     areas: [
-      ["Medicina celular y mitocondrial", "La consulta ofrece Bionic Cell Therapy, medicina mitocondrial, IHHT y conceptos de infusión individualizados."],
+      ["Medicina celular y mitocondrial", "La consulta ofrece Bionic Cell Therapy, medicina mitocondrial e IHHT."],
       ["Diagnóstico funcional", "Pruebas de laboratorio ampliadas sobre metabolismo, inflamación, hormonas y micronutrientes, además de análisis genéticos y epigenéticos y medición de la variabilidad cardíaca."],
       ["Prevención y medicina ambiental", "Asesoramiento individual sobre prevención, y valoración médica ambiental ante sospechas de exposición."],
     ],
@@ -71,7 +71,7 @@ export const healthPointCopy = {
     networkBody: "La Dra. Klein ha asistido a cursos de Cell Education sobre Bionic Cell Therapy. Los cursos transmiten conocimientos, no nuevas competencias para tratar. En Health Point, este concepto se integra en la historia clínica, las pruebas especializadas y la atención individualizada. La responsabilidad médica corresponde a la consulta tratante.",
     teamLabel: "La consulta", teamTitle: "Atención personal desde el primer contacto.",
     teamBody: "El equipo de asistencia médica, secretaría y administración apoya a la Dra. Klein en una atención cuidadosa y personal. La consulta recibe pacientes de Suiza y del extranjero y puede recomendar hoteles de la región para quienes viajan desde lejos.",
-    galleryTitle: "Conozca Health Point", galleryAlts: ["Espacios de infusión y tratamiento en Health Point", "Sala de tratamiento luminosa con sillones", "Sala de espera de la consulta"],
+    galleryTitle: "Conozca Health Point", waitingAlt: "Sala de espera de la consulta",
     contactTitle: "Contacte con Health Point", contactBody: "Para citas o preguntas sobre los servicios, contacte directamente con el equipo.",
     hours: "Horario de consulta", weekdays: "Lunes–jueves: 08:30–17:00", friday: "Viernes: 08:30–12:00", office: "Viernes a partir de las 12:00: atención administrativa, sin consulta médica.", referrals: "Para médicos remitentes", source: "Información facilitada por la consulta asociada · Septiembre de 2026."
   }
