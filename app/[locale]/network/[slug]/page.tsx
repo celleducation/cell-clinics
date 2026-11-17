@@ -260,13 +260,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
       <section className="clinic-network-context">
         <div className="container clinic-network-context-card">
           <span className="eyebrow">{t("cellClinicsLabel")}</span>
-          <h2 className="section-title clinic-network-title">
-            <span>{networkPartnerTitle}</span>
-            <span className="clinic-network-brand">
-              <span aria-hidden="true">×</span>
-              <Image src="/cell-clinics-logo.svg" alt="Cell Clinics" width={875} height={153} />
-            </span>
-          </h2>
+          <h2 className="section-title">{networkPartnerTitle}</h2>
           <p className="lead">{t("cellClinicsBody")}</p>
         </div>
       </section>
