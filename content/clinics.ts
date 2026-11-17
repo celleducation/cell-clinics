@@ -22,6 +22,17 @@ export type Clinic = {
 
 const clinicDirectory: Clinic[] = [
   {
+    slug: "ronja-loeber-handwerker-kassel",
+    name: "For You - Holistic Medical Aesthetics",
+    practitioner: "Dr. med. Ronja Löber-Handwerker",
+    berufsgruppe: "Arztpraxis",
+    city: "Kassel",
+    region: "Hessen",
+    countryCode: "DE",
+    listingOnly: true,
+    coordinates: {lat: 51.3144341, lng: 9.4908502}
+  },
+  {
     slug: "franziska-eisenbrandt-eggenstein-leopoldshafen",
     name: "Praxis Dr. Eisenbrandt",
     practitioner: "Dr. med. Franziska Eisenbrandt",
