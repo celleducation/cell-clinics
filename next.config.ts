@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
   images: {
     formats: ["image/avif", "image/webp"],
+    qualities: [75, 90],
   },
   async redirects() {
     return [
