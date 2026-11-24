@@ -1945,7 +1945,8 @@ textarea.input {
 }
 
 .photo-hero-home .photo-hero-image > img {
-  object-position: center top;
+  object-fit: contain;
+  object-position: right center;
 }
 
 .photo-hero::before {
