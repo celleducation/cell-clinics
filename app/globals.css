@@ -1941,12 +1941,15 @@ textarea.input {
 }
 
 .photo-hero-home .photo-hero-image {
-  width: 100%;
+  inset: auto max(24px, calc((100% - 1200px) / 2)) 0 auto;
+  width: min(46%, 550px);
+  height: calc(100% - 32px);
+  max-height: 530px;
 }
 
 .photo-hero-home .photo-hero-image > img {
   object-fit: contain;
-  object-position: right center;
+  object-position: center bottom;
 }
 
 .photo-hero::before {
@@ -5482,8 +5485,8 @@ textarea.input {
     position: relative;
     inset: auto;
     width: 100%;
-    height: auto;
-    aspect-ratio: 1376 / 768;
+    height: clamp(300px, 65vw, 420px);
+    max-height: none;
     opacity: 1;
     z-index: 0;
   }
