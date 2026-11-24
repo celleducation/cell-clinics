@@ -1941,11 +1941,11 @@ textarea.input {
 }
 
 .photo-hero-home .photo-hero-image {
-  width: 48%;
+  width: 100%;
 }
 
 .photo-hero-home .photo-hero-image > img {
-  object-position: 72% center;
+  object-position: center top;
 }
 
 .photo-hero::before {
