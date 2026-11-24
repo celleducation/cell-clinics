@@ -1941,11 +1941,11 @@ textarea.input {
 }
 
 .photo-hero-home .photo-hero-image {
-  width: 50%;
+  width: 48%;
 }
 
 .photo-hero-home .photo-hero-image > img {
-  object-position: left top;
+  object-position: 72% center;
 }
 
 .photo-hero::before {
@@ -1957,7 +1957,11 @@ textarea.input {
 }
 
 .photo-hero-home::before {
-  background: linear-gradient(90deg, #f3f7f8 44%, rgba(243,247,248,.95) 50%, rgba(243,247,248,.2) 66%, transparent 78%);
+  content: none;
+}
+
+.photo-hero-home .photo-hero-intro > div {
+  width: 48%;
 }
 
 .photo-hero .photo-hero-intro {
@@ -5457,3 +5461,29 @@ textarea.input {
 .privacy-copy .display { font-size: clamp(1.65rem, 5vw, 3rem); overflow-wrap: anywhere; }
 .privacy-copy > section { margin-top: 2rem; }
 .privacy-copy > section .section-title { margin-bottom: .65rem; }
+
+
+@media (max-width: 900px) {
+  .photo-hero.photo-hero-home {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .photo-hero-home .photo-hero-intro {
+    min-height: 0;
+  }
+
+  .photo-hero-home .photo-hero-intro > div {
+    width: 100%;
+  }
+
+  .photo-hero.photo-hero-home .photo-hero-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1376 / 768;
+    opacity: 1;
+    z-index: 0;
+  }
+}
