@@ -57,8 +57,13 @@ export function SchmookProfile({clinic, locale}: {clinic: Clinic; locale: string
       </section>
       <section className="section section-soft">
         <div className="container">
-          <SectionHeading title={c.focusTitle} />
-          <p className={styles.intro}>{c.focusIntro}</p>
+          <div className={styles.focusOverview}>
+            <div>
+              <SectionHeading title={c.focusTitle} />
+              <p className={styles.intro}>{c.focusIntro}</p>
+            </div>
+            <Image className={styles.focusGraphic} src="/images/cell-science/digestion.webp" alt="" width={1400} height={788} sizes="(max-width: 800px) 92vw, 460px" />
+          </div>
           <div className={styles.cards}>
             {c.topics.map(([title, body]) => (
               <article className={styles.card} key={title}>
@@ -72,10 +77,12 @@ export function SchmookProfile({clinic, locale}: {clinic: Clinic; locale: string
       <section className="section">
         <div className={`container ${styles.detailsGrid}`}>
           <div className={styles.card}>
+            <Image className={styles.detailGraphic} src="/images/cellclinic-diagnostics.png" alt="" width={1415} height={1086} sizes="(max-width: 800px) 85vw, 500px" />
             <SectionHeading title={c.servicesTitle} />
             <ul className={styles.services}>{c.services.map(service => <li key={service}>{service}</li>)}</ul>
           </div>
           <div className={styles.card}>
+            <Image className={styles.detailGraphic} src="/images/cellclinic-mitochondria.png" alt="" width={1672} height={934} sizes="(max-width: 800px) 85vw, 500px" />
             <SectionHeading title={c.approachTitle} />
             <p>{c.approach}</p>
           </div>

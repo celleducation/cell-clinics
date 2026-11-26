@@ -23,7 +23,22 @@
   align-items: start;
 }
 .aboutGrid p + p { margin-top: 20px; }
-.intro { max-width: 75ch; margin-bottom: 32px; }
+.intro { max-width: 75ch; margin: 0; }
+.focusOverview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.focusGraphic { display: block; width: 100%; height: auto; border-radius: 24px; }
+.detailGraphic {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 20vw, 250px);
+  object-fit: contain;
+  margin-bottom: 28px;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -49,7 +64,7 @@
   .cards, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 800px) {
-  .heroGrid, .aboutGrid, .visitGrid, .detailsGrid { grid-template-columns: minmax(0, 1fr); }
+  .heroGrid, .aboutGrid, .visitGrid, .detailsGrid, .focusOverview { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
 }
 @media (max-width: 600px) {
