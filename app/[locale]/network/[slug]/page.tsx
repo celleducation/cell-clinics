@@ -1,3 +1,5 @@
+import {SchmookProfile} from "@/components/SchmookProfile";
+import {schmookCopy} from "@/content/schmook";
 import {ClinicProfileLabel} from "@/components/ClinicProfileLabel";
 import {GoeczeProfile} from "@/components/GoeczeProfile";
 import {EisenbrandtProfile} from "@/components/EisenbrandtProfile";
@@ -38,6 +40,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale, slug} = await params;
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) return {};
+  if (slug === "claudia-schmook-bad-soden") {
+    const copy = schmookCopy[locale as keyof typeof schmookCopy];
+    return pageMetadata({locale, path: `/network/${slug}`, title: copy.title, description: copy.intro, image: "/clinics/claudia-schmook/portrait.webp", imageWidth: 1280, imageHeight: 852, imageAlt: copy.portraitAlt});
+  }
   if (slug === "ivan-goecze-mintraching") {
     const t = await getTranslations({locale, namespace: "goecze"});
     return pageMetadata({locale, path: `/network/${slug}`, title: clinic.practitioner + " · " + clinic.city, description: t("intro")});
@@ -110,6 +116,7 @@ export default async function ClinicPage({params}: {params: Promise<{locale: str
   if (slug === "julia-napolitano-gil-esslingen") permanentRedirect(`/${locale}/network/julia-napolitano-gil-goeppingen`);
   const clinic = getClinic(slug);
   if (!clinic?.profileAvailable) notFound();
+  if (slug === "claudia-schmook-bad-soden") return <SchmookProfile clinic={clinic} locale={locale} />;
   if (slug === "ivan-goecze-mintraching") return <GoeczeProfile clinic={clinic} locale={locale} />;
   if (slug === "franziska-eisenbrandt-eggenstein-leopoldshafen") return <EisenbrandtProfile clinic={clinic} locale={locale} />;
   if (slug === "peter-degano-bendinat") return <DeganoProfile locale={locale} clinic={clinic} />;

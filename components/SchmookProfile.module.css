@@ -1,0 +1,57 @@
+.hero {
+  padding-block: clamp(40px, 6vw, 80px);
+  background: linear-gradient(130deg, #f5f9fc, #e7f5fa);
+}
+.heroGrid, .visitGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.hero h1 { margin: 16px 0 24px; }
+.portrait, .exterior {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 20px 54px rgba(16, 60, 97, .1);
+}
+.aboutGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+}
+.aboutGrid p + p { margin-top: 20px; }
+.intro { max-width: 75ch; margin-bottom: 32px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid rgba(206, 226, 238, .65);
+  border-radius: 26px;
+  background: linear-gradient(145deg, #ffffffed, #f0f9fcbf);
+  box-shadow: inset 0 1px 1px white, 0 10px 32px #103c610a;
+}
+.card h3 { margin: 0 0 14px; color: var(--navy); font-size: 1.3rem; }
+.card p { margin: 0; }
+.detailsGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.services { margin: 0; padding-left: 20px; }
+.services li { padding: 5px 0; }
+.services li::marker { color: var(--sky-ink); }
+.gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.gallery img { display: block; width: 100%; height: auto; border-radius: 22px; }
+.visitGrid p + p { margin-top: 16px; }
+@media (max-width: 1000px) {
+  .cards, .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  .heroGrid, .aboutGrid, .visitGrid, .detailsGrid { grid-template-columns: minmax(0, 1fr); }
+  .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+}
+@media (max-width: 600px) {
+  .cards, .gallery { grid-template-columns: minmax(0, 1fr); }
+}

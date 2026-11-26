@@ -61,6 +61,9 @@ const clinicDirectory: Clinic[] = [
   },
   {
     slug: "claudia-schmook-bad-soden",
+    profileAvailable: true,
+    website: "https://www.naturheilpraxis-schmook.de/",
+    images: ["/clinics/claudia-schmook/portrait.webp", "/clinics/claudia-schmook/consultation.webp"],
     berufsgruppe: "Heilpraktikerpraxis",
     name: "Naturheilpraxis Claudia Schmook",
     practitioner: "Claudia Schmook",
